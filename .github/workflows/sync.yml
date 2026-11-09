@@ -1,0 +1,28 @@
+name: sync records
+
+on:
+  schedule:
+    - cron: "17 3 * * *" # daily, 03:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Mirror the served records
+        run: node sync.mjs https://api.modalhub.ai
+      - name: Commit what changed
+        run: |
+          git config user.name "modalhub-records-sync"
+          git config user.email "noreply@modalhub.ai"
+          git add -A
+          if git diff --cached --quiet; then echo "no change"; exit 0; fi
+          git commit -m "sync: records as of $(date -u +%Y-%m-%d)"
+          git push

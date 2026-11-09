@@ -1,0 +1,4895 @@
+{
+ "generated_at": "2026-11-09T14:45:25Z",
+ "source": "https://api.modalhub.ai/v1/records",
+ "license": "CC0-1.0",
+ "count": 240,
+ "records": [
+  {
+   "id": "ad82643b-424f-4495-bbcd-e4aaf4e52017",
+   "slug": "vitest-error-projects-undefined-and-have-different-0892",
+   "url": "https://api.modalhub.ai/r/vitest-error-projects-undefined-and-have-different-0892",
+   "symptom": "Error: Projects \"undefined\" and \"\" have different 'maxWorkers' but same 'sequence.groupOrder'.",
+   "cause": "a maxWorkers that is not a number (VITEST_MAX_WORKERS=abc, --maxWorkers=abc, config) becomes NaN; NaN !== NaN fails the group check on the first file, with no second project",
+   "tool": "vitest",
+   "version": "5.1.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "caution",
+    "flags": [
+     {
+      "code": "installs_package",
+      "args": [
+       "npm:vitest"
+      ]
+     }
+    ],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "7c732984-e35b-4b71-96ae-5d6401da05fe",
+   "slug": "uv-error-distribution-pyqt5-qt5-version-registry-c20c",
+   "url": "https://api.modalhub.ai/r/uv-error-distribution-pyqt5-qt5-version-registry-c20c",
+   "symptom": "error: Distribution `pyqt5-qt5==<version> @ registry+<host>` can't be installed because it doesn't have a source distribution or wheel for the current platform",
+   "cause": "uv's lock covers all platforms and takes the newest pyqt5-qt5, 5.15.19, which has no Windows wheel or sdist; only 5.15.2 has Windows wheels",
+   "tool": "uv",
+   "version": "0.13.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "caution",
+    "flags": [
+     {
+      "code": "installs_package",
+      "args": [
+       "pypi:pyqt5"
+      ]
+     }
+    ],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "5553a229-9955-4723-9429-86833e5e7d03",
+   "slug": "uv-error-failed-to-download-and-build-4d68",
+   "url": "https://api.modalhub.ai/r/uv-error-failed-to-download-and-build-4d68",
+   "symptom": "error: Failed to download and build `<pkg>==<version>` cause: Failed to extract archive: <pkg>==<version> cause: Invalid tar file cause: at byte <n>: extraction policy rejected input: hard-link members are not allowed",
+   "cause": "0.13.0 made the stricter tar-codec reader the default for sdists, and it rejected hard-link members, which old sdists such as pybabel-json 0.2.0 (2015) contain",
+   "tool": "uv",
+   "version": "0.13.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "caution",
+    "flags": [
+     {
+      "code": "installs_package",
+      "args": [
+       "pypi:pybabel-json"
+      ]
+     }
+    ],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "6f28aa53-925d-461d-8b24-bfca84861fec",
+   "slug": "transformers-nameerror-name-nn-is-not-defined-f837",
+   "url": "https://api.modalhub.ai/r/transformers-nameerror-name-nn-is-not-defined-f837",
+   "symptom": "NameError: name 'nn' is not defined",
+   "cause": "transformers 5.20+ treats torch < 2.6 as absent, so torch.nn is never imported, but module-level code still references nn",
+   "tool": "transformers",
+   "version": "5.22.1",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "caution",
+    "flags": [
+     {
+      "code": "installs_package",
+      "args": [
+       "pypi:torch"
+      ]
+     }
+    ],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "0b4f0772-4ba6-4063-ad28-a8fc5f396b50",
+   "slug": "transformers-huggingface-hub-errors-strictdataclassfieldvalidationerror-97aa",
+   "url": "https://api.modalhub.ai/r/transformers-huggingface-hub-errors-strictdataclassfieldvalidationerror-97aa",
+   "symptom": "huggingface_hub.errors.StrictDataclassFieldValidationError: Validation error for field 'hidden_dropout_prob':",
+   "cause": "facebook/esm-1b's config.json stores hidden_dropout_prob as int 0, and EsmConfig is a strict dataclass typed float | None",
+   "tool": "transformers",
+   "version": "5.22.1",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "daacf92d-66c4-48bb-9990-8bf7041e1ea6",
+   "slug": "three-js-typeerror-cannot-destructure-property-useframebuffertarget-of-b388",
+   "url": "https://api.modalhub.ai/r/three-js-typeerror-cannot-destructure-property-useframebuffertarget-of-b388",
+   "symptom": "TypeError: Cannot destructure property 'useFrameBufferTarget' of 'this._precompilationState' as it is null.",
+   "cause": "r187's compileAsync() keeps its pre-compile state in one renderer field across an await; a second call overwrites and clears it, so the first restores the wrong state and the other reads null",
+   "tool": "three-js",
+   "version": "0.187.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "3803eb2e-d913-4062-8acd-fdfdb6a8234a",
+   "slug": "terraform-error-couldn-t-show-local-plan-ca65",
+   "url": "https://api.modalhub.ai/r/terraform-error-couldn-t-show-local-plan-ca65",
+   "symptom": "Error: Couldn't show local plan Plan read error: Module source has changed: The source address was changed since this module was installed.",
+   "cause": "show before 1.17.0 ignores the variable values saved in the plan, so a module source built from a const variable resolves from its default and mismatches",
+   "tool": "terraform",
+   "version": "1.16.7",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "4bbf4825-96f9-48c8-9515-82c21108efdc",
+   "slug": "streamlit-streamlitinvalidlayoutcontexterror-a-fragment-tried-to-write-2c2d",
+   "url": "https://api.modalhub.ai/r/streamlit-streamlitinvalidlayoutcontexterror-a-fragment-tried-to-write-2c2d",
+   "symptom": "StreamlitInvalidLayoutContextError: A fragment tried to write to a container created outside the fragment, but that container was not written to during the initial run, so Streamlit could not reserve a stable position for it.",
+   "cause": "A fragment-only rerun can write to an outside container only if that same fragment wrote to it during the last full app run; writes from the main script reserve nothing",
+   "tool": "streamlit",
+   "version": "1.65.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "3b138978-5fb5-4139-b13d-5be48d5d9f56",
+   "slug": "sqlalchemy-sqlalchemy-exc-timeouterror-queuepool-limit-of-49ff",
+   "url": "https://api.modalhub.ai/r/sqlalchemy-sqlalchemy-exc-timeouterror-queuepool-limit-of-49ff",
+   "symptom": "sqlalchemy.exc.TimeoutError: QueuePool limit of size <n> overflow <n> reached, connection timed out, timeout <n>",
+   "cause": "On CPython 3.15, 2.1.0rc2-2.1.6 never return a connection the GC collects in a reference cycle, e.g. a Session dropped unclosed mid-transaction, so its pool slot is gone",
+   "tool": "sqlalchemy",
+   "version": "2.1.6",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "caution",
+    "flags": [
+     {
+      "code": "installs_package",
+      "args": [
+       "pypi:sqlalchemy"
+      ]
+     }
+    ],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "229ccd0b-bfe7-4781-ae58-0fb6f43c953a",
+   "slug": "sqlalchemy-sqlalchemy-exc-invalidrequesterror-this-connection-has-d9f5",
+   "url": "https://api.modalhub.ai/r/sqlalchemy-sqlalchemy-exc-invalidrequesterror-this-connection-has-d9f5",
+   "symptom": "sqlalchemy.exc.InvalidRequestError: This connection has already initialized a SQLAlchemy Transaction() object via begin() or autobegin; isolation_level may not be altered unless rollback() or commit() is called first.",
+   "cause": "2.1.0-2.1.6: a begin_nested() SAVEPOINT re-applies Session execution_options the root transaction set before BEGIN; isolation_level can't change mid-transaction",
+   "tool": "sqlalchemy",
+   "version": "2.1.6",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "caution",
+    "flags": [
+     {
+      "code": "installs_package",
+      "args": [
+       "pypi:sqlalchemy"
+      ]
+     }
+    ],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "e47bd7d8-c557-4fd6-a15b-66233c3feb5e",
+   "slug": "pytest-attributeerror-state-object-has-no-attribute-5888",
+   "url": "https://api.modalhub.ai/r/pytest-attributeerror-state-object-has-no-attribute-5888",
+   "symptom": "AttributeError: 'State' object has no attribute '<name>'",
+   "cause": "9.2.0's monkeypatch.setattr takes the value to restore from the instance __dict__ (#10644 fix); attributes served by __getattr__ are not there, so undo() deletes them",
+   "tool": "pytest",
+   "version": "9.2.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "caution",
+    "flags": [
+     {
+      "code": "installs_package",
+      "args": [
+       "pypi:pytest"
+      ]
+     }
+    ],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "31a3ce8c-4a80-41bf-a102-f36fb45b4fe5",
+   "slug": "pydantic-typeerror-forwardref-init-got-an-unexpected-4b13",
+   "url": "https://api.modalhub.ai/r/pydantic-typeerror-forwardref-init-got-an-unexpected-4b13",
+   "symptom": "TypeError: ForwardRef.__init__() got an unexpected keyword argument 'is_class'",
+   "cause": "pydantic 2.14.0 calls typing.ForwardRef(..., is_class=True) for string annotations without the 2.13 shim; Python 3.10.0's ForwardRef has no is_class (added in 3.10.1)",
+   "tool": "pydantic",
+   "version": "2.14.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "caution",
+    "flags": [
+     {
+      "code": "installs_package",
+      "args": [
+       "pypi:pydantic"
+      ]
+     }
+    ],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "7421d202-121c-418b-bbcf-417e220e716c",
+   "slug": "polars-pyo3-runtime-panicexception-range-end-index-579e",
+   "url": "https://api.modalhub.ai/r/polars-pyo3-runtime-panicexception-range-end-index-579e",
+   "symptom": "pyo3_runtime.PanicException: range end index <n> out of range for slice of length <n>",
+   "cause": "2.1.0 turns head()/slice() after sort_by into a sort limit (#29831); after a per-group reorder (reverse, sort, cum_sum) the cut lists keep the old group lengths, so reads run past them",
+   "tool": "polars",
+   "version": "2.1.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "caution",
+    "flags": [
+     {
+      "code": "installs_package",
+      "args": [
+       "pypi:polars"
+      ]
+     }
+    ],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "88b2422d-b588-4ea7-95ba-75a65a5fee15",
+   "slug": "pnpm-error-cannot-find-module-ajv-require-0764",
+   "url": "https://api.modalhub.ai/r/pnpm-error-cannot-find-module-ajv-require-0764",
+   "symptom": "Error: Cannot find module 'ajv' Require stack: - <path>/node_modules/ajv-formats/dist/limit.js",
+   "cause": "Re-resolving a parent of ajv-formats@3.0.1 whose lockfile snapshot is peer-resolved (ajv is both its dependency and an optional peer) rewrites it as `ajv-formats@3.0.1: {}`, dropping ajv",
+   "tool": "pnpm",
+   "version": "12.14.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "f191ce49-cfe6-47e1-907f-3b9f37806fb5",
+   "slug": "pnpm-error-err-pnpm-no-matching-version-d58c",
+   "url": "https://api.modalhub.ai/r/pnpm-error-err-pnpm-no-matching-version-d58c",
+   "symptom": "Error: ERR_PNPM_NO_MATCHING_VERSION No matching version found for <pkg>@<version> while fetching it from <host>",
+   "cause": "pnpm 12's minimumReleaseAge shortcut caches a packument read from the disk mirror as registry-verified, so a version newer than that mirror, e.g. let in by a <pkg>@<version> exclude, is never fetched",
+   "tool": "pnpm",
+   "version": "12.18.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "4185378a-f3bd-4fa7-9d9a-d6b6281a9035",
+   "slug": "pnpm-error-unexpected-argument-cache-dir-found-f50b",
+   "url": "https://api.modalhub.ai/r/pnpm-error-unexpected-argument-cache-dir-found-f50b",
+   "symptom": "error: unexpected argument '--cache-dir' found",
+   "cause": "pnpm 12's Rust CLI left cache-dir out of the settings it lifts out of argv as bare flags, so its clap parser rejects --cache-dir as an unknown argument",
+   "tool": "pnpm",
+   "version": "12.15.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "caution",
+    "flags": [
+     {
+      "code": "installs_package",
+      "args": [
+       "unparsed"
+      ]
+     },
+     {
+      "code": "unverified_package",
+      "args": [
+       "unparsed",
+       "file"
+      ]
+     }
+    ],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "893e95d8-7c07-411b-b30e-945e1e8e39f1",
+   "slug": "playwright-typeerror-cannot-read-properties-of-undefined-836e",
+   "url": "https://api.modalhub.ai/r/playwright-typeerror-cannot-read-properties-of-undefined-836e",
+   "symptom": "TypeError: Cannot read properties of undefined (reading 'url')",
+   "cause": "Chrome detaches the Playwright extension's debugger from a page holding a frame it may not debug, often another extension's iframe; the MCP reply then reads .url of the lost tab",
+   "tool": "playwright",
+   "version": "1.64.1",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "caution",
+    "flags": [
+     {
+      "code": "installs_package",
+      "args": [
+       "npm:@playwright/mcp"
+      ]
+     }
+    ],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "42aa9c86-10da-4154-9cec-c434e7a8c073",
+   "slug": "pandas-attributeerror-nonetype-object-has-no-attribute-d98f",
+   "url": "https://api.modalhub.ai/r/pandas-attributeerror-nonetype-object-has-no-attribute-d98f",
+   "symptom": "AttributeError: 'NoneType' object has no attribute 'total_seconds'",
+   "cause": "python-dateutil 3.0 rewrote tz.tzfile without _trans_list, so pandas no longer detects dateutil zones and get_dst_info calls utcoffset(None), which is None for them",
+   "tool": "pandas",
+   "version": "3.1.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "caution",
+    "flags": [
+     {
+      "code": "installs_package",
+      "args": [
+       "pypi:pandas"
+      ]
+     }
+    ],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "f60fa9ac-c56a-49b0-809b-0ed4fdd0f2c1",
+   "slug": "ollama-error-this-model-requires-mlx-support-42f6",
+   "url": "https://api.modalhub.ai/r/ollama-error-this-model-requires-mlx-support-42f6",
+   "symptom": "Error: this model requires MLX support, but the MLX runtime is not available",
+   "cause": "The tag is a safetensors build for the MLX runner; Linux/Windows installs omit MLX, a separate CUDA-only amd64 package",
+   "tool": "ollama",
+   "version": "0.40.12",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "678ee379-9cf5-4b57-9ac3-687f5126e6eb",
+   "slug": "ollama-ollama-types-responseerror-detokenize-error-error-215c",
+   "url": "https://api.modalhub.ai/r/ollama-ollama-types-responseerror-detokenize-error-error-215c",
+   "symptom": "ollama._types.ResponseError: detokenize error: {\"error\":{\"code\":500,\"message\":\"vector\",\"type\":\"server_error\"}} (status code: 500)",
+   "cause": "The deprecated generate context is one model's token IDs; another model fails to detokenize IDs past its vocabulary",
+   "tool": "ollama",
+   "version": "0.40.6",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "6cfaa704-d497-45ff-9bdc-c040f905a034",
+   "slug": "node-error-invalid-package-config-nul-package-e1cb",
+   "url": "https://api.modalhub.ai/r/node-error-invalid-package-config-nul-package-e1cb",
+   "symptom": "Error: Invalid package config \\\\.\\nul\\package.json.",
+   "cause": "A SEA built with useVfs mounts its assets VFS only in the main thread, so a Worker given a path inside it reads the real file system, here the NUL device",
+   "tool": "node",
+   "version": "26.12.1",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "76ae8acf-3cda-4abb-82b0-146022bd1202",
+   "slug": "nextjs-error-route-route-unexpected-cache-miss-8386",
+   "url": "https://api.modalhub.ai/r/nextjs-error-route-route-unexpected-cache-miss-8386",
+   "symptom": "Error: Route \"<route>\": Unexpected cache miss after cache warming phase during prerendering. This is likely caused by non-deterministic arguments that differ between the cache warming phase and the final prerender phase (e.g. unstable array order).",
+   "cause": "Draft mode never saves 'use cache' entries to the Resume Data Cache, which the partialPrefetching runtime prerender then reads, so every cached read misses",
+   "tool": "nextjs",
+   "version": "16.4.3",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "caution",
+    "flags": [
+     {
+      "code": "installs_package",
+      "args": [
+       "npm:next"
+      ]
+     }
+    ],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "7307ebed-ae9b-4f1b-9438-d39ecc9f60f7",
+   "slug": "nestjs-typeerror-cannot-set-properties-of-undefined-5850",
+   "url": "https://api.modalhub.ai/r/nestjs-typeerror-cannot-set-properties-of-undefined-5850",
+   "symptom": "TypeError: Cannot set properties of undefined (setting 'content-type')",
+   "cause": "NodeAdapter has no HTTP/2 support: its router re-prototypes an Http2ServerResponse to NodeResponse (an http.ServerResponse), so the object lacks the header map setHeader() writes",
+   "tool": "nestjs",
+   "version": "12.3.2",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "1011a5d7-0a89-4b3d-8118-d009cb81258a",
+   "slug": "mcp-typescript-sdk-failed-to-reconnect-sse-stream-failed-13e4",
+   "url": "https://api.modalhub.ai/r/mcp-typescript-sdk-failed-to-reconnect-sse-stream-failed-13e4",
+   "symptom": "Failed to reconnect SSE stream: Failed to open SSE stream: Conflict",
+   "cause": "toNodeHandler sees a client disconnect only when the next chunk arrives, so a dropped idle GET stream holds the session's slot until the 15 s keep-alive and reconnects get 409",
+   "tool": "mcp-typescript-sdk",
+   "version": "2.4.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "8b31a3b3-a50d-46ee-a397-05c0f679409a",
+   "slug": "kubernetes-error-grpc-error-unmarshalling-request-string-b251",
+   "url": "https://api.modalhub.ai/r/kubernetes-error-grpc-error-unmarshalling-request-string-b251",
+   "symptom": "Error: grpc: error unmarshalling request: string field contains invalid UTF-8",
+   "cause": "kubelet 1.36.2+ (1.34.9+, 1.35.6+) sends env values as CRI bytes so Secret data may be non-UTF-8; an unpatched runtime still decodes them as UTF-8 strings and rejects them",
+   "tool": "kubernetes",
+   "version": "1.36.2",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "296d33e3-4a52-4318-8e0c-52f77474a2e9",
+   "slug": "astro-typeerror-this-bridge-setlasterror-is-not-b84a",
+   "url": "https://api.modalhub.ai/r/astro-typeerror-this-bridge-setlasterror-is-not-b84a",
+   "symptom": "TypeError: this.bridge.setLastError is not a function",
+   "cause": "@astrojs/astro2tsx 0.1.3 pins @emnapi/core 1.11.3, not @emnapi/runtime, so pnpm pairs it with runtime 2.0.0-beta.2 from rolldown 1.3.0's wasm binding; runtime 2 calls bridge methods core 1.11.3 lacks",
+   "tool": "astro",
+   "version": "7.4.7",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "b047f72a-9a84-46d8-a021-7d3f0ce77239",
+   "slug": "react-accessing-element-ref-was-removed-in-195c",
+   "url": "https://api.modalhub.ai/r/react-accessing-element-ref-was-removed-in-195c",
+   "symptom": "Accessing element.ref was removed in React 19. ref is now a regular prop. It will be removed from the JSX Element type in a future release.",
+   "cause": "React 19 moved ref into props; element.ref is now a dev-only getter that logs this when code, typically a cloneElement wrapper, reads it",
+   "tool": "react",
+   "version": "19.0.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "98fd7c3c-9d16-46aa-92d0-6e64a37d62f5",
+   "slug": "pytorch-nvidia-geforce-rtx-model-with-cuda-e883",
+   "url": "https://api.modalhub.ai/r/pytorch-nvidia-geforce-rtx-model-with-cuda-e883",
+   "symptom": "NVIDIA GeForce RTX <model> with CUDA capability sm_120 is not compatible with the current PyTorch installation.",
+   "cause": "the installed torch build has no sm_120 (RTX 50-series, Blackwell) kernels: only CUDA 12.8+ builds of torch 2.7.0 and later compile them",
+   "tool": "pytorch",
+   "version": "2.6.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "d98bf34d-d155-45f8-ad41-c24812b5a4c4",
+   "slug": "nextjs-typeerror-error-while-loading-rule-react-9698",
+   "url": "https://api.modalhub.ai/r/nextjs-typeerror-error-while-loading-rule-react-9698",
+   "symptom": "TypeError: Error while loading rule 'react/display-name': contextOrFilename.getFilename is not a function",
+   "cause": "ESLint 10 removed context.getFilename(); eslint-plugin-react, bundled by eslint-config-next, still calls it to resolve settings.react.version 'detect'",
+   "tool": "nextjs",
+   "version": "16.3.8",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "d47eff0c-8535-438a-bb06-d84cbcc97ce8",
+   "slug": "nextjs-invalid-project-directory-provided-no-such-7371",
+   "url": "https://api.modalhub.ai/r/nextjs-invalid-project-directory-provided-no-such-7371",
+   "symptom": "Invalid project directory provided, no such directory: <path>/lint",
+   "cause": "Next 16 removed the lint subcommand; the CLI's default command is dev, which takes the word lint as a project directory that does not exist",
+   "tool": "nextjs",
+   "version": "16.0.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "65e324dc-9ef0-4757-bbfc-9a1e2e019871",
+   "slug": "nestjs-warn-legacyrouteconverter-unsupported-route-path-route-f8b0",
+   "url": "https://api.modalhub.ai/r/nestjs-warn-legacyrouteconverter-unsupported-route-path-route-f8b0",
+   "symptom": "WARN [LegacyRouteConverter] Unsupported route path: \"<route>\". In previous versions, the symbols ?, *, and + were used to denote optional or repeating path parameters. The latest version of \"path-to-regexp\" now requires the use of named parameters.",
+   "cause": "Nest 11 matches paths with path-to-regexp 8 (Express 5, middie 9), which rejects an unnamed * or (.*); Nest rewrites such paths at boot and warns",
+   "tool": "nestjs",
+   "version": "11.1.6",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "399cd3bc-b5e4-49cf-80fe-9897653e6746",
+   "slug": "eslint-plugin-react-hooks-error-calling-setstate-synchronously-within-an-1265",
+   "url": "https://api.modalhub.ai/r/eslint-plugin-react-hooks-error-calling-setstate-synchronously-within-an-1265",
+   "symptom": "Error: Calling setState synchronously within an effect can trigger cascading renders",
+   "cause": "the recommended preset (7.0+, also spread by eslint-config-next 16) errors on react-hooks/set-state-in-effect: a sync setState in an effect forces an extra render pass",
+   "tool": "eslint-plugin-react-hooks",
+   "version": "7.1.1",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "bdd64ac8-f083-454b-a3dd-f71f4fefdd24",
+   "slug": "vitest-typeerror-implementation-is-not-a-constructor-1599",
+   "url": "https://api.modalhub.ai/r/vitest-typeerror-implementation-is-not-a-constructor-1599",
+   "symptom": "TypeError: () => <implementation> is not a constructor",
+   "cause": "since Vitest 4 a mock called with new runs Reflect.construct on its implementation, and an arrow function cannot be constructed",
+   "tool": "vitest",
+   "version": "4.0.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "a8952325-9c11-48fe-b674-fcb4b73fb705",
+   "slug": "vite-blocked-request-this-host-host-is-6c14",
+   "url": "https://api.modalhub.ai/r/vite-blocked-request-this-host-host-is-6c14",
+   "symptom": "Blocked request. This host (\"<host>\") is not allowed.",
+   "cause": "since 6.0.9 the dev server checks the Host header against server.allowedHosts to block DNS rebinding; by default only localhost, *.localhost and IP addresses pass",
+   "tool": "vite",
+   "version": "8.3.5",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "25e8e72d-ccfe-429a-aead-d1033251377b",
+   "slug": "vite-typeerror-crypto-hash-is-not-a-6129",
+   "url": "https://api.modalhub.ai/r/vite-typeerror-crypto-hash-is-not-a-6129",
+   "symptom": "TypeError: crypto.hash is not a function",
+   "cause": "Vite 7's dev server hashes the lockfile with crypto.hash(), added in Node 20.12/21.7; older Node (18, 20.0-20.11) lacks it, and Vite 7 needs 20.19+ or 22.12+ anyway",
+   "tool": "vite",
+   "version": "7.0.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "8f884970-80a2-42a3-899d-a36d3685d6e1",
+   "slug": "vercel-error-node-js-version-20-x-f8d4",
+   "url": "https://api.modalhub.ai/r/vercel-error-node-js-version-20-x-f8d4",
+   "symptom": "Error: Node.js Version \"20.x\" is discontinued and must be upgraded.",
+   "cause": "Vercel discontinued Node.js 20 builds on 2026-10-01; engines.node in package.json, or the project's Node.js Version setting when engines is absent, still selects 20.x",
+   "tool": "vercel",
+   "version": "65.11.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "f8ef2b90-3fa7-4b54-901c-3a7762809a64",
+   "slug": "uv-warning-virtual-env-path-does-not-188c",
+   "url": "https://api.modalhub.ai/r/uv-warning-virtual-env-path-does-not-188c",
+   "symptom": "warning: `VIRTUAL_ENV=<path>` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead",
+   "cause": "uv project commands (run, sync, add, remove) use the project's own .venv by default and ignore an activated VIRTUAL_ENV that points anywhere else",
+   "tool": "uv",
+   "version": "0.13.7",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "bdf5a8ab-2969-474a-b7a2-f3c214654583",
+   "slug": "typescript-error-ts2882-cannot-find-module-or-2500",
+   "url": "https://api.modalhub.ai/r/typescript-error-ts2882-cannot-find-module-or-2500",
+   "symptom": "error TS2882: Cannot find module or type declarations for side-effect import of './globals.css'.",
+   "cause": "TS 6.0 turned noUncheckedSideEffectImports on by default, so import './x.css' must resolve to a declaration; Next before 16.2.0 declares only *.module.css",
+   "tool": "typescript",
+   "version": "6.0.3",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "42eaed1b-ec91-4133-b88a-48af7cac3809",
+   "slug": "typescript-error-ts2591-cannot-find-name-process-ffb0",
+   "url": "https://api.modalhub.ai/r/typescript-error-ts2591-cannot-find-name-process-ffb0",
+   "symptom": "error TS2591: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node` and then add 'node' to the types field in your tsconfig.",
+   "cause": "TS 6.0 made compilerOptions.types default to [] (5.9 loaded every node_modules/@types package), so an installed @types/node is no longer loaded automatically",
+   "tool": "typescript",
+   "version": "6.0.2",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "de8acacb-6aea-43a8-97b1-79e2acfdc7de",
+   "slug": "typescript-eslint-error-typescript-eslint-does-not-support-cc3b",
+   "url": "https://api.modalhub.ai/r/typescript-eslint-error-typescript-eslint-does-not-support-cc3b",
+   "symptom": "Error: typescript-eslint does not support TS 7.0.",
+   "cause": "TypeScript 7.0 (the native Go port) ships no JS API: require('typescript') exposes only version fields, so typescript-eslint has no compiler to parse with",
+   "tool": "typescript-eslint",
+   "version": "8.72.1",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "5625c8aa-f45c-48a3-ba05-511d6341bd3f",
+   "slug": "typescript-error-ts5107-option-moduleresolution-node10-is-e191",
+   "url": "https://api.modalhub.ai/r/typescript-error-ts5107-option-moduleresolution-node10-is-e191",
+   "symptom": "error TS5107: Option 'moduleResolution=node10' is deprecated and will stop functioning in TypeScript 7.0. Specify compilerOption '\"ignoreDeprecations\": \"6.0\"' to silence this error.",
+   "cause": "TS 6.0 deprecates moduleResolution \"node\" (= node10, the Node 10 algorithm that ignores package.json exports/imports) ahead of its removal in 7.0, and reports it as an error",
+   "tool": "typescript",
+   "version": "6.0.2",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "0ba11641-dab2-4907-b7ab-9e0f57da6d0a",
+   "slug": "typescript-error-ts5101-option-baseurl-is-deprecated-cb18",
+   "url": "https://api.modalhub.ai/r/typescript-error-ts5101-option-baseurl-is-deprecated-cb18",
+   "symptom": "error TS5101: Option 'baseUrl' is deprecated and will stop functioning in TypeScript 7.0. Specify compilerOption '\"ignoreDeprecations\": \"6.0\"' to silence this error.",
+   "cause": "TS 6.0 deprecates baseUrl ahead of its removal in 7.0; paths has not needed it since 4.1, as targets then resolve relative to the tsconfig that declares them",
+   "tool": "typescript",
+   "version": "6.0.2",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "d96f4721-c353-49f7-8da9-117b18bd8fe6",
+   "slug": "ts-node-typeerror-err-unknown-file-extension-unknown-12db",
+   "url": "https://api.modalhub.ai/r/ts-node-typeerror-err-unknown-file-extension-unknown-12db",
+   "symptom": "TypeError [ERR_UNKNOWN_FILE_EXTENSION]: Unknown file extension \".ts\" for <path>/<file>.ts",
+   "cause": "\"type\": \"module\" sends the .ts entry to the ESM loader, which never calls ts-node's CommonJS require hook; Node before 22.18/23.6 has no .ts format there",
+   "tool": "ts-node",
+   "version": "10.9.2",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "d53c8c46-4d3b-4c3b-a45c-a116a9a8569a",
+   "slug": "testcontainers-java-unixsocketclientproviderstrategy-failed-with-exception-e362",
+   "url": "https://api.modalhub.ai/r/testcontainers-java-unixsocketclientproviderstrategy-failed-with-exception-e362",
+   "symptom": "UnixSocketClientProviderStrategy: failed with exception BadRequestException (Status 400: {\"message\":\"client version 1.32 is too old. Minimum supported API version is 1.44, please upgrade your client to a newer version\"}",
+   "cause": "with api.version unset, Testcontainers 1.16.0-1.21.3 and 2.0.0-2.0.1 pin Docker API 1.32; Docker Engine 29 rejects clients below API 1.44 (1.40 from 29.3.0), so every probe fails",
+   "tool": "testcontainers-java",
+   "version": "1.21.3",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "530f0749-dce0-434f-9581-089a156bc97e",
+   "slug": "terraform-the-parameter-dynamodb-table-is-deprecated-01ba",
+   "url": "https://api.modalhub.ai/r/terraform-the-parameter-dynamodb-table-is-deprecated-01ba",
+   "symptom": "The parameter \"dynamodb_table\" is deprecated. Use parameter \"use_lockfile\" instead.",
+   "cause": "Terraform 1.11 made S3-native locking (a <key>.tflock object) GA and deprecated DynamoDB locking, so the s3 backend warns on every run while dynamodb_table is set",
+   "tool": "terraform",
+   "version": "1.11.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "08b96781-655f-4a86-a8c3-0803df3af092",
+   "slug": "terraform-unable-to-verify-checksums-signature-openpgp-a533",
+   "url": "https://api.modalhub.ai/r/terraform-unable-to-verify-checksums-signature-openpgp-a533",
+   "symptom": "unable to verify checksums signature: openpgp: key expired",
+   "cause": "hc-install <=0.9.3 embeds HashiCorp's signing key 72D7468F with its old 2026-04-18 expiry; the key was renewed to 2030, but old builds verify with the stale copy",
+   "tool": "terraform",
+   "version": "1.14.8",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "d9524287-87f9-40e7-a775-372cb5c17838",
+   "slug": "tailwindcss-unknown-at-rule-theme-css-unknownatrules-c7e3",
+   "url": "https://api.modalhub.ai/r/tailwindcss-unknown-at-rule-theme-css-unknownatrules-c7e3",
+   "symptom": "Unknown at rule @theme css(unknownAtRules)",
+   "cause": "VS Code lints .css files with its built-in CSS language service, which does not know Tailwind v4 directives; the CSS itself is valid and builds",
+   "tool": "tailwindcss",
+   "version": "4.0.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "56426313-cfed-4236-a7c8-0c9d3399bdcb",
+   "slug": "sveltekit-sveltekit-error-app-stores-removed-d96a",
+   "url": "https://api.modalhub.ai/r/sveltekit-sveltekit-error-app-stores-removed-d96a",
+   "symptom": "SvelteKit error: app_stores_removed",
+   "cause": "`$app/stores` has been removed in favour of `$app/state` in SvelteKit 3; the stub left behind throws from subscribe(), so any $page/$navigating/$updated read fails the render",
+   "tool": "sveltekit",
+   "version": "3.1.1",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "837a9a17-e7bd-4672-8e6c-ddc041d18920",
+   "slug": "svelte-this-reference-only-captures-the-initial-87f2",
+   "url": "https://api.modalhub.ai/r/svelte-this-reference-only-captures-the-initial-87f2",
+   "symptom": "This reference only captures the initial value of `<name>`. Did you mean to reference it inside a closure instead?",
+   "cause": "5.45.3 extended state_referenced_locally to props: a top-level <script> read runs once at setup, so it keeps the first value and never follows prop updates",
+   "tool": "svelte",
+   "version": "5.45.3",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "72634941-47d9-4890-b97f-daeb42e588d2",
+   "slug": "starlette-typeerror-unhashable-type-dict-when-calling-7a39",
+   "url": "https://api.modalhub.ai/r/starlette-typeerror-unhashable-type-dict-when-calling-7a39",
+   "symptom": "TypeError: unhashable type: 'dict' when calling templates.TemplateResponse(\"<name>.html\", {\"request\": request}) on Starlette 1.x; Python 3.14 prints cannot use 'tuple' as a dict key (unhashable type: 'dict')",
+   "cause": "Starlette 1.0 removed the deprecated TemplateResponse(name, context) form: the name lands in the request slot and the dict reaches Jinja2 as the template name, a cache key",
+   "tool": "starlette",
+   "version": "1.0.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "64a29c72-7c48-4418-850b-6bd9999147cd",
+   "slug": "sqlalchemy-sqlalchemy-exc-missinggreenlet-greenlet-spawn-has-a57a",
+   "url": "https://api.modalhub.ai/r/sqlalchemy-sqlalchemy-exc-missinggreenlet-greenlet-spawn-has-a57a",
+   "symptom": "sqlalchemy.exc.MissingGreenlet: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place?",
+   "cause": "a plain attribute access (lazy-loaded relationship, or a column expired by commit) tried to emit SQL; under asyncio IO only runs inside an awaited call",
+   "tool": "sqlalchemy",
+   "version": "2.0.55",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "bdbb19db-c401-4860-81e8-b624c8d5a0fd",
+   "slug": "sqlalchemy-modulenotfounderror-no-module-named-psycopg-7afe",
+   "url": "https://api.modalhub.ai/r/sqlalchemy-modulenotfounderror-no-module-named-psycopg-7afe",
+   "symptom": "ModuleNotFoundError: No module named 'psycopg'",
+   "cause": "SQLAlchemy 2.1 maps a bare postgresql:// URL to the psycopg (v3) driver instead of psycopg2, so create_engine fails where only psycopg2 is installed",
+   "tool": "sqlalchemy",
+   "version": "2.1.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "03ccbd8c-a596-483a-9e86-48cdeb5ec82f",
+   "slug": "sqlalchemy-importerror-the-sqlalchemy-asyncio-module-requires-bdc2",
+   "url": "https://api.modalhub.ai/r/sqlalchemy-importerror-the-sqlalchemy-asyncio-module-requires-bdc2",
+   "symptom": "ImportError: The SQLAlchemy asyncio module requires that the Python 'greenlet' library is installed.  In order to ensure this dependency is available, use the 'sqlalchemy[asyncio]' install target:  'pip install sqlalchemy[asyncio]'",
+   "cause": "SQLAlchemy 2.1 moved greenlet, which the asyncio extension needs, entirely into the [asyncio] extra, so a plain sqlalchemy requirement no longer installs it",
+   "tool": "sqlalchemy",
+   "version": "2.1.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "72cb0db4-a7dc-46f9-966a-7aaba53bc1ac",
+   "slug": "spring-boot-error-package-org-springframework-boot-test-4fdb",
+   "url": "https://api.modalhub.ai/r/spring-boot-error-package-org-springframework-boot-test-4fdb",
+   "symptom": "error: package org.springframework.boot.test.autoconfigure.web.servlet does not exist",
+   "cause": "Boot 4 split spring-boot-test-autoconfigure into per-technology modules; MockMvc and @WebMvcTest support moved to spring-boot-webmvc-test under a new package",
+   "tool": "spring-boot",
+   "version": "4.0.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "f5ec6647-bb00-450e-b5ad-1d925df3a33c",
+   "slug": "setuptools-modulenotfounderror-no-module-named-pkg-resources-4364",
+   "url": "https://api.modalhub.ai/r/setuptools-modulenotfounderror-no-module-named-pkg-resources-4364",
+   "symptom": "ModuleNotFoundError: No module named 'pkg_resources'",
+   "cause": "setuptools 82.0.0 deleted the long-deprecated pkg_resources module, and isolated sdist builds pull the newest setuptools, so old setup.py imports break too",
+   "tool": "setuptools",
+   "version": "82.0.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "735632c7-ff50-40f6-937e-a99b761d5090",
+   "slug": "react-router-react-router-future-flag-warning-react-fef3",
+   "url": "https://api.modalhub.ai/r/react-router-react-router-future-flag-warning-react-fef3",
+   "symptom": "⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early.",
+   "cause": "6.28+ console.warns once per v7 behavior change whose future flag is undefined; v7_startTransition is read from the BrowserRouter or RouterProvider future prop",
+   "tool": "react-router",
+   "version": "6.30.1",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "ad84e593-ee3a-4483-b55e-50ecf962e4d5",
+   "slug": "react-native-error-call-to-consteval-function-fmt-a7ef",
+   "url": "https://api.modalhub.ai/r/react-native-error-call-to-consteval-function-fmt-a7ef",
+   "symptom": "error: call to consteval function 'fmt::basic_format_string<char, unsigned int &>::basic_format_string<FMT_COMPILE_STRING, 0>' is not a constant expression",
+   "cause": "Apple clang 21 (Xcode 26.4) rejects the consteval FMT_STRING check in fmt 11.0.2, which assumes two evaluations of one string literal yield the same pointer",
+   "tool": "react-native",
+   "version": "0.83.4",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "a65fac94-4f6c-4d95-8455-5a2979e77f7d",
+   "slug": "pytorch-pickle-unpicklingerror-weights-only-load-failed-21ef",
+   "url": "https://api.modalhub.ai/r/pytorch-pickle-unpicklingerror-weights-only-load-failed-21ef",
+   "symptom": "_pickle.UnpicklingError: Weights only load failed. This file can still be loaded, to do so you have two options, do those steps only if you trust the source of the checkpoint.",
+   "cause": "torch 2.6 flipped the weights_only default of torch.load to True; its restricted unpickler refuses every pickled class or function outside an allowlist",
+   "tool": "pytorch",
+   "version": "2.6.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "764acf16-487e-43d2-9068-3c06b24b6a34",
+   "slug": "python-runtimeerror-there-is-no-current-event-ec8c",
+   "url": "https://api.modalhub.ai/r/python-runtimeerror-there-is-no-current-event-ec8c",
+   "symptom": "RuntimeError: There is no current event loop in thread 'MainThread'.",
+   "cause": "3.14 made asyncio.get_event_loop() raise when no loop is set instead of creating one (3.12-3.13 only warned), so the get_event_loop() + run_until_complete idiom breaks",
+   "tool": "python",
+   "version": "3.14.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "7e6173ac-4352-4a89-8d18-a9825f22b9d0",
+   "slug": "python-modulenotfounderror-no-module-named-audioop-a1fc",
+   "url": "https://api.modalhub.ai/r/python-modulenotfounderror-no-module-named-audioop-a1fc",
+   "symptom": "ModuleNotFoundError: No module named 'audioop'",
+   "cause": "PEP 594 removed audioop from the 3.13 stdlib (deprecated since 3.11), so code and libraries that still import it, such as pydub, fail at import",
+   "tool": "python",
+   "version": "3.13.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "e0a89f25-e621-4093-a53c-aa3db14f6aee",
+   "slug": "python-syntaxwarning-invalid-escape-sequence-d-c944",
+   "url": "https://api.modalhub.ai/r/python-syntaxwarning-invalid-escape-sequence-d-c944",
+   "symptom": "SyntaxWarning: invalid escape sequence '\\d'",
+   "cause": "Python keeps an undefined backslash pair (\\d, \\., \\s, \\w) literally but deprecated it in 3.6; 3.12 turned that hidden DeprecationWarning into a SyntaxWarning at compile time",
+   "tool": "python",
+   "version": "3.12.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "fe2c6509-6c41-4ac1-8d9f-4e26bc81daf1",
+   "slug": "pytest-failed-async-def-functions-are-not-3f66",
+   "url": "https://api.modalhub.ai/r/pytest-failed-async-def-functions-are-not-3f66",
+   "symptom": "Failed: async def functions are not natively supported.",
+   "cause": "8.4 made pytest fail, instead of warn and skip, any async def test that no plugin runs; pytest-asyncio's default strict mode runs only marked tests",
+   "tool": "pytest",
+   "version": "8.4.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "c7701f8e-1aa9-47a1-ba94-a2c077848dc0",
+   "slug": "prisma-error-the-datasource-property-url-is-355f",
+   "url": "https://api.modalhub.ai/r/prisma-error-the-datasource-property-url-is-355f",
+   "symptom": "error: The datasource property `url` is no longer supported in schema files. Move connection URLs for Migrate to `prisma.config.ts` and pass either `adapter` for a direct database connection or `accelerateUrl` for Accelerate to the `PrismaClient` constructor.",
+   "cause": "Prisma 7 dropped URL properties from schema files: the CLI reads the URL from prisma.config.ts and PrismaClient takes a driver adapter",
+   "tool": "prisma",
+   "version": "7.0.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "bc3478ee-1db1-45d6-be1b-cb2f3a8077dd",
+   "slug": "prisma-failed-to-load-config-file-path-7e39",
+   "url": "https://api.modalhub.ai/r/prisma-failed-to-load-config-file-path-7e39",
+   "symptom": "Failed to load config file \"<path>\" as a TypeScript/JavaScript module. Error: PrismaConfigEnvError: Cannot resolve environment variable: DATABASE_URL.",
+   "cause": "every prisma command loads prisma.config.ts, Prisma 7 loads no .env file, and env() throws on an unset variable, even for generate, which needs no URL",
+   "tool": "prisma",
+   "version": "7.2.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "8111fdcc-267e-401b-8637-2e532b1da057",
+   "slug": "prisma-prismaclientconstructorvalidationerror-using-engine-type-client-7014",
+   "url": "https://api.modalhub.ai/r/prisma-prismaclientconstructorvalidationerror-using-engine-type-client-7014",
+   "symptom": "PrismaClientConstructorValidationError: Using engine type \"client\" requires either \"adapter\" or \"accelerateUrl\" to be provided to PrismaClient constructor.",
+   "cause": "Prisma 7's Rust-free client ships no database driver of its own: PrismaClient must get a driver adapter (or an Accelerate URL), so options without either fail validation",
+   "tool": "prisma",
+   "version": "7.0.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "27d23a9d-673f-49f9-b425-579eade03dda",
+   "slug": "powershell-totalwidth-17-must-be-a-non-4596",
+   "url": "https://api.modalhub.ai/r/powershell-totalwidth-17-must-be-a-non-4596",
+   "symptom": "totalWidth ('-17') must be a non-negative value. (Parameter 'totalWidth')",
+   "cause": "a localized update-notification line is longer than the first one, so the startup banner pads by a negative width and the host fails fast",
+   "tool": "powershell",
+   "version": "7.6.6",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "233a3fc3-3ed7-407c-9e1d-5c48f1c2fce1",
+   "slug": "powershell-the-token-is-not-a-valid-24c5",
+   "url": "https://api.modalhub.ai/r/powershell-the-token-is-not-a-valid-24c5",
+   "symptom": "The token '&&' is not a valid statement separator in this version.",
+   "cause": "Windows PowerShell 5.1 has no && or || operators; they arrived as pipeline chain operators in PowerShell 7, so the 5.1 parser rejects bash/cmd-style chains",
+   "tool": "powershell",
+   "version": "5.1",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "94803db9-f1d9-4b58-adde-6208897089c3",
+   "slug": "postgresql-error-in-18-these-docker-images-bca8",
+   "url": "https://api.modalhub.ai/r/postgresql-error-in-18-these-docker-images-bca8",
+   "symptom": "Error: in 18+, these Docker images are configured to store database data in a",
+   "cause": "postgres 18+ images moved PGDATA to /var/lib/postgresql/18/docker and the VOLUME to /var/lib/postgresql; the entrypoint exits when data or a mount sits at the old /data path",
+   "tool": "postgresql",
+   "version": "18.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "c626e89a-5ead-4497-ae92-20595ca4e30a",
+   "slug": "poetry-looks-like-you-re-trying-to-a0d9",
+   "url": "https://api.modalhub.ai/r/poetry-looks-like-you-re-trying-to-a0d9",
+   "symptom": "Looks like you're trying to use a Poetry command that is not available. — after poetry shell on Poetry 2.1+; 2.0.x printed The command \"shell\" does not exist.",
+   "cause": "Poetry 2.0 moved the shell command out of core into the separate poetry-plugin-shell plugin; env activate replaces it but only prints the activation command",
+   "tool": "poetry",
+   "version": "2.1.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "c83e458b-364d-426e-994f-c1470905fabe",
+   "slug": "poetry-the-requested-command-export-does-not-71ee",
+   "url": "https://api.modalhub.ai/r/poetry-the-requested-command-export-does-not-71ee",
+   "symptom": "The requested command export does not exist.",
+   "cause": "Poetry 2.0 stopped bundling poetry-plugin-export, the plugin that provides export, and Poetry loads plugins from its own environment, not from the project's",
+   "tool": "poetry",
+   "version": "2.1.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "caution",
+    "flags": [
+     {
+      "code": "installs_package",
+      "args": [
+       "pypi:poetry",
+       "pypi:poetry-plugin-export"
+      ]
+     }
+    ],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "3a5ae462-ae07-4dba-a43b-283b58028abc",
+   "slug": "pnpm-err-pnpm-ignored-builds-ignored-build-11d4",
+   "url": "https://api.modalhub.ai/r/pnpm-err-pnpm-ignored-builds-ignored-build-11d4",
+   "symptom": "ERR_PNPM_IGNORED_BUILDS  Ignored build scripts: <pkg>@<version>",
+   "cause": "pnpm 11 defaults strictDepBuilds to true, so a dependency install script not reviewed in allowBuilds fails the install; v10 keys such as onlyBuiltDependencies are removed",
+   "tool": "pnpm",
+   "version": "11.0.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "00de340b-0cdf-416e-bd72-f317ca0e102b",
+   "slug": "pandas-typeerror-invalid-value-value-for-dtype-1d4b",
+   "url": "https://api.modalhub.ai/r/pandas-typeerror-invalid-value-value-for-dtype-1d4b",
+   "symptom": "TypeError: Invalid value '<value>' for dtype 'str'. Value should be a string or missing value, got '<type>' instead.",
+   "cause": "pandas 3 infers the new str dtype for text columns instead of object, and a str column only holds strings or missing values, so setting an int or float raises",
+   "tool": "pandas",
+   "version": "3.0.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "7de22a9b-f980-4722-b5a4-03fc2f1a6f76",
+   "slug": "pandas-valueerror-invalid-frequency-h-failed-to-154c",
+   "url": "https://api.modalhub.ai/r/pandas-valueerror-invalid-frequency-h-failed-to-154c",
+   "symptom": "ValueError: Invalid frequency: H. Failed to parse with error message: ValueError(\"Invalid frequency: H. Failed to parse with error message: KeyError('H'). Did you mean h?\") Did you mean h?",
+   "cause": "pandas 3.0 enforced the 2.2 renames: H, BH, T, S, L, U, N are now h, bh, min, s, ms, us, ns and the offsets M, Q, Y, A are ME, QE, YE; the old strings no longer parse",
+   "tool": "pandas",
+   "version": "3.0.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "74bf17f4-a87b-428b-b89c-0cd8c9bdcee9",
+   "slug": "pandas-typeerror-ndframe-fillna-got-an-unexpected-6e83",
+   "url": "https://api.modalhub.ai/r/pandas-typeerror-ndframe-fillna-got-an-unexpected-6e83",
+   "symptom": "TypeError: NDFrame.fillna() got an unexpected keyword argument 'method'",
+   "cause": "pandas 3.0 removed the method= keyword of DataFrame.fillna and Series.fillna (deprecated since 2.1); forward and backward filling are only .ffill() and .bfill() now",
+   "tool": "pandas",
+   "version": "3.0.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "a74c5b6f-42cd-4882-934d-9aadbe840481",
+   "slug": "openai-python-openai-notfounderror-error-code-404-error-3f39",
+   "url": "https://api.modalhub.ai/r/openai-python-openai-notfounderror-error-code-404-error-3f39",
+   "symptom": "openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `gpt-3.5-turbo` has been deprecated, learn more here: <url>', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}",
+   "cause": "OpenAI shut these models down on 2026-10-23 (gpt-3.5-turbo, gpt-4, gpt-4-turbo, o1, o3-mini, o4-mini...); the API answers model_not_found on every SDK version",
+   "tool": "openai-python",
+   "version": "3.37.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "f9e3cd7f-8a3f-4973-b88b-ea6d76161c67",
+   "slug": "openai-python-openai-badrequesterror-error-code-400-error-7442",
+   "url": "https://api.modalhub.ai/r/openai-python-openai-badrequesterror-error-code-400-error-7442",
+   "symptom": "openai.BadRequestError: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead.\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}}",
+   "cause": "reasoning models (o-series, gpt-5 family except gpt-5-chat) reject the legacy max_tokens on Chat Completions; their cap is max_completion_tokens, which also counts reasoning tokens",
+   "tool": "openai-python",
+   "version": "1.99.9",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "95b89322-8796-43df-9fc6-6caa7cc92a4c",
+   "slug": "numpy-attributeerror-module-numpy-has-no-attribute-1c43",
+   "url": "https://api.modalhub.ai/r/numpy-attributeerror-module-numpy-has-no-attribute-1c43",
+   "symptom": "AttributeError: module 'numpy' has no attribute 'trapz'. Did you mean: 'trace'?",
+   "cause": "NumPy 2.4 removed np.trapz (deprecated in 2.0 in favour of np.trapezoid) and np.in1d; numpy's module __getattr__ finds nothing and Python suggests the nearest name, trace",
+   "tool": "numpy",
+   "version": "2.4.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "8f64c93e-2114-429f-8699-3848d3a49410",
+   "slug": "numpy-typeerror-only-0-dimensional-arrays-can-3c8f",
+   "url": "https://api.modalhub.ai/r/numpy-typeerror-only-0-dimensional-arrays-can-3c8f",
+   "symptom": "TypeError: only 0-dimensional arrays can be converted to Python scalars",
+   "cause": "NumPy 2.4 expired the 1.25 deprecation: float(), int(), complex() and math.* on an array with ndim > 0 now raise, even when it holds a single element",
+   "tool": "numpy",
+   "version": "2.4.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "88fbf59d-ea16-4a56-8915-c089916b03f1",
+   "slug": "npm-npm-warn-install-scripts-n-packages-9d62",
+   "url": "https://api.modalhub.ai/r/npm-npm-warn-install-scripts-n-packages-9d62",
+   "symptom": "npm warn install-scripts <n> packages had install scripts blocked because they are not covered by allowScripts:",
+   "cause": "npm 12 skips dependency preinstall/install/postinstall scripts unless the root package.json allowScripts policy approves the package; the install still exits 0",
+   "tool": "npm",
+   "version": "12.0.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "e3f9e53f-a8d2-4c0b-b875-99ade957eba0",
+   "slug": "node-syntaxerror-err-unsupported-typescript-syntax-typescript-f84e",
+   "url": "https://api.modalhub.ai/r/node-syntaxerror-err-unsupported-typescript-syntax-typescript-f84e",
+   "symptom": "SyntaxError [ERR_UNSUPPORTED_TYPESCRIPT_SYNTAX]: TypeScript enum is not supported in strip-only mode",
+   "cause": "Node runs .ts by default since 22.18.0/23.6.0 but only strips erasable type syntax; an enum (const enum too) needs generated JavaScript, so the parser rejects it",
+   "tool": "node",
+   "version": "22.18.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "d5804c01-4428-4e80-a65c-4672a6e28d98",
+   "slug": "node-node-bad-option-experimental-transform-types-8f62",
+   "url": "https://api.modalhub.ai/r/node-node-bad-option-experimental-transform-types-8f62",
+   "symptom": "node: bad option: --experimental-transform-types",
+   "cause": "Node 26.0.0 removed the flag (semver-major); built-in TypeScript support now only strips erasable types and never transforms enums, parameter properties or value namespaces",
+   "tool": "node",
+   "version": "26.0.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "0e4062b1-7fdb-4083-8e69-977eb1dca77a",
+   "slug": "node-typeerror-cannot-read-properties-of-undefined-e45d",
+   "url": "https://api.modalhub.ai/r/node-typeerror-cannot-read-properties-of-undefined-e45d",
+   "symptom": "TypeError: Cannot read properties of undefined (reading 'prototype') at Object.<anonymous> (<path>/node_modules/buffer-equal-constant-time/index.js:37:35)",
+   "cause": "Node 25 removed buffer.SlowBuffer; buffer-equal-constant-time reads SlowBuffer.prototype at load, and jwa before 1.4.2/2.0.1 (via jsonwebtoken > jws) requires it eagerly",
+   "tool": "node",
+   "version": "25.0.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "01de9eb7-3442-44d7-a997-15a6fc5e49e2",
+   "slug": "node-bin-sh-1-corepack-not-found-11eb",
+   "url": "https://api.modalhub.ai/r/node-bin-sh-1-corepack-not-found-11eb",
+   "symptom": "/bin/sh: 1: corepack: not found",
+   "cause": "Node.js 25+ stopped distributing Corepack: the official binaries and the node:25/26 Docker images have no corepack executable, so the shell cannot find it",
+   "tool": "node",
+   "version": "25.0.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "caution",
+    "flags": [
+     {
+      "code": "installs_package",
+      "args": [
+       "npm:corepack"
+      ]
+     }
+    ],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "a884e5cf-7c70-4c59-9163-d6b7fedbce24",
+   "slug": "node-fetcherror-invalid-response-body-while-trying-88ef",
+   "url": "https://api.modalhub.ai/r/node-fetcherror-invalid-response-body-while-trying-88ef",
+   "symptom": "FetchError: Invalid response body while trying to fetch <url>: Premature close",
+   "cause": "the 24.17.0 http.Agent queue-poisoning fix adds a 'data' listener to idle keep-alive sockets; node-fetch@2 sees it when a chunked response closes and reports truncation",
+   "tool": "node",
+   "version": "24.17.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "db5c3efc-f4c8-4953-b192-38dafc5db119",
+   "slug": "node-syntaxerror-unexpected-identifier-assert-430c",
+   "url": "https://api.modalhub.ai/r/node-syntaxerror-unexpected-identifier-assert-430c",
+   "symptom": "SyntaxError: Unexpected identifier 'assert'",
+   "cause": "Node 22 dropped the old import-assertions syntax (assert {...}); only import attributes (with {...}) parse, so assert after a module specifier is a syntax error",
+   "tool": "node",
+   "version": "22.0.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "7d508a07-7730-4bf1-893a-0958e1c7be81",
+   "slug": "nextjs-error-this-build-is-using-turbopack-b349",
+   "url": "https://api.modalhub.ai/r/nextjs-error-this-build-is-using-turbopack-b349",
+   "symptom": "ERROR: This build is using Turbopack, with a `webpack` config and no `turbopack` config.",
+   "cause": "Next 16 picks Turbopack when no bundler flag is given, and Turbopack never calls the webpack() hook, so Next exits instead of silently dropping that config",
+   "tool": "nextjs",
+   "version": "16.0.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "983fce5e-8075-457c-a230-36d233735077",
+   "slug": "nextjs-the-middleware-file-convention-is-deprecated-68da",
+   "url": "https://api.modalhub.ai/r/nextjs-the-middleware-file-convention-is-deprecated-68da",
+   "symptom": "The \"middleware\" file convention is deprecated. Please use \"proxy\" instead.",
+   "cause": "Next 16 renamed the middleware file convention to proxy; a middleware.ts at the root or in src/ still runs but is flagged on every next dev and next build",
+   "tool": "nextjs",
+   "version": "16.0.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "aa3d086b-28aa-4a24-9e9b-e31c1a35c3a0",
+   "slug": "mongoose-typeerror-next-is-not-a-function-6f26",
+   "url": "https://api.modalhub.ai/r/mongoose-typeerror-next-is-not-a-function-6f26",
+   "symptom": "TypeError: next is not a function",
+   "cause": "Mongoose 9 (kareem 3) calls pre middleware without a callback: the next parameter gets the hook's argument (e.g. save options) or undefined, so next() throws",
+   "tool": "mongoose",
+   "version": "9.0.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "a41f3f7c-3f1e-4ef4-bd91-fb8b0741e7b9",
+   "slug": "langchain-modulenotfounderror-no-module-named-langchain-chains-1689",
+   "url": "https://api.modalhub.ai/r/langchain-modulenotfounderror-no-module-named-langchain-chains-1689",
+   "symptom": "ModuleNotFoundError: No module named 'langchain.chains'",
+   "cause": "langchain 1.0 cut the package to agents, chat_models, embeddings, messages, rate_limiters and tools; legacy chains, retrievers, indexes and hub moved to the separate langchain-classic package",
+   "tool": "langchain",
+   "version": "1.0.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "2b826b21-49da-4adc-b844-df1f51dd8c65",
+   "slug": "langchain-importerror-cannot-import-name-agentexecutor-from-f098",
+   "url": "https://api.modalhub.ai/r/langchain-importerror-cannot-import-name-agentexecutor-from-f098",
+   "symptom": "ImportError: cannot import name 'AgentExecutor' from 'langchain.agents' (<path>)",
+   "cause": "langchain 1.0 cut langchain.agents down to create_agent and AgentState; AgentExecutor and the create_*_agent constructors moved to the separate langchain-classic package",
+   "tool": "langchain",
+   "version": "1.0.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "2f61a421-f2de-4b95-85b7-6a57441bb8a9",
+   "slug": "httpx-typeerror-asyncclient-init-got-an-unexpected-ea6a",
+   "url": "https://api.modalhub.ai/r/httpx-typeerror-asyncclient-init-got-an-unexpected-ea6a",
+   "symptom": "TypeError: AsyncClient.__init__() got an unexpected keyword argument 'app'",
+   "cause": "httpx 0.28.0 removed the app= shortcut (deprecated since 0.27.0); it only ever wrapped the app in ASGITransport (WSGITransport for Client) for you",
+   "tool": "httpx",
+   "version": "0.28.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "c3c70aaa-8055-42b7-856b-9c2349d79e1d",
+   "slug": "httpx-typeerror-client-init-got-an-unexpected-817a",
+   "url": "https://api.modalhub.ai/r/httpx-typeerror-client-init-got-an-unexpected-817a",
+   "symptom": "TypeError: Client.__init__() got an unexpected keyword argument 'proxies'",
+   "cause": "httpx 0.28.0 deleted the proxies= keyword (deprecated since 0.26) from Client, AsyncClient and the top-level functions; proxy= replaces it, and per-scheme routing needs a client's mounts=",
+   "tool": "httpx",
+   "version": "0.28.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "056cb4fc-20b1-4310-8408-39747c77a238",
+   "slug": "homebrew-homebrew-is-currently-ignoring-formulae-casks-671e",
+   "url": "https://api.modalhub.ai/r/homebrew-homebrew-is-currently-ignoring-formulae-casks-671e",
+   "symptom": "Homebrew is currently ignoring formulae, casks and commands from these taps because tap trust is required.",
+   "cause": "since Homebrew 6.0.0 a non-official tap's Ruby is loaded only once it is trusted, so its formulae, casks and commands are skipped until then",
+   "tool": "homebrew",
+   "version": "7.0.12",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "caution",
+    "flags": [
+     {
+      "code": "installs_package",
+      "args": [
+       "unparsed"
+      ]
+     }
+    ],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "c55a11e4-2a9a-47b0-b783-85050537f355",
+   "slug": "helm-error-invalid-argument-path-for-post-1b1b",
+   "url": "https://api.modalhub.ai/r/helm-error-invalid-argument-path-for-post-1b1b",
+   "symptom": "Error: invalid argument \"<path>\" for \"--post-renderer\" flag: plugin: {Name:<path> Type:postrenderer/v1} not found",
+   "cause": "Helm 4 reads --post-renderer as the name of an installed postrenderer/v1 plugin; a Helm 3 style path to an executable matches no plugin",
+   "tool": "helm",
+   "version": "4.3.1",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "328fa065-a4f4-4c6f-840d-742002d7a8bf",
+   "slug": "go-file-go-n-n-non-constant-5785",
+   "url": "https://api.modalhub.ai/r/go-file-go-n-n-non-constant-5785",
+   "symptom": "<file>.go:<n>:<n>: non-constant format string in call to fmt.Printf",
+   "cause": "Go 1.24's vet printf check flags a Printf-style call whose format string is non-constant with no arguments after it, and go test runs it once the go.mod go line is 1.24+",
+   "tool": "go",
+   "version": "1.24.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "53c6d9a3-bb7d-4b1f-8f73-9c1aa418bdc8",
+   "slug": "github-actions-failed-to-createartifact-received-non-retryable-771c",
+   "url": "https://api.modalhub.ai/r/github-actions-failed-to-createartifact-received-non-retryable-771c",
+   "symptom": "Failed to CreateArtifact: Received non-retryable error: Failed request: (409) Conflict: an artifact with this name already exists on the workflow run",
+   "cause": "since upload-artifact v4 an artifact is immutable, so a second upload under a name the run already used (matrix legs, a second step or job) is refused",
+   "tool": "github-actions",
+   "version": "4.0.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "5caea023-253f-4b7f-893b-471fe87cb13a",
+   "slug": "github-actions-error-the-version-3-9-with-29c5",
+   "url": "https://api.modalhub.ai/r/github-actions-error-the-version-3-9-with-29c5",
+   "symptom": "Error: The version '3.9' with architecture 'x64' was not found for Ubuntu 26.04.",
+   "cause": "ubuntu-latest is now Ubuntu 26.04; setup-python installs only builds made for that exact Ubuntu, and none exist for 3.8, 3.9 or older exact patches",
+   "tool": "github-actions",
+   "version": "26.04",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "9741b747-0af2-40c3-8137-a9ea8a9b0a99",
+   "slug": "github-actions-system-argumentoutofrangeexception-specified-argument-was-8718",
+   "url": "https://api.modalhub.ai/r/github-actions-system-argumentoutofrangeexception-specified-argument-was-8718",
+   "symptom": "System.ArgumentOutOfRangeException: Specified argument was out of the range of valid values. (Parameter ''using: node24' is not supported, use 'docker', 'node12', 'node16' or 'node20' instead.')",
+   "cause": "checkout@v5 and other node24 actions need Actions Runner 2.327.1+; an older self-hosted runner rejects runs.using: node24 while loading the action manifest",
+   "tool": "github-actions",
+   "version": "2.326.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "eaf0f5a0-c09d-4fac-9ec6-d28260cfa27a",
+   "slug": "github-actions-node-js-20-is-deprecated-the-8a1f",
+   "url": "https://api.modalhub.ai/r/github-actions-node-js-20-is-deprecated-the-8a1f",
+   "symptom": "Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: <actions>.",
+   "cause": "the runner now runs every node20 JavaScript action on Node 24 and lists each action whose action.yml still declares runs.using: node20",
+   "tool": "github-actions",
+   "version": "2.338.2",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "2ed0eea2-15f3-4c07-a17c-ad11409de5d7",
+   "slug": "git-fatal-need-to-specify-how-to-b58e",
+   "url": "https://api.modalhub.ai/r/git-fatal-need-to-specify-how-to-b58e",
+   "symptom": "fatal: Need to specify how to reconcile divergent branches.",
+   "cause": "local and upstream each have commits the other lacks, and with pull.rebase and pull.ff unset git refuses to pick merge or rebase for you",
+   "tool": "git",
+   "version": "2.56.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "66664bc2-2594-43f8-9d6c-539cf2ec247b",
+   "slug": "gh-graphql-projects-classic-is-being-deprecated-55f2",
+   "url": "https://api.modalhub.ai/r/gh-graphql-projects-classic-is-being-deprecated-55f2",
+   "symptom": "GraphQL: Projects (classic) is being deprecated in favor of the new Projects experience, see: <url>. (repository.issue.projectCards)",
+   "cause": "github.com shut down the classic Projects API, but older gh still requests projectCards by default (issue view before 2.71, pr view/edit before 2.73), so the query errors",
+   "tool": "gh",
+   "version": "2.45.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "f5a000d6-8e2d-4ada-9506-1420ac8a1b00",
+   "slug": "fastapi-attributeerror-includedrouter-object-has-no-attribute-d3fe",
+   "url": "https://api.modalhub.ai/r/fastapi-attributeerror-includedrouter-object-has-no-attribute-d3fe",
+   "symptom": "AttributeError: '_IncludedRouter' object has no attribute 'path'",
+   "cause": "0.137 keeps each include_router() as an _IncludedRouter node in app.routes (a tree, not a flat list); code that walks app.routes and reads .path hits one",
+   "tool": "fastapi",
+   "version": "0.137.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "f02fb72e-809e-4509-81db-f5405cb5ec2b",
+   "slug": "express-typeerror-cannot-set-property-query-of-f799",
+   "url": "https://api.modalhub.ai/r/express-typeerror-cannot-set-property-query-of-f799",
+   "symptom": "TypeError: Cannot set property query of #<IncomingMessage> which has only a getter",
+   "cause": "Express 5 defines req.query as a getter with no setter that re-parses the query string on every read, so assigning it from strict-mode code throws",
+   "tool": "express",
+   "version": "5.0.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "fa643abf-8842-478b-bcb7-eeacdfb57116",
+   "slug": "express-typeerror-unexpected-at-index-n-path-adc7",
+   "url": "https://api.modalhub.ai/r/express-typeerror-unexpected-at-index-n-path-adc7",
+   "symptom": "TypeError: Unexpected ? at index <n>: <path>",
+   "cause": "Express 5 compiles route strings with path-to-regexp 8, which dropped the ? modifier and reserves ()[]?+!, so an Express 4 path like '/user/:id?' throws at registration",
+   "tool": "express",
+   "version": "5.3.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "88da1add-0182-4232-8d45-9dfe519fd46a",
+   "slug": "expo-workletserror-worklets-mismatch-between-javascript-part-8970",
+   "url": "https://api.modalhub.ai/r/expo-workletserror-worklets-mismatch-between-javascript-part-8970",
+   "symptom": "WorkletsError: [Worklets] Mismatch between JavaScript part and native part of Worklets (<js-version> vs <native-version>).",
+   "cause": "Expo Go ships react-native-worklets precompiled (0.5.1 in SDK 54); a JS package of another minor, e.g. from @latest, fails the startup version check",
+   "tool": "expo",
+   "version": "54.0.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "b5293453-180e-4b1e-8e70-1bec25b3513d",
+   "slug": "eslint-plugin-react-hooks-npm-error-peer-eslint-3-0-55d9",
+   "url": "https://api.modalhub.ai/r/eslint-plugin-react-hooks-npm-error-peer-eslint-3-0-55d9",
+   "symptom": "npm error peer eslint@\"^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0 || ^9.0.0\" from eslint-plugin-react-hooks@7.0.1",
+   "cause": "7.0.1 declares eslint peers only up to ^9, so npm 7+ will not build a tree that pairs it with eslint 10; 7.1.0 is the first release that lists ^10.0.0",
+   "tool": "eslint-plugin-react-hooks",
+   "version": "7.0.1",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "838334d9-7be0-46ca-a562-6a20d986f0e7",
+   "slug": "eslint-a-config-object-is-using-the-1301",
+   "url": "https://api.modalhub.ai/r/eslint-a-config-object-is-using-the-1301",
+   "symptom": "A config object is using the \"extends\" key, which is not supported in flat config system.",
+   "cause": "a flat config object has no extends key of its own: a plain exported array reaches ESLint as-is, and only defineConfig() from eslint/config (ESLint 9.22+) expands extends",
+   "tool": "eslint",
+   "version": "10.14.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "6c04ab61-8083-44ca-aee2-93abd9d37d93",
+   "slug": "eslint-typeerror-error-while-loading-rule-react-8cdc",
+   "url": "https://api.modalhub.ai/r/eslint-typeerror-error-while-loading-rule-react-8cdc",
+   "symptom": "TypeError: Error while loading rule 'react/display-name': contextOrFilename.getFilename is not a function",
+   "cause": "ESLint 10 removed context.getFilename(); eslint-plugin-react 7.37.5, its newest release, still calls it to resolve settings.react.version 'detect'",
+   "tool": "eslint",
+   "version": "10.0.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "564fd30d-bc9d-4058-a108-02a49db9a3ac",
+   "slug": "eslint-typeerror-error-while-loading-rule-import-679b",
+   "url": "https://api.modalhub.ai/r/eslint-typeerror-error-while-loading-rule-import-679b",
+   "symptom": "TypeError: Error while loading rule 'import/<rule>': Cannot use 'in' operator to search for 'sourceType' in undefined",
+   "cause": "ESLint 10 removed context.parserOptions and SourceCode.getTokenOrCommentBefore/After; eslint-plugin-import 2.32.0, still its latest release (peer eslint up to ^9), calls them",
+   "tool": "eslint",
+   "version": "10.14.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "ba633253-9477-4cd4-bfc7-b16283745fb9",
+   "slug": "dotnet-the-settings-file-in-the-tool-c840",
+   "url": "https://api.modalhub.ai/r/dotnet-the-settings-file-in-the-tool-c840",
+   "symptom": "The settings file in the tool's NuGet package is invalid: Settings file 'DotnetToolSettings.xml' was not found in the package.",
+   "cause": "dotnet-ef 10.0.0 and 10.0.1 ship the tool only under tools/net10.0; an SDK 8 or 9 finds no tools folder it can run, so the settings file reads as missing",
+   "tool": "dotnet",
+   "version": "9.0.320",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "fb5ab633-92a4-4614-abcb-b93ab5ed2abc",
+   "slug": "docker-error-failed-to-build-failed-to-16e5",
+   "url": "https://api.modalhub.ai/r/docker-error-failed-to-build-failed-to-16e5",
+   "symptom": "ERROR: failed to build: failed to solve: openjdk:<tag>: failed to resolve source metadata for docker.io/library/openjdk:<tag>: docker.io/library/openjdk:<tag>: not found",
+   "cause": "the openjdk image is deprecated; in Nov 2025 its maintainers deleted every tag except explicit old versions and early-access builds, so FROM openjdk:17 no longer resolves",
+   "tool": "docker",
+   "version": "28.3.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "82e4ea2f-b9c6-4e80-955b-93be366f1b50",
+   "slug": "docker-compose-additional-privileges-requested-pass-allow-fs-9deb",
+   "url": "https://api.modalhub.ai/r/docker-compose-additional-privileges-requested-pass-allow-fs-9deb",
+   "symptom": "additional privileges requested: pass \"--allow=fs.read=<path>\" to grant requested privileges",
+   "cause": "buildx 0.37.2+ enforces bake fs entitlements under --progress rawjson, which Compose always uses; Compose < 5.7.0 grants fs.read only for build contexts, not a Dockerfile or secret outside them",
+   "tool": "docker-compose",
+   "version": "5.6.1",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "fe148006-7107-49da-af28-1d03cc569d6b",
+   "slug": "docker-error-response-from-daemon-manifest-for-37d0",
+   "url": "https://api.modalhub.ai/r/docker-error-response-from-daemon-manifest-for-37d0",
+   "symptom": "Error response from daemon: manifest for bitnami/<image>:<tag> not found: manifest unknown: manifest unknown",
+   "cause": "Bitnami moved versioned tags out of Docker Hub's bitnami namespace into bitnamilegacy (deleted from 2025-09-29); bitnami keeps a small hardened set on 'latest' only",
+   "tool": "docker",
+   "version": "28.1.1",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "ec48f678-ffa6-449e-bc95-b3f43d55e8c1",
+   "slug": "docker-error-response-from-daemon-client-version-5351",
+   "url": "https://api.modalhub.ai/r/docker-error-response-from-daemon-client-version-5351",
+   "symptom": "Error response from daemon: client version <api-version> is too old. Minimum supported API version is 1.44, please upgrade your client to a newer version",
+   "cause": "Engine 29 refuses API versions below 1.44 with HTTP 400; clients that pin an old version instead of negotiating (Traefik <=3.6.0 sends 1.24) fail",
+   "tool": "docker",
+   "version": "29.0.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "dc74dbf5-36f9-4278-812e-84d274473cc3",
+   "slug": "cargo-feature-edition2024-is-required-4d2e",
+   "url": "https://api.modalhub.ai/r/cargo-feature-edition2024-is-required-4d2e",
+   "symptom": "feature `edition2024` is required",
+   "cause": "a Cargo.toml in the build (usually a dependency's) says edition = \"2024\", stable only from Cargo 1.85.0; older Cargo treats it as an unstable feature and refuses the manifest",
+   "tool": "cargo",
+   "version": "1.84.1",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "0a38f790-ee52-4f5b-a052-4677a0e3ec1b",
+   "slug": "biome-tailwind-specific-syntax-is-disabled-c5cb",
+   "url": "https://api.modalhub.ai/r/biome-tailwind-specific-syntax-is-disabled-c5cb",
+   "symptom": "Tailwind-specific syntax is disabled.",
+   "cause": "Biome 2.3's CSS parser rejects Tailwind v4 at-rules (@theme, @apply, @plugin, @custom-variant) unless css.parser.tailwindDirectives is on; it is off by default",
+   "tool": "biome",
+   "version": "2.3.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "4ddebf44-60fb-46ce-aba0-2d35b814133e",
+   "slug": "aws-lambda-runtime-importmoduleerror-error-cannot-find-module-e26a",
+   "url": "https://api.modalhub.ai/r/aws-lambda-runtime-importmoduleerror-error-cannot-find-module-e26a",
+   "symptom": "Runtime.ImportModuleError: Error: Cannot find module 'aws-sdk'",
+   "cause": "Lambda Node.js runtimes from nodejs18.x on ship only AWS SDK for JavaScript v3 (@aws-sdk/*), so the v2 require('aws-sdk') finds nothing unless bundled",
+   "tool": "aws-lambda",
+   "version": "24",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "cdbcfa56-044f-4f88-8fa6-2d5216e1a9dc",
+   "slug": "aws-cli-an-error-occurred-missingcontentlength-when-calling-924a",
+   "url": "https://api.modalhub.ai/r/aws-cli-an-error-occurred-missingcontentlength-when-calling-924a",
+   "symptom": "An error occurred (MissingContentLength) when calling the PutObject operation: You must provide the Content-Length HTTP header.",
+   "cause": "since 2.23.0 HTTPS uploads add a default CRC checksum as an aws-chunked trailer and drop Content-Length; S3-compatible stores without trailer support reject them",
+   "tool": "aws-cli",
+   "version": "2.23.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "1f2179a1-2d3b-44ba-844e-6f1cc63e0aa4",
+   "slug": "astro-legacycontentconfigerror-found-legacy-content-config-file-fee5",
+   "url": "https://api.modalhub.ai/r/astro-legacycontentconfigerror-found-legacy-content-config-file-fee5",
+   "symptom": "[LegacyContentConfigError] Found legacy content config file in \"src/content/config.ts\". Please move this file to \"src/content.config.ts\" and ensure each collection has a loader defined.",
+   "cause": "Astro 6 removed the v2-v4 content collections API: config must live in src/content.config.ts with a loader per collection, so an old src/content/config.ts aborts startup",
+   "tool": "astro",
+   "version": "7.4.5",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "f40fb910-5bc9-4c8f-bb1b-cf31b364b5f5",
+   "slug": "anthropic-api-400-type-error-error-type-invalid-0a4a",
+   "url": "https://api.modalhub.ai/r/anthropic-api-400-type-error-error-type-invalid-0a4a",
+   "symptom": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"\\\"thinking.type.enabled\\\" is not supported for this model. Use \\\"thinking.type.adaptive\\\" and \\\"output_config.effort\\\" to control thinking behavior.\"},\"request_id\":\"req_<id>\"}",
+   "cause": "Claude 4.7 and later models removed manual extended thinking (type enabled + budget_tokens); they think adaptively, and output_config.effort sets how much",
+   "tool": "anthropic-api",
+   "version": "1",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "60f4a841-b793-4ebb-862d-c1ef77aaa8a2",
+   "slug": "anthropic-api-400-type-error-error-type-invalid-d9b1",
+   "url": "https://api.modalhub.ai/r/anthropic-api-400-type-error-error-type-invalid-d9b1",
+   "symptom": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"`temperature` is deprecated for this model.\"},\"request_id\":\"req_<id>\"}",
+   "cause": "Claude 4.7 and later models take no sampling settings: a temperature other than the default 1, or any top_p/top_k, is rejected instead of ignored",
+   "tool": "anthropic-api",
+   "version": "1",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "ac277ad0-02f9-4e03-8b3d-19f5895b8241",
+   "slug": "anthropic-api-error-400-type-error-error-type-9525",
+   "url": "https://api.modalhub.ai/r/anthropic-api-error-400-type-error-error-type-9525",
+   "symptom": "Error: 400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"This model does not support assistant message prefill. The conversation must end with a user message.\"},\"request_id\":\"req_<id>\"}",
+   "cause": "Claude Opus 4.6, Sonnet 4.6 and every later model reject a messages array that ends on an assistant turn (prefill); only Opus 4.5, Sonnet 4.5, Haiku 4.5 and older models continue one",
+   "tool": "anthropic-api",
+   "version": "1",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "dd0f0e8e-53de-4f73-b895-85197cc2b20f",
+   "slug": "anthropic-api-404-type-error-error-type-not-d47d",
+   "url": "https://api.modalhub.ai/r/anthropic-api-404-type-error-error-type-not-d47d",
+   "symptom": "404 {\"type\":\"error\",\"error\":{\"type\":\"not_found_error\",\"message\":\"model: claude-3-5-sonnet-20241022\"},\"request_id\":\"req_<id>\"}",
+   "cause": "the model id is retired (both Claude Sonnet 3.5 ids since 2025-10-28); the API answers a retired id, or its -latest alias, with 404 instead of routing to a newer model",
+   "tool": "anthropic-api",
+   "version": "1",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "5f418913-c112-41b4-b1cb-a9613bbb3599",
+   "slug": "angular-ng6008-component-name-is-standalone-and-c2e5",
+   "url": "https://api.modalhub.ai/r/angular-ng6008-component-name-is-standalone-and-c2e5",
+   "symptom": "NG6008: Component <Name> is standalone, and cannot be declared in an NgModule. Did you mean to import it instead?",
+   "cause": "Angular 19 flipped the standalone default to true, so a component, directive or pipe without standalone: false is standalone and cannot sit in NgModule declarations",
+   "tool": "angular",
+   "version": "22.2.4",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "b699297d-c799-4318-ab69-4c8196bcdd88",
+   "slug": "angular-the-angular-compiler-requires-typescript-6-860a",
+   "url": "https://api.modalhub.ai/r/angular-the-angular-compiler-requires-typescript-6-860a",
+   "symptom": "The Angular Compiler requires TypeScript >=6.0.0 and <6.1.0 but <version> was found instead.",
+   "cause": "@angular/compiler-cli 22 checks the loaded ts.version against >=6.0.0 <6.1.0 when it creates the program; a 5.x TypeScript got in past its peer range, e.g. via --legacy-peer-deps",
+   "tool": "angular",
+   "version": "22.2.4",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "05885e8f-64da-4664-a061-33111c0ffa88",
+   "slug": "webpack-error-error-hex-digital-envelope-routines-5136",
+   "url": "https://api.modalhub.ai/r/webpack-error-error-hex-digital-envelope-routines-5136",
+   "symptom": "Error: error:0308010C:digital envelope routines::unsupported",
+   "cause": "Node 17+ bundles OpenSSL 3, which disables MD4; webpack 4 and webpack 5 before 5.61 hash with crypto.createHash('md4'), so the build throws ERR_OSSL_EVP_UNSUPPORTED",
+   "tool": "webpack",
+   "version": "4.44.2",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "caution",
+    "flags": [
+     {
+      "code": "installs_package",
+      "args": [
+       "npm:webpack"
+      ]
+     }
+    ],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "efae82f7-99ce-42a1-b84f-a93fa62c6bb5",
+   "slug": "vite-uncaught-referenceerror-process-is-not-defined-fa16",
+   "url": "https://api.modalhub.ai/r/vite-uncaught-referenceerror-process-is-not-defined-fa16",
+   "symptom": "Uncaught ReferenceError: process is not defined",
+   "cause": "process is a Node global; Vite does not shim Node built-ins, and in dev it serves process.env.X in client code untouched, so the browser throws",
+   "tool": "vite",
+   "version": "8.3.5",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "6bdb6b79-3e24-4f76-9c0d-ea2ba4613053",
+   "slug": "vite-plugin-vite-import-analysis-failed-to-91fc",
+   "url": "https://api.modalhub.ai/r/vite-plugin-vite-import-analysis-failed-to-91fc",
+   "symptom": "[plugin:vite:import-analysis] Failed to resolve import \"@/<path>\" from \"src/<file>\". Does the file exist?",
+   "cause": "tsconfig paths only steer the TypeScript checker; Vite resolves imports itself and ignores them unless resolve.alias or resolve.tsconfigPaths is set",
+   "tool": "vite",
+   "version": "8.3.5",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "695d2661-cd7d-4fbd-99af-ff72faec80ee",
+   "slug": "uv-error-no-virtual-environment-found-run-4126",
+   "url": "https://api.modalhub.ai/r/uv-error-no-virtual-environment-found-run-4126",
+   "symptom": "error: No virtual environment found; run `uv venv` to create an environment, or pass `--system` to install into a non-virtual environment",
+   "cause": "uv pip only writes to virtual environments by default and found no active VIRTUAL_ENV or Conda env and no .venv in the current or any parent directory",
+   "tool": "uv",
+   "version": "0.13.6",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "202d7e41-9817-4e6d-9d65-13d21c0a9409",
+   "slug": "typescript-error-ts7016-could-not-find-a-62cc",
+   "url": "https://api.modalhub.ai/r/typescript-error-ts7016-could-not-find-a-62cc",
+   "symptom": "error TS7016: Could not find a declaration file for module '<pkg>'. '<path>/node_modules/<pkg>/index.js' implicitly has an 'any' type.",
+   "cause": "the package ships plain JS with no .d.ts and no @types/<pkg> is installed; under noImplicitAny (part of strict, on by default since TS 6.0) an untyped import is an error",
+   "tool": "typescript",
+   "version": "6.0.3",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "caution",
+    "flags": [
+     {
+      "code": "installs_package",
+      "args": [
+       "unparsed"
+      ]
+     },
+     {
+      "code": "unverified_package",
+      "args": [
+       "unparsed"
+      ]
+     }
+    ],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "61f5777e-f71e-40fa-a713-57111e6b5990",
+   "slug": "typescript-error-ts5110-option-module-must-be-c3c4",
+   "url": "https://api.modalhub.ai/r/typescript-error-ts5110-option-module-must-be-c3c4",
+   "symptom": "error TS5110: Option 'module' must be set to 'NodeNext' when option 'moduleResolution' is set to 'NodeNext'.",
+   "cause": "since TS 5.2 node16/nodenext resolution is accepted only with a matching Node module setting; module esnext, commonjs or the default no longer pair with it",
+   "tool": "typescript",
+   "version": "5.2.2",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "bcbfa4a1-e668-4be1-9bdd-e811868b92ce",
+   "slug": "typescript-error-ts2593-cannot-find-name-describe-be68",
+   "url": "https://api.modalhub.ai/r/typescript-error-ts2593-cannot-find-name-describe-be68",
+   "symptom": "error TS2593: Cannot find name 'describe'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig.",
+   "cause": "test globals come from ambient type packages that are not loaded: TS 6.0 made compilerOptions.types default to [] (no @types auto-include), or the runner's types are not installed",
+   "tool": "typescript",
+   "version": "6.0.3",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "bd5d445c-26b1-41c7-876d-6cecb21f4cc7",
+   "slug": "typescript-error-ts2307-cannot-find-module-path-5ebc",
+   "url": "https://api.modalhub.ai/r/typescript-error-ts2307-cannot-find-module-path-5ebc",
+   "symptom": "error TS2307: Cannot find module '@/<path>' or its corresponding type declarations.",
+   "cause": "'@/' is not a package: tsc resolves it only through compilerOptions.paths, and the tsconfig covering this file maps no such prefix (or relied on baseUrl, which TS 7 removed)",
+   "tool": "typescript",
+   "version": "7.0.2",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "1ad88619-66d9-4b91-94c3-403176e5b1ff",
+   "slug": "terraform-error-error-acquiring-the-state-lock-2305",
+   "url": "https://api.modalhub.ai/r/terraform-error-error-acquiring-the-state-lock-2305",
+   "symptom": "Error: Error acquiring the state lock",
+   "cause": "the backend's state lock is held: another plan or apply is running, or an interrupted run (killed CI job, crash) left its lock behind",
+   "tool": "terraform",
+   "version": "1.9.8",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "2b3a7692-7bbc-4248-89a2-f97fe7da87d0",
+   "slug": "tailwindcss-it-looks-like-you-re-trying-5273",
+   "url": "https://api.modalhub.ai/r/tailwindcss-it-looks-like-you-re-trying-5273",
+   "symptom": "It looks like you're trying to use `tailwindcss` directly as a PostCSS plugin. The PostCSS plugin has moved to a separate package, so to continue using Tailwind CSS with PostCSS you'll need to install `@tailwindcss/postcss` and update your PostCSS configuration.",
+   "cause": "since 4.0 the tailwindcss package is only the compiler; its default export is a stub that throws, and the PostCSS integration ships separately",
+   "tool": "tailwindcss",
+   "version": "4.0.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "caution",
+    "flags": [
+     {
+      "code": "installs_package",
+      "args": [
+       "npm:@tailwindcss/postcss"
+      ]
+     }
+    ],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "3094fb43-15e9-4b02-9d77-6dcdc8006ff8",
+   "slug": "tailwindcss-npm-error-could-not-determine-executable-3f93",
+   "url": "https://api.modalhub.ai/r/tailwindcss-npm-error-could-not-determine-executable-3f93",
+   "symptom": "npm error could not determine executable to run",
+   "cause": "the tailwindcss v4 package ships no executable (the CLI moved to @tailwindcss/cli) and v4 has no init: configuration lives in your CSS",
+   "tool": "tailwindcss",
+   "version": "4.0.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "caution",
+    "flags": [
+     {
+      "code": "installs_package",
+      "args": [
+       "npm:tailwindcss",
+       "npm:@tailwindcss/vite"
+      ]
+     }
+    ],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "8d89ced1-637d-4365-aa4f-accb8ed984b6",
+   "slug": "tailwindcss-cannot-apply-unknown-utility-class-class-e73d",
+   "url": "https://api.modalhub.ai/r/tailwindcss-cannot-apply-unknown-utility-class-class-e73d",
+   "symptom": "Cannot apply unknown utility class `<class>`",
+   "cause": "@apply resolves only utilities its stylesheet's theme defines: v3 JS-config theme values aren't loaded in v4, and CSS modules or component styles have no theme",
+   "tool": "tailwindcss",
+   "version": "4.1.8",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "49e82108-ce6c-4538-b99d-a570afff451c",
+   "slug": "sqlalchemy-sqlalchemy-exc-objectnotexecutableerror-not-an-executable-915f",
+   "url": "https://api.modalhub.ai/r/sqlalchemy-sqlalchemy-exc-objectnotexecutableerror-not-an-executable-915f",
+   "symptom": "sqlalchemy.exc.ObjectNotExecutableError: Not an executable object: 'SELECT 1'",
+   "cause": "SQLAlchemy 2.0's Connection.execute() accepts only executable constructs such as select() or text(); 1.x still took plain SQL strings, 2.0 dropped that",
+   "tool": "sqlalchemy",
+   "version": "2.0.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "2645bc64-b7f0-42af-8c91-5ea2f4f78cb8",
+   "slug": "sqlalchemy-attributeerror-engine-object-has-no-attribute-f833",
+   "url": "https://api.modalhub.ai/r/sqlalchemy-attributeerror-engine-object-has-no-attribute-f833",
+   "symptom": "AttributeError: 'Engine' object has no attribute 'execute'",
+   "cause": "SQLAlchemy 2.0 removed connectionless execution (Engine.execute/scalar) and library-level autocommit; statements run on a Connection or Session you hold",
+   "tool": "sqlalchemy",
+   "version": "2.0.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "78914a45-22e1-49a5-ab02-53693e221ba9",
+   "slug": "rustc-error-linker-cc-not-found-545e",
+   "url": "https://api.modalhub.ai/r/rustc-error-linker-cc-not-found-545e",
+   "symptom": "error: linker `cc` not found",
+   "cause": "rustc links Linux targets through the system C compiler driver cc, and rustup ships no C toolchain, so a bare system or slim container has no cc to call",
+   "tool": "rustc",
+   "version": "1.90.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "caution",
+    "flags": [
+     {
+      "code": "installs_package",
+      "args": [
+       "apt:build-essential",
+       "dnf:gcc",
+       "apk:build-base"
+      ]
+     },
+     {
+      "code": "elevated",
+      "args": [
+       "sudo"
+      ]
+     }
+    ],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "b1796b08-ae23-4dd9-ba97-016b1195cf3c",
+   "slug": "react-objects-are-not-valid-as-a-114b",
+   "url": "https://api.modalhub.ai/r/react-objects-are-not-valid-as-a-114b",
+   "symptom": "Objects are not valid as a React child (found: object with keys {<keys>}). If you meant to render a collection of children, use an array instead.",
+   "cause": "JSX renders strings, numbers, elements and arrays of them; a plain object or a Date has no rendering, so React throws while reconciling children",
+   "tool": "react",
+   "version": "19.0.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "e5220df1-ca73-4c07-be59-4e719f4131cf",
+   "slug": "react-invalid-hook-call-hooks-can-only-ac45",
+   "url": "https://api.modalhub.ai/r/react-invalid-hook-call-hooks-can-only-ac45",
+   "symptom": "Invalid hook call. Hooks can only be called inside of the body of a function component.",
+   "cause": "React sets the hooks dispatcher only while it renders a component; a hook called outside render, or through a second copy of react, finds it null",
+   "tool": "react",
+   "version": "19.0.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "cee3e490-640e-40ca-9d9c-03f045f2d771",
+   "slug": "react-typeerror-reactdom-render-is-not-a-df59",
+   "url": "https://api.modalhub.ai/r/react-typeerror-reactdom-render-is-not-a-df59",
+   "symptom": "TypeError: ReactDOM.render is not a function",
+   "cause": "React 19 removed the legacy root API: react-dom no longer exports render, hydrate or unmountComponentAtNode, deprecated since 18",
+   "tool": "react",
+   "version": "19.0.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "5e19a1ad-12da-45da-a090-d800a2a1af81",
+   "slug": "react-hydration-failed-because-the-server-rendered-4b29",
+   "url": "https://api.modalhub.ai/r/react-hydration-failed-because-the-server-rendered-4b29",
+   "symptom": "Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client.",
+   "cause": "hydration expects the first client render to reproduce the server HTML; time, randomness, locale formatting, typeof window branches or invalid nesting make them differ",
+   "tool": "react",
+   "version": "19.0.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "9b489255-7f99-4190-93b9-ae11d22ca376",
+   "slug": "python-importerror-attempted-relative-import-with-no-11f3",
+   "url": "https://api.modalhub.ai/r/python-importerror-attempted-relative-import-with-no-11f3",
+   "symptom": "ImportError: attempted relative import with no known parent package",
+   "cause": "a file run by path executes as __main__ with no package context, so 'from .x import y' has no parent package to resolve against",
+   "tool": "python",
+   "version": "3.12",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "d0ce1d1a-26b1-412b-a7bb-917fdee35215",
+   "slug": "python-ssl-sslcertverificationerror-ssl-certificate-verify-failed-24e6",
+   "url": "https://api.modalhub.ai/r/python-ssl-sslcertverificationerror-ssl-certificate-verify-failed-24e6",
+   "symptom": "ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:<n>)",
+   "cause": "the python.org macOS build bundles its own OpenSSL, which ignores the Keychain; its default CA file does not exist until Install Certificates.command links certifi's bundle",
+   "tool": "python",
+   "version": "3.12",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "f454350d-0f9d-4a49-996f-686c961a11dc",
+   "slug": "python-importerror-cannot-import-name-name-from-a837",
+   "url": "https://api.modalhub.ai/r/python-importerror-cannot-import-name-name-from-a837",
+   "symptom": "ImportError: cannot import name '<name>' from partially initialized module '<module>' (most likely due to a circular import) (<path>)",
+   "cause": "A imports B and B runs 'from A import name' while A is still executing its own imports, before name exists; a local file named like the imported module does the same",
+   "tool": "python",
+   "version": "3.12",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "42203f22-1cac-4ab7-9af4-290991b2ceea",
+   "slug": "python-runtimeerror-asyncio-run-cannot-be-called-ead9",
+   "url": "https://api.modalhub.ai/r/python-runtimeerror-asyncio-run-cannot-be-called-ead9",
+   "symptom": "RuntimeError: asyncio.run() cannot be called from a running event loop",
+   "cause": "asyncio.run() starts and closes a fresh loop and refuses when the thread already runs one, as Jupyter/IPython kernels and async frameworks do",
+   "tool": "python",
+   "version": "3.12",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "264e9999-bfa9-40ed-ab2b-5113277b955d",
+   "slug": "python-typeerror-type-object-is-not-subscriptable-e3e1",
+   "url": "https://api.modalhub.ai/r/python-typeerror-type-object-is-not-subscriptable-e3e1",
+   "symptom": "TypeError: 'type' object is not subscriptable",
+   "cause": "builtin generics such as list[int] and dict[str, int] arrived in Python 3.9 (PEP 585); 3.8 evaluates the annotation at def time and list has no __class_getitem__",
+   "tool": "python",
+   "version": "3.8",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "c5235cb6-fe47-4fcb-bf44-a9e2502b94ca",
+   "slug": "python-modulenotfounderror-no-module-named-imghdr-64c5",
+   "url": "https://api.modalhub.ai/r/python-modulenotfounderror-no-module-named-imghdr-64c5",
+   "symptom": "ModuleNotFoundError: No module named 'imghdr'",
+   "cause": "PEP 594 removed 19 'dead battery' modules from the 3.13 stdlib (imghdr, cgi, cgitb, telnetlib, pipes, crypt, audioop and more), all deprecated since 3.11",
+   "tool": "python",
+   "version": "3.13",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "caution",
+    "flags": [
+     {
+      "code": "installs_package",
+      "args": [
+       "pypi:standard-imghdr"
+      ]
+     }
+    ],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "4a156791-b5b8-4475-95f4-827fde4e7aea",
+   "slug": "python-modulenotfounderror-no-module-named-distutils-6e45",
+   "url": "https://api.modalhub.ai/r/python-modulenotfounderror-no-module-named-distutils-6e45",
+   "symptom": "ModuleNotFoundError: No module named 'distutils'",
+   "cause": "PEP 632 removed distutils from the 3.12 stdlib, and 3.12+ venvs no longer pre-install setuptools, the package that ships a drop-in distutils shim",
+   "tool": "python",
+   "version": "3.12",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "caution",
+    "flags": [
+     {
+      "code": "installs_package",
+      "args": [
+       "pypi:setuptools"
+      ]
+     }
+    ],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "77536f91-ff3b-4416-9b15-c2a72a5b55e6",
+   "slug": "python-deprecationwarning-datetime-datetime-utcnow-is-deprecated-4a10",
+   "url": "https://api.modalhub.ai/r/python-deprecationwarning-datetime-datetime-utcnow-is-deprecated-4a10",
+   "symptom": "DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).",
+   "cause": "utcnow() returns a naive datetime that many datetime methods treat as local time; 3.12 deprecated it and utcfromtimestamp() in favour of aware UTC values",
+   "tool": "python",
+   "version": "3.12",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "9e35afe9-71b9-497c-9e59-5be9332f9589",
+   "slug": "pytest-e-modulenotfounderror-no-module-named-package-9aa9",
+   "url": "https://api.modalhub.ai/r/pytest-e-modulenotfounderror-no-module-named-package-9aa9",
+   "symptom": "E   ModuleNotFoundError: No module named '<package>'",
+   "cause": "pytest's default prepend import mode puts the test (and conftest) dirs or their package roots' parents on sys.path, never src/, so an uninstalled src-layout package is not importable",
+   "tool": "pytest",
+   "version": "9.2.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "fe38f527-4907-4147-bf8f-2943cad711eb",
+   "slug": "pydantic-userwarning-valid-config-keys-have-changed-341c",
+   "url": "https://api.modalhub.ai/r/pydantic-userwarning-valid-config-keys-have-changed-341c",
+   "symptom": "UserWarning: Valid config keys have changed in V2: * 'orm_mode' has been renamed to 'from_attributes'",
+   "cause": "Pydantic 2 renamed the config key and only warns about the old one: orm_mode=True is not applied, so ORM objects then fail validation",
+   "tool": "pydantic",
+   "version": "2.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "a20d4ffe-8e3c-427d-b888-4bcf30cb4986",
+   "slug": "pydantic-pydantic-errors-pydanticimporterror-basesettings-has-been-7e99",
+   "url": "https://api.modalhub.ai/r/pydantic-pydantic-errors-pydanticimporterror-basesettings-has-been-7e99",
+   "symptom": "pydantic.errors.PydanticImportError: `BaseSettings` has been moved to the `pydantic-settings` package.",
+   "cause": "Pydantic 2 split settings management out of the core library into the separate pydantic-settings distribution; the old import path is now a stub that raises",
+   "tool": "pydantic",
+   "version": "2.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "caution",
+    "flags": [
+     {
+      "code": "installs_package",
+      "args": [
+       "pypi:pydantic-settings"
+      ]
+     }
+    ],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "150879f7-836b-454c-90af-d10e753b5eb7",
+   "slug": "prisma-prismaclientinitializationerror-prisma-client-could-not-locate-bb40",
+   "url": "https://api.modalhub.ai/r/prisma-prismaclientinitializationerror-prisma-client-could-not-locate-bb40",
+   "symptom": "PrismaClientInitializationError: Prisma Client could not locate the Query Engine for runtime \"rhel-openssl-3.0.x\".",
+   "cause": "prisma generate bundles query engines only for its binaryTargets (by default the build machine's), and the deploy runtime, e.g. AWS Lambda on Node 20+, needs the rhel-openssl-3.0.x engine",
+   "tool": "prisma",
+   "version": "5.22.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "d2045e81-dde0-44de-8872-9fd14e85b6c2",
+   "slug": "prisma-error-environment-variable-not-found-database-3c25",
+   "url": "https://api.modalhub.ai/r/prisma-error-environment-variable-not-found-database-3c25",
+   "symptom": "error: Environment variable not found: DATABASE_URL.",
+   "cause": "the Prisma CLI runs as its own process and loads only ./.env (or the .env beside the schema or in ./prisma); framework files such as .env.local are never read",
+   "tool": "prisma",
+   "version": "5.22.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "caution",
+    "flags": [
+     {
+      "code": "installs_package",
+      "args": [
+       "npm:prisma",
+       "npm:dotenv-cli",
+       "npm:dotenv"
+      ]
+     }
+    ],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "a3b14532-1bfc-42b2-877c-fc71373b4126",
+   "slug": "prisma-warn-prisma-client-this-is-the-f7b2",
+   "url": "https://api.modalhub.ai/r/prisma-warn-prisma-client-this-is-the-f7b2",
+   "symptom": "warn(prisma-client) This is the 10th instance of Prisma Client being started. Make sure this is intentional.",
+   "cause": "dev hot reload re-evaluates the module that calls new PrismaClient(), so every reload starts one more client with its own connection pool",
+   "tool": "prisma",
+   "version": "5.16.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "fcb2dbdf-d7ad-491c-97d0-c253a9d9a92f",
+   "slug": "powershell-file-path-cannot-be-loaded-because-5098",
+   "url": "https://api.modalhub.ai/r/powershell-file-path-cannot-be-loaded-because-5098",
+   "symptom": "File <path> cannot be loaded because running scripts is disabled on this system.",
+   "cause": "Windows client PCs default to the Restricted execution policy, which blocks every .ps1 file, including the npm/npx PowerShell shims",
+   "tool": "powershell",
+   "version": "5.1",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "caution",
+    "flags": [
+     {
+      "code": "elevated",
+      "args": [
+       "set-executionpolicy"
+      ]
+     }
+    ],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "150ecdce-fc25-48cd-b807-5fcb98b3d96c",
+   "slug": "postgresql-psql-error-connection-to-server-on-6c85",
+   "url": "https://api.modalhub.ai/r/postgresql-psql-error-connection-to-server-on-6c85",
+   "symptom": "psql: error: connection to server on socket \"/var/run/postgresql/.s.PGSQL.5432\" failed: No such file or directory",
+   "cause": "with no host given psql connects through the local Unix socket, and no server is listening at that socket path: server stopped, other port or socket dir, or it runs in Docker",
+   "tool": "postgresql",
+   "version": "16.4",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "caution",
+    "flags": [
+     {
+      "code": "elevated",
+      "args": [
+       "sudo"
+      ]
+     }
+    ],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "f4d2404e-da0a-4801-959a-d724a533e95b",
+   "slug": "postgresql-psql-error-connection-to-server-on-bb71",
+   "url": "https://api.modalhub.ai/r/postgresql-psql-error-connection-to-server-on-bb71",
+   "symptom": "psql: error: connection to server on socket \"/var/run/postgresql/.s.PGSQL.5432\" failed: FATAL:  role \"<user>\" does not exist",
+   "cause": "psql and libpq default the role name to the OS user name, and a fresh cluster holds only its bootstrap superuser (usually postgres), so no role by that name exists",
+   "tool": "postgresql",
+   "version": "16.4",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "caution",
+    "flags": [
+     {
+      "code": "elevated",
+      "args": [
+       "sudo"
+      ]
+     }
+    ],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "316adc5f-f63b-48a0-afec-3281529e7652",
+   "slug": "postgresql-fatal-password-authentication-failed-for-user-bd6e",
+   "url": "https://api.modalhub.ai/r/postgresql-fatal-password-authentication-failed-for-user-bd6e",
+   "symptom": "FATAL:  password authentication failed for user \"postgres\"",
+   "cause": "the postgres image applies POSTGRES_PASSWORD only when it initializes an empty data directory; the reused volume still holds the role with the password from its first start",
+   "tool": "postgresql",
+   "version": "16.4",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "5660a4f6-8539-4920-8d5f-144f1a92e13c",
+   "slug": "pnpm-err-pnpm-outdated-lockfile-cannot-install-539d",
+   "url": "https://api.modalhub.ai/r/pnpm-err-pnpm-outdated-lockfile-cannot-install-539d",
+   "symptom": "ERR_PNPM_OUTDATED_LOCKFILE  Cannot install with \"frozen-lockfile\" because pnpm-lock.yaml is not up to date with <ROOT>/package.json",
+   "cause": "pnpm turns frozen-lockfile on in CI and refuses to re-resolve; a dependency in package.json or a lockfile-relevant setting (overrides, patches) changed without regenerating pnpm-lock.yaml",
+   "tool": "pnpm",
+   "version": "10.34.9",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "953b2917-ef17-4879-83f3-f1d1dd010b08",
+   "slug": "pip-error-externally-managed-environment-a62f",
+   "url": "https://api.modalhub.ai/r/pip-error-externally-managed-environment-a62f",
+   "symptom": "error: externally-managed-environment",
+   "cause": "pip 23.0+ honours PEP 668: an EXTERNALLY-MANAGED marker in the interpreter's stdlib dir (Debian/Ubuntu, Homebrew, uv-managed Pythons) blocks installs outside a venv",
+   "tool": "pip",
+   "version": "23.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "62f1f4c3-dc57-4065-a5a4-da642050e9c1",
+   "slug": "pandas-attributeerror-dataframe-object-has-no-attribute-8dff",
+   "url": "https://api.modalhub.ai/r/pandas-attributeerror-dataframe-object-has-no-attribute-8dff",
+   "symptom": "AttributeError: 'DataFrame' object has no attribute 'append'",
+   "cause": "pandas 2.0 removed DataFrame.append and Series.append after deprecating them in 1.4 (FutureWarning); pd.concat is the replacement",
+   "tool": "pandas",
+   "version": "2.0.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "be2c8f8e-e50f-45b5-b349-abb90dc332fd",
+   "slug": "openai-python-openai-lib-old-api-apiremovedinv1-you-b6e4",
+   "url": "https://api.modalhub.ai/r/openai-python-openai-lib-old-api-apiremovedinv1-you-b6e4",
+   "symptom": "openai.lib._old_api.APIRemovedInV1: You tried to access openai.ChatCompletion, but this is no longer supported in openai>=1.0.0",
+   "cause": "openai-python 1.0 replaced the module-level resource classes (ChatCompletion, Completion, Embedding...) with a client object; the old names are stubs that raise",
+   "tool": "openai-python",
+   "version": "1.2.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "77b05c9b-632c-4fe0-bbd5-a7d9cc3a1196",
+   "slug": "numpy-attributeerror-np-float-was-removed-in-712d",
+   "url": "https://api.modalhub.ai/r/numpy-attributeerror-np-float-was-removed-in-712d",
+   "symptom": "AttributeError: `np.float_` was removed in the NumPy 2.0 release. Use `np.float64` instead.",
+   "cause": "NumPy 2.0 expired dozens of legacy aliases (float_, complex_, NaN, Inf, unicode_...) from the main namespace; numpy's module __getattr__ raises for each one",
+   "tool": "numpy",
+   "version": "2.0.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "84554dda-fcd6-4675-a7a4-69acfb420220",
+   "slug": "numpy-a-module-that-was-compiled-using-13a4",
+   "url": "https://api.modalhub.ai/r/numpy-a-module-that-was-compiled-using-13a4",
+   "symptom": "A module that was compiled using NumPy 1.x cannot be run in NumPy 2.0.0 as it may crash. To support both 1.x and 2.x versions of NumPy, modules must be compiled with NumPy 2.0.",
+   "cause": "a compiled extension (e.g. pandas < 2.2.2) was built against the NumPy 1.x C ABI, which 2.0 changed; numpy 2 refuses to hand such a module its C API",
+   "tool": "numpy",
+   "version": "2.0.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "caution",
+    "flags": [
+     {
+      "code": "installs_package",
+      "args": [
+       "pypi:pandas",
+       "pypi:numpy"
+      ]
+     }
+    ],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "cafc444a-b00b-40d4-a0e9-6dadce880cb1",
+   "slug": "npm-node-env-is-not-recognized-as-0b4a",
+   "url": "https://api.modalhub.ai/r/npm-node-env-is-not-recognized-as-0b4a",
+   "symptom": "'NODE_ENV' is not recognized as an internal or external command, operable program or batch file.",
+   "cause": "npm runs package.json scripts through cmd.exe on Windows (script-shell default), and cmd has no VAR=value command prefix, so it treats NODE_ENV=production as a program name",
+   "tool": "npm",
+   "version": "11.6.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "caution",
+    "flags": [
+     {
+      "code": "installs_package",
+      "args": [
+       "npm:cross-env"
+      ]
+     }
+    ],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "140579a2-be61-454a-8460-053804025c7a",
+   "slug": "npm-npm-error-eresolve-unable-to-resolve-581d",
+   "url": "https://api.modalhub.ai/r/npm-npm-error-eresolve-unable-to-resolve-581d",
+   "symptom": "npm error ERESOLVE unable to resolve dependency tree",
+   "cause": "npm 7+ installs peerDependencies and aborts when a package's declared peer range (e.g. react ^18) excludes the version the root project uses (react 19)",
+   "tool": "npm",
+   "version": "10.9.2",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "caution",
+    "flags": [
+     {
+      "code": "installs_package",
+      "args": [
+       "unparsed"
+      ]
+     },
+     {
+      "code": "unverified_package",
+      "args": [
+       "unparsed"
+      ]
+     }
+    ],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "be978e70-4655-43a3-991a-2ab1679c2aee",
+   "slug": "npm-npm-error-error-eacces-permission-denied-bd37",
+   "url": "https://api.modalhub.ai/r/npm-npm-error-error-eacces-permission-denied-bd37",
+   "symptom": "npm error Error: EACCES: permission denied, mkdir '/usr/local/lib/node_modules/<pkg>'",
+   "cause": "the global prefix is a root-owned system directory (/usr/local or /usr from the official installer or a distro package), so npm running as your user cannot write there",
+   "tool": "npm",
+   "version": "10.9.2",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "caution",
+    "flags": [
+     {
+      "code": "system_config",
+      "args": [
+       "npm-config",
+       "shell-rc"
+      ]
+     }
+    ],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "1e6fc244-5072-43c9-8f87-a5694a3ea754",
+   "slug": "npm-npm-error-npm-ci-can-only-0bec",
+   "url": "https://api.modalhub.ai/r/npm-npm-error-npm-ci-can-only-0bec",
+   "symptom": "npm error `npm ci` can only install packages when your package.json and package-lock.json or npm-shrinkwrap.json are in sync. Please update your lock file with `npm install` before continuing.",
+   "cause": "npm ci never edits the lock: it rebuilds the tree from package.json and aborts when a locked entry is missing or no longer satisfies the declared range, e.g. a dependency edited without re-locking",
+   "tool": "npm",
+   "version": "10.9.2",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "a0394956-726c-4041-b238-8d2e777a4932",
+   "slug": "node-error-the-module-path-addon-node-382f",
+   "url": "https://api.modalhub.ai/r/node-error-the-module-path-addon-node-382f",
+   "symptom": "Error: The module '<path>/<addon>.node' was compiled against a different Node.js version using NODE_MODULE_VERSION 127. This version of Node.js requires NODE_MODULE_VERSION 137.",
+   "cause": "a native addon (.node binary) is built for one Node ABI; after switching Node majors (here 22 to 24) the old binary is still in node_modules and the new runtime refuses to load it",
+   "tool": "node",
+   "version": "24.9.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "04f4166c-494b-4471-af49-96b28e397783",
+   "slug": "node-error-listen-eaddrinuse-address-already-in-50a7",
+   "url": "https://api.modalhub.ai/r/node-error-listen-eaddrinuse-address-already-in-50a7",
+   "symptom": "Error: listen EADDRINUSE: address already in use :::<port>",
+   "cause": "another process still holds the port, most often an earlier dev-server instance left running in another terminal or orphaned by a crashed watcher, so bind() fails",
+   "tool": "node",
+   "version": "24.9.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "a75230ec-a130-49e9-b17a-9cbd1fdd655f",
+   "slug": "node-error-err-module-not-found-cannot-d739",
+   "url": "https://api.modalhub.ai/r/node-error-err-module-not-found-cannot-d739",
+   "symptom": "Error [ERR_MODULE_NOT_FOUND]: Cannot find module '<path>/dist/foo' imported from <path>/dist/index.js",
+   "cause": "Node's ESM resolver does no extension or /index.js probing for relative specifiers, and tsc emits './foo' exactly as written, so the import names no existing file",
+   "tool": "node",
+   "version": "24.9.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "bbf0b58c-385c-4df4-8e33-b18550273211",
+   "slug": "node-error-err-require-esm-require-of-f653",
+   "url": "https://api.modalhub.ai/r/node-error-err-require-esm-require-of-f653",
+   "symptom": "Error [ERR_REQUIRE_ESM]: require() of ES Module <path>/node_modules/<pkg>/index.js from <path>/index.js not supported.",
+   "cause": "the dependency ships ES modules only (\"type\": \"module\" or .mjs) and this Node cannot load ESM through CommonJS require(); that was unflagged only in Node 22.12 and 20.19",
+   "tool": "node",
+   "version": "22.11.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "acfda551-3df2-4c1f-978a-de54137570d5",
+   "slug": "node-error-connect-econnrefused-1-port-a6ee",
+   "url": "https://api.modalhub.ai/r/node-error-connect-econnrefused-1-port-a6ee",
+   "symptom": "Error: connect ECONNREFUSED ::1:<port>",
+   "cause": "since Node 17 dns.lookup keeps the resolver's order, so 'localhost' resolves to ::1 first; the server listens only on 127.0.0.1 and nothing answers on IPv6",
+   "tool": "node",
+   "version": "18.17.1",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "76ff7483-0882-47df-881e-df27039da379",
+   "slug": "node-referenceerror-dirname-is-not-defined-in-74dc",
+   "url": "https://api.modalhub.ai/r/node-referenceerror-dirname-is-not-defined-in-74dc",
+   "symptom": "ReferenceError: __dirname is not defined in ES module scope",
+   "cause": "ES modules get no CommonJS wrapper, so __dirname, __filename and require are never injected; the file runs as ESM because of \"type\": \"module\" or a .mjs extension",
+   "tool": "node",
+   "version": "24.9.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "86b71536-d6b0-4346-bac8-a6b11c2569ff",
+   "slug": "node-syntaxerror-cannot-use-import-statement-outside-9fcc",
+   "url": "https://api.modalhub.ai/r/node-syntaxerror-cannot-use-import-statement-outside-9fcc",
+   "symptom": "SyntaxError: Cannot use import statement outside a module",
+   "cause": "Node loads the .js file as CommonJS: its nearest package.json declares \"type\": \"commonjs\" (what npm 11 npm init writes), or has no type on Node <22.7/<20.19, which lack ESM syntax detection",
+   "tool": "node",
+   "version": "24.9.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "751f5ba9-e9fe-40a2-9994-5936eee1adfa",
+   "slug": "nextjs-usesearchparams-should-be-wrapped-in-a-4940",
+   "url": "https://api.modalhub.ai/r/nextjs-usesearchparams-should-be-wrapped-in-a-4940",
+   "symptom": "useSearchParams() should be wrapped in a suspense boundary at page \"<route>\".",
+   "cause": "a prerendered page has no query string at build time, so useSearchParams() bails out to client rendering up to the nearest Suspense; with none, the build stops",
+   "tool": "nextjs",
+   "version": "16.4.3",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "c17ab3d0-17b2-42f5-ad3b-539da661853f",
+   "slug": "nextjs-you-re-importing-a-module-that-5ce1",
+   "url": "https://api.modalhub.ai/r/nextjs-you-re-importing-a-module-that-5ce1",
+   "symptom": "You're importing a module that depends on `useState` into a React Server Component module. This API is only available in Client Components. To fix, mark the file (or its parent) with the `\"use client\"` directive.",
+   "cause": "App Router files are Server Components by default and render without client state or effects, so the compiler rejects imports of client-only React APIs",
+   "tool": "nextjs",
+   "version": "16.2.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "8afec428-1593-42eb-a08d-ba63d6e3cf2d",
+   "slug": "nextjs-module-not-found-can-t-resolve-e873",
+   "url": "https://api.modalhub.ai/r/nextjs-module-not-found-can-t-resolve-e873",
+   "symptom": "Module not found: Can't resolve 'fs'",
+   "cause": "a module that imports fs is reachable from a 'use client' file, so it is bundled for the browser, where Node built-ins do not exist",
+   "tool": "nextjs",
+   "version": "16.4.3",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "9df85e1c-e270-414b-8fd0-8efe86323d3c",
+   "slug": "nextjs-error-invalid-src-prop-https-host-62ea",
+   "url": "https://api.modalhub.ai/r/nextjs-error-invalid-src-prop-https-host-62ea",
+   "symptom": "Error: Invalid src prop (https://<host>/<path>) on `next/image`, hostname \"<host>\" is not configured under images in your `next.config.js`",
+   "cause": "next/image only optimizes remote URLs that match images.remotePatterns; in dev the loader checks every remote src and throws on a host that matches none",
+   "tool": "nextjs",
+   "version": "16.4.3",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "9fa469f7-0803-4f23-afbe-48f8da3e3801",
+   "slug": "nextjs-error-route-route-used-params-name-bb0f",
+   "url": "https://api.modalhub.ai/r/nextjs-error-route-route-used-params-name-bb0f",
+   "symptom": "Error: Route \"<route>\" used `params.<name>`. `params` should be awaited before using its properties.",
+   "cause": "Next 15 made params a Promise; reading its properties synchronously only works through a temporary compat proxy that logs this in dev",
+   "tool": "nextjs",
+   "version": "15.1.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "dfbf28a1-f79b-4495-8fb4-da3335e9fb88",
+   "slug": "nextjs-type-error-type-params-param-string-0774",
+   "url": "https://api.modalhub.ai/r/nextjs-type-error-type-params-param-string-0774",
+   "symptom": "Type error: Type '{ params: { <param>: string; }; }' does not satisfy the constraint 'PageProps'.",
+   "cause": "the generated .next/types guard checks each page's props against PageProps, whose params is a Promise since 15; a plain-object params type is not assignable",
+   "tool": "nextjs",
+   "version": "15.0.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "a7165c70-054f-4c02-a2f3-958f25e596b2",
+   "slug": "nextjs-error-route-route-used-cookies-get-e381",
+   "url": "https://api.modalhub.ai/r/nextjs-error-route-route-used-cookies-get-e381",
+   "symptom": "Error: Route \"<route>\" used `cookies().get('<name>')`. `cookies()` should be awaited before using its value.",
+   "cause": "cookies() and headers() return Promises since Next 15; calling .get() on the result synchronously only works via a dev-warning compat shim",
+   "tool": "nextjs",
+   "version": "15.1.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "d1536eee-7b3b-40b8-b026-e9cba879083f",
+   "slug": "claude-code-error-spawn-npx-enoent-dd5d",
+   "url": "https://api.modalhub.ai/r/claude-code-error-spawn-npx-enoent-dd5d",
+   "symptom": "Error: spawn npx ENOENT",
+   "cause": "the client starts the stdio MCP server without a shell, and on Windows npx is the batch shim npx.cmd, which Node's child_process.spawn cannot resolve without one",
+   "tool": "claude-code",
+   "version": "2.1.139",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "high",
+    "flags": [
+     {
+      "code": "agent_config",
+      "args": [
+       "mcp"
+      ]
+     }
+    ],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "0406b820-4eeb-47e8-9515-bfe744ee5cb6",
+   "slug": "macos-zsh-command-not-found-python-374f",
+   "url": "https://api.modalhub.ai/r/macos-zsh-command-not-found-python-374f",
+   "symptom": "zsh: command not found: python",
+   "cause": "macOS 12.3 removed the bundled Python 2.7, which was the only interpreter installed as python; Python 3 on macOS is invoked as python3",
+   "tool": "macos",
+   "version": "12.3",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "df5d63f9-e399-4341-bd5a-53df705c3c30",
+   "slug": "langchain-importerror-cannot-import-name-chatopenai-from-aba1",
+   "url": "https://api.modalhub.ai/r/langchain-importerror-cannot-import-name-chatopenai-from-aba1",
+   "symptom": "ImportError: cannot import name 'ChatOpenAI' from 'langchain.chat_models' (<path>)",
+   "cause": "langchain 1.0 cut its namespace down to agent building blocks; provider chat models now come from partner packages such as langchain-openai, which langchain does not install",
+   "tool": "langchain",
+   "version": "1.0.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "caution",
+    "flags": [
+     {
+      "code": "installs_package",
+      "args": [
+       "pypi:langchain-openai"
+      ]
+     }
+    ],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "1d82e0cb-36c1-4e3c-a226-6275da132264",
+   "slug": "jest-syntaxerror-unexpected-token-export-b6fe",
+   "url": "https://api.modalhub.ai/r/jest-syntaxerror-unexpected-token-export-b6fe",
+   "symptom": "SyntaxError: Unexpected token 'export'",
+   "cause": "Jest runs tests as CommonJS and its default transformIgnorePatterns skips node_modules, so an ESM-only dependency reaches the CommonJS loader untranspiled",
+   "tool": "jest",
+   "version": "29.7.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "6ee91d40-b645-42b3-a051-78d71b90494a",
+   "slug": "java-java-lang-unsupportedclassversionerror-class-has-been-03fb",
+   "url": "https://api.modalhub.ai/r/java-java-lang-unsupportedclassversionerror-class-has-been-03fb",
+   "symptom": "java.lang.UnsupportedClassVersionError: <class> has been compiled by a more recent version of the Java Runtime (class file version 61.0), this version of the Java Runtime only recognizes class file versions up to 55.0",
+   "cause": "the classes were compiled for a newer Java than the JVM loading them (major 61 = Java 17, 55 = Java 11), and a JVM rejects class files newer than its own release",
+   "tool": "java",
+   "version": "11.0.24",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "afcc54a5-4beb-4e23-9c09-63370f4679bc",
+   "slug": "gradle-bug-exception-in-phase-semantic-analysis-c3ae",
+   "url": "https://api.modalhub.ai/r/gradle-bug-exception-in-phase-semantic-analysis-c3ae",
+   "symptom": "BUG! exception in phase 'semantic analysis' in source unit '_BuildScript_' Unsupported class file major version 65",
+   "cause": "Gradle itself runs on JDK 21 (class major 65), and releases before 8.5 cannot run on Java 21: their Groovy/ASM fails to read Java 21 classes while compiling the build script",
+   "tool": "gradle",
+   "version": "8.1.1",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "3eb6f87e-68b9-4f83-a57d-00a66ec5c914",
+   "slug": "go-main-go-n-n-undefined-name-3d40",
+   "url": "https://api.modalhub.ai/r/go-main-go-n-n-undefined-name-3d40",
+   "symptom": "./main.go:<n>:<n>: undefined: <name>",
+   "cause": "go run main.go compiles a package made of exactly the files named on the command line, so identifiers declared in the package's other .go files are missing",
+   "tool": "go",
+   "version": "1.25.6",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "d74ed84d-dbcc-4a97-9eec-47fab2315ab5",
+   "slug": "go-go-module-version-parsing-go-mod-0210",
+   "url": "https://api.modalhub.ai/r/go-go-module-version-parsing-go-mod-0210",
+   "symptom": "go: <module>@<version>: parsing go.mod: module declares its path as: <declared-path> but was required as: <required-path>",
+   "cause": "the go.mod inside that module version names a different module path than the one required: a fork that kept the upstream module line, or a renamed or re-cased path",
+   "tool": "go",
+   "version": "1.25.6",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "a6cf5701-fc4d-4305-acc6-664d30be8d83",
+   "slug": "go-go-go-mod-requires-go-required-c54b",
+   "url": "https://api.modalhub.ai/r/go-go-go-mod-requires-go-required-c54b",
+   "symptom": "go: go.mod requires go >= <required> (running go <installed>; GOTOOLCHAIN=local)",
+   "cause": "since Go 1.21 the go line is a hard minimum, and GOTOOLCHAIN=local forbids switching to a newer toolchain, so the installed older go refuses to load the module",
+   "tool": "go",
+   "version": "1.25.6",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "fc8d6e5a-59d2-48e1-a8c3-c72b1d487bd0",
+   "slug": "go-go-go-mod-file-not-found-ca68",
+   "url": "https://api.modalhub.ai/r/go-go-go-mod-file-not-found-ca68",
+   "symptom": "go: go.mod file not found in current directory or any parent directory; see 'go help modules'",
+   "cause": "module mode is the default and no go.mod exists in the working directory or above it: the command runs outside the module, or the project was never initialized",
+   "tool": "go",
+   "version": "1.25.6",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "bb7591e6-ae80-41bc-9dd1-bc18af0a895d",
+   "slug": "go-missing-go-sum-entry-for-module-c06d",
+   "url": "https://api.modalhub.ai/r/go-missing-go-sum-entry-for-module-c06d",
+   "symptom": "missing go.sum entry for module providing package <pkg>; to add: go mod download <module>",
+   "cause": "go.mod requires the module but go.sum holds no checksum for it, and since Go 1.16 build commands run -mod=readonly, so they never add go.sum lines themselves",
+   "tool": "go",
+   "version": "1.25.6",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "5d182a99-a5c6-4c06-8842-def74ad0d99c",
+   "slug": "github-actions-this-request-has-been-automatically-failed-f987",
+   "url": "https://api.modalhub.ai/r/github-actions-this-request-has-been-automatically-failed-f987",
+   "symptom": "This request has been automatically failed because it uses a deprecated version of `actions/upload-artifact: v3`.",
+   "cause": "github.com retired v3 of actions/upload-artifact and download-artifact on 2025-01-30 and fails every job that resolves it, even through another action",
+   "tool": "github-actions",
+   "version": "3",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "4aabce61-7274-4215-bcb2-912d90233544",
+   "slug": "github-actions-the-set-output-command-is-deprecated-591f",
+   "url": "https://api.modalhub.ai/r/github-actions-the-set-output-command-is-deprecated-591f",
+   "symptom": "The `set-output` command is deprecated and will be disabled soon. Please upgrade to using Environment Files.",
+   "cause": "a step, or an action built on @actions/core older than 1.10.0, prints ::set-output to stdout; runners since 2.298.2 flag that in favour of the $GITHUB_OUTPUT file",
+   "tool": "github-actions",
+   "version": "2.298.2",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "90a6fa47-5df2-492d-a6d9-4ee563cd5edb",
+   "slug": "github-actions-requesterror-httperror-resource-not-accessible-by-4342",
+   "url": "https://api.modalhub.ai/r/github-actions-requesterror-httperror-resource-not-accessible-by-4342",
+   "symptom": "RequestError [HttpError]: Resource not accessible by integration",
+   "cause": "the job's GITHUB_TOKEN lacks the scope the API call needs: repos created since 2023 default to read-only, and a permissions: block sets every scope it omits to none",
+   "tool": "github-actions",
+   "version": "7",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "aea964bd-fa15-4dc1-9e3c-9692af16427b",
+   "slug": "git-email-permission-denied-publickey-224b",
+   "url": "https://api.modalhub.ai/r/git-email-permission-denied-publickey-224b",
+   "symptom": "git@github.com: Permission denied (publickey).",
+   "cause": "ssh offered GitHub no key that is registered to your account: none exists, ssh did not find or load it, or its public half was never added in your GitHub settings",
+   "tool": "git",
+   "version": "2.56.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "b3b3ab58-44d3-4db5-98a2-6d2f5f300f9b",
+   "slug": "git-error-src-refspec-main-does-not-4fbc",
+   "url": "https://api.modalhub.ai/r/git-error-src-refspec-main-does-not-4fbc",
+   "symptom": "error: src refspec main does not match any",
+   "cause": "push looks for a local branch named main and finds none: nothing is committed yet (unborn branch), or the branch is master, git 2.x's built-in default",
+   "tool": "git",
+   "version": "2.56.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "fb67dfdd-9f43-492d-bdc0-c01ede3c851d",
+   "slug": "git-fatal-refusing-to-merge-unrelated-histories-c004",
+   "url": "https://api.modalhub.ai/r/git-fatal-refusing-to-merge-unrelated-histories-c004",
+   "symptom": "fatal: refusing to merge unrelated histories",
+   "cause": "the local repo and the remote each have their own root commit (git init + commit vs. a README or LICENSE created on the host); with no common ancestor git won't merge them",
+   "tool": "git",
+   "version": "2.56.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "7bd5ed80-4558-4aaf-828a-ef95eabb9762",
+   "slug": "git-hint-updates-were-rejected-because-the-7c03",
+   "url": "https://api.modalhub.ai/r/git-hint-updates-were-rejected-because-the-7c03",
+   "symptom": "hint: Updates were rejected because the remote contains work that you do not",
+   "cause": "someone pushed commits to the remote branch after your last fetch; your branch lacks them, so the push is not a fast-forward and git refuses to drop them",
+   "tool": "git",
+   "version": "2.56.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "24f0aff8-a26c-40e2-bc99-735004db8ce5",
+   "slug": "git-error-your-local-changes-to-the-096c",
+   "url": "https://api.modalhub.ai/r/git-error-your-local-changes-to-the-096c",
+   "symptom": "error: Your local changes to the following files would be overwritten by merge:",
+   "cause": "uncommitted edits touch files the incoming commits also change; applying them would clobber your work, so git aborts before touching the work tree",
+   "tool": "git",
+   "version": "2.56.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "341d019e-c230-4fca-839d-1805d6e88898",
+   "slug": "git-warning-in-the-working-copy-of-a3ac",
+   "url": "https://api.modalhub.ai/r/git-warning-in-the-working-copy-of-a3ac",
+   "symptom": "warning: in the working copy of '<file>', LF will be replaced by CRLF the next time Git touches it",
+   "cause": "core.autocrlf=true (the Git for Windows installer default) writes text files out with CRLF on checkout, so git warns that this LF file won't round-trip unchanged",
+   "tool": "git",
+   "version": "2.56.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "1cf403cc-4ed1-43a8-b9d6-a0fa144b07e5",
+   "slug": "git-remote-support-for-password-authentication-was-5808",
+   "url": "https://api.modalhub.ai/r/git-remote-support-for-password-authentication-was-5808",
+   "symptom": "remote: Support for password authentication was removed on August 13, 2021.",
+   "cause": "github.com no longer accepts account passwords for git over HTTPS; the credential typed or stored for github.com is the login password, not a token",
+   "tool": "git",
+   "version": "2.56.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "a9d0eecb-37ab-4942-86b7-31b57959efba",
+   "slug": "git-fatal-detected-dubious-ownership-in-repository-9ffd",
+   "url": "https://api.modalhub.ai/r/git-fatal-detected-dubious-ownership-in-repository-9ffd",
+   "symptom": "fatal: detected dubious ownership in repository at '<path>'",
+   "cause": "the repo directory is owned by another user (sudo clone, container or CI uid, mounted drive); since CVE-2022-24765 git refuses repos the current user doesn't own",
+   "tool": "git",
+   "version": "2.56.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "caution",
+    "flags": [
+     {
+      "code": "elevated",
+      "args": [
+       "sudo"
+      ]
+     },
+     {
+      "code": "system_config",
+      "args": [
+       "git-global"
+      ]
+     }
+    ],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "8dda0d65-c576-4188-a15f-16e7fd5e78ee",
+   "slug": "express-typeerror-cannot-destructure-property-name-of-ab2b",
+   "url": "https://api.modalhub.ai/r/express-typeerror-cannot-destructure-property-name-of-ab2b",
+   "symptom": "TypeError: Cannot destructure property '<name>' of 'req.body' as it is undefined.",
+   "cause": "req.body is set only by a body parser whose type matches the request Content-Type; without a match Express 5 leaves it undefined (Express 4 used {})",
+   "tool": "express",
+   "version": "5.0.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "56dbafdf-b260-4c9b-8021-6a5c40dabfce",
+   "slug": "express-typeerror-missing-parameter-name-at-index-eb3e",
+   "url": "https://api.modalhub.ai/r/express-typeerror-missing-parameter-name-at-index-eb3e",
+   "symptom": "TypeError: Missing parameter name at index 1: *",
+   "cause": "Express 5 matches paths with path-to-regexp 8, where * is a named wildcard like :param, so a bare * has no name and the route throws at registration",
+   "tool": "express",
+   "version": "5.0.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "46dadda8-8fb6-4919-94f6-fcbb02f96b73",
+   "slug": "eslint-eslint-couldn-t-find-an-eslint-22a2",
+   "url": "https://api.modalhub.ai/r/eslint-eslint-couldn-t-find-an-eslint-22a2",
+   "symptom": "ESLint couldn't find an eslint.config.(js|mjs|cjs) file.",
+   "cause": "ESLint 9 loads only flat config (eslint.config.*) by default, so a project still configured through .eslintrc.* has no config file ESLint can find",
+   "tool": "eslint",
+   "version": "9.39.5",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "caution",
+    "flags": [
+     {
+      "code": "installs_package",
+      "args": [
+       "npm:@eslint/migrate-config"
+      ]
+     }
+    ],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "0bf48623-8857-4e33-b8cf-be3d5e1f3635",
+   "slug": "docker-permission-denied-while-trying-to-connect-5db1",
+   "url": "https://api.modalhub.ai/r/docker-permission-denied-while-trying-to-connect-5db1",
+   "symptom": "permission denied while trying to connect to the docker API at unix:///var/run/docker.sock: dial unix /var/run/docker.sock: connect: permission denied",
+   "cause": "the socket is owned by root and the docker group (mode 0660); your user is not in that group, or joined it but this login session still has the old group list",
+   "tool": "docker",
+   "version": "29.0.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "caution",
+    "flags": [
+     {
+      "code": "elevated",
+      "args": [
+       "sudo"
+      ]
+     },
+     {
+      "code": "system_config",
+      "args": [
+       "user-group"
+      ]
+     }
+    ],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "c089a1cd-0ff6-4c27-953a-ac42e69f8a03",
+   "slug": "docker-bind-for-ip-port-failed-port-3633",
+   "url": "https://api.modalhub.ai/r/docker-bind-for-ip-port-failed-port-3633",
+   "symptom": "Bind for 0.0.0.0:<port> failed: port is already allocated",
+   "cause": "another running container already publishes that host port, often one left up by an earlier docker compose up, and the daemon's port allocator refuses a second binding",
+   "tool": "docker",
+   "version": "24.0.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "d174a627-16a3-40ef-b37c-b803adc29268",
+   "slug": "docker-warning-the-requested-image-s-platform-c270",
+   "url": "https://api.modalhub.ai/r/docker-warning-the-requested-image-s-platform-c270",
+   "symptom": "WARNING: The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested",
+   "cause": "the image was built only for amd64; an arm64 host without QEMU or Rosetta emulation cannot execute its binaries, so the container dies with exec format error",
+   "tool": "docker",
+   "version": "29.0.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "1abdff65-45b5-4030-984f-3952949348be",
+   "slug": "docker-compose-warn-n-path-docker-compose-yml-0e1b",
+   "url": "https://api.modalhub.ai/r/docker-compose-warn-n-path-docker-compose-yml-0e1b",
+   "symptom": "WARN[0000] <path>/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion",
+   "cause": "Compose v2 and later read every file as the Compose Specification, where the top-level version key is informational only; any value triggers this warning",
+   "tool": "docker-compose",
+   "version": "2.29.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "21a79abb-4085-4505-8a36-fcb32f93f636",
+   "slug": "docker-error-failed-to-solve-failed-to-dd27",
+   "url": "https://api.modalhub.ai/r/docker-error-failed-to-solve-failed-to-dd27",
+   "symptom": "ERROR: failed to solve: failed to read dockerfile: failed to create temp dir: mkdir /var/lib/docker/tmp/buildkit-mount<n>: no space left on device",
+   "cause": "Docker's data disk (/var/lib/docker, or the Docker Desktop VM disk) is full, mostly of build cache and unused images, so BuildKit cannot create its temp dir",
+   "tool": "docker",
+   "version": "24.0.7",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "ab234d0b-e378-4390-9275-f3424f7cbb2f",
+   "slug": "docker-failed-to-compute-cache-key-failed-78cf",
+   "url": "https://api.modalhub.ai/r/docker-failed-to-compute-cache-key-failed-78cf",
+   "symptom": "failed to compute cache key: failed to calculate checksum of ref <ref>: \"/<file>\": not found",
+   "cause": "a COPY or ADD source is not in the build context: it lies outside the context directory, a .dockerignore rule excludes it, or the build ran from the wrong directory",
+   "tool": "docker",
+   "version": "24.0.2",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "cb4ec941-6a65-4dba-b306-029640159abe",
+   "slug": "corepack-error-cannot-find-matching-keyid-signatures-0c27",
+   "url": "https://api.modalhub.ai/r/corepack-error-cannot-find-matching-keyid-signatures-0c27",
+   "symptom": "Error: Cannot find matching keyid: {\"signatures\":[{\"sig\":\"<sig>\",\"keyid\":\"SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U\"}],\"keys\":[{\"expires\":null,\"keyid\":\"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA\",...}]}",
+   "cause": "the npm registry rotated its signing key (old key expired 2025-01-29); pnpm/yarn releases signed only with the new key fail verification in corepack 0.30 and older, whose key list predates it",
+   "tool": "corepack",
+   "version": "0.30.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "caution",
+    "flags": [
+     {
+      "code": "installs_package",
+      "args": [
+       "npm:corepack"
+      ]
+     }
+    ],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "524f3dc3-3aab-459d-aafe-a1a86726bae1",
+   "slug": "cargo-error-rustc-installed-is-not-supported-9ba8",
+   "url": "https://api.modalhub.ai/r/cargo-error-rustc-installed-is-not-supported-9ba8",
+   "symptom": "error: rustc <installed> is not supported by the following package: <crate>@<version> requires rustc <required>",
+   "cause": "a crate version locked in Cargo.lock declares a rust-version (MSRV) newer than the active rustc, so cargo refuses to compile it instead of failing on newer syntax",
+   "tool": "cargo",
+   "version": "1.90.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "0be04d65-1abd-4661-858e-d3ac04e397de",
+   "slug": "browser-cors-access-to-fetch-at-url-from-108c",
+   "url": "https://api.modalhub.ai/r/browser-cors-access-to-fetch-at-url-from-108c",
+   "symptom": "Access to fetch at '<url>' from origin '<origin>' has been blocked by CORS policy: The value of the 'Access-Control-Allow-Origin' header in the response must not be the wildcard '*' when the request's credentials mode is 'include'.",
+   "cause": "requests carrying cookies or credentials are only exposed when the server names the exact origin and sends Allow-Credentials: true; '*' is never accepted for them",
+   "tool": "browser-cors",
+   "version": "136.0.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "c3082c8f-dc32-4e5a-9e86-8a6998e0c5e9",
+   "slug": "browser-cors-access-to-fetch-at-url-from-769d",
+   "url": "https://api.modalhub.ai/r/browser-cors-access-to-fetch-at-url-from-769d",
+   "symptom": "Access to fetch at '<url>' from origin '<origin>' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+   "cause": "the API runs on another origin and its response (or OPTIONS preflight) carries no Access-Control-Allow-Origin, so the browser hides the response from the page",
+   "tool": "browser-cors",
+   "version": "136.0.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "440e5303-d756-4213-860c-a250254f8c3e",
+   "slug": "bash-bash-script-sh-bin-bash-m-406e",
+   "url": "https://api.modalhub.ai/r/bash-bash-script-sh-bin-bash-m-406e",
+   "symptom": "bash: ./<script>.sh: /bin/bash^M: bad interpreter: No such file or directory",
+   "cause": "the script has Windows CRLF line endings, so its shebang names /bin/bash plus a carriage return; no such file exists, and bash shows the CR as ^M",
+   "tool": "bash",
+   "version": "5.2",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "2f9e3e0c-4f14-48fc-bdb3-50f55b6dfbb1",
+   "slug": "aws-cli-an-error-occurred-expiredtoken-when-calling-0870",
+   "url": "https://api.modalhub.ai/r/aws-cli-an-error-occurred-expiredtoken-when-calling-0870",
+   "symptom": "An error occurred (ExpiredToken) when calling the GetCallerIdentity operation: The security token included in the request is expired",
+   "cause": "the request was signed with temporary STS credentials past their expiry, often stale exported AWS_* variables or a static session token that outrank the refreshable profile",
+   "tool": "aws-cli",
+   "version": "2.11.16",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "980dea92-079f-4c85-b9e2-66eed49ee153",
+   "slug": "anthropic-api-error-400-type-error-error-type-f35b",
+   "url": "https://api.modalhub.ai/r/anthropic-api-error-400-type-error-error-type-f35b",
+   "symptom": "Error: 400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"prompt is too long: 208310 tokens > 200000 maximum\"},\"request_id\":\"req_<id>\"}",
+   "cause": "the input alone (system field, tool definitions, every message incl. tool results, images, documents) exceeds the model's context window; the API rejects it instead of truncating",
+   "tool": "anthropic-api",
+   "version": "1",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "6b2ef949-4a27-4b76-aaaa-f81b7b34dd5c",
+   "slug": "anthropic-api-429-type-error-error-type-rate-33cf",
+   "url": "https://api.modalhub.ai/r/anthropic-api-429-type-error-error-type-rate-33cf",
+   "symptom": "429 {\"type\":\"error\",\"error\":{\"type\":\"rate_limit_error\",\"message\":\"This request would exceed the rate limit for your organization (<org>) of <n> input tokens per minute. ...\"}}",
+   "cause": "the organization exceeded a per-model RPM, ITPM or OTPM limit of its usage tier; limits are token buckets, so short bursts trip them even below the per-minute total",
+   "tool": "anthropic-api",
+   "version": "1",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "638269c9-b553-4371-bbdb-8901c0915b32",
+   "slug": "vitest-after-upgrading-vitest-to-3-2-6d9b",
+   "url": "https://api.modalhub.ai/r/vitest-after-upgrading-vitest-to-3-2-6d9b",
+   "symptom": "After upgrading vitest to ^3.2.6, npm ls esbuild --all shows esbuild 0.27.7 under a transitive vite 7 in the root package, flagged GHSA-g7r4-m6w7-qqqr by the Forge Dependency Scanner",
+   "cause": "the root package has no direct vite pin, so npm resolves vitest's vite dependency to the newest major (7), which brings esbuild 0.27.x and its own dev-server advisory",
+   "tool": "vitest",
+   "version": "3.2.6",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "44212c77-e853-4c8c-a0be-cd5605697466",
+   "slug": "vite-forge-dependency-scanner-developer-console-flags-5db7",
+   "url": "https://api.modalhub.ai/r/vite-forge-dependency-scanner-developer-console-flags-5db7",
+   "symptom": "Forge Dependency Scanner (developer console) flags vite GHSA-fx2h-pf6j-xcff (high) and vitest GHSA-5xrq-8626-4rwp (critical) in a Custom UI app although both are devDependencies that never ship in the bundle",
+   "cause": "the scanner reads every lockfile in the repo including devDependencies, not the shipped bundle, so dev-only tooling counts and only a lockfile bump past the fixed release clears it",
+   "tool": "vite",
+   "version": "5.3.1",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "caution",
+    "flags": [
+     {
+      "code": "installs_package",
+      "args": [
+       "npm:vite",
+       "npm:vitest"
+      ]
+     }
+    ],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "6705f1f3-33ed-4d57-8bcb-738bfa9f700c",
+   "slug": "three-js-tsc-noemit-fails-in-a-project-9cda",
+   "url": "https://api.modalhub.ai/r/three-js-tsc-noemit-fails-in-a-project-9cda",
+   "symptom": "tsc --noEmit fails in a project using react-force-graph-3d: its type definitions import EffectComposer and WebGLRenderer from 'three', which resolves to no declaration file",
+   "cause": "three@0.185 ships no .d.ts of its own, so the types react-force-graph-3d imports from it are missing unless @types/three of the matching minor is installed as a devDependency",
+   "tool": "three-js",
+   "version": "0.185",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "caution",
+    "flags": [
+     {
+      "code": "installs_package",
+      "args": [
+       "npm:@types/three",
+       "npm:tsc"
+      ]
+     }
+    ],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "96530901-470e-483d-af5e-77e26f6a7444",
+   "slug": "three-js-in-react-force-graph-3d-with-99ba",
+   "url": "https://api.modalhub.ai/r/three-js-in-react-force-graph-3d-with-99ba",
+   "symptom": "In react-force-graph-3d with nodeThreeObjectExtend=true, a custom camera-facing Sprite glyph placed at the node centre is invisible or shows only its outer edge, even with the sprite scaled 3x",
+   "cause": "with extend=true the default node sphere still renders and the sprite's plane passes through it, so any glyph content within about one sphere radius of the centre fails the depth test",
+   "tool": "three-js",
+   "version": "0.185",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "9b1a5847-a1ad-44eb-8a09-2c2c33da2bf9",
+   "slug": "jira-cloud-api-every-jql-count-reads-0-or-2469",
+   "url": "https://api.modalhub.ai/r/jira-cloud-api-every-jql-count-reads-0-or-2469",
+   "symptom": "Every JQL count reads 0 or undefined: GET /rest/api/3/search/jql?maxResults=0 returns a body without total, so code reading body.total gets undefined",
+   "cause": "the enhanced search endpoint is token-paginated (nextPageToken) and Atlassian removed the total field from it; nothing errors, the count is simply absent",
+   "tool": "jira-cloud-api",
+   "version": "3",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "56b8096a-8926-4159-b03d-6c75cae284b1",
+   "slug": "jira-cloud-api-get-rest-api-3-project-search-295f",
+   "url": "https://api.modalhub.ai/r/jira-cloud-api-get-rest-api-3-project-search-295f",
+   "symptom": "GET /rest/api/3/project/search called as the app (Forge api.asApp()) omits a fully configured company-managed project, while every team-managed project is listed; no error, just a shorter list",
+   "cause": "the endpoint returns only projects the caller can Browse; company-managed projects grant app access via the permission scheme's atlassian-addons-project-access role, which custom schemes often omit",
+   "tool": "jira-cloud-api",
+   "version": "3",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "d540d8b9-88de-479d-a5fe-a16fec6616d8",
+   "slug": "jira-cloud-api-get-rest-api-3-project-search-90ec",
+   "url": "https://api.modalhub.ai/r/jira-cloud-api-get-rest-api-3-project-search-90ec",
+   "symptom": "GET /rest/api/3/project/search returns at most 50 projects; on a large site every project past the 50th (alphabetically) is silently missing from the app's project list",
+   "cause": "the endpoint pages at 50 by default and the code read only the first page; isLast and startAt in the response were ignored",
+   "tool": "jira-cloud-api",
+   "version": "3",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "c875f5f2-75e5-4e57-9bbe-cc4d3f2ba52c",
+   "slug": "jira-cloud-api-jql-project-x-and-labels-not-2b27",
+   "url": "https://api.modalhub.ai/r/jira-cloud-api-jql-project-x-and-labels-not-2b27",
+   "symptom": "JQL `project = X AND labels not in (\"flagged\")` returns 0 issues on a project where most issues carry no labels at all; a chart built on the count renders a flat line at zero",
+   "cause": "`not in` and `!=` match only issues that HAVE the field set to another value; issues with an empty field are not returned, so an unlabelled population reads 0",
+   "tool": "jira-cloud-api",
+   "version": "3",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "aee9fa27-4288-4220-abcb-0bbd24acda62",
+   "slug": "jira-cloud-api-syntaxerror-unexpected-end-of-json-input-1184",
+   "url": "https://api.modalhub.ai/r/jira-cloud-api-syntaxerror-unexpected-end-of-json-input-1184",
+   "symptom": "SyntaxError: Unexpected end of JSON input after POST /rest/api/3/issue/{key}/transitions (also POST /rest/agile/1.0/backlog/issue and most PUTs); the request itself succeeded with 204",
+   "cause": "those endpoints answer 204 No Content with an empty body, so calling res.json() on the Response throws even though the write went through",
+   "tool": "jira-cloud-api",
+   "version": "3",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "ccb71052-63e0-4332-a3a2-f8ba79a4f5dd",
+   "slug": "jira-agile-api-get-rest-agile-1-0-board-2bd2",
+   "url": "https://api.modalhub.ai/r/jira-agile-api-get-rest-agile-1-0-board-2bd2",
+   "symptom": "GET /rest/agile/1.0/board?projectKeyOrId=KEY&type=scrum returns {\"values\": []} for a team-managed project that has a scrum board; every sprint feature then behaves as if the project had no board",
+   "cause": "team-managed (next-gen) boards report type \"simple\" for scrum and kanban alike; only company-managed boards return \"scrum\" or \"kanban\", so a type=scrum filter excludes all of them",
+   "tool": "jira-agile-api",
+   "version": "1.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "292f0742-ef6f-4f6b-b56b-b0d3d1301c2b",
+   "slug": "jira-agile-api-get-rest-agile-1-0-board-e742",
+   "url": "https://api.modalhub.ai/r/jira-agile-api-get-rest-agile-1-0-board-e742",
+   "symptom": "GET /rest/agile/1.0/board from a Forge app returns 401 Unauthorized; scope does not match on every project type, although read:board-scope:jira-software is granted",
+   "cause": "the board endpoints require read:project:jira in addition to read:board-scope:jira-software (stated in the Agile board API reference), and the manifest held only the latter",
+   "tool": "jira-agile-api",
+   "version": "1.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "ec4f6003-9d08-44d2-9579-c0caa1849d0c",
+   "slug": "jira-agile-api-post-rest-agile-1-0-backlog-a22f",
+   "url": "https://api.modalhub.ai/r/jira-agile-api-post-rest-agile-1-0-backlog-a22f",
+   "symptom": "POST /rest/agile/1.0/backlog/issue from a Forge app fails 401 {\"message\": \"Unauthorized; scope does not match\"} although the manifest grants write:sprint:jira-software and forge install --upgrade says already at the latest version",
+   "cause": "the endpoint needs write:board-scope:jira-software, not write:sprint:jira-software (that covers only /rest/agile/1.0/sprint); Forge grants the scope you ask for, so the mismatch shows at call time",
+   "tool": "jira-agile-api",
+   "version": "1.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "f382aeee-b819-4e92-a4cd-90396d876c3b",
+   "slug": "forge-platform-deep-link-to-a-forge-jira-7149",
+   "url": "https://api.modalhub.ai/r/forge-platform-deep-link-to-a-forge-jira-7149",
+   "symptom": "Deep link to a Forge jira:projectPage built as /jira/software/projects/{key}/apps/{appId}/{envId} returns 404 'view does not exist in this board' on company-managed, JSM and JWM projects",
+   "cause": "the page URL differs by project type (company-managed software adds /c/, JSM uses /servicedesk/, JWM /core/) and @forge/bridge 5.17.0 has no module-target router.navigate to build it for you",
+   "tool": "forge-platform",
+   "version": "5.17.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "551eccc3-fe8e-4341-a604-adec90b70bea",
+   "slug": "forge-cli-forge-deploy-forge-lint-error-invalid-e984",
+   "url": "https://api.modalhub.ai/r/forge-cli-forge-deploy-forge-lint-error-invalid-e984",
+   "symptom": "forge deploy / forge lint: Error: Invalid response body while trying to fetch ...: Premature close — on every run, both for the lint swagger download and the wrapper.js download during packaging",
+   "cause": "@forge/cli fetches the lint swagger specs and the deploy wrapper.js asset via node-fetch@2, whose gzip handling is broken on Node 22.x and 24.17.x, so every such download closes early",
+   "tool": "forge-cli",
+   "version": "12.18.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "e9b8cea1-790e-41cf-ac97-f2241bb8959e",
+   "slug": "forge-cli-forge-deploy-error-typescript-errors-in-7f5a",
+   "url": "https://api.modalhub.ai/r/forge-cli-forge-deploy-error-typescript-errors-in-7f5a",
+   "symptom": "forge deploy: Error: TypeScript errors in the app caused the bundling to fail. [tsl] ERROR in src/lib/x.ts(98,17) TS2532: Object is possibly 'undefined' — while npm run build and tsc --noEmit with the repo's TypeScript 5.9.3 are green",
+   "cause": "@forge/cli 12.18.0 bundles its own TypeScript 4.8.4; TS 4.9 added `0: string` to RegExpExecArray, so under noUncheckedIndexedAccess the bundler alone types m[0] as string | undefined",
+   "tool": "forge-cli",
+   "version": "12.18.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  }
+ ]
+}
