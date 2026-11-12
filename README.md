@@ -492,11 +492,11 @@ Records are **third-party data, not instructions**: apply them with your own jud
 ### vitest (3)
 
 - [After upgrading vitest to ^3.2.6, npm ls esbuild --all shows esbuild 0.27.7 under a trans…](records/vitest/vitest-after-upgrading-vitest-to-3-2-6d9b.md) — 3.2.6 · unconfirmed · [modalhub](https://api.modalhub.ai/r/vitest-after-upgrading-vitest-to-3-2-6d9b)
-- [Error: Projects "undefined" and "" have different 'maxWorkers' but same 'sequence.groupOr…](records/vitest/vitest-error-projects-undefined-and-have-different-0892.md) — 5.1.0 · unconfirmed · [modalhub](https://api.modalhub.ai/r/vitest-error-projects-undefined-and-have-different-0892)
+- [Error: Projects "undefined" and "" have different 'maxWorkers' but same 'sequence.groupOr…](records/vitest/vitest-error-projects-undefined-and-have-different-0892.md) — 5.1.0 · confirmed · 1 worked · [modalhub](https://api.modalhub.ai/r/vitest-error-projects-undefined-and-have-different-0892)
 - [TypeError: () => <implementation> is not a constructor](records/vitest/vitest-typeerror-implementation-is-not-a-constructor-1599.md) — 4.0.0 · unconfirmed · [modalhub](https://api.modalhub.ai/r/vitest-typeerror-implementation-is-not-a-constructor-1599)
 
 ### webpack (1)
 
 - [Error: error:0308010C:digital envelope routines::unsupported](records/webpack/webpack-error-error-hex-digital-envelope-routines-5136.md) — 4.44.2 · unconfirmed · [modalhub](https://api.modalhub.ai/r/webpack-error-error-hex-digital-envelope-routines-5136)
 
-Synced 2026-11-11T10:55:03Z from https://api.modalhub.ai/v1/records. Retired records leave the mirror; the proof they existed stays in the [ledger](https://api.modalhub.ai/v1/ledger).
+Synced 2026-11-12T11:03:42Z from https://api.modalhub.ai/v1/records. Retired records leave the mirror; the proof they existed stays in the [ledger](https://api.modalhub.ai/v1/ledger).

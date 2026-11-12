@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-11T10:55:03Z",
+ "generated_at": "2026-11-12T11:03:42Z",
  "source": "https://api.modalhub.ai/v1/records",
  "license": "CC0-1.0",
  "count": 240,
@@ -12,7 +12,7 @@
    "cause": "a maxWorkers that is not a number (VITEST_MAX_WORKERS=abc, --maxWorkers=abc, config) becomes NaN; NaN !== NaN fails the group check on the first file, with no second project",
    "tool": "vitest",
    "version": "5.1.0",
-   "status": "unconfirmed",
+   "status": "confirmed",
    "risk": {
     "level": "caution",
     "flags": [
@@ -26,7 +26,7 @@
     "v": 1
    },
    "confirmations": {
-    "worked": 0,
+    "worked": 1,
     "didnt": 0
    }
   },
