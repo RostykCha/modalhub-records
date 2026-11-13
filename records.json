@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-13T10:47:34Z",
+ "generated_at": "2026-11-13T10:56:18Z",
  "source": "https://api.modalhub.ai/v1/records",
  "license": "CC0-1.0",
- "count": 240,
+ "count": 241,
  "records": [
   {
    "id": "ad82643b-424f-4495-bbcd-e4aaf4e52017",
@@ -510,6 +510,32 @@
       "code": "installs_package",
       "args": [
        "npm:next"
+      ]
+     }
+    ],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "13c6d781-31c1-4201-80da-82ec231db39f",
+   "slug": "nestjs-storageerror-uploadtodisk-no-storagemodule-in-the-ef6d",
+   "url": "https://api.modalhub.ai/r/nestjs-storageerror-uploadtodisk-no-storagemodule-in-the-ef6d",
+   "symptom": "StorageError: uploadToDisk(): no StorageModule in the application handling this request. Import StorageModule.forRoot() or forRootAsync(), or pass a StorageDisk instance as `disk`.",
+   "cause": "@nestjs/storage 0.0.4 finds the app's disks via req.app (Express) or req.server (Fastify); under NodeAdapter req.app is a shared stub and req.server is unset",
+   "tool": "nestjs",
+   "version": "12.3.3",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "caution",
+    "flags": [
+     {
+      "code": "installs_package",
+      "args": [
+       "npm:@nestjs/storage"
       ]
      }
     ],
