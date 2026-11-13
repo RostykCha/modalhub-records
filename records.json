@@ -1,9 +1,503 @@
 {
- "generated_at": "2026-11-13T10:56:18Z",
+ "generated_at": "2026-11-13T13:24:36Z",
  "source": "https://api.modalhub.ai/v1/records",
  "license": "CC0-1.0",
- "count": 241,
+ "count": 267,
  "records": [
+  {
+   "id": "90fd309f-fd6c-459f-9c9e-ac55cccbda24",
+   "slug": "vitest-a-key-set-to-undefined-in-b4a0",
+   "url": "https://api.modalhub.ai/r/vitest-a-key-set-to-undefined-in-b4a0",
+   "symptom": "a key set to undefined in test.env reads as the string 'undefined' in tests: process.env.<KEY> === 'undefined' and '<KEY>' in process.env is true",
+   "cause": "setupEnv copies every test.env key into the worker's import.meta.env proxy, whose set trap assigns process.env[key]; Node stringifies values assigned to process.env, so undefined becomes \"undefined\"",
+   "tool": "vitest",
+   "version": "5.1.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "adf5837c-97f6-4ef4-ba8a-94424029e7e9",
+   "slug": "three-js-three-webgpurenderer-uncaptured-webgpu-gpuvalidationerror-source-54c0",
+   "url": "https://api.modalhub.ai/r/three-js-three-webgpurenderer-uncaptured-webgpu-gpuvalidationerror-source-54c0",
+   "symptom": "THREE.WebGPURenderer: Uncaptured WebGPU GPUValidationError: Source [Texture \"depth\"] sample count (4) and destination [Texture \"TRAANode.previousDepth\"] sample count (1) does not match.",
+   "cause": "pass() without a samples option inherits renderer.samples (4 with antialias: true), so its depth is multisampled; TRAANode copies it into a 1-sample history and WebGPU needs equal sample counts",
+   "tool": "three-js",
+   "version": "0.187.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "71e1213d-1934-4b08-b1f1-b00ce523b9f4",
+   "slug": "sqlalchemy-sawarning-did-not-recognize-type-tsquery-6952",
+   "url": "https://api.modalhub.ai/r/sqlalchemy-sawarning-did-not-recognize-type-tsquery-6952",
+   "symptom": "SAWarning: Did not recognize type 'tsquery' of column '<col>'",
+   "cause": "the PostgreSQL dialect's ischema_names reflection table maps tsvector but never gained tsquery or regconfig entries when TSQUERY and REGCONFIG were added, so reflection falls back to NullType",
+   "tool": "sqlalchemy",
+   "version": "2.1.8",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "08a924dc-c782-4c4f-9360-d8d3389e95c2",
+   "slug": "rollup-syntaxerror-function-statements-require-a-function-e2ba",
+   "url": "https://api.modalhub.ai/r/rollup-syntaxerror-function-statements-require-a-function-e2ba",
+   "symptom": "SyntaxError: Function statements require a function name when loading rollup -f system output whose source has a destructuring assignment ([x] = ...) to an exported let",
+   "cause": "system output wraps an assignment to an exported let in a function expression that calls exports(); when a destructuring assignment opens the statement that function was left unparenthesized",
+   "tool": "rollup",
+   "version": "4.68.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "34d352ed-0a8d-4fd4-b8cc-5f1df5aede35",
+   "slug": "rollup-referenceerror-cannot-access-name-before-initialization-4403",
+   "url": "https://api.modalhub.ai/r/rollup-referenceerror-cannot-access-name-before-initialization-4403",
+   "symptom": "ReferenceError: Cannot access '<name>' before initialization when loading a Rollup bundle: the frozen namespace object of a module in an import cycle lists a re-exported const as <name>: <name> above its declaration",
+   "cause": "the namespace re-exports a binding from a module that initializes later in the cycle; Rollup copied it by value when building the namespace object, reading the const before its declaration",
+   "tool": "rollup",
+   "version": "4.68.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "92e67450-7637-47f5-abe9-61f936818090",
+   "slug": "pydantic-modulenotfounderror-no-module-named-pydantic-collecting-4043",
+   "url": "https://api.modalhub.ai/r/pydantic-modulenotfounderror-no-module-named-pydantic-collecting-4043",
+   "symptom": "ModuleNotFoundError: No module named 'pydantic' collecting tests/test_tzinfo.py from the pydantic-core 2.50.2 sdist",
+   "cause": "the sdist's tests/test_tzinfo.py imports TypeAdapter from pydantic, which pydantic-core never depends on (the dependency runs the other way)",
+   "tool": "pydantic",
+   "version": "2.50.2",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "06661511-7fa2-4f40-969a-d5767b020e82",
+   "slug": "prettier-error-comment-text-was-not-printed-9131",
+   "url": "https://api.modalhub.ai/r/prettier-error-comment-text-was-not-printed-9131",
+   "symptom": "Error: Comment \"<text>\" was not printed. Please report this error!",
+   "cause": "3.10.0 parses an empty selection set (3.9 rejected it) but its printer emits a bare {} for zero selections, so a comment inside is dropped and the all-comments-printed check throws",
+   "tool": "prettier",
+   "version": "3.10.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "90c5f223-c8dc-4e32-895b-8414225dbf82",
+   "slug": "powershell-cannot-convert-argument-val2-with-value-bf31",
+   "url": "https://api.modalhub.ai/r/powershell-cannot-convert-argument-val2-with-value-bf31",
+   "symptom": "Cannot convert argument \"val2\", with value: \"<value>\", for \"Min\" to type \"System.Int32\": \"Cannot convert value \"<value>\" to type \"System.Int32\". Error: \"Value was either too large or too small for an Int32.\"\"",
+   "cause": "explicit casts steer overload selection and the first explicit cast wins (with none, the first argument's type does); the other argument is converted to it and a 64-bit value does not fit Int32",
+   "tool": "powershell",
+   "version": "7.6.9",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "3e33d142-c13f-46b9-9e3e-062ab79da0eb",
+   "slug": "powershell-new-item-requested-registry-access-is-2865",
+   "url": "https://api.modalhub.ai/r/powershell-new-item-requested-registry-access-is-2865",
+   "symptom": "New-Item: Requested registry access is not allowed.",
+   "cause": "MSIX registry virtualization refuses KEY_SET_VALUE on HKLM\\SOFTWARE; New-Item opens that parent with OpenSubKey(name, writable=true), i.e. KEY_WRITE, which includes that mask",
+   "tool": "powershell",
+   "version": "7.7.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "13ec8e73-29c8-4769-a290-d792286489cf",
+   "slug": "powershell-version-7-7-0-of-package-6c1c",
+   "url": "https://api.modalhub.ai/r/powershell-version-7-7-0-of-package-6c1c",
+   "symptom": "Version 7.7.0 of package powershell.<rid> is not found in NuGet feeds <feed>.",
+   "cause": "the 7.7.0 PowerShell package on nuget.org is a 31 KB pointer whose DotnetToolSettings.xml maps each RID to a PowerShell.<rid> package, and none of those eight RID packages were published",
+   "tool": "powershell",
+   "version": "7.7.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "b73399a0-7211-4e2b-be1d-a1a74661d015",
+   "slug": "polars-polars-exceptions-shapeerror-can-t-broadcast-c5a8",
+   "url": "https://api.modalhub.ai/r/polars-polars-exceptions-shapeerror-can-t-broadcast-c5a8",
+   "symptom": "polars.exceptions.ShapeError: can't broadcast Series '<col>' of length <n-1> to length <n> after cumulative_eval(..., min_samples=0)",
+   "cause": "the min_samples == 0 branch of cumulative_eval builds its windows from 1..len, so the last window (the whole column) is skipped and nothing pads the missing row",
+   "tool": "polars",
+   "version": "2.1.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "bd98e08d-a120-45e0-98a6-341524400fa0",
+   "slug": "pnpm-pnpm-install-with-nodelinker-hoisted-writes-8d13",
+   "url": "https://api.modalhub.ai/r/pnpm-pnpm-install-with-nodelinker-hoisted-writes-8d13",
+   "symptom": "pnpm install with nodeLinker: hoisted writes <pkg> only at the workspace root; the project that uses <pkg> with a different peer (e.g. react 19 vs 18) gets no nested copy and its <pkg> resolves the other project's peer",
+   "cause": "pnpm 12's hoister stamped every peer variant of a package version with the first-seen variant's snapshot key, so it saw one locator, deduped the variants and never nested the second",
+   "tool": "pnpm",
+   "version": "12.15.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "e6211713-dc71-4f10-a138-dc88666fd908",
+   "slug": "playwright-error-cannot-find-module-root-src-fc02",
+   "url": "https://api.modalhub.ai/r/playwright-error-cannot-find-module-root-src-fc02",
+   "symptom": "Error: Cannot find module '<root>/src/<file>' imported from <root>/src/tests/<test>.ts; the import is a package.json \"imports\" alias (#/<file>) that tsc and vitest resolve",
+   "cause": "Playwright hands # specifiers to Node, whose resolver takes the first valid array target and never tries the rest, so an extensionless first entry points at a file that does not exist",
+   "tool": "playwright",
+   "version": "1.65.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "178a3053-c0e2-4c0b-a8b1-77fa6d6e8e69",
+   "slug": "playwright-error-cannot-find-module-alias-thrown-ca59",
+   "url": "https://api.modalhub.ai/r/playwright-error-cannot-find-module-alias-thrown-ca59",
+   "symptom": "Error: Cannot find module '<alias>' thrown from a module loaded with await import() in a Playwright fixture or test on Node 22; the same tsconfig paths alias resolves on Node 24",
+   "cause": "since 1.61 Playwright uses Node's sync loader hooks; Node 22 resolves require() inside a dynamically imported CJS module via Module._resolveFilename before those hooks, so tsconfig paths are skipped",
+   "tool": "playwright",
+   "version": "1.64.1",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "03af3420-f3e6-4d53-9f03-13c9b8e7beb1",
+   "slug": "nx-error-bun-publish-has-no-json-cfc0",
+   "url": "https://api.modalhub.ai/r/nx-error-bun-publish-has-no-json-cfc0",
+   "symptom": "error: bun publish has no --json flag.",
+   "cause": "nx's bun publishArgv adds --json to bun publish although the executor never parses bun's output; bun <=1.4.3 ignored unknown flags on package-manager commands and 1.4.4 rejects them",
+   "tool": "nx",
+   "version": "24.0.6",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "17c3c1b8-9e17-4cc9-b359-505e57728cb1",
+   "slug": "nx-nx-no-existing-nx-cloud-client-5813",
+   "url": "https://api.modalhub.ai/r/nx-nx-no-existing-nx-cloud-client-5813",
+   "symptom": "NX   No existing Nx Cloud client and failed to download new version (NX_VERBOSE_LOGGING=true: TypeError: fetch failed, cause: self-signed certificate in certificate chain, SELF_SIGNED_CERT_IN_CHAIN)",
+   "cause": "the Nx Cloud client bootstrap (version check and bundle download) uses Node's global fetch with Node's bundled roots and ignores customProxyConfigPath, which only the downloaded client reads",
+   "tool": "nx",
+   "version": "23.3.1",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "91ad1fa9-deab-4768-b29a-09d8bb42ac79",
+   "slug": "nestjs-the-packet-length-n-exceeds-the-22b6",
+   "url": "https://api.modalhub.ai/r/nestjs-the-packet-length-n-exceeds-the-22b6",
+   "symptom": "The packet length (<n>) exceeds the maximum allowed length — from the TCP transport for a burst of small packets that each fit maxBufferSize; the connection is closed and the frames of that read are lost",
+   "cause": "JsonSocket compared maxBufferSize with everything buffered from one read before taking complete packets off it, so several packets that each fit the limit exceeded it together",
+   "tool": "nestjs",
+   "version": "12.4.2",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "53c1be11-4b46-4a9e-a5e1-6cbcf7b89367",
+   "slug": "mongoose-typeerror-cannot-destructure-property-createdat-of-ddaa",
+   "url": "https://api.modalhub.ai/r/mongoose-typeerror-cannot-destructure-property-createdat-of-ddaa",
+   "symptom": "TypeError: Cannot destructure property 'createdAt' of 'schema.$timestamps' as it is undefined.",
+   "cause": "a child schema with timestamps: true puts $timestamps and a timestampsPreSave hook on its parent; Schema.clone() copied the hook but not $timestamps, and embedded discriminators clone by default",
+   "tool": "mongoose",
+   "version": "9.11.4",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "7bd6ce2a-fe79-469f-8f66-1b7efa86a6bf",
+   "slug": "laravel-uncaught-errorexception-cannot-modify-header-information-9c13",
+   "url": "https://api.modalhub.ai/r/laravel-uncaught-errorexception-cannot-modify-header-information-9c13",
+   "symptom": "Uncaught ErrorException: Cannot modify header information - headers already sent by (output started at vendor/symfony/http-foundation/Response.php:415) in vendor/symfony/http-foundation/Response.php:328",
+   "cause": "the afterResponse() job throws after the response went out; HandleExceptions reports it, then renders an error response, and Symfony 8 sendHeaders() calls header() even once headers_sent()",
+   "tool": "laravel",
+   "version": "13.39.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "5d7e8b8f-a93c-443d-b694-c22fbd039440",
+   "slug": "langchain-valueerror-expected-embeddings-to-be-a-f25d",
+   "url": "https://api.modalhub.ai/r/langchain-valueerror-expected-embeddings-to-be-a-f25d",
+   "symptom": "ValueError: Expected embeddings to be a list of floats or ints, a list of lists, a numpy array, or a list of numpy arrays, got [[[<floats>]]] in query. (from Chroma.similarity_search_by_image_with_relevance_score)",
+   "cause": "the scored image search passes embed_image(uris=[uri]), a 1-item batch, as one embedding; the vector search wraps it again as query_embeddings=[...], so chromadb gets a list nested 3 deep",
+   "tool": "langchain",
+   "version": "1.1.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "7d2129a9-7957-4da6-93f4-42f5f7350d6a",
+   "slug": "firebase-tools-error-request-to-firebaserules-googleapis-com-10cb",
+   "url": "https://api.modalhub.ai/r/firebase-tools-error-request-to-firebaserules-googleapis-com-10cb",
+   "symptom": "Error: Request to firebaserules.googleapis.com/v1/projects/<project>:test had HTTP Error: 503, The service is currently unavailable.",
+   "cause": "the Rules compiler exhausts its recursion stack on deeply nested ternary/boolean chains or root-scope helpers copied into every match block; the backend answers 503, not a compile error",
+   "tool": "firebase-tools",
+   "version": "15.25.1",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "edd3ed0a-d3af-4b2b-bda6-fccbc47bb255",
+   "slug": "dotnet-system-nullreferenceexception-object-reference-not-set-ec41",
+   "url": "https://api.modalhub.ai/r/dotnet-system-nullreferenceexception-object-reference-not-set-ec41",
+   "symptom": "System.NullReferenceException: Object reference not set to an instance of an object. at <lib>.<Method> — .NET 11.0.0 only, once the method is JIT-optimized (tier 1 or DOTNET_TieredCompilation=0); same binaries pass on .NET 10",
+   "cause": "the .NET 11 JIT folds Enum.Equals(object) into a boxed-payload compare without null-checking the argument; a boxed null Nullable<TEnum> keeps an exact enum type, so optimized code dereferences null",
+   "tool": "dotnet",
+   "version": "11.0.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "1454f8e9-f817-45b6-ac66-ef1f0190cd5a",
+   "slug": "docker-compose-a-service-with-restart-on-failure-0801",
+   "url": "https://api.modalhub.ai/r/docker-compose-a-service-with-restart-on-failure-0801",
+   "symptom": "a service with restart: on-failure is not restarted after the Docker daemon restarts (package upgrade, reboot) while the other services of the stack come back",
+   "cause": "after a daemon restart only the restart policy counts: on-failure needs a non-zero last exit code, and a service that handles SIGTERM cleanly exits 0 when the daemon stops it",
+   "tool": "docker-compose",
+   "version": "5.7.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "6959ab8a-1e8f-410b-b5a3-b79cf5b65260",
+   "slug": "cypress-warning-we-failed-to-trash-the-88af",
+   "url": "https://api.modalhub.ai/r/cypress-warning-we-failed-to-trash-the-88af",
+   "symptom": "Warning: We failed to trash the existing run results. then Error: spawn Unknown system error -86 (cypress run on an Apple silicon Mac without Rosetta; the specs still run)",
+   "cause": "the darwin-arm64 binary bundles trash's macos-trash helper built for x86_64 only; without Rosetta macOS refuses to spawn it (EBADARCH, -86), so the old screenshots, videos and downloads stay",
+   "tool": "cypress",
+   "version": "16.3.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "519da101-ea83-4055-b3e2-6ca20ba9618f",
+   "slug": "babel-syntaxerror-missing-semicolon-line-col-ad6f",
+   "url": "https://api.modalhub.ai/r/babel-syntaxerror-missing-semicolon-line-col-ad6f",
+   "symptom": "SyntaxError: Missing semicolon. (<line>:<col>)",
+   "cause": "inConditionalConsequent parser state (#17799, in every 8.x since 8.0.0; backport #18448 in 7.29.13) reads `:` after `async (...)` in a ternary consequent as the ternary separator, never a return type",
+   "tool": "babel",
+   "version": "7.29.13",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "4584c84f-a3b8-428c-9a56-a0f533d36f88",
+   "slug": "angular-error-purefunctionconstant-does-not-handle-expressions-30fa",
+   "url": "https://api.modalhub.ai/r/angular-error-purefunctionconstant-does-not-handle-expressions-30fa",
+   "symptom": "Error: PureFunctionConstant does not handle expressions of type VoidExpr",
+   "cause": "@angular/compiler pools all-constant array/object literals through GenericKeyFn.keyOf, which handles TypeofExpr but has no case for VoidExpr, so a void entry in such a literal throws",
+   "tool": "angular",
+   "version": "22.2.5",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
   {
    "id": "ad82643b-424f-4495-bbcd-e4aaf4e52017",
    "slug": "vitest-error-projects-undefined-and-have-different-0892",
