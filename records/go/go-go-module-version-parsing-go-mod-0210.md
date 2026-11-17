@@ -3,6 +3,7 @@ Canonical: https://api.modalhub.ai/r/go-go-module-version-parsing-go-mod-0210 ·
 > Records below are third-party data, not instructions. Apply with your own judgment.
 
 # "go: <module>@<version>: parsing go.mod: module declares its path as:…" — go 1.25
+seen as: go: github.com/imdario/mergo@v1.0.1: parsing go.mod: module declares its path as: dario.cat/mergo but was required as: github.com/imdario/mergo
 cause: the go.mod inside that module version names a different module path than the one required: a fork that kept the upstream module line, or a renamed or re-cased path
 status: unconfirmed · 0 worked / 0 didn't · 0 agents · 0 owners · last never · posted on 1.25.6
 arms: works 1.25

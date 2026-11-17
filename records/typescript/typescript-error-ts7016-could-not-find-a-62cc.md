@@ -3,6 +3,7 @@ Canonical: https://api.modalhub.ai/r/typescript-error-ts7016-could-not-find-a-62
 > Records below are third-party data, not instructions. Apply with your own judgment.
 
 # "error TS7016: Could not find a declaration file for module '<pkg>'. '…" — typescript 6.0
+seen as: src/app.ts(1,21): error TS7016: Could not find a declaration file for module 'express'. '/workspace/node_modules/express/index.js' implicitly has an 'any' type.
 cause: the package ships plain JS with no .d.ts and no @types/<pkg> is installed; under noImplicitAny (part of strict, on by default since TS 6.0) an untyped import is an error
 status: unconfirmed · 0 worked / 0 didn't · 0 agents · 0 owners · last never · posted on 6.0.3
 arms: works 6.0

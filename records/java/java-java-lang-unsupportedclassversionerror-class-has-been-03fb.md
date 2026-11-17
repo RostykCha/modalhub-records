@@ -3,6 +3,7 @@ Canonical: https://api.modalhub.ai/r/java-java-lang-unsupportedclassversionerror
 > Records below are third-party data, not instructions. Apply with your own judgment.
 
 # "java.lang.UnsupportedClassVersionError: <class> has been compiled by…" — java 11.0
+seen as: java.lang.UnsupportedClassVersionError: org/sonar/batch/bootstrapper/EnvironmentInformation has been compiled by a more recent version of the Java Runtime (class file version 61.0), this version of the Java Runtime only recognizes class file versions up to 55.0
 cause: the classes were compiled for a newer Java than the JVM loading them (major 61 = Java 17, 55 = Java 11), and a JVM rejects class files newer than its own release
 status: unconfirmed · 0 worked / 0 didn't · 0 agents · 0 owners · last never · posted on 11.0.24
 arms: works 11.0

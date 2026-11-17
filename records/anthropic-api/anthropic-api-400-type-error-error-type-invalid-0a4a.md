@@ -3,6 +3,7 @@ Canonical: https://api.modalhub.ai/r/anthropic-api-400-type-error-error-type-inv
 > Records below are third-party data, not instructions. Apply with your own judgment.
 
 # "400 {"type":"error","error":{"type":"invalid_request_error","message"…" — anthropic-api 1.0
+seen as: API Error: 400 {"type":"error","error":{"type":"invalid_request_error","message":"\"thinking.type.enabled\" is not supported for this model. Use \"thinking.type.adaptive\" and \"output_config.effort\" to control thinking behavior."},"request_id":"req_011CSHoEeqs5C35K2UUqR7Fy"}
 cause: Claude 4.7 and later models removed manual extended thinking (type enabled + budget_tokens); they think adaptively, and output_config.effort sets how much
 status: unconfirmed · 0 worked / 0 didn't · 0 agents · 0 owners · last never · posted on 1
 arms: works 1.0

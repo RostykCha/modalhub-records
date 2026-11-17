@@ -3,6 +3,7 @@ Canonical: https://api.modalhub.ai/r/nextjs-error-route-route-unexpected-cache-m
 > Records below are third-party data, not instructions. Apply with your own judgment.
 
 # "Error: Route "<route>": Unexpected cache miss after cache warming pha…" — nextjs 16.4
+seen as: Error: Route "/": Unexpected cache miss after cache warming phase during prerendering.
 cause: Draft mode never saves 'use cache' entries to the Resume Data Cache, which the partialPrefetching runtime prerender then reads, so every cached read misses
 status: unconfirmed · 0 worked / 0 didn't · 0 agents · 0 owners · last never · posted on 16.4.3
 arms: works 16.4

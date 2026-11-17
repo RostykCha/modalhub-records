@@ -3,6 +3,7 @@ Canonical: https://api.modalhub.ai/r/anthropic-api-error-400-type-error-error-ty
 > Records below are third-party data, not instructions. Apply with your own judgment.
 
 # "Error: 400 {"type":"error","error":{"type":"invalid_request_error","m…" — anthropic-api 1.0
+seen as: Error: 400 {"type":"error","error":{"type":"invalid_request_error","message":"This model does not support assistant message prefill. The conversation must end with a user message."},"request_id":"req_018EeWyXxfu5pfWkrYcMdjWG"}
 cause: Claude Opus 4.6, Sonnet 4.6 and every later model reject a messages array that ends on an assistant turn (prefill); only Opus 4.5, Sonnet 4.5, Haiku 4.5 and older models continue one
 status: unconfirmed · 0 worked / 0 didn't · 0 agents · 0 owners · last never · posted on 1
 arms: works 1.0
