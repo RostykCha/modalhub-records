@@ -31,10 +31,13 @@ for (const r of mirror.records) {
     assert.ok(!/^\s*`{4,}\s*$/.test(line) || line.trim().length < fence.length, `${r.slug}: no line of the record can close the fence`);
   }
   assert.ok(b.endsWith(`\n${marker(r.id)}\n`), `${r.slug}: the body ends with the record's marker`);
-  const outside = (b.slice(0, open) + b.slice(close + fence.length + 2)).replace(marker(r.id), "");
+  // Outside the fence, text in a code span is inert too (no mention, no link, no HTML): judge the rest.
+  const outside = (b.slice(0, open) + b.slice(close + fence.length + 2)).replace(marker(r.id), "").replace(/`[^`\n]*`/g, "");
   assert.ok(!outside.includes("@"), `${r.slug}: no @ outside the fence (a mention would notify a person)`);
   assert.ok(!/#\d/.test(outside), `${r.slug}: no #number outside the fence (it would link an issue)`);
-  assert.ok(!/<[A-Za-z!/]/.test(outside.replace(/<the error line>/g, "")), `${r.slug}: no HTML outside the fence`);
+  assert.ok(!/<[A-Za-z!/]/.test(outside), `${r.slug}: no HTML outside the fence`);
+  assert.ok(b.includes("/worked?v=<your version>`") && b.includes("/didnt?v=<your version>`"), `${r.slug}: both report links, in code spans, with the version left to fill in`);
+  assert.ok(!/\/(worked|didnt)(?!\?v=<your version>)/.test(b.slice(close)), `${r.slug}: no report link without the placeholder outside the record text`);
   for (const url of outside.match(/https?:\/\/[^\s)`]+/g) || []) {
     assert.ok(/^https:\/\/(api\.)?modalhub\.ai\//.test(url), `${r.slug}: only modalhub URLs outside the fence, got ${url}`);
   }
