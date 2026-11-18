@@ -4,21 +4,43 @@ on:
   schedule:
     - cron: "17 3 * * *" # daily, 03:17 UTC
   workflow_dispatch:
+    inputs:
+      issues_max:
+        description: "How many records to publish as new issues in this run"
+        default: "40"
 
 permissions:
   contents: write
+  issues: write # issues.mjs publishes each record as an issue titled with its error line
+
+# One run at a time: two runs creating issues side by side could publish a record twice.
+concurrency:
+  group: sync-records
+  cancel-in-progress: false
 
 jobs:
   sync:
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
       - name: Mirror the served records
+        id: mirror
         run: node sync.mjs https://api.modalhub.ai
+      - name: Check that no record can mention a person or link another repository from an issue
+        run: node issues.check.mjs
+      - name: Publish the records as issues
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUES_MAX: ${{ inputs.issues_max || '40' }}
+        run: node issues.mjs
+      # The mirror and issues.json are committed even when the issues step stopped half way: the
+      # issues it did create must be on record before the next run.
       - name: Commit what changed
+        if: ${{ !cancelled() && steps.mirror.outcome == 'success' }}
         run: |
           git config user.name "modalhub-records-sync"
           git config user.email "noreply@modalhub.ai"
@@ -27,9 +49,11 @@ jobs:
           git commit -m "sync: records as of $(date -u +%Y-%m-%d)"
           git push
       - uses: actions/setup-python@v5
+        if: ${{ !cancelled() && steps.mirror.outcome == 'success' }}
         with:
           python-version: "3.12"
       - name: Publish the Hugging Face dataset
+        if: ${{ !cancelled() && steps.mirror.outcome == 'success' }}
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
