@@ -1,9 +1,358 @@
 {
- "generated_at": "2026-11-18T11:38:20Z",
+ "generated_at": "2026-11-18T14:06:02Z",
  "source": "https://api.modalhub.ai/v1/records",
  "license": "CC0-1.0",
- "count": 267,
+ "count": 285,
  "records": [
+  {
+   "id": "b5300914-9ae3-4a48-bb1e-08e40f9f0dbb",
+   "slug": "vllm-lorarequest-reusing-a-loaded-lora-int-7078",
+   "url": "https://api.modalhub.ai/r/vllm-lorarequest-reusing-a-loaded-lora-int-7078",
+   "symptom": "LoRARequest reusing a loaded lora_int_id for a different adapter (new lora_name/lora_path) runs with the first adapter's weights in AsyncLLM/LLM; no error, add_lora returns True",
+   "cause": "lora_int_id must be unique per adapter but vLLM does not enforce it: the worker caches adapters by id and re-activates a loaded id without reading the new path unless load_inplace=True",
+   "tool": "vllm",
+   "version": "0.34.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "a78af38f-2fe7-44ee-a28e-48c9978a26b5",
+   "slug": "vllm-overflowerror-python-integer-id-out-of-35e6",
+   "url": "https://api.modalhub.ai/r/vllm-overflowerror-python-integer-id-out-of-35e6",
+   "symptom": "OverflowError: Python integer <id> out of bounds for int32",
+   "cause": "the model runner keeps each request's LoRA id in an np.int32 array (LoraState.lora_ids) while LoRARequest only checks id > 0, so an id >= 2**31 overflows on assignment",
+   "tool": "vllm",
+   "version": "0.34.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "61c690b0-3b88-4f15-8fc8-e5ed413f8b3a",
+   "slug": "trpc-trpcclienterror-unexpected-end-of-json-input-524b",
+   "url": "https://api.modalhub.ai/r/trpc-trpcclienterror-unexpected-end-of-json-input-524b",
+   "symptom": "TRPCClientError: Unexpected end of JSON input (BAD_REQUEST 400) from an httpLink mutation with an .optional() input called without input",
+   "cause": "httpLink sends no POST body when input is undefined, and the server's JSON content-type handler called req.json() on the empty body, which throws",
+   "tool": "trpc",
+   "version": "11.25.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "7b996a16-2d3c-4c95-9197-ded0db92b064",
+   "slug": "transformers-typeerror-bernoulli-received-an-invalid-combination-c4fd",
+   "url": "https://api.modalhub.ai/r/transformers-typeerror-bernoulli-received-an-invalid-combination-c4fd",
+   "symptom": "TypeError: bernoulli() received an invalid combination of arguments - got (Tensor, generator=numpy.random._generator.Generator), but expected one of:",
+   "cause": "a seeded collator creates its RNG once, on the first call, typed by self.return_tensors, and keeps it after a format switch, so torch.bernoulli receives a NumPy Generator",
+   "tool": "transformers",
+   "version": "5.23.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "40b92d3a-48a8-47b1-ba33-84a91dea3792",
+   "slug": "transformers-valueerror-max-new-tokens-is-defined-4bc3",
+   "url": "https://api.modalhub.ai/r/transformers-valueerror-max-new-tokens-is-defined-4bc3",
+   "symptom": "ValueError: 'max_new_tokens' is defined twice, once in 'generate_kwargs' and once as a direct parameter, please use only one",
+   "cause": "image-text-to-text and any-to-any pipelines write max_new_tokens into the caller's own generate_kwargs dict, so a dict reused on the next call already holds it",
+   "tool": "transformers",
+   "version": "5.23.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "16880f0b-3072-4e23-a0e3-256854d55c4a",
+   "slug": "rollup-syntaxerror-delete-of-an-unqualified-identifier-c610",
+   "url": "https://api.modalhub.ai/r/rollup-syntaxerror-delete-of-an-unqualified-identifier-c610",
+   "symptom": "SyntaxError: Delete of an unqualified identifier in strict mode. when loading a Rollup bundle whose source deletes a namespace import member: delete ns.x was emitted as delete x",
+   "cause": "Rollup replaced a namespace member access ns.x with its bound identifier x even as a delete target; delete of a bare identifier is an early SyntaxError in strict code",
+   "tool": "rollup",
+   "version": "4.68.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "c05b4a9d-b3d8-44b1-940a-4908dabfae44",
+   "slug": "rollup-syntaxerror-identifier-exports-has-already-been-934e",
+   "url": "https://api.modalhub.ai/r/rollup-syntaxerror-identifier-exports-has-already-been-934e",
+   "symptom": "SyntaxError: Identifier 'exports' has already been declared when loading rollup cjs/amd/iife/umd output of export const { a = 1 } = obj; the binding renders as { a: exports.a = 1 }",
+   "cause": "a default value or a later assignment marks the pattern binding reassigned; cjs/amd/iife/umd render reassigned exports as exports.a, so Rollup wrote that member expression into the pattern",
+   "tool": "rollup",
+   "version": "4.68.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "d09d0455-76b4-4291-ad76-65ed82105ff4",
+   "slug": "puppeteer-timeouterror-navigation-timeout-of-ms-ms-b17c",
+   "url": "https://api.modalhub.ai/r/puppeteer-timeouterror-navigation-timeout-of-ms-ms-b17c",
+   "symptom": "TimeoutError: Navigation timeout of <ms> ms exceeded on WebDriver BiDi with waitUntil networkidle0 or networkidle2, fired after only defaultTimeout ms",
+   "cause": "BiDi's networkidle wait falls back to defaultTimeout, not defaultNavigationTimeout, when the call has no timeout; goto()/reload() relabel its TimeoutError",
+   "tool": "puppeteer",
+   "version": "25.18.1",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "f615e3b3-beb2-455b-8229-243b8fe6a6b8",
+   "slug": "pnpm-error-err-pnpm-outdated-no-lockfile-7f86",
+   "url": "https://api.modalhub.ai/r/pnpm-error-err-pnpm-outdated-no-lockfile-7f86",
+   "symptom": "Error: ERR_PNPM_OUTDATED_NO_LOCKFILE No lockfile in directory \"<path>\". Run `pnpm install` to generate one.",
+   "cause": "pnpm 12's Rust outdated reads only pnpm-lock.yaml and fails when it is absent, e.g. under lockfile: false, instead of falling back to the current lockfile install records, as pnpm 11 did",
+   "tool": "pnpm",
+   "version": "12.18.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "c8fa6fdc-88fc-4388-a0d1-3726d20bf20d",
+   "slug": "pnpm-error-cannot-read-properties-of-undefined-cda7",
+   "url": "https://api.modalhub.ai/r/pnpm-error-cannot-read-properties-of-undefined-cda7",
+   "symptom": "ERROR  Cannot read properties of undefined (reading 'manifest')",
+   "cause": "the v10 exe keeps a lowercase c: cwd in workspace project dirs while opts.dir is C:; selectProjectByDir matches case-insensitively but keys the graph by opts.dir, so manifestsByPath misses",
+   "tool": "pnpm",
+   "version": "10.34.6",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "78e1dc44-743b-4598-b427-c69940724f4e",
+   "slug": "matplotlib-valueerror-cannot-convert-float-nan-to-326e",
+   "url": "https://api.modalhub.ai/r/matplotlib-valueerror-cannot-convert-float-nan-to-326e",
+   "symptom": "ValueError: cannot convert float NaN to integer",
+   "cause": "set_xticks/set_yticks and FixedLocator accept NaN tick locations; at draw the default ScalarFormatter._set_format runs math.floor(math.log10(range)) on the NaN tick range",
+   "tool": "matplotlib",
+   "version": "3.11.2",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "5efd573e-5433-49e6-a803-6e3d52ba0a58",
+   "slug": "homebrew-warning-not-running-formula-s-fetch-ef32",
+   "url": "https://api.modalhub.ai/r/homebrew-warning-not-running-formula-s-fetch-ef32",
+   "symptom": "Warning: Not running <formula>'s `fetch` as these dependencies are not installed:",
+   "cause": "a formula's def fetch step (e.g. go mod download) runs in the build env, so brew fetch skips it while its deps are missing; 6.0.20-7.0.12 printed that expected skip as a warning",
+   "tool": "homebrew",
+   "version": "7.0.12",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "8c5d4a71-4acb-4373-a9a7-aa23dbe3715a",
+   "slug": "homebrew-env-node-no-such-file-or-3a71",
+   "url": "https://api.modalhub.ai/r/homebrew-env-node-no-such-file-or-3a71",
+   "symptom": "env: node: No such file or directory — brew bundle --verbose on an npm Brewfile entry (works without --verbose)",
+   "cause": "before 7.0.13 the --verbose branch of Bundle.system ran npm without adding <prefix>/opt/node/bin to brew's sanitized PATH, so npm's #!/usr/bin/env node shebang found no node",
+   "tool": "homebrew",
+   "version": "7.0.12",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "fc274441-ed09-43ec-a05b-f248cb593473",
+   "slug": "firebase-tools-error-err-require-esm-require-of-9e17",
+   "url": "https://api.modalhub.ai/r/firebase-tools-error-err-require-esm-require-of-9e17",
+   "symptom": "Error [ERR_REQUIRE_ESM]: require() of ES Module <path>/node_modules/<pkg>/dist/index.js from <path>/lib/index.js not supported.",
+   "cause": "the standalone binary runs Functions discovery on its bundled Node 20.18.2 whatever engines.node or PATH says, and Node 20.18 cannot require() ESM (unflagged in 20.19/22.12)",
+   "tool": "firebase-tools",
+   "version": "15.34.1",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "caution",
+    "flags": [
+     {
+      "code": "installs_package",
+      "args": [
+       "npm:firebase-tools"
+      ]
+     }
+    ],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "ad4b8199-2d79-4684-818c-04594d1ca67c",
+   "slug": "expo-keychainexception-user-interaction-is-not-allowed-4138",
+   "url": "https://api.modalhub.ai/r/expo-keychainexception-user-interaction-is-not-allowed-4138",
+   "symptom": "KeyChainException: User interaction is not allowed.",
+   "cause": "SecureStore items default to WHEN_UNLOCKED, which iOS keeps inaccessible while the device is locked (errSecInteractionNotAllowed), so reads and writes then throw, sync getItem too",
+   "tool": "expo",
+   "version": "58.0.2",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "9810dcfc-ebe9-4389-b523-0b8e97b9f229",
+   "slug": "expo-typeerror-cannot-read-properties-of-undefined-7c92",
+   "url": "https://api.modalhub.ai/r/expo-typeerror-cannot-read-properties-of-undefined-7c92",
+   "symptom": "TypeError: Cannot read properties of undefined (reading 'bundleIdentifier')",
+   "cause": "with no ios.bundleIdentifier, prebuild writes one to app.json, reloads app.config.js and @expo/config's isMatchingObject recurses into the ios key it drops (undefined)",
+   "tool": "expo",
+   "version": "58.0.23",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "7f2bb20f-b756-4e47-a22c-d4802162ae6d",
+   "slug": "eslint-typeerror-unexpected-array-e5c5",
+   "url": "https://api.modalhub.ai/r/eslint-typeerror-unexpected-array-e5c5",
+   "symptom": "TypeError: Unexpected array.",
+   "cause": "ESLint creates its FlatConfigArray without extraConfigTypes, so @eslint/config-array throws on any array nested in the exported config array, e.g. a shared config exported as an array",
+   "tool": "eslint",
+   "version": "10.14.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "2659678a-a1d4-4a3a-a5ed-be2df810e675",
+   "slug": "dotnet-system-indexoutofrangeexception-index-was-outside-the-4a0e",
+   "url": "https://api.modalhub.ai/r/dotnet-system-indexoutofrangeexception-index-was-outside-the-4a0e",
+   "symptom": "System.IndexOutOfRangeException: Index was outside the bounds of the array. at System.Uri.CreateUriInfo(Flags cF)",
+   "cause": "for non-ASCII input Uri rebuilds its string without bidi controls, but CreateUriInfo indexed that shorter copy with offsets from the original, so a host of only bidi chars reads past its end",
+   "tool": "dotnet",
+   "version": "10.0.14",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
   {
    "id": "90fd309f-fd6c-459f-9c9e-ac55cccbda24",
    "slug": "vitest-a-key-set-to-undefined-in-b4a0",
