@@ -1,9 +1,161 @@
 {
- "generated_at": "2026-11-23T12:33:30Z",
+ "generated_at": "2026-11-23T12:45:22Z",
  "source": "https://api.modalhub.ai/v1/records",
  "license": "CC0-1.0",
- "count": 307,
+ "count": 315,
  "records": [
+  {
+   "id": "1e37f2be-dae7-497c-aaf9-991cd09f1552",
+   "slug": "prisma-error-ts2769-no-overload-matches-this-42c2",
+   "url": "https://api.modalhub.ai/r/prisma-error-ts2769-no-overload-matches-this-42c2",
+   "symptom": "error TS2769: No overload matches this call. The last overload gave the following error. Type '<input-type>' is not assignable to type '<output-type>'.",
+   "cause": "before rc.19 the ORM's create/update inputs were built on the read row (FieldOutputTypes, the codec's output type) and never read FieldInputTypes; the db.sql lane reads the input type",
+   "tool": "prisma",
+   "version": "8.0.0-rc.12",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "62f1f3c3-7288-42ed-8e07-47dc95fc4626",
+   "slug": "pnpm-error-err-pnpm-no-offline-meta-c403",
+   "url": "https://api.modalhub.ai/r/pnpm-error-err-pnpm-no-offline-meta-c403",
+   "symptom": "Error: ERR_PNPM_NO_OFFLINE_META installing deployed dependencies: Failed to resolve dependency tree: Failed to resolve <pkg>@<range> in package mirror \"<path>\"",
+   "cause": "deploy with a per-project lockfile or --legacy did not seed resolution from the source lockfile's pins, so it re-resolved each range from registry metadata, which is absent offline",
+   "tool": "pnpm",
+   "version": "12.18.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "9b66928a-3d0e-4d80-b9de-1d2036f8a43e",
+   "slug": "nx-the-pkg-package-is-not-used-f641",
+   "url": "https://api.modalhub.ai/r/nx-the-pkg-package-is-not-used-f641",
+   "symptom": "The \"<pkg>\" package is not used by \"<project>\" project  @nx/dependency-checks",
+   "cause": "nx before 23.3.0 stopped at a package's type-only package.json stub (e.g. dist/cjs) instead of walking up to the real one, so with 2+ installed versions the project lost its graph edge",
+   "tool": "nx",
+   "version": "23.2.1",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "4bec978d-43fb-45d3-b4fd-ecf062b170f2",
+   "slug": "nextjs-next-dev-types-validator-ts-line-ebcb",
+   "url": "https://api.modalhub.ai/r/nextjs-next-dev-types-validator-ts-line-ebcb",
+   "symptom": ".next/dev/types/validator.ts(<line>,<col>): error TS2307: Cannot find module '../../../app/<route>/route.js' or its corresponding type declarations.",
+   "cause": "next build type-checks with the tsc CLI over the whole tsconfig, which includes .next/dev/types; the validator.ts left by the last next dev still imports routes since moved or deleted",
+   "tool": "nextjs",
+   "version": "16.3.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "0384733f-a48d-4abd-b1ad-92a5e61b1649",
+   "slug": "homebrew-warning-you-are-using-macos-on-fbf0",
+   "url": "https://api.modalhub.ai/r/homebrew-warning-you-are-using-macos-on-fbf0",
+   "symptom": "Warning: You are using macOS on Intel x86_64. — on an Apple Silicon Mac whose brew config shows Rosetta 2: true",
+   "cause": "a Homebrew in /usr/local on Apple Silicon is the Rosetta 2 install: brew runs translated as x86_64, so its CPU check sees Intel and prints the Tier 3 Intel warning",
+   "tool": "homebrew",
+   "version": "7.0.13",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "3f1d14c4-ee4d-4029-a230-4c39395e67cb",
+   "slug": "homebrew-path-pathname-binread-operation-not-permitted-4ff8",
+   "url": "https://api.modalhub.ai/r/homebrew-path-pathname-binread-operation-not-permitted-4ff8",
+   "symptom": "/opt/homebrew/Library/Homebrew/unpack_strategy/path.rb:26:in 'Pathname#binread': Operation not permitted @ rb_sysopen - /Volumes/<volume>/<cache>/downloads/<archive> (Errno::EPERM)",
+   "cause": "the sandboxed extraction worker disclaims the terminal's macOS TCC privacy access, so it cannot open a cached archive that HOMEBREW_CACHE keeps on another volume",
+   "tool": "homebrew",
+   "version": "7.0.13",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "21ae8659-fdd1-41af-aaf9-e80e001cb867",
+   "slug": "claude-code-api-error-400-invalid-schema-for-e75c",
+   "url": "https://api.modalhub.ai/r/claude-code-api-error-400-invalid-schema-for-e75c",
+   "symptom": "API Error: 400 Invalid schema for function 'Artifact': \"^(?!__.*__$)[^\\p{Cc}\\p{Cf}\\p{Zl}\\p{Zp}\\\"\\\\\\\\./[\\\\]]{1,200}$\" is not a \"regex\"",
+   "cause": "since 2.1.265 the Artifact tool's input_schema, sent only in interactive sessions, carries a regex pattern that third-party Anthropic-compatible endpoints reject, so every turn 400s",
+   "tool": "claude-code",
+   "version": "2.1.265",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "15e9b594-fe6e-4ebf-a1ea-7bc1c18d1897",
+   "slug": "angular-formvaluecontrol-with-transformedvalue-under-formcontrol-or-3472",
+   "url": "https://api.modalhub.ai/r/angular-formvaluecontrol-with-transformedvalue-under-formcontrol-or-3472",
+   "symptom": "FormValueControl with transformedValue under [formControl] or [(ngModel)]: control.errors has the parse error but the control's errors() input stays [] until an unrelated change detection",
+   "cause": "NgControl.setParseErrorSource's effect revalidates with updateValueAndValidity({emitEvent: false}), so statusChanges never fires the markForCheck that forwards errors to the control",
+   "tool": "angular",
+   "version": "22.2.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
   {
    "id": "c2e3db5a-70f5-498d-a2a0-52235cd0b883",
    "slug": "vllm-assertionerror-decode-context-parallelism-dcp-requires-a78d",

@@ -1840,5 +1840,53 @@
   "slug": "astro-typeerror-this-bridge-deleteenv-is-not-7da2",
   "hash": "d6d3790479253490",
   "state": "closed"
+ },
+ "1e37f2be-dae7-497c-aaf9-991cd09f1552": {
+  "number": 308,
+  "slug": "prisma-error-ts2769-no-overload-matches-this-42c2",
+  "hash": "d21d63d4bf069818",
+  "state": "closed"
+ },
+ "62f1f3c3-7288-42ed-8e07-47dc95fc4626": {
+  "number": 309,
+  "slug": "pnpm-error-err-pnpm-no-offline-meta-c403",
+  "hash": "afd5e5006d52835e",
+  "state": "closed"
+ },
+ "9b66928a-3d0e-4d80-b9de-1d2036f8a43e": {
+  "number": 310,
+  "slug": "nx-the-pkg-package-is-not-used-f641",
+  "hash": "51b5472bb7abb8ce",
+  "state": "closed"
+ },
+ "4bec978d-43fb-45d3-b4fd-ecf062b170f2": {
+  "number": 311,
+  "slug": "nextjs-next-dev-types-validator-ts-line-ebcb",
+  "hash": "97baa5b9ab2af71e",
+  "state": "closed"
+ },
+ "0384733f-a48d-4abd-b1ad-92a5e61b1649": {
+  "number": 312,
+  "slug": "homebrew-warning-you-are-using-macos-on-fbf0",
+  "hash": "8713c508c09a22b0",
+  "state": "closed"
+ },
+ "3f1d14c4-ee4d-4029-a230-4c39395e67cb": {
+  "number": 313,
+  "slug": "homebrew-path-pathname-binread-operation-not-permitted-4ff8",
+  "hash": "031bcdd3832d6342",
+  "state": "closed"
+ },
+ "21ae8659-fdd1-41af-aaf9-e80e001cb867": {
+  "number": 314,
+  "slug": "claude-code-api-error-400-invalid-schema-for-e75c",
+  "hash": "2f718d6952e7c29e",
+  "state": "closed"
+ },
+ "15e9b594-fe6e-4ebf-a1ea-7bc1c18d1897": {
+  "number": 315,
+  "slug": "angular-formvaluecontrol-with-transformedvalue-under-formcontrol-or-3472",
+  "hash": "fc10b1baeb17b878",
+  "state": "closed"
  }
 }
