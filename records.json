@@ -1,9 +1,434 @@
 {
- "generated_at": "2026-11-22T11:19:55Z",
+ "generated_at": "2026-11-23T07:42:41Z",
  "source": "https://api.modalhub.ai/v1/records",
  "license": "CC0-1.0",
- "count": 285,
+ "count": 307,
  "records": [
+  {
+   "id": "c2e3db5a-70f5-498d-a2a0-52235cd0b883",
+   "slug": "vllm-assertionerror-decode-context-parallelism-dcp-requires-a78d",
+   "url": "https://api.modalhub.ai/r/vllm-assertionerror-decode-context-parallelism-dcp-requires-a78d",
+   "symptom": "AssertionError: Decode Context Parallelism (DCP) requires attention implementations to return the softmax LSE during decode, but ROCMAiterMLASparseImpl does not. Try a different backend by setting --attention-backend or disable DCP.",
+   "cause": "on ROCm a sparse-MLA (DSA) model gets only ROCM_AITER_MLA_SPARSE, whose impl never returns the decode softmax LSE that DCP needs to merge each rank's partial attention",
+   "tool": "vllm",
+   "version": "0.29.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "952f7ba3-13be-4df8-b01c-36aecb79120f",
+   "slug": "vllm-runtimeerror-the-size-of-tensor-a-2ef6",
+   "url": "https://api.modalhub.ai/r/vllm-runtimeerror-the-size-of-tensor-a-2ef6",
+   "symptom": "RuntimeError: The size of tensor a (3072) must match the size of tensor b (2880) at non-singleton dimension 1",
+   "cause": "FLASHINFER_TRTLLM_MXFP4_BF16 pads hidden 2880->3072 but its experts return 2880 wide; the modular MoE kernel sized output from the padded input, so the EP finalize copy fails",
+   "tool": "vllm",
+   "version": "0.28.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "a8495406-70a8-48bc-94d6-bf17cf4238ae",
+   "slug": "trpc-typeerror-cannot-read-properties-of-undefined-ea1a",
+   "url": "https://api.modalhub.ai/r/trpc-typeerror-cannot-read-properties-of-undefined-ea1a",
+   "symptom": "TypeError: Cannot read properties of undefined (reading 'String') at file:///<path>/node_modules/@trpc/openapi/dist/cli.mjs:262:38",
+   "cause": "TypeScript 7.0 has no JS compiler API: the typescript module exports only version fields, so ts.TypeFlags is undefined when @trpc/openapi <=11.28.2-alpha loads",
+   "tool": "trpc",
+   "version": "11.28.0-alpha",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "3fa342d1-8ddc-4344-9c46-bc27702db226",
+   "slug": "transformers-keyerror-rope-type-at-self-rope-6a68",
+   "url": "https://api.modalhub.ai/r/transformers-keyerror-rope-type-at-self-rope-6a68",
+   "symptom": "KeyError: 'rope_type' at self.rope_type = self.config.rope_parameters[\"rope_type\"] in the RotaryEmbedding, after assigning config.rope_scaling",
+   "cause": "v5 keeps rope_type and rope_theta inside rope_parameters, and the rope_scaling alias setter replaces that whole dict, so a v4-style {\"type\": ...} leaves neither key",
+   "tool": "transformers",
+   "version": "5.20.2",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "57e49a3a-258c-4ea1-81af-2ad2df683d04",
+   "slug": "transformers-jinja2-exceptions-undefinederror-dict-object-has-9fed",
+   "url": "https://api.modalhub.ai/r/transformers-jinja2-exceptions-undefinederror-dict-object-has-9fed",
+   "symptom": "jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'content'",
+   "cause": "apply_chat_template now drops None-valued message keys; DeepSeek templates test message['content'] is none, false for a missing key, then concatenate it",
+   "tool": "transformers",
+   "version": "5.23.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "4565e192-bb29-4eee-a121-5fdd3ca2e5de",
+   "slug": "transformers-typeerror-bool-object-is-not-iterable-e414",
+   "url": "https://api.modalhub.ai/r/transformers-typeerror-bool-object-is-not-iterable-e414",
+   "symptom": "TypeError: 'bool' object is not iterable; raised at existing_mapping.update(video_processor_classes) in AutoVideoProcessor.register",
+   "cause": "5.19.0 inserted video_processor_classes (a backend-name dict) before exist_ok in register(), so a third positional bool binds to the dict and dict.update(True) raises",
+   "tool": "transformers",
+   "version": "5.19.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "173b9fdb-1ffe-48ea-96d7-1bad715ecb32",
+   "slug": "transformers-audio-classification-pipeline-returns-score-1-71a3",
+   "url": "https://api.modalhub.ai/r/transformers-audio-classification-pipeline-returns-score-1-71a3",
+   "symptom": "audio-classification pipeline returns [{'score': 1.0, 'label': 'LABEL_0'}] for every input of a regression checkpoint (problem_type=\"regression\", num_labels=1); multi-label ones get softmax, not sigmoid",
+   "cause": "AudioClassificationPipeline set function_to_apply to softmax whenever the caller omitted it, never reading model.config.problem_type; softmax of one logit is always 1.0",
+   "tool": "transformers",
+   "version": "5.22.2",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "d1854536-be85-4dfc-af27-b05d7569eaee",
+   "slug": "tensorflow-typeerror-expected-int32-but-got-value-9b83",
+   "url": "https://api.modalhub.ai/r/tensorflow-typeerror-expected-int32-but-got-value-9b83",
+   "symptom": "TypeError: Expected int32, but got <value> of type 'float'.",
+   "cause": "under tf.function, tf.while_loop turns a NumPy int32 loop var into an int32 Tensor, so 0.99 ** i is tf.pow(float, int32) and the float cannot convert to int32",
+   "tool": "tensorflow",
+   "version": "2.21.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "e03a5c4b-9059-473e-bd46-624eb5fae72c",
+   "slug": "ruff-error-e0425-cannot-find-value-note-1012",
+   "url": "https://api.modalhub.ai/r/ruff-error-e0425-cannot-find-value-note-1012",
+   "symptom": "error[E0425]: cannot find value `NOTE_PCTRLMASK` in crate `libc`",
+   "cause": "no FreeBSD wheel, so the sdist compiles; its Cargo.lock pairs libc 0.2.190, which removed FreeBSD's NOTE_PCTRLMASK, with mio 1.0.4, which still lists it in kqueue Debug output",
+   "tool": "ruff",
+   "version": "0.17.4",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "c364f0a2-0a50-4e43-b812-84ff4015bb67",
+   "slug": "pnpm-pre-run-install-error-and-warn-8c87",
+   "url": "https://api.modalhub.ai/r/pnpm-pre-run-install-error-and-warn-8c87",
+   "symptom": "Pre-run install error and \"[WARN] The install that runs before scripts failed, so your node_modules may be out of sync with your lockfile.\" print twice when a bare pnpm command matches no script and falls back to exec",
+   "cause": "pnpm 12's Rust CLI runs the verifyDepsBeforeRun check in the run path, then hands a name with no matching script to exec, whose ExecArgs::run runs the same check again",
+   "tool": "pnpm",
+   "version": "12.18.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "fc63d8e1-46a7-41a6-835e-d42805d3f23b",
+   "slug": "pnpm-pnpm-install-with-dedupepeers-true-links-908a",
+   "url": "https://api.modalhub.ai/r/pnpm-pnpm-install-with-dedupepeers-true-links-908a",
+   "symptom": "pnpm install with dedupePeers: true links a package to another workspace project's copy of its peer (drizzle-zod@0.8.3(drizzle-orm@0.45.2) -> drizzle-orm: 0.45.2(postgres@3.4.7)), no warning; tsc: error TS2769: No overload matches this call.",
+   "cause": "dedupePeers keys each peer only by name@version, so two copies of one peer version (resolved with different peers of their own) share one snapshot that links whichever copy came first",
+   "tool": "pnpm",
+   "version": "12.21.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "3822c42a-f219-4217-9407-2deff47f6ecd",
+   "slug": "playwright-error-unknown-command-cli-081e",
+   "url": "https://api.modalhub.ai/r/playwright-error-unknown-command-cli-081e",
+   "symptom": "error: unknown command 'cli'",
+   "cause": "the hidden cli subcommand (local entry to playwright-cli) is first registered in playwright-core 1.59.0; older CLIs reject it as an unknown command",
+   "tool": "playwright",
+   "version": "1.58.2",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "b34633f4-2e9b-4add-b0b6-097abc9a7082",
+   "slug": "playwright-waiting-for-url-navigation-to-finish-2d23",
+   "url": "https://api.modalhub.ai/r/playwright-waiting-for-url-navigation-to-finish-2d23",
+   "symptom": "waiting for \"<url>\" navigation to finish... in the call log of a Firefox-only action or expect() timeout; the page had loaded, its document cached by another tab and served with stale-while-revalidate",
+   "cause": "Firefox's Juggler tags the background stale-while-revalidate revalidation of the cached document with the committed navigation's id, so Playwright waits for a document commit that never comes",
+   "tool": "playwright",
+   "version": "1.65.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "8f9597f8-5f1f-42d1-97cc-0a7db6b2a262",
+   "slug": "ollama-warning-could-not-connect-to-a-5ba8",
+   "url": "https://api.modalhub.ai/r/ollama-warning-could-not-connect-to-a-5ba8",
+   "symptom": "Warning: could not connect to a running Ollama instance",
+   "cause": "ollama -v asks the server at OLLAMA_HOST (default 127.0.0.1:11434) for /api/version; none answers, so it warns, then prints only the client version",
+   "tool": "ollama",
+   "version": "0.40.15",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "44c968c0-e270-48ee-ab16-a6ae170b53e8",
+   "slug": "langchain-js-invalidupdateerror-invalid-update-for-channel-key-c0b8",
+   "url": "https://api.modalhub.ai/r/langchain-js-invalidupdateerror-invalid-update-for-channel-key-c0b8",
+   "symptom": "InvalidUpdateError: Invalid update for channel \"<key>\" with values [<values>]: LastValue can only receive one value per step. — createAgent: inner wrapModelCall returns a Command without calling handler, outer middleware passes it on",
+   "cause": "AgentNode collects a Command after each wrapModelCall layer returning it; a pass-through outer layer re-pushes the same instance, applying its update once per layer",
+   "tool": "langchain-js",
+   "version": "1.6.5",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "9a232584-e247-4f10-8a2c-975cee6bf413",
+   "slug": "langchain-js-error-tool-error-message-at-object-0c75",
+   "url": "https://api.modalhub.ai/r/langchain-js-error-tool-error-message-at-object-0c75",
+   "symptom": "Error: <tool-error-message> at Object.process (file:///<path>/node_modules/langchain/dist/agents/transformers/tool-call.js:152:29)",
+   "cause": "the tool-call and subagent transformers create each call's output promise eagerly and reject it on tool-error; when nothing awaits it, Node exits on the unhandled rejection",
+   "tool": "langchain-js",
+   "version": "1.6.5",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "954e8012-4f16-4581-91ce-2c8d67dffc97",
+   "slug": "homebrew-error-cask-attempted-to-use-a-d0da",
+   "url": "https://api.modalhub.ai/r/homebrew-error-cask-attempted-to-use-a-d0da",
+   "symptom": "Error: <cask>: attempted to use a `Downloadable` without a URL!",
+   "cause": "the receipt still names the old, untapped tap (pre-7.0.14 cask-to-cask tap migrations never rewrote it); since 7.0.14 a short-name reinstall falls back to the stored caskfile, which has no url",
+   "tool": "homebrew",
+   "version": "7.0.14",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "caution",
+    "flags": [
+     {
+      "code": "installs_package",
+      "args": [
+       "unparsed"
+      ]
+     }
+    ],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "ad7abd98-8c5e-45eb-b981-024f200e4a41",
+   "slug": "firebase-tools-request-to-serviceusage-googleapis-com-v1-d37f",
+   "url": "https://api.modalhub.ai/r/firebase-tools-request-to-serviceusage-googleapis-com-v1-d37f",
+   "symptom": "Request to serviceusage.googleapis.com/v1/projects/<project>/services/firebasehosting.googleapis.com had HTTP Error: 403, Permission denied to get service [firebasehosting.googleapis.com]",
+   "cause": "15.34.1 added a hard ensure() gate that calls serviceusage.services.get before Hosting commands; deploy accounts with Hosting roles only get 403 there",
+   "tool": "firebase-tools",
+   "version": "15.34.1",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "7aa38782-3703-465f-bef0-83573f3abe5e",
+   "slug": "expo-unsatisfiedlinkerror-dlopen-failed-library-libexpo-sqlite-0ffd",
+   "url": "https://api.modalhub.ai/r/expo-unsatisfiedlinkerror-dlopen-failed-library-libexpo-sqlite-0ffd",
+   "symptom": "UnsatisfiedLinkError: dlopen failed: library \"libexpo-sqlite.so\" not found",
+   "cause": "the prebuilt AAR published in expo-sqlite 57.0.5 holds jni/arm64-v8a/libexpo-sqlite.so only (57.0.4 had all four ABIs), so loadLibrary fails on x86, x86_64 and armeabi-v7a",
+   "tool": "expo",
+   "version": "57.0.5",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "8167df0b-5b5c-4013-ad49-f1a890ab087e",
+   "slug": "eslint-parsing-error-unexpected-token-after-eslint-12ba",
+   "url": "https://api.modalhub.ai/r/eslint-parsing-error-unexpected-token-after-eslint-12ba",
+   "symptom": "Parsing error: Unexpected token !== after eslint --fix; no-unneeded-ternary turned ({ a: 1 } === b) ? false : true into { a: 1 } !== b",
+   "cause": "the fixer copied the comparison by its own node range, losing the parens around the test (a leading { then opens a block), and wrote true/false with no space after case or return",
+   "tool": "eslint",
+   "version": "10.14.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "c3d72b45-6619-433c-b748-d3eddc588601",
+   "slug": "biome-i-rule-name-errored-error-file-7861",
+   "url": "https://api.modalhub.ai/r/biome-i-rule-name-errored-error-file-7861",
+   "symptom": "i Rule <name> errored: <error> (<file>:<line>:<col>); a throwing JS plugin is reported as info (Found 1 info.) and biome lint exits 0, even with --error-on-warnings",
+   "cause": "RuleDiagnostic::new defaults to Severity::Information and the plugin-failure diagnostic never set a severity, so a rule that throws counts as info: no error, no warning, exit 0",
+   "tool": "biome",
+   "version": "2.6.4",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "dfdb9295-81b0-4bef-ac85-3a87abf51d64",
+   "slug": "astro-typeerror-this-bridge-deleteenv-is-not-7da2",
+   "url": "https://api.modalhub.ai/r/astro-typeerror-this-bridge-deleteenv-is-not-7da2",
+   "symptom": "TypeError: this.bridge.deleteEnv is not a function",
+   "cause": "@astrojs/astro2tsx 0.1.3 pins @emnapi/core 1.11.3 but not @emnapi/runtime, so pnpm pairs it with rolldown's wasm-binding runtime 2.0.0-beta.2, which calls bridge methods core 1.11.3 lacks",
+   "tool": "astro",
+   "version": "7.4.7",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
   {
    "id": "b5300914-9ae3-4a48-bb1e-08e40f9f0dbb",
    "slug": "vllm-lorarequest-reusing-a-loaded-lora-int-7078",

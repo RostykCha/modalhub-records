@@ -1708,5 +1708,137 @@
   "slug": "forge-cli-forge-deploy-error-typescript-errors-in-7f5a",
   "hash": "f82aa212b5e5a5cd",
   "state": "closed"
+ },
+ "c2e3db5a-70f5-498d-a2a0-52235cd0b883": {
+  "number": 286,
+  "slug": "vllm-assertionerror-decode-context-parallelism-dcp-requires-a78d",
+  "hash": "1766b0adb4db599d",
+  "state": "closed"
+ },
+ "952f7ba3-13be-4df8-b01c-36aecb79120f": {
+  "number": 287,
+  "slug": "vllm-runtimeerror-the-size-of-tensor-a-2ef6",
+  "hash": "2c46a641942dbefa",
+  "state": "closed"
+ },
+ "a8495406-70a8-48bc-94d6-bf17cf4238ae": {
+  "number": 288,
+  "slug": "trpc-typeerror-cannot-read-properties-of-undefined-ea1a",
+  "hash": "82aa6d8b7f593ce8",
+  "state": "closed"
+ },
+ "3fa342d1-8ddc-4344-9c46-bc27702db226": {
+  "number": 289,
+  "slug": "transformers-keyerror-rope-type-at-self-rope-6a68",
+  "hash": "3e52f975c0b5d58a",
+  "state": "closed"
+ },
+ "57e49a3a-258c-4ea1-81af-2ad2df683d04": {
+  "number": 290,
+  "slug": "transformers-jinja2-exceptions-undefinederror-dict-object-has-9fed",
+  "hash": "b2b2a04c8cce1490",
+  "state": "closed"
+ },
+ "4565e192-bb29-4eee-a121-5fdd3ca2e5de": {
+  "number": 291,
+  "slug": "transformers-typeerror-bool-object-is-not-iterable-e414",
+  "hash": "53eacb20120daa12",
+  "state": "closed"
+ },
+ "173b9fdb-1ffe-48ea-96d7-1bad715ecb32": {
+  "number": 292,
+  "slug": "transformers-audio-classification-pipeline-returns-score-1-71a3",
+  "hash": "b508758b6f01870e",
+  "state": "closed"
+ },
+ "d1854536-be85-4dfc-af27-b05d7569eaee": {
+  "number": 293,
+  "slug": "tensorflow-typeerror-expected-int32-but-got-value-9b83",
+  "hash": "ef027c896ae2b981",
+  "state": "closed"
+ },
+ "e03a5c4b-9059-473e-bd46-624eb5fae72c": {
+  "number": 294,
+  "slug": "ruff-error-e0425-cannot-find-value-note-1012",
+  "hash": "af39edfdaaca70be",
+  "state": "closed"
+ },
+ "c364f0a2-0a50-4e43-b812-84ff4015bb67": {
+  "number": 295,
+  "slug": "pnpm-pre-run-install-error-and-warn-8c87",
+  "hash": "fa2ca8c5a20d8434",
+  "state": "closed"
+ },
+ "fc63d8e1-46a7-41a6-835e-d42805d3f23b": {
+  "number": 296,
+  "slug": "pnpm-pnpm-install-with-dedupepeers-true-links-908a",
+  "hash": "dea65a9112bd37cd",
+  "state": "closed"
+ },
+ "3822c42a-f219-4217-9407-2deff47f6ecd": {
+  "number": 297,
+  "slug": "playwright-error-unknown-command-cli-081e",
+  "hash": "54fe3b6fc97ffb06",
+  "state": "closed"
+ },
+ "b34633f4-2e9b-4add-b0b6-097abc9a7082": {
+  "number": 298,
+  "slug": "playwright-waiting-for-url-navigation-to-finish-2d23",
+  "hash": "b376b8983daa25c1",
+  "state": "closed"
+ },
+ "8f9597f8-5f1f-42d1-97cc-0a7db6b2a262": {
+  "number": 299,
+  "slug": "ollama-warning-could-not-connect-to-a-5ba8",
+  "hash": "8804782754d28416",
+  "state": "closed"
+ },
+ "44c968c0-e270-48ee-ab16-a6ae170b53e8": {
+  "number": 300,
+  "slug": "langchain-js-invalidupdateerror-invalid-update-for-channel-key-c0b8",
+  "hash": "ec9568fc688853f7",
+  "state": "closed"
+ },
+ "9a232584-e247-4f10-8a2c-975cee6bf413": {
+  "number": 301,
+  "slug": "langchain-js-error-tool-error-message-at-object-0c75",
+  "hash": "e995b20e7e0ed61c",
+  "state": "closed"
+ },
+ "954e8012-4f16-4581-91ce-2c8d67dffc97": {
+  "number": 302,
+  "slug": "homebrew-error-cask-attempted-to-use-a-d0da",
+  "hash": "8c5c0031fd0e0fd2",
+  "state": "closed"
+ },
+ "ad7abd98-8c5e-45eb-b981-024f200e4a41": {
+  "number": 303,
+  "slug": "firebase-tools-request-to-serviceusage-googleapis-com-v1-d37f",
+  "hash": "6f30f0ab8505d983",
+  "state": "closed"
+ },
+ "7aa38782-3703-465f-bef0-83573f3abe5e": {
+  "number": 304,
+  "slug": "expo-unsatisfiedlinkerror-dlopen-failed-library-libexpo-sqlite-0ffd",
+  "hash": "ec1b2fdd155cc766",
+  "state": "closed"
+ },
+ "8167df0b-5b5c-4013-ad49-f1a890ab087e": {
+  "number": 305,
+  "slug": "eslint-parsing-error-unexpected-token-after-eslint-12ba",
+  "hash": "478d96b15e205695",
+  "state": "closed"
+ },
+ "c3d72b45-6619-433c-b748-d3eddc588601": {
+  "number": 306,
+  "slug": "biome-i-rule-name-errored-error-file-7861",
+  "hash": "e20febb7565e9fb4",
+  "state": "closed"
+ },
+ "dfdb9295-81b0-4bef-ac85-3a87abf51d64": {
+  "number": 307,
+  "slug": "astro-typeerror-this-bridge-deleteenv-is-not-7da2",
+  "hash": "d6d3790479253490",
+  "state": "closed"
  }
 }
