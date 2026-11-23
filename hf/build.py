@@ -117,6 +117,9 @@ def row(rec: dict, md: str) -> dict:
         "dead_ends": [
             {"attempt": d.get("attempt") or "", "why": d.get("why") or "", "reports": int(d.get("reports") or 0)}
             for d in (rec.get("dead_ends") or [])
+            # A tried entry (something a caller tried before asking, stored with no reason) is not a
+            # dead end with a cause: the dataset keeps the ones that say why.
+            if not d.get("tried")
         ],
         "worked": int(conf.get("worked") or 0),
         "didnt": int(conf.get("didnt") or 0),
