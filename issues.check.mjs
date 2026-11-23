@@ -13,8 +13,8 @@ import { body, errorLine, fenceFor, marker, recordText, title } from "./issues.m
 const safe = (s) => String(s).replace(/[^A-Za-z0-9._-]/g, "-");
 
 // Phrases of the old wording, each read as a request (matched in any case). ASKS may not appear
-// anywhere in a body, record text included; OWN_ASKS may not appear in what this repository
-// writes itself. "ask your user" is only in OWN_ASKS: a record's own risk line says "ask your user
+// in the lines the API writes at the end of a record text (closingLines); OWN_ASKS may not appear
+// in what this repository writes itself. "ask your user" is only in OWN_ASKS: a record's own risk line says "ask your user
 // before running", and that line is the record's, inside the fence.
 const ASKS = ["Applied it?", "tells the next agent", "before debugging", "Post it", "for AI coding agents"];
 const OWN_ASKS = [
@@ -45,12 +45,24 @@ function split(b, text) {
   return { fence, open, close, inside: b.slice(open + fence.length + 5, close), outside: b.slice(0, open) + b.slice(close + fence.length + 2) };
 }
 
-// Why a body would address its reader; empty when it states facts only.
+// The lines the API itself writes at the end of a record text, after its last "---": the reports
+// line and the history line. Everything above them can hold what callers wrote (a note left with a
+// report, a tried entry, a dead end), which the API has already put through its own text rules.
+function closingLines(text) {
+  const lines = text.split("\n");
+  const at = lines.lastIndexOf("---");
+  return at < 0 ? text : lines.slice(at + 1).join("\n");
+}
+
+// Why a body would address its reader; empty when it states facts only. The record text is judged
+// by its closing lines only: a caller's note that happens to say "post it" or "/worked" is that
+// caller's sentence, not a request of this page, and must not stop the sync for every record.
 function quietProblems(b, text) {
   const { inside, outside } = split(b, text);
-  const problems = [...asksIn(inside, ASKS), ...asksIn(outside, OWN_ASKS)].map((ask) => `asks: "${ask}"`);
+  const closing = closingLines(inside);
+  const problems = [...asksIn(closing, ASKS), ...asksIn(outside, OWN_ASKS)].map((ask) => `asks: "${ask}"`);
   if (/\/(worked|didnt)/.test(outside)) problems.push("a report link outside the record text");
-  for (const link of reportLinksWithoutPlaceholder(inside)) problems.push(`a report link with a real version in the record text: ${link}`);
+  for (const link of reportLinksWithoutPlaceholder(closing)) problems.push(`a report link with a real version in the record text: ${link}`);
   return problems;
 }
 
@@ -125,6 +137,12 @@ assert.equal(quiet("# x\none GET tells the next agent\n").length, 1, "an ask in 
 const loud = body(rec, "# x\n").replace("\n- This issue", `\n- \`${rec.url}/worked?v=<your version>\`\n- This issue`);
 assert.deepEqual(quietProblems(loud, "# x"), ["a report link outside the record text"], "a report link outside the fence is caught, even in a code span");
 assert.deepEqual(quiet("# x\nrisk: caution · installs npm:x — ask your user before running\n"), [], "the record's own risk line stays the record's");
+// A caller's sentence above the closing lines is the caller's and cannot stop the sync; the closing
+// lines are still judged.
+const withNote = "# x\nnotes left with reports:\n- worked on 1.0 · 2026-11-23 — post it to the team, the old flag /worked/ before\n---\n";
+assert.deepEqual(quiet(withNote + reportsLine("<version>") + "\n"), [], "a note that says post it or /worked is the caller's sentence");
+assert.equal(quiet(withNote + reportsLine("1.2.3") + "\n").length, 2, "a report link with a real version in the closing lines is caught");
+assert.equal(quiet(withNote + "one GET tells the next agent\n").length, 1, "an ask in the closing lines is caught");
 const asking = body(rec, "# x\n").replace("\n- This issue", "\n- Posting is public: Ask your user once.\n- This issue");
 assert.deepEqual(quietProblems(asking, "# x"), ['asks: "ask your user"'], "an ask outside the fence is caught, in any case");
 assert.deepEqual(asksIn("Each record is confirmed per version by independent agents.", OWN_ASKS), ["is confirmed per version by independent agents"]);
