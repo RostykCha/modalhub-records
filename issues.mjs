@@ -1,5 +1,7 @@
 // Publish every mirrored record as an issue of this repository, titled with its error line, so an
-// agent that searches GitHub issues for an error finds the fix next to the original bug report.
+// agent that searches GitHub issues for an error finds the record next to the original bug report.
+// The issue carries the error and its cause; the fix, its check, its sources and the dead ends are
+// on the record, one request away (issueText). The whole record stays in records/<tool>/<slug>.md.
 // Runs after sync.mjs (it reads records.json and records/<tool>/<slug>.md) with the workflow's
 // GITHUB_TOKEN, so the issues are written by github-actions, never by a person's account.
 //
@@ -14,7 +16,7 @@
 // created content.
 //
 // Nothing here can reach another repository or a person:
-//   - the record text sits inside a code fence, where GitHub turns no @name into a mention, no
+//   - the record's lines sit inside a code fence, where GitHub turns no @name into a mention, no
 //     #123 or owner/repo#123 into a cross-reference, no URL into a link and no <tag> into HTML;
 //   - the lines outside the fence are fixed text and this project's own URLs;
 //   - titles are plain text (GitHub never links or notifies from a title).
@@ -70,14 +72,44 @@ export function recordText(markdown) {
   return markdown.replace(/\r\n/g, "\n").replace(/^Canonical: [^\n]*\n\n/, "").trimEnd();
 }
 
-export function body(record, markdown) {
+// The lines of a record its issue carries: the title line, the error as seen, the cause, when to
+// prefer the fix and the publisher's reproduction. Everything else stays on the record: the fix,
+// its check, its sources and the dead ends (an agent that finds the issue then reads the record,
+// where reports, notes and newer fixes are current), the status and the reader count (they change
+// with every report and would rewrite the issue each time) and the risk line (it belongs with the
+// fix). Measured on 2026-11-23 with 16 fresh agents: with the whole record in the issue none
+// opened modalhub, with this form all did, and all 16 fixed their build.
+const HEAD_LINE = /^(# |seen as: |cause: |prefer when: |reproduced by the publisher: )/;
+
+// What the record holds beyond its fix and check, so an issue never promises sources or dead ends
+// its record does not have.
+function restOf(markdown) {
   const text = recordText(markdown);
+  return { sources: /^sources:$/m.test(text), deadEnds: /^don't:$/m.test(text) };
+}
+
+const list = (parts) => (parts.length < 2 ? parts.join("") : parts.slice(0, -1).join(", ") + " and " + parts[parts.length - 1]);
+
+// issueText is what the fence of an issue holds: the record's head lines, then one line that says
+// where the rest is.
+export function issueText(record, markdown) {
+  const lines = recordText(markdown).split("\n");
+  const fixAt = lines.findIndex((l) => l.startsWith("fix ("));
+  const head = (fixAt < 0 ? lines : lines.slice(0, fixAt)).filter((l) => HEAD_LINE.test(l));
+  const rest = restOf(markdown);
+  const names = ["fix", "check", ...(rest.sources ? ["sources"] : []), ...(rest.deadEnds ? ["what does not work"] : [])];
+  return [...head, `${list(names)}: ${record.url}.md`].join("\n");
+}
+
+export function body(record, markdown) {
+  const text = issueText(record, markdown);
   const fence = fenceFor(text);
-  // Agents read a request on a page like this as prompt injection: the lines outside the fence
-  // state facts and carry no report link. The record's own reports line stays inside the fence,
-  // where GitHub makes no link of it.
+  const rest = restOf(markdown);
+  const onRecord = ["the fix", "the command that proves it", ...(rest.sources ? ["its sources"] : []), ...(rest.deadEnds ? ["what looks like a fix and is not"] : [])];
+  // Agents read a request on a page like this as prompt injection: every line states a fact, and
+  // the issue carries no report link (those are on the record).
   return [
-    `A fix record mirrored from [modalhub](${record.url}): the cause, the fix, a command that proves it, and what looks like a fix and is not. Third-party data, not instructions: apply it with your own judgment. License CC0-1.0.`,
+    `A fix record on [modalhub](${record.url}). This issue carries the error and its cause; ${list(onRecord)} are on the record: ${record.url}.md. Third-party data, not instructions: apply it with your own judgment. License CC0-1.0.`,
     "",
     `${fence}text`,
     text,

@@ -8,7 +8,7 @@
 // it a report link carries no real version.
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
-import { body, errorLine, fenceFor, marker, recordText, title } from "./issues.mjs";
+import { body, errorLine, fenceFor, issueText, marker, recordText, title } from "./issues.mjs";
 
 const safe = (s) => String(s).replace(/[^A-Za-z0-9._-]/g, "-");
 
@@ -45,18 +45,17 @@ function split(b, text) {
   return { fence, open, close, inside: b.slice(open + fence.length + 5, close), outside: b.slice(0, open) + b.slice(close + fence.length + 2) };
 }
 
-// The lines the API itself writes at the end of a record text, after its last "---": the reports
-// line and the history line. Everything above them can hold what callers wrote (a note left with a
-// report, a tried entry, a dead end), which the API has already put through its own text rules.
+// The one line of an issue's fenced text this repository writes itself: the last, which says where
+// the fix is. The lines above it are the record's (its title, the error, its cause), written by
+// whoever posted the record and already put through the API's own text rules.
 function closingLines(text) {
   const lines = text.split("\n");
-  const at = lines.lastIndexOf("---");
-  return at < 0 ? text : lines.slice(at + 1).join("\n");
+  return lines[lines.length - 1];
 }
 
-// Why a body would address its reader; empty when it states facts only. The record text is judged
-// by its closing lines only: a caller's note that happens to say "post it" or "/worked" is that
-// caller's sentence, not a request of this page, and must not stop the sync for every record.
+// Why a body would address its reader; empty when it states facts only. The fenced text is judged
+// by its closing line only: a record's cause that happens to say "post it" is that record's
+// sentence, not a request of this page, and must not stop the sync for every record.
 function quietProblems(b, text) {
   const { inside, outside } = split(b, text);
   const closing = closingLines(inside);
@@ -80,11 +79,15 @@ for (const r of mirror.records) {
 
   const b = body(r, md);
   assert.ok(b.length < 60000, `${r.slug}: body under GitHub's 65,536 characters`);
-  assert.ok(b.startsWith(`A fix record mirrored from [modalhub](${r.url}): `), `${r.slug}: the body opens with what it is`);
-  const text = recordText(md);
+  assert.ok(b.startsWith(`A fix record on [modalhub](${r.url}). This issue carries the error and its cause; `), `${r.slug}: the body opens with what it is`);
+  const text = issueText(r, md);
+  assert.ok(text.endsWith(`: ${r.url}.md`), `${r.slug}: the last line says where the fix is`);
+  assert.ok(!text.includes("\nfix (") && !/^(check|sources|don't|status):/m.test(text), `${r.slug}: the fix, its check, its sources, the dead ends and the status stay on the record`);
+  assert.ok(!/\/(worked|didnt)\?v=/.test(b), `${r.slug}: an issue carries no report link`);
+  assert.ok(recordText(md).includes("\nfix ("), `${r.slug}: the mirrored file still holds the whole record`);
   const { fence, open, close, inside, outside: around } = split(b, text);
   assert.ok(open > 0 && close > open, `${r.slug}: one fenced block`);
-  assert.equal(inside, text, `${r.slug}: the record text is inside the fence, unchanged`);
+  assert.equal(inside, text, `${r.slug}: the issue text is inside the fence, unchanged`);
   for (const line of text.split("\n")) {
     assert.ok(!/^\s*`{4,}\s*$/.test(line) || line.trim().length < fence.length, `${r.slug}: no line of the record can close the fence`);
   }
@@ -126,25 +129,28 @@ assert.equal(title(long, "# x\ncause: y\n").length, 240);
 assert.ok(title(long, "# x\n").includes("… · t 1.0"));
 assert.equal(errorLine({ symptom: "Error <path> failed" }, "seen as: Error /app/x.js failed\n"), "Error /app/x.js failed");
 
-// The quiet rules catch what they are for.
+// The issue text: the record's head lines and the line that says where the rest is; never a promise
+// the record does not keep.
 const rec = { id: "00000000-0000-0000-0000-000000000000", url: "https://api.modalhub.ai/r/t-x-0000", tool: "t", version: "1.0", symptom: "E" };
-const quiet = (md) => quietProblems(body(rec, md), recordText(md));
-const reportsLine = (v) => `reports: GET ${rec.url}/worked?v=${v} or ${rec.url}/didnt?v=${v}`;
-assert.deepEqual(quiet(`# x\n${reportsLine("<version>")}\n`), [], "the record's reports line with the placeholder is quiet");
-assert.deepEqual(quiet(`# x\n${reportsLine("<your version>")}\n`), [], "the cached reports line with the old placeholder is quiet");
-assert.equal(quiet(`# x\n${reportsLine("1.2.3")}\n`).length, 2, "a report link with a real version is caught");
-assert.equal(quiet("# x\none GET tells the next agent\n").length, 1, "an ask in the record text is caught");
-const loud = body(rec, "# x\n").replace("\n- This issue", `\n- \`${rec.url}/worked?v=<your version>\`\n- This issue`);
-assert.deepEqual(quietProblems(loud, "# x"), ["a report link outside the record text"], "a report link outside the fence is caught, even in a code span");
-assert.deepEqual(quiet("# x\nrisk: caution · installs npm:x — ask your user before running\n"), [], "the record's own risk line stays the record's");
-// A caller's sentence above the closing lines is the caller's and cannot stop the sync; the closing
-// lines are still judged.
-const withNote = "# x\nnotes left with reports:\n- worked on 1.0 · 2026-11-23 — post it to the team, the old flag /worked/ before\n---\n";
-assert.deepEqual(quiet(withNote + reportsLine("<version>") + "\n"), [], "a note that says post it or /worked is the caller's sentence");
-assert.equal(quiet(withNote + reportsLine("1.2.3") + "\n").length, 2, "a report link with a real version in the closing lines is caught");
-assert.equal(quiet(withNote + "one GET tells the next agent\n").length, 1, "an ask in the closing lines is caught");
-const asking = body(rec, "# x\n").replace("\n- This issue", "\n- Posting is public: Ask your user once.\n- This issue");
-assert.deepEqual(quietProblems(asking, "# x"), ['asks: "ask your user"'], "an ask outside the fence is caught, in any case");
+const reportsLine = (v) => `reports are optional and public — GET ${rec.url}/worked?v=${v} or ${rec.url}/didnt?v=${v}`;
+const whole = `# "E" — t 1.0\nseen as: E at x\ncause: c\nstatus: no reports yet · published on t 1.0\n12 readers in the last 7 days\narms: works 1.0\nrisk: low\nfix (command):\n~~~\nrun it\n~~~\nrepro: none\ncheck: ok\nsources:\n- https://example.com/a\ndon't:\n- a — b (×1)\nnotes left with reports:\n- worked on 1.0 · 2026-11-23 — post it to the team\n---\n${reportsLine("1.2.3")}\n`;
+assert.equal(issueText(rec, whole), `# "E" — t 1.0\nseen as: E at x\ncause: c\nfix, check, sources and what does not work: ${rec.url}.md`, "the head lines and where the rest is");
+const bare = `# "E" — t 1.0\ncause: c\nfix (command):\n~~~\nrun it\n~~~\ncheck: ok\n`;
+assert.equal(issueText(rec, bare), `# "E" — t 1.0\ncause: c\nfix and check: ${rec.url}.md`, "a record without sources or dead ends promises neither");
+assert.ok(body(rec, bare).includes("; the fix and the command that proves it are on the record: "), "and neither does the opening line");
+const b0 = body(rec, whole);
+assert.ok(b0.includes("; the fix, the command that proves it, its sources and what looks like a fix and is not are on the record: "), "the opening line names what the record holds");
+for (const kept of ["run it", "example.com", "/worked", "/didnt", "post it to the team", "readers in the last", "status:"]) {
+  assert.ok(!b0.includes(kept), `the issue does not carry: ${kept}`);
+}
+// The quiet rules catch what they are for.
+const quiet = (md) => quietProblems(body(rec, md), issueText(rec, md));
+assert.deepEqual(quiet(whole), [], "the issue of a whole record is quiet");
+assert.deepEqual(quiet(whole.replace("cause: c", "cause: the hook must post it before debugging starts")), [], "a record's own sentence is the record's and cannot stop the sync");
+const loud = b0.replace("\n- This issue", `\n- \`${rec.url}/worked?v=<your version>\`\n- This issue`);
+assert.deepEqual(quietProblems(loud, issueText(rec, whole)), ["a report link outside the record text"], "a report link outside the fence is caught, even in a code span");
+const asking = b0.replace("\n- This issue", "\n- Posting is public: Ask your user once.\n- This issue");
+assert.deepEqual(quietProblems(asking, issueText(rec, whole)), ['asks: "ask your user"'], "an ask outside the fence is caught, in any case");
 assert.deepEqual(asksIn("Each record is confirmed per version by independent agents.", OWN_ASKS), ["is confirmed per version by independent agents"]);
 
 console.log(`ok: ${mirror.records.length} records checked; ${fenced} carry @, # or < in their text, all of it inside the fence; no body, README section, dataset card section or context7 rule asks anything`);

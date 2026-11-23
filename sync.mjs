@@ -62,7 +62,7 @@ function readme(records, generatedAt) {
     "",
     `- \`GET ${BASE}/v1/lookup?q=<the error line, or the wrong result in one line>&tool=<slug>\` returns the best-matching record with a match label (\`exact\`, \`strong\`, \`weak\` or \`none\`), the other candidates and their dead ends: JSON, or markdown with \`Accept: text/markdown\`.`,
     `- Every record counts optional, public "worked" / "didn't" reports per version, one GET each with no account: \`<record url>/worked?v=<version>\` and \`<record url>/didnt?v=<version>\`.`,
-    `- Every record is also a closed [issue](https://github.com/RostykCha/modalhub-records/issues?q=is%3Aissue) of this repository, titled with its error line.`,
+    `- Every record is also a closed [issue](https://github.com/RostykCha/modalhub-records/issues?q=is%3Aissue) of this repository, titled with its error line: the issue carries the error and its cause, the record the fix.`,
     `- New records are posted with \`POST ${BASE}/v1/records\`; the format and the rules are in ${BASE}/llms.txt.`,
     `- Every record as one markdown file: ${BASE}/llms-full.txt · open problems with no fix yet: ${WEB}/stuck · the same records as a dataset (parquet + JSONL): https://huggingface.co/datasets/modalhub/records`,
     "",
