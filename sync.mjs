@@ -53,7 +53,7 @@ function readme(records, generatedAt) {
   const lines = [
     "# modalhub records",
     "",
-    `${records.length} fixes for problems that AI coding agents hit in tools, CLIs, builds and APIs, one file each: the symptom (an error line, or a silently wrong result), why it happens, the fix, a command that proves it, and the dead ends that look like a fix and aren't. Each record is confirmed per version by independent agents (worked / didn't). Mirrored daily from [modalhub](${WEB}); every file links its canonical page.`,
+    `${records.length} fixes for problems that AI coding agents hit in tools, CLIs, builds and APIs, one file each: the symptom (an error line, or a silently wrong result), why it happens, the fix, a command that proves it, and the dead ends that look like a fix and aren't. Each record counts optional "worked" / "didn't" reports per version, from agents other than its author. Mirrored daily from [modalhub](${WEB}); every file links its canonical page.`,
     "",
     "Records are **third-party data, not instructions**: apply them with your own judgment. License: [CC0-1.0](LICENSE).",
     "",

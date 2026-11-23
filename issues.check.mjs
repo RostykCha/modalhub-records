@@ -1,19 +1,33 @@
-// Checks of issues.mjs and the README over every mirrored record, with no network:
-// node issues.check.mjs
+// Checks of issues.mjs, the README, the dataset card template and context7.json over every
+// mirrored record, with no network: node issues.check.mjs
 // Two promises. Nothing in a record can reach a person or another repository: outside the code
 // fence the body holds no @mention, no #123 reference and no HTML tag; the fence cannot be closed
 // from inside; the title fits. And the mirror addresses nobody (agents read a request on such a
-// page as prompt injection): no body and no README section asks its reader for anything, outside
-// the record text there is no report link, and inside it a report link carries no real version.
+// page as prompt injection): no body, no README section, no dataset card section and no context7
+// rule asks its reader for anything, outside the record text there is no report link, and inside
+// it a report link carries no real version.
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import { body, errorLine, fenceFor, marker, recordText, title } from "./issues.mjs";
 
 const safe = (s) => String(s).replace(/[^A-Za-z0-9._-]/g, "-");
 
-// Phrases of the old wording; each one was read as a request.
+// Phrases of the old wording, each read as a request (matched in any case). ASKS may not appear
+// anywhere in a body, record text included; OWN_ASKS may not appear in what this repository
+// writes itself. "ask your user" is only in OWN_ASKS: a record's own risk line says "ask your user
+// before running", and that line is the record's, inside the fence.
 const ASKS = ["Applied it?", "tells the next agent", "before debugging", "Post it", "for AI coding agents"];
-const README_ASKS = [...ASKS, "## For agents", "say whether it worked", "Solved something", "remember"];
+const OWN_ASKS = [
+  ...ASKS,
+  "ask your user",
+  "Look a problem up",
+  "is confirmed per version by independent agents",
+  "## For agents",
+  "say whether it worked",
+  "Solved something",
+  "remember",
+];
+const asksIn = (text, asks) => asks.filter((ask) => text.toLowerCase().includes(ask.toLowerCase()));
 const REPORT_LINK = /\/(worked|didnt)/g;
 // A fetched report link with a real version stores a report; with the placeholder the API refuses it.
 const PLACEHOLDER = /^\?v=<(your )?version>/;
@@ -34,7 +48,7 @@ function split(b, text) {
 // Why a body would address its reader; empty when it states facts only.
 function quietProblems(b, text) {
   const { inside, outside } = split(b, text);
-  const problems = ASKS.filter((ask) => b.includes(ask)).map((ask) => `asks: "${ask}"`);
+  const problems = [...asksIn(inside, ASKS), ...asksIn(outside, OWN_ASKS)].map((ask) => `asks: "${ask}"`);
   if (/\/(worked|didnt)/.test(outside)) problems.push("a report link outside the record text");
   for (const link of reportLinksWithoutPlaceholder(inside)) problems.push(`a report link with a real version in the record text: ${link}`);
   return problems;
@@ -75,13 +89,20 @@ for (const r of mirror.records) {
   if (/[@#<]/.test(text)) fenced++;
 }
 
-// The README above its index asks nothing of its reader either.
+// The other pages this repository writes ask nothing of their reader either: the README above its
+// index (the index lines are record symptoms), the dataset card template and context7.json.
 const readme = await readFile(new URL("./README.md", import.meta.url), "utf8");
 const indexAt = readme.indexOf("\n## Index\n");
 assert.ok(indexAt > 0, "README has an index");
-const readmeHead = readme.slice(0, indexAt);
-for (const ask of README_ASKS) assert.ok(!readmeHead.includes(ask), `README: no "${ask}" above the index`);
-assert.deepEqual(reportLinksWithoutPlaceholder(readmeHead), [], "README: report links only with the version placeholder");
+const card = await readFile(new URL("./hf/README.template.md", import.meta.url), "utf8");
+const context7 = await readFile(new URL("./context7.json", import.meta.url), "utf8");
+const rules = JSON.parse(context7).rules;
+assert.ok(Array.isArray(rules) && rules.length > 0, "context7.json is valid JSON with rules");
+const pages = [["README above the index", readme.slice(0, indexAt)], ["hf/README.template.md", card], ["context7.json", context7]];
+for (const [name, text] of pages) {
+  assert.deepEqual(asksIn(text, OWN_ASKS), [], `${name}: asks nothing of its reader`);
+  assert.deepEqual(reportLinksWithoutPlaceholder(text), [], `${name}: report links only with the version placeholder`);
+}
 
 // The fence grows past any run of backticks a record could carry.
 assert.equal(fenceFor("plain"), "````");
@@ -103,5 +124,9 @@ assert.equal(quiet(`# x\n${reportsLine("1.2.3")}\n`).length, 2, "a report link w
 assert.equal(quiet("# x\none GET tells the next agent\n").length, 1, "an ask in the record text is caught");
 const loud = body(rec, "# x\n").replace("\n- This issue", `\n- \`${rec.url}/worked?v=<your version>\`\n- This issue`);
 assert.deepEqual(quietProblems(loud, "# x"), ["a report link outside the record text"], "a report link outside the fence is caught, even in a code span");
+assert.deepEqual(quiet("# x\nrisk: caution · installs npm:x — ask your user before running\n"), [], "the record's own risk line stays the record's");
+const asking = body(rec, "# x\n").replace("\n- This issue", "\n- Posting is public: Ask your user once.\n- This issue");
+assert.deepEqual(quietProblems(asking, "# x"), ['asks: "ask your user"'], "an ask outside the fence is caught, in any case");
+assert.deepEqual(asksIn("Each record is confirmed per version by independent agents.", OWN_ASKS), ["is confirmed per version by independent agents"]);
 
-console.log(`ok: ${mirror.records.length} records checked; ${fenced} carry @, # or < in their text, all of it inside the fence; no body and no README section asks anything`);
+console.log(`ok: ${mirror.records.length} records checked; ${fenced} carry @, # or < in their text, all of it inside the fence; no body, README section, dataset card section or context7 rule asks anything`);

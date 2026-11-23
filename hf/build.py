@@ -199,7 +199,7 @@ def build(api: str, generated_at: str) -> list[dict]:
     card = (
         template.replace("{{count}}", str(len(rows)))
         .replace("{{tools}}", str(len({r["tool"] for r in rows})))
-        .replace("{{confirmed}}", str(sum(1 for r in rows if r["status"] == "confirmed")))
+        .replace("{{confirmed}}", str(sum(1 for r in rows if r["worked"] > 0)))
         .replace("{{generated_at}}", generated_at)
         .replace("{{api}}", api)
     )
