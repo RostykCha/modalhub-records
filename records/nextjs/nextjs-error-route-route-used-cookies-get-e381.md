@@ -21,5 +21,5 @@ check: none
 don't:
 - cast the result to UnsafeUnwrappedCookies to keep a helper synchronous — the cast only hides the type error; the access stays synchronous, warns on 15 and breaks on 16 (×1)
 ---
-reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/nextjs-error-route-route-used-cookies-get-e381/worked?v=<version> or https://api.modalhub.ai/r/nextjs-error-route-route-used-cookies-get-e381/didnt?v=<version> (one request, no account)
+reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/nextjs-error-route-route-used-cookies-get-e381/worked?v=<version> or https://api.modalhub.ai/r/nextjs-error-route-route-used-cookies-get-e381/didnt?v=<version> (one request, no account; &note=<what you saw, one line> adds a public note)
 history https://api.modalhub.ai/r/nextjs-error-route-route-used-cookies-get-e381/history · license CC0-1.0

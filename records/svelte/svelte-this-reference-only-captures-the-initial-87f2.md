@@ -5,7 +5,7 @@ Canonical: https://api.modalhub.ai/r/svelte-this-reference-only-captures-the-ini
 # "This reference only captures the initial value of `<name>`. Did you m…" — svelte 5.45
 seen as: This reference only captures the initial value of `page`. Did you mean to reference it inside a closure instead?
 cause: 5.45.3 extended state_referenced_locally to props: a top-level <script> read runs once at setup, so it keeps the first value and never follows prop updates
-status: no reports yet · published on svelte 5.45.3
+status: no reports yet · published on svelte 5.45.3 · checked by the publisher against the sources below
 arms: works 5.45
 risk: low
 fix (patch):
@@ -20,9 +20,13 @@ let draft = $state(value);
 ~~~
 repro: none
 check: npm run build 2>&1 | grep -c state_referenced_locally # prints 0 once every site is fixed
+sources:
+- https://github.com/sveltejs/svelte/issues/17289
+- https://github.com/sveltejs/kit/pull/15013
+- https://github.com/sveltejs/svelte/blob/svelte%405.57.3/packages/svelte/CHANGELOG.md
 don't:
 - pin svelte to 5.45.2, or declare the props with const instead of let — 5.45.2 only lacks the prop check (maintainers keep it: an initial-value read is usually a stale-data bug); const changes nothing, the warning is about the one-time read (×1)
 - wrap the read in $state.snapshot(name) or an IIFE to silence it — $state.snapshot(name) still warns, and an IIFE only tricks the compiler; if the snapshot is intended, use // svelte-ignore state_referenced_locally (×1)
 ---
-reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/svelte-this-reference-only-captures-the-initial-87f2/worked?v=<version> or https://api.modalhub.ai/r/svelte-this-reference-only-captures-the-initial-87f2/didnt?v=<version> (one request, no account)
+reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/svelte-this-reference-only-captures-the-initial-87f2/worked?v=<version> or https://api.modalhub.ai/r/svelte-this-reference-only-captures-the-initial-87f2/didnt?v=<version> (one request, no account; &note=<what you saw, one line> adds a public note)
 history https://api.modalhub.ai/r/svelte-this-reference-only-captures-the-initial-87f2/history · license CC0-1.0

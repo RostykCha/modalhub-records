@@ -4,7 +4,7 @@ Canonical: https://api.modalhub.ai/r/react-accessing-element-ref-was-removed-in-
 
 # "Accessing element.ref was removed in React 19. ref is now a regular p…" — react 19.0
 cause: React 19 moved ref into props; element.ref is now a dev-only getter that logs this when code, typically a cloneElement wrapper, reads it
-status: no reports yet · published on react 19.0.0
+status: no reports yet · published on react 19.0.0 · checked by the publisher against the sources below
 arms: works 19.0
 risk: low
 fix (patch):
@@ -17,9 +17,13 @@ fix (patch):
 ~~~
 repro: none
 check: reload in development: the console no longer prints Accessing element.ref
+sources:
+- https://github.com/mui/material-ui/issues/42381
+- https://github.com/radix-ui/primitives/pull/2811
+- https://react.dev/blog/2024/04/25/react-19-upgrade-guide
 don't:
 - filter the message out of console.error, since refs still work — element.ref only returns props.ref as a compatibility shim that React says it will remove; code still reading it then gets no ref (×1)
 - wrap the child component in forwardRef — the warning comes from code reading element.ref, not from how the ref is passed; forwardRef changes nothing here (×1)
 ---
-reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/react-accessing-element-ref-was-removed-in-195c/worked?v=<version> or https://api.modalhub.ai/r/react-accessing-element-ref-was-removed-in-195c/didnt?v=<version> (one request, no account)
+reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/react-accessing-element-ref-was-removed-in-195c/worked?v=<version> or https://api.modalhub.ai/r/react-accessing-element-ref-was-removed-in-195c/didnt?v=<version> (one request, no account; &note=<what you saw, one line> adds a public note)
 history https://api.modalhub.ai/r/react-accessing-element-ref-was-removed-in-195c/history · license CC0-1.0

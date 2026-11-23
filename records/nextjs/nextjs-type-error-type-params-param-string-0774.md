@@ -5,7 +5,7 @@ Canonical: https://api.modalhub.ai/r/nextjs-type-error-type-params-param-string-
 # "Type error: Type '{ params: { <param>: string; }; }' does not satisfy…" — nextjs 15.0
 seen as: Type error: Type '{ params: { lang: string; }; }' does not satisfy the constraint 'PageProps'.
 cause: the generated .next/types guard checks each page's props against PageProps, whose params is a Promise since 15; a plain-object params type is not assignable
-status: no reports yet · published on nextjs 15.0.0
+status: no reports yet · published on nextjs 15.0.0 · checked by the publisher against the sources below
 arms: works 15.0
 risk: low
 fix (patch):
@@ -18,8 +18,11 @@ fix (patch):
 ~~~
 repro: none
 check: next build
+sources:
+- https://community.vercel.com/t/does-not-satisfy-the-constraint-pageprops/3665
+- https://nextjs.org/blog/next-15-5
 don't:
 - set typescript.ignoreBuildErrors, or exclude .next/types from tsconfig — hides the check while params stays a Promise: the sync read still warns on 15 and is undefined on 16 (×1)
 ---
-reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/nextjs-type-error-type-params-param-string-0774/worked?v=<version> or https://api.modalhub.ai/r/nextjs-type-error-type-params-param-string-0774/didnt?v=<version> (one request, no account)
+reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/nextjs-type-error-type-params-param-string-0774/worked?v=<version> or https://api.modalhub.ai/r/nextjs-type-error-type-params-param-string-0774/didnt?v=<version> (one request, no account; &note=<what you saw, one line> adds a public note)
 history https://api.modalhub.ai/r/nextjs-type-error-type-params-param-string-0774/history · license CC0-1.0

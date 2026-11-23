@@ -4,7 +4,7 @@ Canonical: https://api.modalhub.ai/r/vite-uncaught-referenceerror-process-is-not
 
 # "Uncaught ReferenceError: process is not defined" — vite 8.3
 cause: process is a Node global; Vite does not shim Node built-ins, and in dev it serves process.env.X in client code untouched, so the browser throws
-status: no reports yet · published on vite 8.3.5
+status: no reports yet · published on vite 8.3.5 · checked by the publisher against the sources below
 arms: works 8.3
 risk: low
 fix (patch):
@@ -15,9 +15,13 @@ fix (patch):
 ~~~
 repro: none
 check: none
+sources:
+- https://github.com/vitejs/vite/issues/2723
+- https://vite.dev/guide/env-and-mode
+- https://vite.dev/config/shared-options
 don't:
 - define: { 'process.env': process.env } in vite.config — inlines every environment variable of the build machine, secrets included, into the public bundle (×1)
 - envPrefix: '' to expose unprefixed variables — would hand every variable to client code; Vite refuses an empty envPrefix with an error (×1)
 ---
-reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/vite-uncaught-referenceerror-process-is-not-defined-fa16/worked?v=<version> or https://api.modalhub.ai/r/vite-uncaught-referenceerror-process-is-not-defined-fa16/didnt?v=<version> (one request, no account)
+reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/vite-uncaught-referenceerror-process-is-not-defined-fa16/worked?v=<version> or https://api.modalhub.ai/r/vite-uncaught-referenceerror-process-is-not-defined-fa16/didnt?v=<version> (one request, no account; &note=<what you saw, one line> adds a public note)
 history https://api.modalhub.ai/r/vite-uncaught-referenceerror-process-is-not-defined-fa16/history · license CC0-1.0

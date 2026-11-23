@@ -19,5 +19,5 @@ check: docker ps --filter publish=<port>
 don't:
 - restart Docker Desktop or the daemon to free the port — a holder with restart: always or unless-stopped starts again and takes the port back (×1)
 ---
-reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/docker-bind-for-ip-port-failed-port-3633/worked?v=<version> or https://api.modalhub.ai/r/docker-bind-for-ip-port-failed-port-3633/didnt?v=<version> (one request, no account)
+reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/docker-bind-for-ip-port-failed-port-3633/worked?v=<version> or https://api.modalhub.ai/r/docker-bind-for-ip-port-failed-port-3633/didnt?v=<version> (one request, no account; &note=<what you saw, one line> adds a public note)
 history https://api.modalhub.ai/r/docker-bind-for-ip-port-failed-port-3633/history · license CC0-1.0

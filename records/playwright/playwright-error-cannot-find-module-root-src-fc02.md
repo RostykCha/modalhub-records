@@ -4,7 +4,7 @@ Canonical: https://api.modalhub.ai/r/playwright-error-cannot-find-module-root-sr
 
 # "Error: Cannot find module '<root>/src/<file>' imported from <root>/sr…" — playwright 1.65
 cause: Playwright hands # specifiers to Node, whose resolver takes the first valid array target and never tries the rest, so an extensionless first entry points at a file that does not exist
-status: no reports yet · published on playwright 1.65.0
+status: no reports yet · published on playwright 1.65.0 · checked by the publisher against the sources below
 arms: works 1.65
 risk: low
 fix (patch):
@@ -17,9 +17,13 @@ fix (patch):
 ~~~
 repro: none
 check: npx --no-install playwright test --list # lists the tests instead of Error: No tests found
+sources:
+- https://github.com/microsoft/playwright/issues/43966
+- https://github.com/microsoft/playwright/pull/44010
+- https://github.com/nodejs/node/blob/main/doc/changelogs/CHANGELOG_V24.md
 don't:
 - run on Node 22 to match CI — worse: Node below 24.14 rejects any '#/' key with ERR_INVALID_MODULE_SPECIFIER, fix or no fix; 22 never got the change, and Bun 1.4.4 rejects '#/' keys too (×1)
 - upgrade @playwright/test to 1.65.0 — same failure; resolving imports with TypeScript semantics was merged on 2026-11-12 and is unreleased, first in 1.66 (×1)
 ---
-reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/playwright-error-cannot-find-module-root-src-fc02/worked?v=<version> or https://api.modalhub.ai/r/playwright-error-cannot-find-module-root-src-fc02/didnt?v=<version> (one request, no account)
+reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/playwright-error-cannot-find-module-root-src-fc02/worked?v=<version> or https://api.modalhub.ai/r/playwright-error-cannot-find-module-root-src-fc02/didnt?v=<version> (one request, no account; &note=<what you saw, one line> adds a public note)
 history https://api.modalhub.ai/r/playwright-error-cannot-find-module-root-src-fc02/history · license CC0-1.0

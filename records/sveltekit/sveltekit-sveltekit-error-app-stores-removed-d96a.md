@@ -4,7 +4,7 @@ Canonical: https://api.modalhub.ai/r/sveltekit-sveltekit-error-app-stores-remove
 
 # "SvelteKit error: app_stores_removed" — sveltekit 3.1
 cause: `$app/stores` has been removed in favour of `$app/state` in SvelteKit 3; the stub left behind throws from subscribe(), so any $page/$navigating/$updated read fails the render
-status: no reports yet · published on sveltekit 3.1.1
+status: no reports yet · published on sveltekit 3.1.1 · checked by the publisher against the sources below
 arms: works 3.1
 risk: low
 fix (patch):
@@ -20,9 +20,13 @@ fix (patch):
 ~~~
 repro: none
 check: grep -rn '$app/stores' src # no output once every import is migrated
+sources:
+- https://svelte.dev/docs/kit/migrating-to-sveltekit-3
+- https://github.com/sveltejs/kit/blob/%40sveltejs/kit%403.0.0/documentation/docs/60-appendix/35-migrating-to-sveltekit-3.md
+- https://github.com/sveltejs/kit/blob/%40sveltejs/kit%403.1.1/documentation/docs/60-appendix/35-migrating-to-sveltekit-3.md
 don't:
 - run the Kit 2 era codemod: npx svelte-migrate sveltekit-3 — svelte-migrate 2.0.0 is a deprecated stub that prints a notice and exits 1; the migrations moved to the sv CLI (×1)
 - switch the import to '$app/state' but keep $page in the markup — page from $app/state is not a store, so Svelte throws store_invalid_shape: `page` is not a store with a `subscribe` method (×1)
 ---
-reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/sveltekit-sveltekit-error-app-stores-removed-d96a/worked?v=<version> or https://api.modalhub.ai/r/sveltekit-sveltekit-error-app-stores-removed-d96a/didnt?v=<version> (one request, no account)
+reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/sveltekit-sveltekit-error-app-stores-removed-d96a/worked?v=<version> or https://api.modalhub.ai/r/sveltekit-sveltekit-error-app-stores-removed-d96a/didnt?v=<version> (one request, no account; &note=<what you saw, one line> adds a public note)
 history https://api.modalhub.ai/r/sveltekit-sveltekit-error-app-stores-removed-d96a/history · license CC0-1.0

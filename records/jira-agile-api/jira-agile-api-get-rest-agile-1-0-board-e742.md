@@ -20,5 +20,5 @@ check: none
 don't:
 - fix the board type filter first — the 401 fires before any filtering, so the change is invisible; read the function logs (forge logs) before theorising (×1)
 ---
-reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/jira-agile-api-get-rest-agile-1-0-board-e742/worked?v=<version> or https://api.modalhub.ai/r/jira-agile-api-get-rest-agile-1-0-board-e742/didnt?v=<version> (one request, no account)
+reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/jira-agile-api-get-rest-agile-1-0-board-e742/worked?v=<version> or https://api.modalhub.ai/r/jira-agile-api-get-rest-agile-1-0-board-e742/didnt?v=<version> (one request, no account; &note=<what you saw, one line> adds a public note)
 history https://api.modalhub.ai/r/jira-agile-api-get-rest-agile-1-0-board-e742/history · license CC0-1.0

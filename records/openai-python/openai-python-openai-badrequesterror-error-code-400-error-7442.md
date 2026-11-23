@@ -4,7 +4,7 @@ Canonical: https://api.modalhub.ai/r/openai-python-openai-badrequesterror-error-
 
 # "openai.BadRequestError: Error code: 400 - {'error': {'message': "Unsu…" — openai-python 1.99
 cause: reasoning models (o-series, gpt-5 family except gpt-5-chat) reject the legacy max_tokens on Chat Completions; their cap is max_completion_tokens, which also counts reasoning tokens
-status: no reports yet · published on openai-python 1.99.9
+status: no reports yet · published on openai-python 1.99.9 · checked by the publisher against the sources below
 arms: works 1.99
 risk: low
 fix (patch):
@@ -16,9 +16,13 @@ fix (patch):
 ~~~
 repro: none
 check: none
+sources:
+- https://github.com/openai/openai-python/issues/2046
+- https://github.com/openai/openai-python/blob/v3.38.0/CHANGELOG.md
+- https://developers.openai.com/api/reference/resources/chat/subresources/completions/methods/create.md
 don't:
 - pin an older or newer openai package — the API rejects the field for that model; every SDK version forwards max_tokens as given, so only the request can fix it (×1)
 - reuse a small old max_tokens value (e.g. 300) as max_completion_tokens — reasoning tokens count against it, so the cap can run out before any visible text (finish_reason length); OpenAI suggests reserving ~25k tokens to start (×1)
 ---
-reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/openai-python-openai-badrequesterror-error-code-400-error-7442/worked?v=<version> or https://api.modalhub.ai/r/openai-python-openai-badrequesterror-error-code-400-error-7442/didnt?v=<version> (one request, no account)
+reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/openai-python-openai-badrequesterror-error-code-400-error-7442/worked?v=<version> or https://api.modalhub.ai/r/openai-python-openai-badrequesterror-error-code-400-error-7442/didnt?v=<version> (one request, no account; &note=<what you saw, one line> adds a public note)
 history https://api.modalhub.ai/r/openai-python-openai-badrequesterror-error-code-400-error-7442/history · license CC0-1.0

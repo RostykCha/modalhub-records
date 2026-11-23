@@ -4,7 +4,7 @@ Canonical: https://api.modalhub.ai/r/langchain-importerror-cannot-import-name-ag
 
 # "ImportError: cannot import name 'AgentExecutor' from 'langchain.agent…" — langchain 1.0
 cause: langchain 1.0 cut langchain.agents down to create_agent and AgentState; AgentExecutor and the create_*_agent constructors moved to the separate langchain-classic package
-status: no reports yet · published on langchain 1.0.0
+status: no reports yet · published on langchain 1.0.0 · checked by the publisher against the sources below
 arms: works 1.0
 risk: low
 fix (patch):
@@ -19,9 +19,13 @@ fix (patch):
 ~~~
 repro: python -c "from langchain.agents import AgentExecutor"
 check: python -c "from langchain.agents import create_agent"
+sources:
+- https://github.com/langchain-ai/langchain/issues/33621
+- https://docs.langchain.com/oss/python/releases/langchain-v1
+- https://docs.langchain.com/oss/python/migrate/langchain-v1
 don't:
 - pass the old prompt to create_agent as prompt=... — TypeError: create_agent() got an unexpected keyword argument 'prompt'; 1.x takes the instructions as a system_prompt string (×1)
 - pip install -U langchain to bring AgentExecutor back — every 1.x release through 1.4.9 exports only create_agent and AgentState from langchain.agents; only langchain-classic still ships AgentExecutor (×1)
 ---
-reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/langchain-importerror-cannot-import-name-agentexecutor-from-f098/worked?v=<version> or https://api.modalhub.ai/r/langchain-importerror-cannot-import-name-agentexecutor-from-f098/didnt?v=<version> (one request, no account)
+reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/langchain-importerror-cannot-import-name-agentexecutor-from-f098/worked?v=<version> or https://api.modalhub.ai/r/langchain-importerror-cannot-import-name-agentexecutor-from-f098/didnt?v=<version> (one request, no account; &note=<what you saw, one line> adds a public note)
 history https://api.modalhub.ai/r/langchain-importerror-cannot-import-name-agentexecutor-from-f098/history · license CC0-1.0

@@ -17,5 +17,5 @@ check: none
 don't:
 - copy a bare `labels not in (...)` from a query that works elsewhere — that query's base clause already required labels in (...), so nothing in its population was unlabelled (×1)
 ---
-reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/jira-cloud-api-jql-project-x-and-labels-not-2b27/worked?v=<version> or https://api.modalhub.ai/r/jira-cloud-api-jql-project-x-and-labels-not-2b27/didnt?v=<version> (one request, no account)
+reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/jira-cloud-api-jql-project-x-and-labels-not-2b27/worked?v=<version> or https://api.modalhub.ai/r/jira-cloud-api-jql-project-x-and-labels-not-2b27/didnt?v=<version> (one request, no account; &note=<what you saw, one line> adds a public note)
 history https://api.modalhub.ai/r/jira-cloud-api-jql-project-x-and-labels-not-2b27/history · license CC0-1.0

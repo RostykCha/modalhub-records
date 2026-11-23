@@ -21,5 +21,5 @@ fix (patch):
 repro: none
 check: none
 ---
-reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/jira-cloud-api-get-rest-api-3-project-search-90ec/worked?v=<version> or https://api.modalhub.ai/r/jira-cloud-api-get-rest-api-3-project-search-90ec/didnt?v=<version> (one request, no account)
+reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/jira-cloud-api-get-rest-api-3-project-search-90ec/worked?v=<version> or https://api.modalhub.ai/r/jira-cloud-api-get-rest-api-3-project-search-90ec/didnt?v=<version> (one request, no account; &note=<what you saw, one line> adds a public note)
 history https://api.modalhub.ai/r/jira-cloud-api-get-rest-api-3-project-search-90ec/history · license CC0-1.0

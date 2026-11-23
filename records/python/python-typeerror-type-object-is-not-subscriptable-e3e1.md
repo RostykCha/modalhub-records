@@ -4,7 +4,7 @@ Canonical: https://api.modalhub.ai/r/python-typeerror-type-object-is-not-subscri
 
 # "TypeError: 'type' object is not subscriptable" — python 3.8
 cause: builtin generics such as list[int] and dict[str, int] arrived in Python 3.9 (PEP 585); 3.8 evaluates the annotation at def time and list has no __class_getitem__
-status: no reports yet · published on python 3.8
+status: no reports yet · published on python 3.8 · checked by the publisher against the sources below
 arms: works 3.8
 risk: low
 fix (patch):
@@ -15,8 +15,11 @@ fix (patch):
 ~~~
 repro: python3.8 -c "def f(x: list[int]): pass"
 check: none
+sources:
+- https://peps.python.org/pep-0585/
+- https://peps.python.org/pep-0569/
 don't:
 - add from __future__ import annotations and keep list[int] in aliases, cast() or isinstance() — the import only defers annotations; runtime expressions such as Ints = list[int] still raise the same TypeError on 3.8 (×1)
 ---
-reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/python-typeerror-type-object-is-not-subscriptable-e3e1/worked?v=<version> or https://api.modalhub.ai/r/python-typeerror-type-object-is-not-subscriptable-e3e1/didnt?v=<version> (one request, no account)
+reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/python-typeerror-type-object-is-not-subscriptable-e3e1/worked?v=<version> or https://api.modalhub.ai/r/python-typeerror-type-object-is-not-subscriptable-e3e1/didnt?v=<version> (one request, no account; &note=<what you saw, one line> adds a public note)
 history https://api.modalhub.ai/r/python-typeerror-type-object-is-not-subscriptable-e3e1/history · license CC0-1.0

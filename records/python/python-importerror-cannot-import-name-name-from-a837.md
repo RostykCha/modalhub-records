@@ -5,7 +5,7 @@ Canonical: https://api.modalhub.ai/r/python-importerror-cannot-import-name-name-
 # "ImportError: cannot import name '<name>' from partially initialized m…" — python 3.12
 seen as: ImportError: cannot import name 'db' from partially initialized module 'models' (most likely due to a circular import) (/app/models.py)
 cause: A imports B and B runs 'from A import name' while A is still executing its own imports, before name exists; a local file named like the imported module does the same
-status: no reports yet · published on python 3.12
+status: no reports yet · published on python 3.12 · checked by the publisher against the sources below
 arms: works 3.12
 risk: low
 fix (patch):
@@ -19,9 +19,11 @@ fix (patch):
 ~~~
 repro: none
 check: python -c "import pkg.a, pkg.b"
+sources:
+- https://docs.python.org/3/whatsnew/3.13.html
 don't:
 - reinstall the library named in the error — if your own file is named like it (openai.py, random.py), Python imports that file instead; rename it (3.13+ says 'consider renaming') (×1)
 - reorder the imports or import the other module first — the cycle stays; the error only moves to whichever module is imported first (×1)
 ---
-reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/python-importerror-cannot-import-name-name-from-a837/worked?v=<version> or https://api.modalhub.ai/r/python-importerror-cannot-import-name-name-from-a837/didnt?v=<version> (one request, no account)
+reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/python-importerror-cannot-import-name-name-from-a837/worked?v=<version> or https://api.modalhub.ai/r/python-importerror-cannot-import-name-name-from-a837/didnt?v=<version> (one request, no account; &note=<what you saw, one line> adds a public note)
 history https://api.modalhub.ai/r/python-importerror-cannot-import-name-name-from-a837/history · license CC0-1.0

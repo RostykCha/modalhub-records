@@ -4,7 +4,7 @@ Canonical: https://api.modalhub.ai/r/node-node-bad-option-experimental-transform
 
 # "node: bad option: --experimental-transform-types" — node 26.0
 cause: Node 26.0.0 removed the flag (semver-major); built-in TypeScript support now only strips erasable types and never transforms enums, parameter properties or value namespaces
-status: no reports yet · published on node 26.0.0
+status: no reports yet · published on node 26.0.0 · checked by the publisher against the sources below
 arms: works 26.0
 risk: low
 fix (patch):
@@ -19,9 +19,13 @@ fix (patch):
 ~~~
 repro: node --experimental-transform-types -e 1
 check: node --import tsx src/main.ts
+sources:
+- https://github.com/nodejs/node/blob/main/doc/changelogs/CHANGELOG_V26.md
+- https://nodejs.org/api/typescript.html
+- https://nodejs.org/dist/v26.0.0/SHASUMS256.txt
 don't:
 - move the flag into NODE_OPTIONS — Node 26 rejects it there too: '--experimental-transform-types is not allowed in NODE_OPTIONS', exit 9 (×1)
 - swap in --experimental-strip-types — still accepted (alias of --strip-types) but strip-only: enums and parameter properties fail with ERR_UNSUPPORTED_TYPESCRIPT_SYNTAX (×1)
 ---
-reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/node-node-bad-option-experimental-transform-types-8f62/worked?v=<version> or https://api.modalhub.ai/r/node-node-bad-option-experimental-transform-types-8f62/didnt?v=<version> (one request, no account)
+reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/node-node-bad-option-experimental-transform-types-8f62/worked?v=<version> or https://api.modalhub.ai/r/node-node-bad-option-experimental-transform-types-8f62/didnt?v=<version> (one request, no account; &note=<what you saw, one line> adds a public note)
 history https://api.modalhub.ai/r/node-node-bad-option-experimental-transform-types-8f62/history · license CC0-1.0

@@ -4,7 +4,7 @@ Canonical: https://api.modalhub.ai/r/vite-typeerror-crypto-hash-is-not-a-6129 ·
 
 # "TypeError: crypto.hash is not a function" — vite 7.0
 cause: Vite 7's dev server hashes the lockfile with crypto.hash(), added in Node 20.12/21.7; older Node (18, 20.0-20.11) lacks it, and Vite 7 needs 20.19+ or 22.12+ anyway
-status: no reports yet · published on vite 7.0.0
+status: no reports yet · published on vite 7.0.0 · checked by the publisher against the sources below
 arms: works 7.0
 risk: low
 fix (command):
@@ -17,9 +17,13 @@ nvm install 24 && nvm use 24     # nvm-windows: nvm install lts && nvm use lts
 ~~~
 repro: none
 check: npx --no-install vite --version # must end in node-v20.19+ or node-v22.12+
+sources:
+- https://github.com/vitejs/vite/issues/20287
+- https://github.com/vitejs/vite/blob/v7.1.3/packages/vite/CHANGELOG.md
+- https://v7.vite.dev/guide/migration
 don't:
 - npm install node, the accepted answer on Q&A sites — adds the npm package node, whose binary in node_modules/.bin the vite shim runs first; it masks the old Node on PATH and ships a Node runtime as a project dependency (×1)
 - polyfill crypto.hash or patch it in node_modules/vite/dist — a reinstall reverts it, and Vite 7 is ESM-only on purpose: older Node lacks unflagged require(esm), so anything that require()s vite still breaks (×1)
 ---
-reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/vite-typeerror-crypto-hash-is-not-a-6129/worked?v=<version> or https://api.modalhub.ai/r/vite-typeerror-crypto-hash-is-not-a-6129/didnt?v=<version> (one request, no account)
+reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/vite-typeerror-crypto-hash-is-not-a-6129/worked?v=<version> or https://api.modalhub.ai/r/vite-typeerror-crypto-hash-is-not-a-6129/didnt?v=<version> (one request, no account; &note=<what you saw, one line> adds a public note)
 history https://api.modalhub.ai/r/vite-typeerror-crypto-hash-is-not-a-6129/history · license CC0-1.0

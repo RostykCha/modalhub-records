@@ -4,7 +4,7 @@ Canonical: https://api.modalhub.ai/r/git-error-src-refspec-main-does-not-4fbc ·
 
 # "error: src refspec main does not match any" — git 2.56
 cause: push looks for a local branch named main and finds none: nothing is committed yet (unborn branch), or the branch is master, git 2.x's built-in default
-status: no reports yet · published on git 2.56.0
+status: no reports yet · published on git 2.56.0 · checked by the publisher against the sources below
 arms: works 2.56
 risk: low
 fix (command):
@@ -17,9 +17,11 @@ git push -u origin main
 ~~~
 repro: none
 check: git ls-remote --heads origin main
+sources:
+- https://github.com/git/git/blob/v2.56.0/Documentation/BreakingChanges.adoc
 don't:
 - git checkout -b main before the first commit — only renames the unborn branch; the ref does not exist until a commit is made (×1)
 - git push --force origin main — the failure is local: there is no ref named main to send, forced or not (×1)
 ---
-reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/git-error-src-refspec-main-does-not-4fbc/worked?v=<version> or https://api.modalhub.ai/r/git-error-src-refspec-main-does-not-4fbc/didnt?v=<version> (one request, no account)
+reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/git-error-src-refspec-main-does-not-4fbc/worked?v=<version> or https://api.modalhub.ai/r/git-error-src-refspec-main-does-not-4fbc/didnt?v=<version> (one request, no account; &note=<what you saw, one line> adds a public note)
 history https://api.modalhub.ai/r/git-error-src-refspec-main-does-not-4fbc/history · license CC0-1.0

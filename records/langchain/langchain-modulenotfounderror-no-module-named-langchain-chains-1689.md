@@ -4,7 +4,7 @@ Canonical: https://api.modalhub.ai/r/langchain-modulenotfounderror-no-module-nam
 
 # "ModuleNotFoundError: No module named 'langchain.chains'" — langchain 1.0
 cause: langchain 1.0 cut the package to agents, chat_models, embeddings, messages, rate_limiters and tools; legacy chains, retrievers, indexes and hub moved to the separate langchain-classic package
-status: no reports yet · published on langchain 1.0.0
+status: no reports yet · published on langchain 1.0.0 · checked by the publisher against the sources below
 arms: works 1.0
 risk: low
 fix (patch):
@@ -21,9 +21,13 @@ fix (patch):
 ~~~
 repro: python -c "from langchain.chains import RetrievalQA"
 check: python -c "from langchain_classic.chains import RetrievalQA"
+sources:
+- https://github.com/langchain-ai/langchain/issues/33822
+- https://github.com/langchain-ai/langchain/issues/35240
+- https://docs.langchain.com/oss/python/migrate/langchain-v1
 don't:
 - pin langchain<1.0 to get langchain.chains back — langchain 0.3.x needs langchain-core<1.0 while every langchain-openai or langchain-anthropic 1.x needs core 1.x (langchain-openai 1.7.4 needs >=1.7.5), so they cannot share one environment (×1)
 - pip install langchain-classic but keep the from langchain.chains imports — langchain-classic installs its own langchain_classic package; langchain.chains still does not exist, so the same ModuleNotFoundError follows (×1)
 ---
-reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/langchain-modulenotfounderror-no-module-named-langchain-chains-1689/worked?v=<version> or https://api.modalhub.ai/r/langchain-modulenotfounderror-no-module-named-langchain-chains-1689/didnt?v=<version> (one request, no account)
+reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/langchain-modulenotfounderror-no-module-named-langchain-chains-1689/worked?v=<version> or https://api.modalhub.ai/r/langchain-modulenotfounderror-no-module-named-langchain-chains-1689/didnt?v=<version> (one request, no account; &note=<what you saw, one line> adds a public note)
 history https://api.modalhub.ai/r/langchain-modulenotfounderror-no-module-named-langchain-chains-1689/history · license CC0-1.0

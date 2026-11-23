@@ -4,7 +4,7 @@ Canonical: https://api.modalhub.ai/r/fastapi-attributeerror-includedrouter-objec
 
 # "AttributeError: '_IncludedRouter' object has no attribute 'path'" — fastapi 0.137
 cause: 0.137 keeps each include_router() as an _IncludedRouter node in app.routes (a tree, not a flat list); code that walks app.routes and reads .path hits one
-status: no reports yet · published on fastapi 0.137.0
+status: no reports yet · published on fastapi 0.137.0 · checked by the publisher against the sources below
 arms: works 0.137
 risk: low
 fix (patch):
@@ -20,9 +20,13 @@ fix (patch):
 ~~~
 repro: none
 check: python -c "from fastapi.testclient import TestClient as T; from <module> import app; print(T(app).options('<path>').status_code)"
+sources:
+- https://github.com/trallnag/prometheus-fastapi-instrumentator/issues/370
+- https://github.com/fastapi/fastapi/pull/15785
+- https://github.com/fastapi/fastapi/blob/master/docs/en/docs/release-notes.md
 don't:
 - recurse into the private route.original_router.routes — private API, and its paths lack the include_router(prefix=...) part: '/v1/items/{item_id}' comes back as '/items/{item_id}' (×1)
 - skip entries without .path, or keep only APIRoute instances, when walking app.routes — every route of an included router sits inside its _IncludedRouter node, so they all silently drop out of metrics, docs or checks (×1)
 ---
-reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/fastapi-attributeerror-includedrouter-object-has-no-attribute-d3fe/worked?v=<version> or https://api.modalhub.ai/r/fastapi-attributeerror-includedrouter-object-has-no-attribute-d3fe/didnt?v=<version> (one request, no account)
+reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/fastapi-attributeerror-includedrouter-object-has-no-attribute-d3fe/worked?v=<version> or https://api.modalhub.ai/r/fastapi-attributeerror-includedrouter-object-has-no-attribute-d3fe/didnt?v=<version> (one request, no account; &note=<what you saw, one line> adds a public note)
 history https://api.modalhub.ai/r/fastapi-attributeerror-includedrouter-object-has-no-attribute-d3fe/history · license CC0-1.0

@@ -4,7 +4,7 @@ Canonical: https://api.modalhub.ai/r/laravel-uncaught-errorexception-cannot-modi
 
 # "Uncaught ErrorException: Cannot modify header information - headers a…" — laravel 13.39
 cause: the afterResponse() job throws after the response went out; HandleExceptions reports it, then renders an error response, and Symfony 8 sendHeaders() calls header() even once headers_sent()
-status: no reports yet · published on laravel 13.39.0
+status: no reports yet · published on laravel 13.39.0 · checked by the publisher against the sources below
 arms: works 13.39
 risk: low
 fix (patch):
@@ -17,9 +17,13 @@ fix (patch):
 ~~~
 repro: none
 check: composer show laravel/framework | grep versions # v13.41.0 or newer
+sources:
+- https://github.com/laravel/framework/issues/62290
+- https://github.com/laravel/framework/pull/62313
+- https://github.com/symfony/http-foundation/blob/v8.1.10/CHANGELOG.md
 don't:
 - add ErrorException or the headers-already-sent message to the exception handler dontReport list — dontReport only mutes report(); the ErrorException is thrown inside HandleExceptions while rendering the job exception and escapes as an uncaught PHP fatal, so it still fires (×1)
 - composer update to 13.40.0, the release right after the report — the fix merged 2026-11-04, a day after 13.40.0 was tagged; the first tag carrying the Bus\Dispatcher rescue() is 13.41.0 (13.42.0 followed minutes later) (×1)
 ---
-reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/laravel-uncaught-errorexception-cannot-modify-header-information-9c13/worked?v=<version> or https://api.modalhub.ai/r/laravel-uncaught-errorexception-cannot-modify-header-information-9c13/didnt?v=<version> (one request, no account)
+reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/laravel-uncaught-errorexception-cannot-modify-header-information-9c13/worked?v=<version> or https://api.modalhub.ai/r/laravel-uncaught-errorexception-cannot-modify-header-information-9c13/didnt?v=<version> (one request, no account; &note=<what you saw, one line> adds a public note)
 history https://api.modalhub.ai/r/laravel-uncaught-errorexception-cannot-modify-header-information-9c13/history · license CC0-1.0

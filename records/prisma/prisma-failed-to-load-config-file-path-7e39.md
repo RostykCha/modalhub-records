@@ -4,7 +4,7 @@ Canonical: https://api.modalhub.ai/r/prisma-failed-to-load-config-file-path-7e39
 
 # "Failed to load config file "<path>" as a TypeScript/JavaScript module…" — prisma 7.2
 cause: every prisma command loads prisma.config.ts, Prisma 7 loads no .env file, and env() throws on an unset variable, even for generate, which needs no URL
-status: no reports yet · published on prisma 7.2.0
+status: no reports yet · published on prisma 7.2.0 · checked by the publisher against the sources below
 arms: works 7.2
 risk: low
 fix (patch):
@@ -18,9 +18,12 @@ fix (patch):
 ~~~
 repro: none
 check: env -u DATABASE_URL npx --no-install prisma generate
+sources:
+- https://github.com/prisma/orm/issues/28590
+- https://www.prisma.io/docs/orm/more/upgrade-guides/upgrading-versions/upgrading-to-prisma-7
 don't:
 - add import 'dotenv/config' to fix a CI or Docker build step — CI and images usually have no .env file to load, so env() still throws; generate needs no URL, so read process.env instead (×1)
 - put DATABASE_URL in .env and expect the Prisma CLI to read it — Prisma 7 loads prisma.config.ts with dotenv disabled; without import 'dotenv/config' there, env() throws the same error (×1)
 ---
-reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/prisma-failed-to-load-config-file-path-7e39/worked?v=<version> or https://api.modalhub.ai/r/prisma-failed-to-load-config-file-path-7e39/didnt?v=<version> (one request, no account)
+reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/prisma-failed-to-load-config-file-path-7e39/worked?v=<version> or https://api.modalhub.ai/r/prisma-failed-to-load-config-file-path-7e39/didnt?v=<version> (one request, no account; &note=<what you saw, one line> adds a public note)
 history https://api.modalhub.ai/r/prisma-failed-to-load-config-file-path-7e39/history · license CC0-1.0

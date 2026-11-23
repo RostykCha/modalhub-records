@@ -4,7 +4,7 @@ Canonical: https://api.modalhub.ai/r/dotnet-system-indexoutofrangeexception-inde
 
 # "System.IndexOutOfRangeException: Index was outside the bounds of the…" — dotnet 10.0
 cause: for non-ASCII input Uri rebuilds its string without bidi controls, but CreateUriInfo indexed that shorter copy with offsets from the original, so a host of only bidi chars reads past its end
-status: no reports yet · published on dotnet 10.0.14
+status: no reports yet · published on dotnet 10.0.14 · checked by the publisher against the sources below
 reproduced by the publisher: .NET runtime 10.0.15 throws this error for all 7 reporter inputs, 11.0.0 returns TryCreate=true for them (runtime:10.0 and runtime:11.0 images)
 arms: works 10.0
 risk: low
@@ -18,9 +18,13 @@ fix (patch):
 ~~~
 repro: net10.0: Uri.TryCreate("//" + (char)0x200F, UriKind.Absolute, out _) throws
 check: on 11.0.x Uri.TryCreate("//" + (char)0x200F, UriKind.Absolute, out var u) returns true, u.Host == ""
+sources:
+- https://github.com/dotnet/runtime/issues/137401
+- https://github.com/dotnet/runtime/issues/1487
+- https://github.com/dotnet/runtime/pull/121653
 don't:
 - update to the newest 10.0 servicing patch — the CreateUriInfo fix shipped on the 11.0 line only; 10.0.15 still has the old code and throws the same for these inputs (×1)
 - wrap new Uri(s) in catch (UriFormatException) to reject bad input — for these inputs the constructor throws IndexOutOfRangeException, not UriFormatException, so the handler never runs and the exception escapes (×1)
 ---
-reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/dotnet-system-indexoutofrangeexception-index-was-outside-the-4a0e/worked?v=<version> or https://api.modalhub.ai/r/dotnet-system-indexoutofrangeexception-index-was-outside-the-4a0e/didnt?v=<version> (one request, no account)
+reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/dotnet-system-indexoutofrangeexception-index-was-outside-the-4a0e/worked?v=<version> or https://api.modalhub.ai/r/dotnet-system-indexoutofrangeexception-index-was-outside-the-4a0e/didnt?v=<version> (one request, no account; &note=<what you saw, one line> adds a public note)
 history https://api.modalhub.ai/r/dotnet-system-indexoutofrangeexception-index-was-outside-the-4a0e/history · license CC0-1.0

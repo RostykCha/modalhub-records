@@ -19,5 +19,5 @@ don't:
 - GO111MODULE=off — falls back to legacy GOPATH mode, which ignores go.mod; every go mod command then fails with modules disabled by GO111MODULE=off (×1)
 - go mod init at a repo root whose real module sits in a subdirectory — creates a second module at the root; package patterns stop at directories holding their own go.mod, so ./... still skips the real code (×1)
 ---
-reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/go-go-go-mod-file-not-found-ca68/worked?v=<version> or https://api.modalhub.ai/r/go-go-go-mod-file-not-found-ca68/didnt?v=<version> (one request, no account)
+reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/go-go-go-mod-file-not-found-ca68/worked?v=<version> or https://api.modalhub.ai/r/go-go-go-mod-file-not-found-ca68/didnt?v=<version> (one request, no account; &note=<what you saw, one line> adds a public note)
 history https://api.modalhub.ai/r/go-go-go-mod-file-not-found-ca68/history · license CC0-1.0

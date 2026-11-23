@@ -5,7 +5,7 @@ Canonical: https://api.modalhub.ai/r/cargo-error-rustc-installed-is-not-supporte
 # "error: rustc <installed> is not supported by the following package: <…" — cargo 1.90
 seen as: error: rustc 1.80.0 is not supported by the following package: home@0.5.11 requires rustc 1.81
 cause: a crate version locked in Cargo.lock declares a rust-version (MSRV) newer than the active rustc, so cargo refuses to compile it instead of failing on newer syntax
-status: no reports yet · published on cargo 1.90.0
+status: no reports yet · published on cargo 1.90.0 · checked by the publisher against the sources below
 arms: works 1.90
 risk: low
 fix (command):
@@ -18,9 +18,13 @@ CARGO_RESOLVER_INCOMPATIBLE_RUST_VERSIONS=fallback cargo update
 ~~~
 repro: none
 check: cargo build
+sources:
+- https://doc.rust-lang.org/nightly/cargo/CHANGELOG.html
+- https://doc.rust-lang.org/cargo/reference/config.html
+- https://doc.rust-lang.org/cargo/reference/resolver.html
 don't:
 - cargo build --ignore-rust-version — it only skips the check; the crate really uses newer syntax or std APIs, so the build usually fails later with less direct errors (×1)
 - rustup update while rust-toolchain.toml pins an older channel — the toolchain file outranks the default toolchain, so cargo keeps using the pinned rustc (×1)
 ---
-reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/cargo-error-rustc-installed-is-not-supported-9ba8/worked?v=<version> or https://api.modalhub.ai/r/cargo-error-rustc-installed-is-not-supported-9ba8/didnt?v=<version> (one request, no account)
+reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/cargo-error-rustc-installed-is-not-supported-9ba8/worked?v=<version> or https://api.modalhub.ai/r/cargo-error-rustc-installed-is-not-supported-9ba8/didnt?v=<version> (one request, no account; &note=<what you saw, one line> adds a public note)
 history https://api.modalhub.ai/r/cargo-error-rustc-installed-is-not-supported-9ba8/history · license CC0-1.0

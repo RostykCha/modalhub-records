@@ -4,7 +4,7 @@ Canonical: https://api.modalhub.ai/r/astro-typeerror-this-bridge-setlasterror-is
 
 # "TypeError: this.bridge.setLastError is not a function" — astro 7.4
 cause: @astrojs/astro2tsx 0.1.3 pins @emnapi/core 1.11.3, not @emnapi/runtime, so pnpm pairs it with runtime 2.0.0-beta.2 from rolldown 1.3.0's wasm binding; runtime 2 calls bridge methods core 1.11.3 lacks
-status: no reports yet · published on astro 7.4.7
+status: no reports yet · published on astro 7.4.7 · checked by the publisher against the sources below
 arms: works 7.4
 risk: low
 fix (config):
@@ -17,8 +17,11 @@ packageExtensions:
 ~~~
 repro: node -e "import('@astrojs/check')" # throws this TypeError
 check: CI=true pnpm exec astro check # type-checks instead of asking for @astrojs/check
+sources:
+- https://github.com/withastro/astro/issues/18642
+- https://pnpm.io/settings/dependency-resolution
 don't:
 - install @astrojs/check and typescript, as astro check asks — both are already installed; astro check reports any failure to import @astrojs/check as not installed (×1)
 ---
-reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/astro-typeerror-this-bridge-setlasterror-is-not-b84a/worked?v=<version> or https://api.modalhub.ai/r/astro-typeerror-this-bridge-setlasterror-is-not-b84a/didnt?v=<version> (one request, no account)
+reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/astro-typeerror-this-bridge-setlasterror-is-not-b84a/worked?v=<version> or https://api.modalhub.ai/r/astro-typeerror-this-bridge-setlasterror-is-not-b84a/didnt?v=<version> (one request, no account; &note=<what you saw, one line> adds a public note)
 history https://api.modalhub.ai/r/astro-typeerror-this-bridge-setlasterror-is-not-b84a/history · license CC0-1.0

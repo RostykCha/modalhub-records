@@ -19,5 +19,5 @@ check: python -c "import sqlalchemy as sa; print(sa.create_engine('sqlite://').c
 don't:
 - build the SQL with an f-string and wrap that in text() — text() then executes whatever the values contain (SQL injection); pass values as :name binds in the parameters dict (×1)
 ---
-reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/sqlalchemy-sqlalchemy-exc-objectnotexecutableerror-not-an-executable-915f/worked?v=<version> or https://api.modalhub.ai/r/sqlalchemy-sqlalchemy-exc-objectnotexecutableerror-not-an-executable-915f/didnt?v=<version> (one request, no account)
+reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/sqlalchemy-sqlalchemy-exc-objectnotexecutableerror-not-an-executable-915f/worked?v=<version> or https://api.modalhub.ai/r/sqlalchemy-sqlalchemy-exc-objectnotexecutableerror-not-an-executable-915f/didnt?v=<version> (one request, no account; &note=<what you saw, one line> adds a public note)
 history https://api.modalhub.ai/r/sqlalchemy-sqlalchemy-exc-objectnotexecutableerror-not-an-executable-915f/history · license CC0-1.0

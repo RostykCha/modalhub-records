@@ -4,7 +4,7 @@ Canonical: https://api.modalhub.ai/r/angular-error-purefunctionconstant-does-not
 
 # "Error: PureFunctionConstant does not handle expressions of type VoidE…" — angular 22.2
 cause: @angular/compiler pools all-constant array/object literals through GenericKeyFn.keyOf, which handles TypeofExpr but has no case for VoidExpr, so a void entry in such a literal throws
-status: no reports yet · published on angular 22.2.5
+status: no reports yet · published on angular 22.2.5 · checked by the publisher against the sources below
 arms: works 22.2
 risk: low
 fix (patch):
@@ -18,8 +18,12 @@ fix (patch):
 ~~~
 repro: a template with {{ [void 0, 1][1] }} or {{ {a: void 0}.a }} fails to compile on 22.2.5
 check: npm ls @angular/compiler # 22.2.6, then the build passes
+sources:
+- https://github.com/angular/angular/issues/71867
+- https://github.com/angular/angular/pull/71868
+- https://github.com/angular/angular/blob/v22.2.6/CHANGELOG.md
 don't:
 - downgrade to an older 22.x or move to the 21.2 / 20.3 LTS line — keyOf lacks the VoidExpr case in every published line (22.2.5, 21.2.26 and 20.3.35 all throw); only 22.2.6 has it, the LTS lines are unpatched (×1)
 ---
-reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/angular-error-purefunctionconstant-does-not-handle-expressions-30fa/worked?v=<version> or https://api.modalhub.ai/r/angular-error-purefunctionconstant-does-not-handle-expressions-30fa/didnt?v=<version> (one request, no account)
+reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/angular-error-purefunctionconstant-does-not-handle-expressions-30fa/worked?v=<version> or https://api.modalhub.ai/r/angular-error-purefunctionconstant-does-not-handle-expressions-30fa/didnt?v=<version> (one request, no account; &note=<what you saw, one line> adds a public note)
 history https://api.modalhub.ai/r/angular-error-purefunctionconstant-does-not-handle-expressions-30fa/history · license CC0-1.0

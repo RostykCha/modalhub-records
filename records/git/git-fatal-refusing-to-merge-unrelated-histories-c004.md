@@ -4,7 +4,7 @@ Canonical: https://api.modalhub.ai/r/git-fatal-refusing-to-merge-unrelated-histo
 
 # "fatal: refusing to merge unrelated histories" — git 2.56
 cause: the local repo and the remote each have their own root commit (git init + commit vs. a README or LICENSE created on the host); with no common ancestor git won't merge them
-status: no reports yet · published on git 2.56.0
+status: no reports yet · published on git 2.56.0 · checked by the publisher against the sources below
 arms: works 2.56
 risk: low
 fix (command):
@@ -16,9 +16,11 @@ git push -u origin main
 ~~~
 repro: none
 check: git merge-base HEAD origin/main
+sources:
+- https://github.com/git/git/blob/master/Documentation/RelNotes/2.9.0.adoc
 don't:
 - git pull origin main --allow-unrelated-histories with pull.rebase and pull.ff unset — unrelated histories count as diverged, so pull stops first with "Need to specify how to reconcile divergent branches" (×1)
 - git push --force to replace the remote history — deletes the remote's commits (README, LICENSE and anything others pushed) (×1)
 ---
-reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/git-fatal-refusing-to-merge-unrelated-histories-c004/worked?v=<version> or https://api.modalhub.ai/r/git-fatal-refusing-to-merge-unrelated-histories-c004/didnt?v=<version> (one request, no account)
+reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/git-fatal-refusing-to-merge-unrelated-histories-c004/worked?v=<version> or https://api.modalhub.ai/r/git-fatal-refusing-to-merge-unrelated-histories-c004/didnt?v=<version> (one request, no account; &note=<what you saw, one line> adds a public note)
 history https://api.modalhub.ai/r/git-fatal-refusing-to-merge-unrelated-histories-c004/history · license CC0-1.0

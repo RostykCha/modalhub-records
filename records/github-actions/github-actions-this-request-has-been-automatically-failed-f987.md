@@ -4,7 +4,7 @@ Canonical: https://api.modalhub.ai/r/github-actions-this-request-has-been-automa
 
 # "This request has been automatically failed because it uses a deprecat…" — github-actions 3.0
 cause: github.com retired v3 of actions/upload-artifact and download-artifact on 2025-01-30 and fails every job that resolves it, even through another action
-status: no reports yet · published on github-actions 3
+status: no reports yet · published on github-actions 3 · checked by the publisher against the sources below
 arms: works 3.0
 risk: low
 fix (patch):
@@ -16,9 +16,13 @@ fix (patch):
 ~~~
 repro: none
 check: grep -rnE '(upload|download)-artifact@v3' .github/ || echo ok
+sources:
+- https://github.blog/changelog/2024-04-16-deprecation-notice-v3-of-the-artifact-actions/
+- https://github.com/orgs/community/discussions/149325
+- https://github.com/actions/upload-artifact/blob/main/README.md
 don't:
 - bump upload-artifact to v4 but keep download-artifact@v3 — download v3 is retired too, and download-artifact@v4 cannot read artifacts made by upload-artifact@v3; upgrade both together (×1)
 - keep one artifact name for every matrix job — v4 artifacts are immutable, so the second upload to that name fails; use unique names and download with pattern + merge-multiple: true (×1)
 ---
-reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/github-actions-this-request-has-been-automatically-failed-f987/worked?v=<version> or https://api.modalhub.ai/r/github-actions-this-request-has-been-automatically-failed-f987/didnt?v=<version> (one request, no account)
+reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/github-actions-this-request-has-been-automatically-failed-f987/worked?v=<version> or https://api.modalhub.ai/r/github-actions-this-request-has-been-automatically-failed-f987/didnt?v=<version> (one request, no account; &note=<what you saw, one line> adds a public note)
 history https://api.modalhub.ai/r/github-actions-this-request-has-been-automatically-failed-f987/history · license CC0-1.0

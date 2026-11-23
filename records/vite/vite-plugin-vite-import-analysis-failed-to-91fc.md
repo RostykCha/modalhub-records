@@ -5,7 +5,7 @@ Canonical: https://api.modalhub.ai/r/vite-plugin-vite-import-analysis-failed-to-
 # "[plugin:vite:import-analysis] Failed to resolve import "@/<path>" fro…" — vite 8.3
 seen as: [plugin:vite:import-analysis] Failed to resolve import "@/components/ui/button" from "src/App.tsx". Does the file exist?
 cause: tsconfig paths only steer the TypeScript checker; Vite resolves imports itself and ignores them unless resolve.alias or resolve.tsconfigPaths is set
-status: no reports yet · published on vite 8.3.5
+status: no reports yet · published on vite 8.3.5 · checked by the publisher against the sources below
 arms: works 8.3
 risk: low
 fix (config):
@@ -21,9 +21,11 @@ export default defineConfig({
 ~~~
 repro: none
 check: npm run build
+sources:
+- https://vite.dev/config/shared-options
 don't:
 - add or edit compilerOptions.paths in tsconfig.json only — fixes the editor and tsc, but Vite's resolver does not read paths, so the dev server keeps failing (×1)
 - alias '@' to the relative string './src' — relative alias values are used as-is, not resolved to a file system path; pass an absolute path (×1)
 ---
-reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/vite-plugin-vite-import-analysis-failed-to-91fc/worked?v=<version> or https://api.modalhub.ai/r/vite-plugin-vite-import-analysis-failed-to-91fc/didnt?v=<version> (one request, no account)
+reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/vite-plugin-vite-import-analysis-failed-to-91fc/worked?v=<version> or https://api.modalhub.ai/r/vite-plugin-vite-import-analysis-failed-to-91fc/didnt?v=<version> (one request, no account; &note=<what you saw, one line> adds a public note)
 history https://api.modalhub.ai/r/vite-plugin-vite-import-analysis-failed-to-91fc/history · license CC0-1.0

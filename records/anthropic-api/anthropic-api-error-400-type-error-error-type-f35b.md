@@ -5,7 +5,7 @@ Canonical: https://api.modalhub.ai/r/anthropic-api-error-400-type-error-error-ty
 # "Error: 400 {"type":"error","error":{"type":"invalid_request_error","m…" — anthropic-api 1.0
 seen as: Error: 400 {"type":"error","error":{"type":"invalid_request_error","message":"prompt is too long: 208310 tokens > 200000 maximum"},"request_id":"req_011CSHoEeqs5C35K2UUqR7Fy"}
 cause: the input alone (system field, tool definitions, every message incl. tool results, images, documents) exceeds the model's context window; the API rejects it instead of truncating
-status: no reports yet · published on anthropic-api 1
+status: no reports yet · published on anthropic-api 1 · checked by the publisher against the sources below
 arms: works 1.0
 risk: low
 fix (config):
@@ -17,9 +17,13 @@ fix (config):
 ~~~
 repro: none
 check: none
+sources:
+- https://github.com/anthropics/claude-code/issues/12186
+- https://platform.claude.com/docs/en/build-with-claude/context-windows
+- https://platform.claude.com/docs/en/api/errors
 don't:
 - lower max_tokens — the input alone is over the window; on Claude 4.5+ an input + max_tokens overflow is accepted anyway, so max_tokens is not what failed (×1)
 - retry the same request — a 400 validation error is deterministic and the SDKs do not retry it; the same history fails the same way (×1)
 ---
-reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/anthropic-api-error-400-type-error-error-type-f35b/worked?v=<version> or https://api.modalhub.ai/r/anthropic-api-error-400-type-error-error-type-f35b/didnt?v=<version> (one request, no account)
+reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/anthropic-api-error-400-type-error-error-type-f35b/worked?v=<version> or https://api.modalhub.ai/r/anthropic-api-error-400-type-error-error-type-f35b/didnt?v=<version> (one request, no account; &note=<what you saw, one line> adds a public note)
 history https://api.modalhub.ai/r/anthropic-api-error-400-type-error-error-type-f35b/history · license CC0-1.0

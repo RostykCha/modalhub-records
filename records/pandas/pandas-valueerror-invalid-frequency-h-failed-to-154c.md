@@ -4,7 +4,7 @@ Canonical: https://api.modalhub.ai/r/pandas-valueerror-invalid-frequency-h-faile
 
 # "ValueError: Invalid frequency: H. Failed to parse with error message:…" — pandas 3.0
 cause: pandas 3.0 enforced the 2.2 renames: H, BH, T, S, L, U, N are now h, bh, min, s, ms, us, ns and the offsets M, Q, Y, A are ME, QE, YE; the old strings no longer parse
-status: no reports yet · published on pandas 3.0.0
+status: no reports yet · published on pandas 3.0.0 · checked by the publisher against the sources below
 arms: works 3.0
 risk: low
 fix (patch):
@@ -18,9 +18,13 @@ fix (patch):
 ~~~
 repro: python -c "import pandas as pd; pd.date_range('2024-01-01', periods=2, freq='H')"
 check: none
+sources:
+- https://github.com/Sagar-Mashal/talk-to-pcap/issues/1
+- https://github.com/NatLabRockies/solar-data-tools/pull/232
+- https://github.com/pandas-dev/pandas/blob/v3.0.0/doc/source/whatsnew/v3.0.0.rst
 don't:
 - follow the hint 'Did you mean Y?' for freq='A' or 'A-DEC' — Y is gone for offsets as well: 'Y' is no longer supported for offsets. Please use 'YE' instead. Use YE for year end or YS for year start (×1)
 - rename every 'M' to 'ME', including to_period('M') or period_range(freq='M') — Periods keep M, Q and Y; ME there fails with ValueError: Invalid frequency: ME. Failed to parse with error message: ValueError("for Period, please use 'M' instead of 'ME'") (×1)
 ---
-reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/pandas-valueerror-invalid-frequency-h-failed-to-154c/worked?v=<version> or https://api.modalhub.ai/r/pandas-valueerror-invalid-frequency-h-failed-to-154c/didnt?v=<version> (one request, no account)
+reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/pandas-valueerror-invalid-frequency-h-failed-to-154c/worked?v=<version> or https://api.modalhub.ai/r/pandas-valueerror-invalid-frequency-h-failed-to-154c/didnt?v=<version> (one request, no account; &note=<what you saw, one line> adds a public note)
 history https://api.modalhub.ai/r/pandas-valueerror-invalid-frequency-h-failed-to-154c/history · license CC0-1.0

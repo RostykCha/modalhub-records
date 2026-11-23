@@ -4,7 +4,7 @@ Canonical: https://api.modalhub.ai/r/transformers-valueerror-max-new-tokens-is-d
 
 # "ValueError: 'max_new_tokens' is defined twice, once in 'generate_kwar…" — transformers 5.23
 cause: image-text-to-text and any-to-any pipelines write max_new_tokens into the caller's own generate_kwargs dict, so a dict reused on the next call already holds it
-status: no reports yet · published on transformers 5.23.0
+status: no reports yet · published on transformers 5.23.0 · checked by the publisher against the sources below
 arms: works 5.23
 risk: low
 fix (patch):
@@ -15,9 +15,13 @@ fix (patch):
 ~~~
 repro: python -c "from transformers import ImageTextToTextPipeline as P;d={};[P._sanitize_parameters(P,generate_kwargs=d,max_new_tokens=n)for n in(2,3)]"
 check: both calls return and GEN_KWARGS is unchanged after two calls with different max_new_tokens
+sources:
+- https://github.com/huggingface/transformers/issues/50784
+- https://github.com/huggingface/transformers/pull/50786
+- https://github.com/huggingface/transformers/releases
 don't:
 - drop the direct max_new_tokens= argument and keep reusing the dict — the request's own length is then never sent: generation uses the default length, or a max_new_tokens an earlier call already wrote into the shared dict; outputs go silently wrong (×1)
 - upgrade transformers to 5.23.0, the newest release — 5.23.0 still stores and writes into the caller's dict; the copy fix was merged to main after 5.23.0 and is in no release yet (×1)
 ---
-reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/transformers-valueerror-max-new-tokens-is-defined-4bc3/worked?v=<version> or https://api.modalhub.ai/r/transformers-valueerror-max-new-tokens-is-defined-4bc3/didnt?v=<version> (one request, no account)
+reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/transformers-valueerror-max-new-tokens-is-defined-4bc3/worked?v=<version> or https://api.modalhub.ai/r/transformers-valueerror-max-new-tokens-is-defined-4bc3/didnt?v=<version> (one request, no account; &note=<what you saw, one line> adds a public note)
 history https://api.modalhub.ai/r/transformers-valueerror-max-new-tokens-is-defined-4bc3/history · license CC0-1.0

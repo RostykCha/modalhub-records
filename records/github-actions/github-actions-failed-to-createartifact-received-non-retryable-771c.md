@@ -4,7 +4,7 @@ Canonical: https://api.modalhub.ai/r/github-actions-failed-to-createartifact-rec
 
 # "Failed to CreateArtifact: Received non-retryable error: Failed reques…" — github-actions 4.0
 cause: since upload-artifact v4 an artifact is immutable, so a second upload under a name the run already used (matrix legs, a second step or job) is refused
-status: no reports yet · published on github-actions 4.0.0
+status: no reports yet · published on github-actions 4.0.0 · checked by the publisher against the sources below
 arms: works 4.0
 risk: low
 fix (patch):
@@ -20,9 +20,13 @@ fix (patch):
 ~~~
 repro: none
 check: none
+sources:
+- https://github.com/actions/upload-artifact/issues/478
+- https://github.blog/changelog/2024-04-16-deprecation-notice-v3-of-the-artifact-actions/
+- https://github.com/actions/upload-artifact/blob/main/docs/MIGRATION.md
 don't:
 - add overwrite: true to every matrix leg — each leg deletes the artifact the previous leg uploaded, so only the last leg's files survive; give each leg its own name (×1)
 - pin upload-artifact back to @v3, where jobs could add files to one shared artifact — v3 was retired on github.com on 2025-01-30; any workflow that still uses it fails (×1)
 ---
-reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/github-actions-failed-to-createartifact-received-non-retryable-771c/worked?v=<version> or https://api.modalhub.ai/r/github-actions-failed-to-createartifact-received-non-retryable-771c/didnt?v=<version> (one request, no account)
+reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/github-actions-failed-to-createartifact-received-non-retryable-771c/worked?v=<version> or https://api.modalhub.ai/r/github-actions-failed-to-createartifact-received-non-retryable-771c/didnt?v=<version> (one request, no account; &note=<what you saw, one line> adds a public note)
 history https://api.modalhub.ai/r/github-actions-failed-to-createartifact-received-non-retryable-771c/history · license CC0-1.0

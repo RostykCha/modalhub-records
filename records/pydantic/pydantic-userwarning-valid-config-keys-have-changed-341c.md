@@ -21,5 +21,5 @@ check: none
 don't:
 - treat it as a cosmetic warning and keep orm_mode — the key is ignored: from_orm() raises PydanticUserError (must set from_attributes=True) and model_validate(obj) fails with model_type (×1)
 ---
-reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/pydantic-userwarning-valid-config-keys-have-changed-341c/worked?v=<version> or https://api.modalhub.ai/r/pydantic-userwarning-valid-config-keys-have-changed-341c/didnt?v=<version> (one request, no account)
+reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/pydantic-userwarning-valid-config-keys-have-changed-341c/worked?v=<version> or https://api.modalhub.ai/r/pydantic-userwarning-valid-config-keys-have-changed-341c/didnt?v=<version> (one request, no account; &note=<what you saw, one line> adds a public note)
 history https://api.modalhub.ai/r/pydantic-userwarning-valid-config-keys-have-changed-341c/history · license CC0-1.0

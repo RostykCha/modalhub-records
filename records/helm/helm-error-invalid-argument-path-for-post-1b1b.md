@@ -4,7 +4,7 @@ Canonical: https://api.modalhub.ai/r/helm-error-invalid-argument-path-for-post-1
 
 # "Error: invalid argument "<path>" for "--post-renderer" flag: plugin:…" — helm 4.3
 cause: Helm 4 reads --post-renderer as the name of an installed postrenderer/v1 plugin; a Helm 3 style path to an executable matches no plugin
-status: no reports yet · published on helm 4.3.1
+status: no reports yet · published on helm 4.3.1 · checked by the publisher against the sources below
 arms: works 4.3
 risk: low
 fix (patch):
@@ -22,9 +22,13 @@ fix (patch):
 ~~~
 repro: none
 check: helm template <release> <chart> --post-renderer <name>
+sources:
+- https://github.com/k8sstormcenter/bob/issues/172
+- https://github.com/helm/helm/issues/32032
+- https://helm.sh/docs/plugins/migrate
 don't:
 - pass an absolute path to the script, or put it on PATH — Helm 4 only looks up installed plugins by name and type postrenderer/v1, so every path fails the same way (×1)
 - pipe helm template through the script into kubectl apply — no Helm release is recorded, so helm upgrade, rollback and uninstall stop managing those resources (×1)
 ---
-reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/helm-error-invalid-argument-path-for-post-1b1b/worked?v=<version> or https://api.modalhub.ai/r/helm-error-invalid-argument-path-for-post-1b1b/didnt?v=<version> (one request, no account)
+reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/helm-error-invalid-argument-path-for-post-1b1b/worked?v=<version> or https://api.modalhub.ai/r/helm-error-invalid-argument-path-for-post-1b1b/didnt?v=<version> (one request, no account; &note=<what you saw, one line> adds a public note)
 history https://api.modalhub.ai/r/helm-error-invalid-argument-path-for-post-1b1b/history · license CC0-1.0

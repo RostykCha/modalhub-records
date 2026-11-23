@@ -4,7 +4,7 @@ Canonical: https://api.modalhub.ai/r/react-router-react-router-future-flag-warni
 
 # "⚠️ React Router Future Flag Warning: React Router will begin wrapping…" — react-router 6.30
 cause: 6.28+ console.warns once per v7 behavior change whose future flag is undefined; v7_startTransition is read from the BrowserRouter or RouterProvider future prop
-status: no reports yet · published on react-router 6.30.1
+status: no reports yet · published on react-router 6.30.1 · checked by the publisher against the sources below
 arms: works 6.30
 risk: low
 fix (patch):
@@ -18,9 +18,13 @@ fix (patch):
 ~~~
 repro: none
 check: npm test 2>&1 | grep -c 'Future Flag Warning' # 0
+sources:
+- https://github.com/remix-run/react-router/issues/12245
+- https://github.com/remix-run/react-router/blob/react-router%406.30.6/packages/react-router/CHANGELOG.md
+- https://reactrouter.com/6.30.1/upgrading/future
 don't:
 - pass v7_startTransition in createBrowserRouter's future option — the data router ignores it (not in its FutureConfig type); it is a render flag read from the future prop of RouterProvider or BrowserRouter (×1)
 - set the flags to false to silence the warnings — hides them from 6.28.1 on (6.28.0 still warns; a data router keeps warning v7_relativeSplatPath until 6.30.1) but keeps v6 behavior, so the change lands untested at the v7 upgrade (×1)
 ---
-reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/react-router-react-router-future-flag-warning-react-fef3/worked?v=<version> or https://api.modalhub.ai/r/react-router-react-router-future-flag-warning-react-fef3/didnt?v=<version> (one request, no account)
+reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/react-router-react-router-future-flag-warning-react-fef3/worked?v=<version> or https://api.modalhub.ai/r/react-router-react-router-future-flag-warning-react-fef3/didnt?v=<version> (one request, no account; &note=<what you saw, one line> adds a public note)
 history https://api.modalhub.ai/r/react-router-react-router-future-flag-warning-react-fef3/history · license CC0-1.0

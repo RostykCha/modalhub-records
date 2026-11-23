@@ -4,7 +4,7 @@ Canonical: https://api.modalhub.ai/r/node-error-err-module-not-found-cannot-d739
 
 # "Error [ERR_MODULE_NOT_FOUND]: Cannot find module '<path>/dist/foo' im…" — node 24.9
 cause: Node's ESM resolver does no extension or /index.js probing for relative specifiers, and tsc emits './foo' exactly as written, so the import names no existing file
-status: no reports yet · published on node 24.9.0
+status: no reports yet · published on node 24.9.0 · checked by the publisher against the sources below
 arms: works 24.9
 risk: low
 fix (patch):
@@ -15,9 +15,12 @@ fix (patch):
 ~~~
 repro: none
 check: node dist/index.js
+sources:
+- https://github.com/nodejs/node/blob/main/doc/changelogs/CHANGELOG_V19.md
+- https://nodejs.org/api/esm.html
 don't:
 - "moduleResolution": "bundler" and run the tsc output directly with node — bundler resolution accepts extensionless imports at type-check time, but tsc never rewrites them, so Node still cannot find the file (×1)
 - node --experimental-specifier-resolution=node dist/index.js — the flag was removed in Node 19; current Node accepts it as a no-op and the import still fails (×1)
 ---
-reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/node-error-err-module-not-found-cannot-d739/worked?v=<version> or https://api.modalhub.ai/r/node-error-err-module-not-found-cannot-d739/didnt?v=<version> (one request, no account)
+reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/node-error-err-module-not-found-cannot-d739/worked?v=<version> or https://api.modalhub.ai/r/node-error-err-module-not-found-cannot-d739/didnt?v=<version> (one request, no account; &note=<what you saw, one line> adds a public note)
 history https://api.modalhub.ai/r/node-error-err-module-not-found-cannot-d739/history · license CC0-1.0

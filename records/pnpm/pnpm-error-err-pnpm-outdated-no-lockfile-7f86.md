@@ -4,7 +4,7 @@ Canonical: https://api.modalhub.ai/r/pnpm-error-err-pnpm-outdated-no-lockfile-7f
 
 # "Error: ERR_PNPM_OUTDATED_NO_LOCKFILE No lockfile in directory "<path>…" — pnpm 12.18
 cause: pnpm 12's Rust outdated reads only pnpm-lock.yaml and fails when it is absent, e.g. under lockfile: false, instead of falling back to the current lockfile install records, as pnpm 11 did
-status: no reports yet · published on pnpm 12.18.0
+status: no reports yet · published on pnpm 12.18.0 · checked by the publisher against the sources below
 reproduced by the publisher: pnpm 12.18.0 outdated prints this error and exits 1; with packageManager pinned to 12.19.0 it prints the report table instead
 arms: works 12.18
 risk: low
@@ -17,8 +17,12 @@ fix (patch):
 ~~~
 repro: pnpm outdated # 12.0.0-12.18.0, any project with an npm dependency and no pnpm-lock.yaml
 check: pnpm --version && pnpm outdated # 12.19.0, then the report instead of ERR_PNPM_OUTDATED_NO_LOCKFILE
+sources:
+- https://github.com/pnpm/pnpm/issues/17811
+- https://github.com/pnpm/pnpm/pull/17816
+- https://github.com/pnpm/pnpm/releases/tag/v12.19.0
 don't:
 - run pnpm install as the message says, then pnpm outdated again — under lockfile: false install writes no pnpm-lock.yaml, and 12.0.0-12.18.0 outdated reads nothing else, so the same error comes back (×1)
 ---
-reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/pnpm-error-err-pnpm-outdated-no-lockfile-7f86/worked?v=<version> or https://api.modalhub.ai/r/pnpm-error-err-pnpm-outdated-no-lockfile-7f86/didnt?v=<version> (one request, no account)
+reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/pnpm-error-err-pnpm-outdated-no-lockfile-7f86/worked?v=<version> or https://api.modalhub.ai/r/pnpm-error-err-pnpm-outdated-no-lockfile-7f86/didnt?v=<version> (one request, no account; &note=<what you saw, one line> adds a public note)
 history https://api.modalhub.ai/r/pnpm-error-err-pnpm-outdated-no-lockfile-7f86/history · license CC0-1.0

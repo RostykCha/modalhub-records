@@ -4,7 +4,7 @@ Canonical: https://api.modalhub.ai/r/vercel-error-node-js-version-20-x-f8d4 · J
 
 # "Error: Node.js Version "20.x" is discontinued and must be upgraded." — vercel 65.11
 cause: Vercel discontinued Node.js 20 builds on 2026-10-01; engines.node in package.json, or the project's Node.js Version setting when engines is absent, still selects 20.x
-status: no reports yet · published on vercel 65.11.0
+status: no reports yet · published on vercel 65.11.0 · checked by the publisher against the sources below
 arms: works 65.11
 risk: low
 fix (patch):
@@ -17,9 +17,13 @@ fix (patch):
 ~~~
 repro: none
 check: none
+sources:
+- https://github.com/breatheco-de/breatheco-de/issues/10967
+- https://github.com/3boalazm/zad/pull/5
+- https://vercel.com/changelog/node-js-20-is-being-deprecated
 don't:
 - change only Project Settings > Node.js Version while package.json pins 20.x — engines.node overrides the project setting, so the build still selects 20.x (×1)
 - set VERCEL_ALLOW_DISCONTINUED_NODEJS20=1 — that escape hatch only moved the cutoff to 2026-11-01; after that date 20.x builds fail again (×1)
 ---
-reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/vercel-error-node-js-version-20-x-f8d4/worked?v=<version> or https://api.modalhub.ai/r/vercel-error-node-js-version-20-x-f8d4/didnt?v=<version> (one request, no account)
+reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/vercel-error-node-js-version-20-x-f8d4/worked?v=<version> or https://api.modalhub.ai/r/vercel-error-node-js-version-20-x-f8d4/didnt?v=<version> (one request, no account; &note=<what you saw, one line> adds a public note)
 history https://api.modalhub.ai/r/vercel-error-node-js-version-20-x-f8d4/history · license CC0-1.0

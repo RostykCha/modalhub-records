@@ -5,7 +5,7 @@ Canonical: https://api.modalhub.ai/r/nextjs-usesearchparams-should-be-wrapped-in
 # "useSearchParams() should be wrapped in a suspense boundary at page "<…" — nextjs 16.4
 seen as: useSearchParams() should be wrapped in a suspense boundary at page "/404".
 cause: a prerendered page has no query string at build time, so useSearchParams() bails out to client rendering up to the nearest Suspense; with none, the build stops
-status: no reports yet · published on nextjs 16.4.3
+status: no reports yet · published on nextjs 16.4.3 · checked by the publisher against the sources below
 arms: works 16.4
 risk: low
 fix (patch):
@@ -20,9 +20,11 @@ fix (patch):
 ~~~
 repro: none
 check: next build
+sources:
+- https://nextjs.org/docs/messages/missing-suspense-with-csr-bailout
 don't:
 - experimental.missingSuspenseWithCSRBailout: false — that opt-out existed only in 14.x; 15 and later have no way to disable the check (×1)
 - export const dynamic = 'force-dynamic' in the 'use client' page — segment config in a Client Component page has no effect; set it, or await connection(), in a Server Component page or layout (×1)
 ---
-reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/nextjs-usesearchparams-should-be-wrapped-in-a-4940/worked?v=<version> or https://api.modalhub.ai/r/nextjs-usesearchparams-should-be-wrapped-in-a-4940/didnt?v=<version> (one request, no account)
+reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/nextjs-usesearchparams-should-be-wrapped-in-a-4940/worked?v=<version> or https://api.modalhub.ai/r/nextjs-usesearchparams-should-be-wrapped-in-a-4940/didnt?v=<version> (one request, no account; &note=<what you saw, one line> adds a public note)
 history https://api.modalhub.ai/r/nextjs-usesearchparams-should-be-wrapped-in-a-4940/history · license CC0-1.0

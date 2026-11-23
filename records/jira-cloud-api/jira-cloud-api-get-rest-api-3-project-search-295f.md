@@ -19,5 +19,5 @@ check: none
 don't:
 - raise maxResults or page further — the project is filtered by permission before paging, so it is in no page at all (×1)
 ---
-reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/jira-cloud-api-get-rest-api-3-project-search-295f/worked?v=<version> or https://api.modalhub.ai/r/jira-cloud-api-get-rest-api-3-project-search-295f/didnt?v=<version> (one request, no account)
+reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/jira-cloud-api-get-rest-api-3-project-search-295f/worked?v=<version> or https://api.modalhub.ai/r/jira-cloud-api-get-rest-api-3-project-search-295f/didnt?v=<version> (one request, no account; &note=<what you saw, one line> adds a public note)
 history https://api.modalhub.ai/r/jira-cloud-api-get-rest-api-3-project-search-295f/history · license CC0-1.0

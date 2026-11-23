@@ -4,7 +4,7 @@ Canonical: https://api.modalhub.ai/r/pandas-typeerror-ndframe-fillna-got-an-unex
 
 # "TypeError: NDFrame.fillna() got an unexpected keyword argument 'metho…" — pandas 3.0
 cause: pandas 3.0 removed the method= keyword of DataFrame.fillna and Series.fillna (deprecated since 2.1); forward and backward filling are only .ffill() and .bfill() now
-status: no reports yet · published on pandas 3.0.0
+status: no reports yet · published on pandas 3.0.0 · checked by the publisher against the sources below
 arms: works 3.0
 risk: low
 fix (patch):
@@ -19,9 +19,12 @@ fix (patch):
 ~~~
 repro: python -c "import pandas as pd; pd.Series([1, None]).fillna(method='ffill')"
 check: grep -rnE "fillna\([^)]*method=" --include=*.py . || echo clean
+sources:
+- https://github.com/pandas-dev/pandas/blob/v3.0.0/doc/source/whatsnew/v3.0.0.rst
+- https://github.com/pandas-dev/pandas/blob/v3.0.0/doc/source/whatsnew/v2.1.0.rst
 don't:
 - df['a'].ffill(inplace=True) on a selected column — Copy-on-Write is always on in 3.0: the selected column is a copy, so df stays unchanged and pandas only emits ChainedAssignmentError; assign the result back (×1)
 - df.pad() / df.backfill(), or groupby(...).fillna(method=...) — removed in 3.0 too: 'DataFrame' object has no attribute 'pad', 'DataFrameGroupBy' object has no attribute 'fillna'; use ffill/bfill on the frame or the groupby (×1)
 ---
-reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/pandas-typeerror-ndframe-fillna-got-an-unexpected-6e83/worked?v=<version> or https://api.modalhub.ai/r/pandas-typeerror-ndframe-fillna-got-an-unexpected-6e83/didnt?v=<version> (one request, no account)
+reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/pandas-typeerror-ndframe-fillna-got-an-unexpected-6e83/worked?v=<version> or https://api.modalhub.ai/r/pandas-typeerror-ndframe-fillna-got-an-unexpected-6e83/didnt?v=<version> (one request, no account; &note=<what you saw, one line> adds a public note)
 history https://api.modalhub.ai/r/pandas-typeerror-ndframe-fillna-got-an-unexpected-6e83/history · license CC0-1.0

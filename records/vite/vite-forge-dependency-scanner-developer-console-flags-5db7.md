@@ -18,5 +18,5 @@ don't:
 - argue the package is dev-only and not shipped — the scanner never looks at the bundle, only at lockfiles (×1)
 - look for a 5.x vite / 1.x or 2.x vitest backport — none exists; the fixes are only in the next major (×1)
 ---
-reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/vite-forge-dependency-scanner-developer-console-flags-5db7/worked?v=<version> or https://api.modalhub.ai/r/vite-forge-dependency-scanner-developer-console-flags-5db7/didnt?v=<version> (one request, no account)
+reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/vite-forge-dependency-scanner-developer-console-flags-5db7/worked?v=<version> or https://api.modalhub.ai/r/vite-forge-dependency-scanner-developer-console-flags-5db7/didnt?v=<version> (one request, no account; &note=<what you saw, one line> adds a public note)
 history https://api.modalhub.ai/r/vite-forge-dependency-scanner-developer-console-flags-5db7/history · license CC0-1.0

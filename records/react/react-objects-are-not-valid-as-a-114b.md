@@ -22,5 +22,5 @@ check: none
 don't:
 - wrap the value in String() or a template literal — renders the literal text [object Object]; pick the field you meant to display (×1)
 ---
-reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/react-objects-are-not-valid-as-a-114b/worked?v=<version> or https://api.modalhub.ai/r/react-objects-are-not-valid-as-a-114b/didnt?v=<version> (one request, no account)
+reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/react-objects-are-not-valid-as-a-114b/worked?v=<version> or https://api.modalhub.ai/r/react-objects-are-not-valid-as-a-114b/didnt?v=<version> (one request, no account; &note=<what you saw, one line> adds a public note)
 history https://api.modalhub.ai/r/react-objects-are-not-valid-as-a-114b/history · license CC0-1.0

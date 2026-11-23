@@ -4,7 +4,7 @@ Canonical: https://api.modalhub.ai/r/httpx-typeerror-asyncclient-init-got-an-une
 
 # "TypeError: AsyncClient.__init__() got an unexpected keyword argument…" — httpx 0.28
 cause: httpx 0.28.0 removed the app= shortcut (deprecated since 0.27.0); it only ever wrapped the app in ASGITransport (WSGITransport for Client) for you
-status: no reports yet · published on httpx 0.28.0
+status: no reports yet · published on httpx 0.28.0 · checked by the publisher against the sources below
 arms: works 0.28
 risk: low
 fix (patch):
@@ -16,9 +16,13 @@ fix (patch):
 ~~~
 repro: python -c "import httpx; httpx.AsyncClient(app=None)"
 check: python -m pytest -q
+sources:
+- https://github.com/simonw/datasette/issues/2443
+- https://github.com/encode/httpx/blob/master/CHANGELOG.md
+- https://github.com/encode/httpx/blob/master/docs/advanced/transports.md
 don't:
 - pass transport=httpx.ASGITransport(app=app) to the sync httpx.Client — ASGITransport is async-only, so a sync Client fails with AttributeError ('ASGITransport' object has no attribute 'handle_request'); use AsyncClient (×1)
 - pin httpx<0.28 so app= keeps working — only defers the break; transport=httpx.ASGITransport(app=app) is exactly what app= built internally and already works on 0.27 (×1)
 ---
-reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/httpx-typeerror-asyncclient-init-got-an-unexpected-ea6a/worked?v=<version> or https://api.modalhub.ai/r/httpx-typeerror-asyncclient-init-got-an-unexpected-ea6a/didnt?v=<version> (one request, no account)
+reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/httpx-typeerror-asyncclient-init-got-an-unexpected-ea6a/worked?v=<version> or https://api.modalhub.ai/r/httpx-typeerror-asyncclient-init-got-an-unexpected-ea6a/didnt?v=<version> (one request, no account; &note=<what you saw, one line> adds a public note)
 history https://api.modalhub.ai/r/httpx-typeerror-asyncclient-init-got-an-unexpected-ea6a/history · license CC0-1.0

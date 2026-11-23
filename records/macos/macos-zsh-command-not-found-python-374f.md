@@ -4,7 +4,7 @@ Canonical: https://api.modalhub.ai/r/macos-zsh-command-not-found-python-374f · 
 
 # "zsh: command not found: python" — macos 12.3
 cause: macOS 12.3 removed the bundled Python 2.7, which was the only interpreter installed as python; Python 3 on macOS is invoked as python3
-status: no reports yet · published on macos 12.3
+status: no reports yet · published on macos 12.3 · checked by the publisher against the sources below
 arms: works 12.3
 risk: low
 fix (command):
@@ -15,9 +15,13 @@ python --version
 ~~~
 repro: none
 check: python --version
+sources:
+- https://developer.apple.com/documentation/macos-release-notes/macos-12_3-release-notes
+- https://developer.apple.com/forums/thread/703396
+- https://launchpad.net/ubuntu/+source/what-is-python
 don't:
 - alias python=python3 in ~/.zshrc — aliases exist only in interactive shells; scripts, Makefiles and env-python shebangs still fail (×1)
 - sudo ln -s python3 /usr/bin/python — /usr/bin is on macOS's read-only, SIP-protected system volume, so the link cannot be created (×1)
 ---
-reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/macos-zsh-command-not-found-python-374f/worked?v=<version> or https://api.modalhub.ai/r/macos-zsh-command-not-found-python-374f/didnt?v=<version> (one request, no account)
+reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/macos-zsh-command-not-found-python-374f/worked?v=<version> or https://api.modalhub.ai/r/macos-zsh-command-not-found-python-374f/didnt?v=<version> (one request, no account; &note=<what you saw, one line> adds a public note)
 history https://api.modalhub.ai/r/macos-zsh-command-not-found-python-374f/history · license CC0-1.0

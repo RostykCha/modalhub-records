@@ -2,1891 +2,1891 @@
  "b5300914-9ae3-4a48-bb1e-08e40f9f0dbb": {
   "number": 1,
   "slug": "vllm-lorarequest-reusing-a-loaded-lora-int-7078",
-  "hash": "9a1e918db61a0924",
+  "hash": "fce6bb7413284e9d",
   "state": "closed"
  },
  "a78af38f-2fe7-44ee-a28e-48c9978a26b5": {
   "number": 2,
   "slug": "vllm-overflowerror-python-integer-id-out-of-35e6",
-  "hash": "78004b0c252e4e27",
+  "hash": "1f96c562b63ef9a3",
   "state": "closed"
  },
  "61c690b0-3b88-4f15-8fc8-e5ed413f8b3a": {
   "number": 3,
   "slug": "trpc-trpcclienterror-unexpected-end-of-json-input-524b",
-  "hash": "22fd5d9ca6b44e08",
+  "hash": "8d4a9561f2db9c17",
   "state": "closed"
  },
  "7b996a16-2d3c-4c95-9197-ded0db92b064": {
   "number": 4,
   "slug": "transformers-typeerror-bernoulli-received-an-invalid-combination-c4fd",
-  "hash": "d5892b01db45fa88",
+  "hash": "8e00f9f0d587bb3e",
   "state": "closed"
  },
  "40b92d3a-48a8-47b1-ba33-84a91dea3792": {
   "number": 5,
   "slug": "transformers-valueerror-max-new-tokens-is-defined-4bc3",
-  "hash": "fd97738f16b4b840",
+  "hash": "fa8d7c76cd0d507c",
   "state": "closed"
  },
  "16880f0b-3072-4e23-a0e3-256854d55c4a": {
   "number": 6,
   "slug": "rollup-syntaxerror-delete-of-an-unqualified-identifier-c610",
-  "hash": "b50b5391a4904daa",
+  "hash": "f332471502b23367",
   "state": "closed"
  },
  "c05b4a9d-b3d8-44b1-940a-4908dabfae44": {
   "number": 7,
   "slug": "rollup-syntaxerror-identifier-exports-has-already-been-934e",
-  "hash": "e71469dbb3f53aee",
+  "hash": "2edd0b465112109b",
   "state": "closed"
  },
  "d09d0455-76b4-4291-ad76-65ed82105ff4": {
   "number": 8,
   "slug": "puppeteer-timeouterror-navigation-timeout-of-ms-ms-b17c",
-  "hash": "fd005f2a993c42a5",
+  "hash": "97cc0d83493198a7",
   "state": "closed"
  },
  "f615e3b3-beb2-455b-8229-243b8fe6a6b8": {
   "number": 9,
   "slug": "pnpm-error-err-pnpm-outdated-no-lockfile-7f86",
-  "hash": "403861f0243bdb4d",
+  "hash": "5a3034d2bdfb319d",
   "state": "closed"
  },
  "c8fa6fdc-88fc-4388-a0d1-3726d20bf20d": {
   "number": 10,
   "slug": "pnpm-error-cannot-read-properties-of-undefined-cda7",
-  "hash": "da00c5aeb1bcf304",
+  "hash": "dfe6621ea9723531",
   "state": "closed"
  },
  "78e1dc44-743b-4598-b427-c69940724f4e": {
   "number": 11,
   "slug": "matplotlib-valueerror-cannot-convert-float-nan-to-326e",
-  "hash": "a8e9362d726a7bfe",
+  "hash": "33c9ddde55633b1d",
   "state": "closed"
  },
  "5efd573e-5433-49e6-a803-6e3d52ba0a58": {
   "number": 12,
   "slug": "homebrew-warning-not-running-formula-s-fetch-ef32",
-  "hash": "ae1af00e61593d57",
+  "hash": "8963e36198dfa770",
   "state": "closed"
  },
  "8c5d4a71-4acb-4373-a9a7-aa23dbe3715a": {
   "number": 13,
   "slug": "homebrew-env-node-no-such-file-or-3a71",
-  "hash": "7d9fc785229f15fc",
+  "hash": "e83d03ebef6647da",
   "state": "closed"
  },
  "fc274441-ed09-43ec-a05b-f248cb593473": {
   "number": 14,
   "slug": "firebase-tools-error-err-require-esm-require-of-9e17",
-  "hash": "03e1ea7bb3ca95d3",
+  "hash": "6800896b07bb1b7e",
   "state": "closed"
  },
  "ad4b8199-2d79-4684-818c-04594d1ca67c": {
   "number": 15,
   "slug": "expo-keychainexception-user-interaction-is-not-allowed-4138",
-  "hash": "c315067d6d080c17",
+  "hash": "efe71bea7c3c2ec0",
   "state": "closed"
  },
  "9810dcfc-ebe9-4389-b523-0b8e97b9f229": {
   "number": 16,
   "slug": "expo-typeerror-cannot-read-properties-of-undefined-7c92",
-  "hash": "003699cd65ba83f6",
+  "hash": "e5de13d4920241c5",
   "state": "closed"
  },
  "7f2bb20f-b756-4e47-a22c-d4802162ae6d": {
   "number": 17,
   "slug": "eslint-typeerror-unexpected-array-e5c5",
-  "hash": "13d808b1888e785f",
+  "hash": "7c11a0832ac4ca3a",
   "state": "closed"
  },
  "2659678a-a1d4-4a3a-a5ed-be2df810e675": {
   "number": 18,
   "slug": "dotnet-system-indexoutofrangeexception-index-was-outside-the-4a0e",
-  "hash": "17fef0b02e8ba809",
+  "hash": "c5776d8d02b240ff",
   "state": "closed"
  },
  "90fd309f-fd6c-459f-9c9e-ac55cccbda24": {
   "number": 19,
   "slug": "vitest-a-key-set-to-undefined-in-b4a0",
-  "hash": "f1350ecd165ff0fc",
+  "hash": "c32c9eb28a79cf24",
   "state": "closed"
  },
  "adf5837c-97f6-4ef4-ba8a-94424029e7e9": {
   "number": 20,
   "slug": "three-js-three-webgpurenderer-uncaptured-webgpu-gpuvalidationerror-source-54c0",
-  "hash": "eb00cf966e9cec50",
+  "hash": "0ccdc5c1bf4f466b",
   "state": "closed"
  },
  "71e1213d-1934-4b08-b1f1-b00ce523b9f4": {
   "number": 21,
   "slug": "sqlalchemy-sawarning-did-not-recognize-type-tsquery-6952",
-  "hash": "768b36b507889f15",
+  "hash": "b7b8961f1dd05c01",
   "state": "closed"
  },
  "08a924dc-c782-4c4f-9360-d8d3389e95c2": {
   "number": 22,
   "slug": "rollup-syntaxerror-function-statements-require-a-function-e2ba",
-  "hash": "a67d8a9da9933d03",
+  "hash": "ec0b57eb15b1253c",
   "state": "closed"
  },
  "34d352ed-0a8d-4fd4-b8cc-5f1df5aede35": {
   "number": 23,
   "slug": "rollup-referenceerror-cannot-access-name-before-initialization-4403",
-  "hash": "255c970999ec6335",
+  "hash": "6e37a75e90198e3d",
   "state": "closed"
  },
  "92e67450-7637-47f5-abe9-61f936818090": {
   "number": 24,
   "slug": "pydantic-modulenotfounderror-no-module-named-pydantic-collecting-4043",
-  "hash": "eb8f8087da1ba6cd",
+  "hash": "7053402faddcf338",
   "state": "closed"
  },
  "06661511-7fa2-4f40-969a-d5767b020e82": {
   "number": 25,
   "slug": "prettier-error-comment-text-was-not-printed-9131",
-  "hash": "c592b677d474151c",
+  "hash": "b7896bd095df242f",
   "state": "closed"
  },
  "90c5f223-c8dc-4e32-895b-8414225dbf82": {
   "number": 26,
   "slug": "powershell-cannot-convert-argument-val2-with-value-bf31",
-  "hash": "ac8e794e224d1bea",
+  "hash": "b609c6e7d664867d",
   "state": "closed"
  },
  "3e33d142-c13f-46b9-9e3e-062ab79da0eb": {
   "number": 27,
   "slug": "powershell-new-item-requested-registry-access-is-2865",
-  "hash": "0aaf8e65f7afa953",
+  "hash": "3f877c1dbd839682",
   "state": "closed"
  },
  "13ec8e73-29c8-4769-a290-d792286489cf": {
   "number": 28,
   "slug": "powershell-version-7-7-0-of-package-6c1c",
-  "hash": "7881939f8917e719",
+  "hash": "558fbdd4996d64b7",
   "state": "closed"
  },
  "b73399a0-7211-4e2b-be1d-a1a74661d015": {
   "number": 29,
   "slug": "polars-polars-exceptions-shapeerror-can-t-broadcast-c5a8",
-  "hash": "2a7d69ea93bea62e",
+  "hash": "9c9f681f4f3e039f",
   "state": "closed"
  },
  "bd98e08d-a120-45e0-98a6-341524400fa0": {
   "number": 30,
   "slug": "pnpm-pnpm-install-with-nodelinker-hoisted-writes-8d13",
-  "hash": "954564d77544737b",
+  "hash": "8e61438af4060522",
   "state": "closed"
  },
  "e6211713-dc71-4f10-a138-dc88666fd908": {
   "number": 31,
   "slug": "playwright-error-cannot-find-module-root-src-fc02",
-  "hash": "5e7327df38e24294",
+  "hash": "3023a2a86629af81",
   "state": "closed"
  },
  "178a3053-c0e2-4c0b-a8b1-77fa6d6e8e69": {
   "number": 32,
   "slug": "playwright-error-cannot-find-module-alias-thrown-ca59",
-  "hash": "d4abf4619411628b",
+  "hash": "9b3735902c2c1631",
   "state": "closed"
  },
  "03af3420-f3e6-4d53-9f03-13c9b8e7beb1": {
   "number": 33,
   "slug": "nx-error-bun-publish-has-no-json-cfc0",
-  "hash": "2d9b0885b1d5f6d6",
+  "hash": "7e8b0b3461907829",
   "state": "closed"
  },
  "17c3c1b8-9e17-4cc9-b359-505e57728cb1": {
   "number": 34,
   "slug": "nx-nx-no-existing-nx-cloud-client-5813",
-  "hash": "fafd0cdbc74e07d9",
+  "hash": "86412ada4f11af1a",
   "state": "closed"
  },
  "91ad1fa9-deab-4768-b29a-09d8bb42ac79": {
   "number": 35,
   "slug": "nestjs-the-packet-length-n-exceeds-the-22b6",
-  "hash": "a5c25f1053f13fe5",
+  "hash": "a68ca330991dd99b",
   "state": "closed"
  },
  "53c1be11-4b46-4a9e-a5e1-6cbcf7b89367": {
   "number": 36,
   "slug": "mongoose-typeerror-cannot-destructure-property-createdat-of-ddaa",
-  "hash": "fbafe152a18e1132",
+  "hash": "cf6e714f856ba4cb",
   "state": "closed"
  },
  "7bd6ce2a-fe79-469f-8f66-1b7efa86a6bf": {
   "number": 37,
   "slug": "laravel-uncaught-errorexception-cannot-modify-header-information-9c13",
-  "hash": "7e1604726502f1fe",
+  "hash": "ff8af71da09ca785",
   "state": "closed"
  },
  "5d7e8b8f-a93c-443d-b694-c22fbd039440": {
   "number": 38,
   "slug": "langchain-valueerror-expected-embeddings-to-be-a-f25d",
-  "hash": "4e91f9a20302f87b",
+  "hash": "c2540e906e220e1c",
   "state": "closed"
  },
  "7d2129a9-7957-4da6-93f4-42f5f7350d6a": {
   "number": 39,
   "slug": "firebase-tools-error-request-to-firebaserules-googleapis-com-10cb",
-  "hash": "54e5c34b6fa40a7e",
+  "hash": "af2290c94ede45d4",
   "state": "closed"
  },
  "edd3ed0a-d3af-4b2b-bda6-fccbc47bb255": {
   "number": 40,
   "slug": "dotnet-system-nullreferenceexception-object-reference-not-set-ec41",
-  "hash": "cd246fc6d5f0810a",
+  "hash": "d1ec6277f22e7cc9",
   "state": "closed"
  },
  "1454f8e9-f817-45b6-ac66-ef1f0190cd5a": {
   "number": 41,
   "slug": "docker-compose-a-service-with-restart-on-failure-0801",
-  "hash": "f115754da25f8ffc",
+  "hash": "eb8ceeadb9c5af04",
   "state": "closed"
  },
  "6959ab8a-1e8f-410b-b5a3-b79cf5b65260": {
   "number": 42,
   "slug": "cypress-warning-we-failed-to-trash-the-88af",
-  "hash": "90fe2249f9e7af7d",
+  "hash": "07146e06a21aac0b",
   "state": "closed"
  },
  "519da101-ea83-4055-b3e2-6ca20ba9618f": {
   "number": 43,
   "slug": "babel-syntaxerror-missing-semicolon-line-col-ad6f",
-  "hash": "ada8abe023aae72a",
+  "hash": "7770776e2304a130",
   "state": "closed"
  },
  "4584c84f-a3b8-428c-9a56-a0f533d36f88": {
   "number": 44,
   "slug": "angular-error-purefunctionconstant-does-not-handle-expressions-30fa",
-  "hash": "aafe452ec57aeaca",
+  "hash": "353d4d59a770cf77",
   "state": "closed"
  },
  "ad82643b-424f-4495-bbcd-e4aaf4e52017": {
   "number": 45,
   "slug": "vitest-error-projects-undefined-and-have-different-0892",
-  "hash": "989c3cd2a7d8b421",
+  "hash": "81c3ff1ec7145610",
   "state": "closed"
  },
  "7c732984-e35b-4b71-96ae-5d6401da05fe": {
   "number": 46,
   "slug": "uv-error-distribution-pyqt5-qt5-version-registry-c20c",
-  "hash": "94354b4224b1ca40",
+  "hash": "078f7efde6110c29",
   "state": "closed"
  },
  "5553a229-9955-4723-9429-86833e5e7d03": {
   "number": 47,
   "slug": "uv-error-failed-to-download-and-build-4d68",
-  "hash": "f9fef0debf47e536",
+  "hash": "da8451e3aa1462f2",
   "state": "closed"
  },
  "6f28aa53-925d-461d-8b24-bfca84861fec": {
   "number": 48,
   "slug": "transformers-nameerror-name-nn-is-not-defined-f837",
-  "hash": "353f19b91123c8cb",
+  "hash": "d8505c8a5b3326dd",
   "state": "closed"
  },
  "0b4f0772-4ba6-4063-ad28-a8fc5f396b50": {
   "number": 49,
   "slug": "transformers-huggingface-hub-errors-strictdataclassfieldvalidationerror-97aa",
-  "hash": "e9047aad96710baa",
+  "hash": "8a602a7bf162d4d3",
   "state": "closed"
  },
  "daacf92d-66c4-48bb-9990-8bf7041e1ea6": {
   "number": 50,
   "slug": "three-js-typeerror-cannot-destructure-property-useframebuffertarget-of-b388",
-  "hash": "5cecc3e8823d5e86",
+  "hash": "a3f0ff2103f6e4df",
   "state": "closed"
  },
  "3803eb2e-d913-4062-8acd-fdfdb6a8234a": {
   "number": 51,
   "slug": "terraform-error-couldn-t-show-local-plan-ca65",
-  "hash": "796cb983559270fc",
+  "hash": "8800c2519bfc973a",
   "state": "closed"
  },
  "4bbf4825-96f9-48c8-9515-82c21108efdc": {
   "number": 52,
   "slug": "streamlit-streamlitinvalidlayoutcontexterror-a-fragment-tried-to-write-2c2d",
-  "hash": "db9f1ef96344d45b",
+  "hash": "3de176d7a0850900",
   "state": "closed"
  },
  "3b138978-5fb5-4139-b13d-5be48d5d9f56": {
   "number": 53,
   "slug": "sqlalchemy-sqlalchemy-exc-timeouterror-queuepool-limit-of-49ff",
-  "hash": "51546a056d1a768a",
+  "hash": "cee5c9eec975d7e5",
   "state": "closed"
  },
  "229ccd0b-bfe7-4781-ae58-0fb6f43c953a": {
   "number": 54,
   "slug": "sqlalchemy-sqlalchemy-exc-invalidrequesterror-this-connection-has-d9f5",
-  "hash": "dde32382e47d4755",
+  "hash": "bd6a829a8e6e11a1",
   "state": "closed"
  },
  "e47bd7d8-c557-4fd6-a15b-66233c3feb5e": {
   "number": 55,
   "slug": "pytest-attributeerror-state-object-has-no-attribute-5888",
-  "hash": "415e39750768e44c",
+  "hash": "942f0a55b4098854",
   "state": "closed"
  },
  "31a3ce8c-4a80-41bf-a102-f36fb45b4fe5": {
   "number": 56,
   "slug": "pydantic-typeerror-forwardref-init-got-an-unexpected-4b13",
-  "hash": "9c1ed532f93bfd4a",
+  "hash": "68ec8f49c3f2ceaa",
   "state": "closed"
  },
  "7421d202-121c-418b-bbcf-417e220e716c": {
   "number": 57,
   "slug": "polars-pyo3-runtime-panicexception-range-end-index-579e",
-  "hash": "a30561cd9e34f20b",
+  "hash": "188408ab246f387b",
   "state": "closed"
  },
  "88b2422d-b588-4ea7-95ba-75a65a5fee15": {
   "number": 58,
   "slug": "pnpm-error-cannot-find-module-ajv-require-0764",
-  "hash": "7dc1913637e0041e",
+  "hash": "82324f3099b4c575",
   "state": "closed"
  },
  "f191ce49-cfe6-47e1-907f-3b9f37806fb5": {
   "number": 59,
   "slug": "pnpm-error-err-pnpm-no-matching-version-d58c",
-  "hash": "f940de3b609b9ab2",
+  "hash": "c4fc4dae70ad23ec",
   "state": "closed"
  },
  "4185378a-f3bd-4fa7-9d9a-d6b6281a9035": {
   "number": 60,
   "slug": "pnpm-error-unexpected-argument-cache-dir-found-f50b",
-  "hash": "b6e315e07d7d37d6",
+  "hash": "841c6f7730544c8b",
   "state": "closed"
  },
  "893e95d8-7c07-411b-b30e-945e1e8e39f1": {
   "number": 61,
   "slug": "playwright-typeerror-cannot-read-properties-of-undefined-836e",
-  "hash": "5c6ee4c917caaeac",
+  "hash": "2c4698cff4e6f0c9",
   "state": "closed"
  },
  "42aa9c86-10da-4154-9cec-c434e7a8c073": {
   "number": 62,
   "slug": "pandas-attributeerror-nonetype-object-has-no-attribute-d98f",
-  "hash": "76ba8033707358fd",
+  "hash": "90146009e4aed228",
   "state": "closed"
  },
  "f60fa9ac-c56a-49b0-809b-0ed4fdd0f2c1": {
   "number": 63,
   "slug": "ollama-error-this-model-requires-mlx-support-42f6",
-  "hash": "b1a94e44a2071fe8",
+  "hash": "cb1127a2017865b8",
   "state": "closed"
  },
  "678ee379-9cf5-4b57-9ac3-687f5126e6eb": {
   "number": 64,
   "slug": "ollama-ollama-types-responseerror-detokenize-error-error-215c",
-  "hash": "c760837232188a12",
+  "hash": "0997e9a7d78f70df",
   "state": "closed"
  },
  "6cfaa704-d497-45ff-9bdc-c040f905a034": {
   "number": 65,
   "slug": "node-error-invalid-package-config-nul-package-e1cb",
-  "hash": "3612b4a6d1790220",
+  "hash": "168489b8eb108688",
   "state": "closed"
  },
  "76ae8acf-3cda-4abb-82b0-146022bd1202": {
   "number": 66,
   "slug": "nextjs-error-route-route-unexpected-cache-miss-8386",
-  "hash": "3001e3597faa77b4",
+  "hash": "ef5a627fc27da449",
   "state": "closed"
  },
  "13c6d781-31c1-4201-80da-82ec231db39f": {
   "number": 67,
   "slug": "nestjs-storageerror-uploadtodisk-no-storagemodule-in-the-ef6d",
-  "hash": "5d0f8856b614bfed",
+  "hash": "dcbb8de535decad6",
   "state": "closed"
  },
  "7307ebed-ae9b-4f1b-9438-d39ecc9f60f7": {
   "number": 68,
   "slug": "nestjs-typeerror-cannot-set-properties-of-undefined-5850",
-  "hash": "d4cdb076d595794b",
+  "hash": "d0dc0ac3d93c3b5c",
   "state": "closed"
  },
  "1011a5d7-0a89-4b3d-8118-d009cb81258a": {
   "number": 69,
   "slug": "mcp-typescript-sdk-failed-to-reconnect-sse-stream-failed-13e4",
-  "hash": "01455a6b06b808fc",
+  "hash": "208e1dd93fe0d55d",
   "state": "closed"
  },
  "8b31a3b3-a50d-46ee-a397-05c0f679409a": {
   "number": 70,
   "slug": "kubernetes-error-grpc-error-unmarshalling-request-string-b251",
-  "hash": "c7d59b57b5af7038",
+  "hash": "cec774c2f9eb1fa6",
   "state": "closed"
  },
  "296d33e3-4a52-4318-8e0c-52f77474a2e9": {
   "number": 71,
   "slug": "astro-typeerror-this-bridge-setlasterror-is-not-b84a",
-  "hash": "b793426c8eebb567",
+  "hash": "97f2e11cf5e9b0c4",
   "state": "closed"
  },
  "b047f72a-9a84-46d8-a021-7d3f0ce77239": {
   "number": 72,
   "slug": "react-accessing-element-ref-was-removed-in-195c",
-  "hash": "e3c326713fc63d6b",
+  "hash": "1a7f9ed9842beea2",
   "state": "closed"
  },
  "98fd7c3c-9d16-46aa-92d0-6e64a37d62f5": {
   "number": 73,
   "slug": "pytorch-nvidia-geforce-rtx-model-with-cuda-e883",
-  "hash": "1805d9b99dfa3b63",
+  "hash": "dac5e7dc3d1863ae",
   "state": "closed"
  },
  "d98bf34d-d155-45f8-ad41-c24812b5a4c4": {
   "number": 74,
   "slug": "nextjs-typeerror-error-while-loading-rule-react-9698",
-  "hash": "ce6e9ab83a8a4a0a",
+  "hash": "5340959305e3dee1",
   "state": "closed"
  },
  "d47eff0c-8535-438a-bb06-d84cbcc97ce8": {
   "number": 75,
   "slug": "nextjs-invalid-project-directory-provided-no-such-7371",
-  "hash": "ac22225182fed601",
+  "hash": "ba9de77e04630312",
   "state": "closed"
  },
  "65e324dc-9ef0-4757-bbfc-9a1e2e019871": {
   "number": 76,
   "slug": "nestjs-warn-legacyrouteconverter-unsupported-route-path-route-f8b0",
-  "hash": "a233ace3144f9503",
+  "hash": "55bf12d82cca3b4c",
   "state": "closed"
  },
  "399cd3bc-b5e4-49cf-80fe-9897653e6746": {
   "number": 77,
   "slug": "eslint-plugin-react-hooks-error-calling-setstate-synchronously-within-an-1265",
-  "hash": "275de3052e60616f",
+  "hash": "fcfb4b66c6497786",
   "state": "closed"
  },
  "bdd64ac8-f083-454b-a3dd-f71f4fefdd24": {
   "number": 78,
   "slug": "vitest-typeerror-implementation-is-not-a-constructor-1599",
-  "hash": "df28b789388d420c",
+  "hash": "831a88973c336f39",
   "state": "closed"
  },
  "a8952325-9c11-48fe-b674-fcb4b73fb705": {
   "number": 79,
   "slug": "vite-blocked-request-this-host-host-is-6c14",
-  "hash": "bee2d58e35887892",
+  "hash": "0b03b2397646f560",
   "state": "closed"
  },
  "25e8e72d-ccfe-429a-aead-d1033251377b": {
   "number": 80,
   "slug": "vite-typeerror-crypto-hash-is-not-a-6129",
-  "hash": "d18fdc5880e1dc99",
+  "hash": "ebab5191830144f8",
   "state": "closed"
  },
  "8f884970-80a2-42a3-899d-a36d3685d6e1": {
   "number": 81,
   "slug": "vercel-error-node-js-version-20-x-f8d4",
-  "hash": "74343d0517815ab6",
+  "hash": "5574cee19fdf4ec1",
   "state": "closed"
  },
  "f8ef2b90-3fa7-4b54-901c-3a7762809a64": {
   "number": 82,
   "slug": "uv-warning-virtual-env-path-does-not-188c",
-  "hash": "94409523b065e2d3",
+  "hash": "6e50b142da0d1166",
   "state": "closed"
  },
  "bdf5a8ab-2969-474a-b7a2-f3c214654583": {
   "number": 83,
   "slug": "typescript-error-ts2882-cannot-find-module-or-2500",
-  "hash": "f73ecc40c60197ac",
+  "hash": "0fc36bc5d9331fd5",
   "state": "closed"
  },
  "42eaed1b-ec91-4133-b88a-48af7cac3809": {
   "number": 84,
   "slug": "typescript-error-ts2591-cannot-find-name-process-ffb0",
-  "hash": "2d5d72a9a806cbc6",
+  "hash": "d0771f34e92c037a",
   "state": "closed"
  },
  "de8acacb-6aea-43a8-97b1-79e2acfdc7de": {
   "number": 85,
   "slug": "typescript-eslint-error-typescript-eslint-does-not-support-cc3b",
-  "hash": "643de04fdbb7f5e9",
+  "hash": "181571f9d0d4a30d",
   "state": "closed"
  },
  "5625c8aa-f45c-48a3-ba05-511d6341bd3f": {
   "number": 86,
   "slug": "typescript-error-ts5107-option-moduleresolution-node10-is-e191",
-  "hash": "fa94f6619e682eca",
+  "hash": "516d891a91d6cc2a",
   "state": "closed"
  },
  "0ba11641-dab2-4907-b7ab-9e0f57da6d0a": {
   "number": 87,
   "slug": "typescript-error-ts5101-option-baseurl-is-deprecated-cb18",
-  "hash": "ce3330c1cd05a556",
+  "hash": "126cf858fdbe3985",
   "state": "closed"
  },
  "d96f4721-c353-49f7-8da9-117b18bd8fe6": {
   "number": 88,
   "slug": "ts-node-typeerror-err-unknown-file-extension-unknown-12db",
-  "hash": "b3b1dec9568d8e23",
+  "hash": "9a1c8b33e057bc2e",
   "state": "closed"
  },
  "d53c8c46-4d3b-4c3b-a45c-a116a9a8569a": {
   "number": 89,
   "slug": "testcontainers-java-unixsocketclientproviderstrategy-failed-with-exception-e362",
-  "hash": "fd5d176e3a148190",
+  "hash": "8605ce206cb756e9",
   "state": "closed"
  },
  "530f0749-dce0-434f-9581-089a156bc97e": {
   "number": 90,
   "slug": "terraform-the-parameter-dynamodb-table-is-deprecated-01ba",
-  "hash": "5b9e96cff6339278",
+  "hash": "3b0450f6c467cf18",
   "state": "closed"
  },
  "08b96781-655f-4a86-a8c3-0803df3af092": {
   "number": 91,
   "slug": "terraform-unable-to-verify-checksums-signature-openpgp-a533",
-  "hash": "54290211bf276d38",
+  "hash": "3c2c9c83f79432e5",
   "state": "closed"
  },
  "d9524287-87f9-40e7-a775-372cb5c17838": {
   "number": 92,
   "slug": "tailwindcss-unknown-at-rule-theme-css-unknownatrules-c7e3",
-  "hash": "01fbda0fd528182d",
+  "hash": "bcff516b71a298aa",
   "state": "closed"
  },
  "56426313-cfed-4236-a7c8-0c9d3399bdcb": {
   "number": 93,
   "slug": "sveltekit-sveltekit-error-app-stores-removed-d96a",
-  "hash": "5b288388f35442a6",
+  "hash": "42d48713a8fc3182",
   "state": "closed"
  },
  "837a9a17-e7bd-4672-8e6c-ddc041d18920": {
   "number": 94,
   "slug": "svelte-this-reference-only-captures-the-initial-87f2",
-  "hash": "00e26051dae04868",
+  "hash": "25f411499af2a6c9",
   "state": "closed"
  },
  "72634941-47d9-4890-b97f-daeb42e588d2": {
   "number": 95,
   "slug": "starlette-typeerror-unhashable-type-dict-when-calling-7a39",
-  "hash": "e30180db8fffeeca",
+  "hash": "a6dcb4ff8aa5ca3a",
   "state": "closed"
  },
  "64a29c72-7c48-4418-850b-6bd9999147cd": {
   "number": 96,
   "slug": "sqlalchemy-sqlalchemy-exc-missinggreenlet-greenlet-spawn-has-a57a",
-  "hash": "e5e5893efd39732b",
+  "hash": "93493976406e0749",
   "state": "closed"
  },
  "bdbb19db-c401-4860-81e8-b624c8d5a0fd": {
   "number": 97,
   "slug": "sqlalchemy-modulenotfounderror-no-module-named-psycopg-7afe",
-  "hash": "64a1c95928b5ac9d",
+  "hash": "8ef96c865780c3f6",
   "state": "closed"
  },
  "03ccbd8c-a596-483a-9e86-48cdeb5ec82f": {
   "number": 98,
   "slug": "sqlalchemy-importerror-the-sqlalchemy-asyncio-module-requires-bdc2",
-  "hash": "ff4e7ff637f556ea",
+  "hash": "45c7f8267f6d80bb",
   "state": "closed"
  },
  "72cb0db4-a7dc-46f9-966a-7aaba53bc1ac": {
   "number": 99,
   "slug": "spring-boot-error-package-org-springframework-boot-test-4fdb",
-  "hash": "2416b5dfd99ffa93",
+  "hash": "9d50d977adeb4d7c",
   "state": "closed"
  },
  "f5ec6647-bb00-450e-b5ad-1d925df3a33c": {
   "number": 100,
   "slug": "setuptools-modulenotfounderror-no-module-named-pkg-resources-4364",
-  "hash": "c44d6a61a5a91efb",
+  "hash": "a76e06f1bb8a8c2e",
   "state": "closed"
  },
  "735632c7-ff50-40f6-937e-a99b761d5090": {
   "number": 101,
   "slug": "react-router-react-router-future-flag-warning-react-fef3",
-  "hash": "aa12cb7a8330863b",
+  "hash": "4f5e1d8d3b931ac1",
   "state": "closed"
  },
  "ad84e593-ee3a-4483-b55e-50ecf962e4d5": {
   "number": 102,
   "slug": "react-native-error-call-to-consteval-function-fmt-a7ef",
-  "hash": "8738fef136e51f14",
+  "hash": "f25e46b8fa388837",
   "state": "closed"
  },
  "a65fac94-4f6c-4d95-8455-5a2979e77f7d": {
   "number": 103,
   "slug": "pytorch-pickle-unpicklingerror-weights-only-load-failed-21ef",
-  "hash": "25d13dcc4bfb6974",
+  "hash": "44f0530f8ffc427a",
   "state": "closed"
  },
  "764acf16-487e-43d2-9068-3c06b24b6a34": {
   "number": 104,
   "slug": "python-runtimeerror-there-is-no-current-event-ec8c",
-  "hash": "95ef8a96a98eec8b",
+  "hash": "4df1c411b4c259c5",
   "state": "closed"
  },
  "7e6173ac-4352-4a89-8d18-a9825f22b9d0": {
   "number": 105,
   "slug": "python-modulenotfounderror-no-module-named-audioop-a1fc",
-  "hash": "ee634a3f71fb6400",
+  "hash": "0520013f67e63fcd",
   "state": "closed"
  },
  "e0a89f25-e621-4093-a53c-aa3db14f6aee": {
   "number": 106,
   "slug": "python-syntaxwarning-invalid-escape-sequence-d-c944",
-  "hash": "060201cb6b2b0750",
+  "hash": "bb0ce54d096ec4de",
   "state": "closed"
  },
  "fe2c6509-6c41-4ac1-8d9f-4e26bc81daf1": {
   "number": 107,
   "slug": "pytest-failed-async-def-functions-are-not-3f66",
-  "hash": "332e5fe4bda4b9c2",
+  "hash": "1675795299d434e6",
   "state": "closed"
  },
  "c7701f8e-1aa9-47a1-ba94-a2c077848dc0": {
   "number": 108,
   "slug": "prisma-error-the-datasource-property-url-is-355f",
-  "hash": "7cafe75dd989f8b5",
+  "hash": "7e475c1ac63c4acc",
   "state": "closed"
  },
  "bc3478ee-1db1-45d6-be1b-cb2f3a8077dd": {
   "number": 109,
   "slug": "prisma-failed-to-load-config-file-path-7e39",
-  "hash": "e3c814a0f5612365",
+  "hash": "359153c3d6e076dc",
   "state": "closed"
  },
  "8111fdcc-267e-401b-8637-2e532b1da057": {
   "number": 110,
   "slug": "prisma-prismaclientconstructorvalidationerror-using-engine-type-client-7014",
-  "hash": "85166d70ded2d3c2",
+  "hash": "f3673f264524dfd6",
   "state": "closed"
  },
  "27d23a9d-673f-49f9-b425-579eade03dda": {
   "number": 111,
   "slug": "powershell-totalwidth-17-must-be-a-non-4596",
-  "hash": "10fcfb4c46645451",
+  "hash": "ad16f1d2bb5d222b",
   "state": "closed"
  },
  "233a3fc3-3ed7-407c-9e1d-5c48f1c2fce1": {
   "number": 112,
   "slug": "powershell-the-token-is-not-a-valid-24c5",
-  "hash": "9533c67c4498753b",
+  "hash": "8c0697a9a58c4d52",
   "state": "closed"
  },
  "94803db9-f1d9-4b58-adde-6208897089c3": {
   "number": 113,
   "slug": "postgresql-error-in-18-these-docker-images-bca8",
-  "hash": "aaec15f60ecd6bdd",
+  "hash": "dd603307164ca4d7",
   "state": "closed"
  },
  "c626e89a-5ead-4497-ae92-20595ca4e30a": {
   "number": 114,
   "slug": "poetry-looks-like-you-re-trying-to-a0d9",
-  "hash": "8ea9188023a6e49a",
+  "hash": "3df8089e07ab4d4f",
   "state": "closed"
  },
  "c83e458b-364d-426e-994f-c1470905fabe": {
   "number": 115,
   "slug": "poetry-the-requested-command-export-does-not-71ee",
-  "hash": "dbdce317f14627c3",
+  "hash": "90832069a6e42297",
   "state": "closed"
  },
  "3a5ae462-ae07-4dba-a43b-283b58028abc": {
   "number": 116,
   "slug": "pnpm-err-pnpm-ignored-builds-ignored-build-11d4",
-  "hash": "a302063845da8564",
+  "hash": "fd4eb4a437945521",
   "state": "closed"
  },
  "00de340b-0cdf-416e-bd72-f317ca0e102b": {
   "number": 117,
   "slug": "pandas-typeerror-invalid-value-value-for-dtype-1d4b",
-  "hash": "1aec5e5ad4f1828e",
+  "hash": "12b653c0521cb83d",
   "state": "closed"
  },
  "7de22a9b-f980-4722-b5a4-03fc2f1a6f76": {
   "number": 118,
   "slug": "pandas-valueerror-invalid-frequency-h-failed-to-154c",
-  "hash": "01cf4822f5f60268",
+  "hash": "88a2ce06eb9fa27d",
   "state": "closed"
  },
  "74bf17f4-a87b-428b-b89c-0cd8c9bdcee9": {
   "number": 119,
   "slug": "pandas-typeerror-ndframe-fillna-got-an-unexpected-6e83",
-  "hash": "10ec53343f9e30cc",
+  "hash": "63b5f8e4d946dfca",
   "state": "closed"
  },
  "a74c5b6f-42cd-4882-934d-9aadbe840481": {
   "number": 120,
   "slug": "openai-python-openai-notfounderror-error-code-404-error-3f39",
-  "hash": "224c9e7ce62762fc",
+  "hash": "919790f49415cf25",
   "state": "closed"
  },
  "f9e3cd7f-8a3f-4973-b88b-ea6d76161c67": {
   "number": 121,
   "slug": "openai-python-openai-badrequesterror-error-code-400-error-7442",
-  "hash": "71f41e2288178279",
+  "hash": "af0b6a9529152f81",
   "state": "closed"
  },
  "95b89322-8796-43df-9fc6-6caa7cc92a4c": {
   "number": 122,
   "slug": "numpy-attributeerror-module-numpy-has-no-attribute-1c43",
-  "hash": "5619c792a215e4e4",
+  "hash": "12b7532cebd228bf",
   "state": "closed"
  },
  "8f64c93e-2114-429f-8699-3848d3a49410": {
   "number": 123,
   "slug": "numpy-typeerror-only-0-dimensional-arrays-can-3c8f",
-  "hash": "53965a13ffb10a6e",
+  "hash": "79ac1f6479654cab",
   "state": "closed"
  },
  "88fbf59d-ea16-4a56-8915-c089916b03f1": {
   "number": 124,
   "slug": "npm-npm-warn-install-scripts-n-packages-9d62",
-  "hash": "cd26e0333e188bff",
+  "hash": "54b6d99e31d14ea9",
   "state": "closed"
  },
  "e3f9e53f-a8d2-4c0b-b875-99ade957eba0": {
   "number": 125,
   "slug": "node-syntaxerror-err-unsupported-typescript-syntax-typescript-f84e",
-  "hash": "532ef7ff2c6c334e",
+  "hash": "1f3ffff573068d85",
   "state": "closed"
  },
  "d5804c01-4428-4e80-a65c-4672a6e28d98": {
   "number": 126,
   "slug": "node-node-bad-option-experimental-transform-types-8f62",
-  "hash": "9155911f9e759444",
+  "hash": "dce4d68743cf1ae3",
   "state": "closed"
  },
  "0e4062b1-7fdb-4083-8e69-977eb1dca77a": {
   "number": 127,
   "slug": "node-typeerror-cannot-read-properties-of-undefined-e45d",
-  "hash": "2be0c0c7b5a180dd",
+  "hash": "b40dc2a7e9990bef",
   "state": "closed"
  },
  "01de9eb7-3442-44d7-a997-15a6fc5e49e2": {
   "number": 128,
   "slug": "node-bin-sh-1-corepack-not-found-11eb",
-  "hash": "eccc0fc5b90a0b7e",
+  "hash": "405ce262f601ea2a",
   "state": "closed"
  },
  "a884e5cf-7c70-4c59-9163-d6b7fedbce24": {
   "number": 129,
   "slug": "node-fetcherror-invalid-response-body-while-trying-88ef",
-  "hash": "77fb3ac7cc9887ca",
+  "hash": "8a01d95c7eb285db",
   "state": "closed"
  },
  "db5c3efc-f4c8-4953-b192-38dafc5db119": {
   "number": 130,
   "slug": "node-syntaxerror-unexpected-identifier-assert-430c",
-  "hash": "38e362f3eb2689fb",
+  "hash": "e6e5ff31df2f4bc6",
   "state": "closed"
  },
  "7d508a07-7730-4bf1-893a-0958e1c7be81": {
   "number": 131,
   "slug": "nextjs-error-this-build-is-using-turbopack-b349",
-  "hash": "45addc6eaf6f6cdd",
+  "hash": "54da67641546a813",
   "state": "closed"
  },
  "983fce5e-8075-457c-a230-36d233735077": {
   "number": 132,
   "slug": "nextjs-the-middleware-file-convention-is-deprecated-68da",
-  "hash": "687fbc101a1a8a99",
+  "hash": "8d8a35810e169761",
   "state": "closed"
  },
  "aa3d086b-28aa-4a24-9e9b-e31c1a35c3a0": {
   "number": 133,
   "slug": "mongoose-typeerror-next-is-not-a-function-6f26",
-  "hash": "fded14747fc6dcb7",
+  "hash": "05383523f922e709",
   "state": "closed"
  },
  "a41f3f7c-3f1e-4ef4-bd91-fb8b0741e7b9": {
   "number": 134,
   "slug": "langchain-modulenotfounderror-no-module-named-langchain-chains-1689",
-  "hash": "704d838bdb64af33",
+  "hash": "97f4251947166f6d",
   "state": "closed"
  },
  "2b826b21-49da-4adc-b844-df1f51dd8c65": {
   "number": 135,
   "slug": "langchain-importerror-cannot-import-name-agentexecutor-from-f098",
-  "hash": "0dffd7753b09edc9",
+  "hash": "aa697c99273986a0",
   "state": "closed"
  },
  "2f61a421-f2de-4b95-85b7-6a57441bb8a9": {
   "number": 136,
   "slug": "httpx-typeerror-asyncclient-init-got-an-unexpected-ea6a",
-  "hash": "587c4249c8f2f9ed",
+  "hash": "e3f3d73dac7cbf11",
   "state": "closed"
  },
  "c3c70aaa-8055-42b7-856b-9c2349d79e1d": {
   "number": 137,
   "slug": "httpx-typeerror-client-init-got-an-unexpected-817a",
-  "hash": "2f45b81b25755c8a",
+  "hash": "2ebd94c79706d7ff",
   "state": "closed"
  },
  "056cb4fc-20b1-4310-8408-39747c77a238": {
   "number": 138,
   "slug": "homebrew-homebrew-is-currently-ignoring-formulae-casks-671e",
-  "hash": "b2eb075eaef80070",
+  "hash": "4b143da9c11fe344",
   "state": "closed"
  },
  "c55a11e4-2a9a-47b0-b783-85050537f355": {
   "number": 139,
   "slug": "helm-error-invalid-argument-path-for-post-1b1b",
-  "hash": "4f652374f5bc311d",
+  "hash": "ddd76e68940c793c",
   "state": "closed"
  },
  "328fa065-a4f4-4c6f-840d-742002d7a8bf": {
   "number": 140,
   "slug": "go-file-go-n-n-non-constant-5785",
-  "hash": "46dc4a40ac00b1d7",
+  "hash": "47bb12f6da8ab680",
   "state": "closed"
  },
  "53c6d9a3-bb7d-4b1f-8f73-9c1aa418bdc8": {
   "number": 141,
   "slug": "github-actions-failed-to-createartifact-received-non-retryable-771c",
-  "hash": "e5a93e5924ec20f7",
+  "hash": "c502f8514408c9b4",
   "state": "closed"
  },
  "5caea023-253f-4b7f-893b-471fe87cb13a": {
   "number": 142,
   "slug": "github-actions-error-the-version-3-9-with-29c5",
-  "hash": "c5f9b15421dd2774",
+  "hash": "4d6804ff64372b2a",
   "state": "closed"
  },
  "9741b747-0af2-40c3-8137-a9ea8a9b0a99": {
   "number": 143,
   "slug": "github-actions-system-argumentoutofrangeexception-specified-argument-was-8718",
-  "hash": "3b04d06b96dc7016",
+  "hash": "1770a2c1c9a09546",
   "state": "closed"
  },
  "eaf0f5a0-c09d-4fac-9ec6-d28260cfa27a": {
   "number": 144,
   "slug": "github-actions-node-js-20-is-deprecated-the-8a1f",
-  "hash": "bd716c20fceefc57",
+  "hash": "0983499de275c69e",
   "state": "closed"
  },
  "2ed0eea2-15f3-4c07-a17c-ad11409de5d7": {
   "number": 145,
   "slug": "git-fatal-need-to-specify-how-to-b58e",
-  "hash": "2f97cc06511673fa",
+  "hash": "a998679563382616",
   "state": "closed"
  },
  "66664bc2-2594-43f8-9d6c-539cf2ec247b": {
   "number": 146,
   "slug": "gh-graphql-projects-classic-is-being-deprecated-55f2",
-  "hash": "0c777090f11f9d9b",
+  "hash": "4d1bfc39a298ca7b",
   "state": "closed"
  },
  "f5a000d6-8e2d-4ada-9506-1420ac8a1b00": {
   "number": 147,
   "slug": "fastapi-attributeerror-includedrouter-object-has-no-attribute-d3fe",
-  "hash": "a93f46f9535c4343",
+  "hash": "11fde191df72773e",
   "state": "closed"
  },
  "f02fb72e-809e-4509-81db-f5405cb5ec2b": {
   "number": 148,
   "slug": "express-typeerror-cannot-set-property-query-of-f799",
-  "hash": "9e2c1ada47be482f",
+  "hash": "8542a54d13f7b9bc",
   "state": "closed"
  },
  "fa643abf-8842-478b-bcb7-eeacdfb57116": {
   "number": 149,
   "slug": "express-typeerror-unexpected-at-index-n-path-adc7",
-  "hash": "8c20178a8fbcf8c3",
+  "hash": "f63dda9361c802a6",
   "state": "closed"
  },
  "88da1add-0182-4232-8d45-9dfe519fd46a": {
   "number": 150,
   "slug": "expo-workletserror-worklets-mismatch-between-javascript-part-8970",
-  "hash": "f305c90cb9c23295",
+  "hash": "0eef428a23ed3c07",
   "state": "closed"
  },
  "b5293453-180e-4b1e-8e70-1bec25b3513d": {
   "number": 151,
   "slug": "eslint-plugin-react-hooks-npm-error-peer-eslint-3-0-55d9",
-  "hash": "23e781350e7a40b9",
+  "hash": "3a1e488a2ec61c38",
   "state": "closed"
  },
  "838334d9-7be0-46ca-a562-6a20d986f0e7": {
   "number": 152,
   "slug": "eslint-a-config-object-is-using-the-1301",
-  "hash": "07b8c2d65667091a",
+  "hash": "3cecaddc6c578bfc",
   "state": "closed"
  },
  "6c04ab61-8083-44ca-aee2-93abd9d37d93": {
   "number": 153,
   "slug": "eslint-typeerror-error-while-loading-rule-react-8cdc",
-  "hash": "478a9ca7bb97760e",
+  "hash": "5016964c737daf03",
   "state": "closed"
  },
  "564fd30d-bc9d-4058-a108-02a49db9a3ac": {
   "number": 154,
   "slug": "eslint-typeerror-error-while-loading-rule-import-679b",
-  "hash": "213fc064960a3c48",
+  "hash": "dce19e06d8e9c0e1",
   "state": "closed"
  },
  "ba633253-9477-4cd4-bfc7-b16283745fb9": {
   "number": 155,
   "slug": "dotnet-the-settings-file-in-the-tool-c840",
-  "hash": "314c8962bd13382c",
+  "hash": "aefdecc93264725b",
   "state": "closed"
  },
  "fb5ab633-92a4-4614-abcb-b93ab5ed2abc": {
   "number": 156,
   "slug": "docker-error-failed-to-build-failed-to-16e5",
-  "hash": "b782e5699ab35966",
+  "hash": "95e449f80e164417",
   "state": "closed"
  },
  "82e4ea2f-b9c6-4e80-955b-93be366f1b50": {
   "number": 157,
   "slug": "docker-compose-additional-privileges-requested-pass-allow-fs-9deb",
-  "hash": "f74cd7a27927ec56",
+  "hash": "4631920273c86aa2",
   "state": "closed"
  },
  "fe148006-7107-49da-af28-1d03cc569d6b": {
   "number": 158,
   "slug": "docker-error-response-from-daemon-manifest-for-37d0",
-  "hash": "2f074be4d6a602b1",
+  "hash": "37ec11e6bd409f8b",
   "state": "closed"
  },
  "ec48f678-ffa6-449e-bc95-b3f43d55e8c1": {
   "number": 159,
   "slug": "docker-error-response-from-daemon-client-version-5351",
-  "hash": "ecdebf5d52d7c7aa",
+  "hash": "29cbfdf92d53a318",
   "state": "closed"
  },
  "dc74dbf5-36f9-4278-812e-84d274473cc3": {
   "number": 160,
   "slug": "cargo-feature-edition2024-is-required-4d2e",
-  "hash": "3df52391120f5021",
+  "hash": "6c48cc74dbf0c58d",
   "state": "closed"
  },
  "0a38f790-ee52-4f5b-a052-4677a0e3ec1b": {
   "number": 161,
   "slug": "biome-tailwind-specific-syntax-is-disabled-c5cb",
-  "hash": "f7197d5694e8cd0f",
+  "hash": "681254d308ddea3e",
   "state": "closed"
  },
  "4ddebf44-60fb-46ce-aba0-2d35b814133e": {
   "number": 162,
   "slug": "aws-lambda-runtime-importmoduleerror-error-cannot-find-module-e26a",
-  "hash": "2860abd2cfc5b83c",
+  "hash": "100304168b5aacd4",
   "state": "closed"
  },
  "cdbcfa56-044f-4f88-8fa6-2d5216e1a9dc": {
   "number": 163,
   "slug": "aws-cli-an-error-occurred-missingcontentlength-when-calling-924a",
-  "hash": "1642bd9005edaaca",
+  "hash": "fb53377b3fb25093",
   "state": "closed"
  },
  "1f2179a1-2d3b-44ba-844e-6f1cc63e0aa4": {
   "number": 164,
   "slug": "astro-legacycontentconfigerror-found-legacy-content-config-file-fee5",
-  "hash": "55a19c371bbbb16f",
+  "hash": "8b2a9af6931cf565",
   "state": "closed"
  },
  "f40fb910-5bc9-4c8f-bb1b-cf31b364b5f5": {
   "number": 165,
   "slug": "anthropic-api-400-type-error-error-type-invalid-0a4a",
-  "hash": "9bd3a29fe07c2569",
+  "hash": "4e8f2609aedbae13",
   "state": "closed"
  },
  "60f4a841-b793-4ebb-862d-c1ef77aaa8a2": {
   "number": 166,
   "slug": "anthropic-api-400-type-error-error-type-invalid-d9b1",
-  "hash": "09019a458a6f7c2c",
+  "hash": "e7116d667d64fea8",
   "state": "closed"
  },
  "ac277ad0-02f9-4e03-8b3d-19f5895b8241": {
   "number": 167,
   "slug": "anthropic-api-error-400-type-error-error-type-9525",
-  "hash": "32edf1daf2cf7c18",
+  "hash": "dcc25b003500b0b7",
   "state": "closed"
  },
  "dd0f0e8e-53de-4f73-b895-85197cc2b20f": {
   "number": 168,
   "slug": "anthropic-api-404-type-error-error-type-not-d47d",
-  "hash": "8776391827ec872d",
+  "hash": "45d2be3807dc1a99",
   "state": "closed"
  },
  "5f418913-c112-41b4-b1cb-a9613bbb3599": {
   "number": 169,
   "slug": "angular-ng6008-component-name-is-standalone-and-c2e5",
-  "hash": "c3c7604a55640021",
+  "hash": "342f4fb2ac1cb8a4",
   "state": "closed"
  },
  "b699297d-c799-4318-ab69-4c8196bcdd88": {
   "number": 170,
   "slug": "angular-the-angular-compiler-requires-typescript-6-860a",
-  "hash": "9bbbcdb26ea3938f",
+  "hash": "a834f3c716ccbf73",
   "state": "closed"
  },
  "05885e8f-64da-4664-a061-33111c0ffa88": {
   "number": 171,
   "slug": "webpack-error-error-hex-digital-envelope-routines-5136",
-  "hash": "4cf050df8ef9aca2",
+  "hash": "14a8918efce2757a",
   "state": "closed"
  },
  "efae82f7-99ce-42a1-b84f-a93fa62c6bb5": {
   "number": 172,
   "slug": "vite-uncaught-referenceerror-process-is-not-defined-fa16",
-  "hash": "033998850b401dd6",
+  "hash": "b0defdf5f6c98936",
   "state": "closed"
  },
  "6bdb6b79-3e24-4f76-9c0d-ea2ba4613053": {
   "number": 173,
   "slug": "vite-plugin-vite-import-analysis-failed-to-91fc",
-  "hash": "c482a2a927064128",
+  "hash": "dc65cfb15fcdb07d",
   "state": "closed"
  },
  "695d2661-cd7d-4fbd-99af-ff72faec80ee": {
   "number": 174,
   "slug": "uv-error-no-virtual-environment-found-run-4126",
-  "hash": "5e1830685106571f",
+  "hash": "3ba905cc9720e060",
   "state": "closed"
  },
  "202d7e41-9817-4e6d-9d65-13d21c0a9409": {
   "number": 175,
   "slug": "typescript-error-ts7016-could-not-find-a-62cc",
-  "hash": "bab14663cdcacd7d",
+  "hash": "7af99fea611a93f6",
   "state": "closed"
  },
  "61f5777e-f71e-40fa-a713-57111e6b5990": {
   "number": 176,
   "slug": "typescript-error-ts5110-option-module-must-be-c3c4",
-  "hash": "17bd540d9ed332bd",
+  "hash": "fd4595289e29bbec",
   "state": "closed"
  },
  "bcbfa4a1-e668-4be1-9bdd-e811868b92ce": {
   "number": 177,
   "slug": "typescript-error-ts2593-cannot-find-name-describe-be68",
-  "hash": "af09bcc50863e0e0",
+  "hash": "9e9af6b56791214a",
   "state": "closed"
  },
  "bd5d445c-26b1-41c7-876d-6cecb21f4cc7": {
   "number": 178,
   "slug": "typescript-error-ts2307-cannot-find-module-path-5ebc",
-  "hash": "5a8fee10c28ae90c",
+  "hash": "75a5872a6c39463d",
   "state": "closed"
  },
  "1ad88619-66d9-4b91-94c3-403176e5b1ff": {
   "number": 179,
   "slug": "terraform-error-error-acquiring-the-state-lock-2305",
-  "hash": "a52a8f6ac4c3171b",
+  "hash": "de2adcfca1888290",
   "state": "closed"
  },
  "2b3a7692-7bbc-4248-89a2-f97fe7da87d0": {
   "number": 180,
   "slug": "tailwindcss-it-looks-like-you-re-trying-5273",
-  "hash": "404da076732ec003",
+  "hash": "691f115fabaa5649",
   "state": "closed"
  },
  "3094fb43-15e9-4b02-9d77-6dcdc8006ff8": {
   "number": 181,
   "slug": "tailwindcss-npm-error-could-not-determine-executable-3f93",
-  "hash": "91a2fb6ef2c386e7",
+  "hash": "4c0745ada2e43022",
   "state": "closed"
  },
  "8d89ced1-637d-4365-aa4f-accb8ed984b6": {
   "number": 182,
   "slug": "tailwindcss-cannot-apply-unknown-utility-class-class-e73d",
-  "hash": "8b11d5a40a614fcf",
+  "hash": "2e52821b713b63db",
   "state": "closed"
  },
  "49e82108-ce6c-4538-b99d-a570afff451c": {
   "number": 183,
   "slug": "sqlalchemy-sqlalchemy-exc-objectnotexecutableerror-not-an-executable-915f",
-  "hash": "5733e5514ca7ed0d",
+  "hash": "ca2a8647f811a338",
   "state": "closed"
  },
  "2645bc64-b7f0-42af-8c91-5ea2f4f78cb8": {
   "number": 184,
   "slug": "sqlalchemy-attributeerror-engine-object-has-no-attribute-f833",
-  "hash": "58d14cd0332f03bf",
+  "hash": "2582df2b983664d2",
   "state": "closed"
  },
  "78914a45-22e1-49a5-ab02-53693e221ba9": {
   "number": 185,
   "slug": "rustc-error-linker-cc-not-found-545e",
-  "hash": "1c96abdf50bc0188",
+  "hash": "3b9062594f07a72c",
   "state": "closed"
  },
  "b1796b08-ae23-4dd9-ba97-016b1195cf3c": {
   "number": 186,
   "slug": "react-objects-are-not-valid-as-a-114b",
-  "hash": "ddf58d6884b077b0",
+  "hash": "d9c5e0909ebaf181",
   "state": "closed"
  },
  "e5220df1-ca73-4c07-be59-4e719f4131cf": {
   "number": 187,
   "slug": "react-invalid-hook-call-hooks-can-only-ac45",
-  "hash": "bf07dc421708a116",
+  "hash": "0da3204b7e86e64d",
   "state": "closed"
  },
  "cee3e490-640e-40ca-9d9c-03f045f2d771": {
   "number": 188,
   "slug": "react-typeerror-reactdom-render-is-not-a-df59",
-  "hash": "7d6ec60d06f9f901",
+  "hash": "6703d55070918d33",
   "state": "closed"
  },
  "5e19a1ad-12da-45da-a090-d800a2a1af81": {
   "number": 189,
   "slug": "react-hydration-failed-because-the-server-rendered-4b29",
-  "hash": "78a0e9a31cc10216",
+  "hash": "b48d994b0d9ea65b",
   "state": "closed"
  },
  "9b489255-7f99-4190-93b9-ae11d22ca376": {
   "number": 190,
   "slug": "python-importerror-attempted-relative-import-with-no-11f3",
-  "hash": "3c819208ff2758f6",
+  "hash": "ba9bb12a8b96332c",
   "state": "closed"
  },
  "d0ce1d1a-26b1-412b-a7bb-917fdee35215": {
   "number": 191,
   "slug": "python-ssl-sslcertverificationerror-ssl-certificate-verify-failed-24e6",
-  "hash": "24bf7c05b0f583d2",
+  "hash": "dfc0ef1a3f78ecb5",
   "state": "closed"
  },
  "f454350d-0f9d-4a49-996f-686c961a11dc": {
   "number": 192,
   "slug": "python-importerror-cannot-import-name-name-from-a837",
-  "hash": "cf2bb9c1a378485f",
+  "hash": "00158b992b8331ea",
   "state": "closed"
  },
  "42203f22-1cac-4ab7-9af4-290991b2ceea": {
   "number": 193,
   "slug": "python-runtimeerror-asyncio-run-cannot-be-called-ead9",
-  "hash": "42b26695ffd33791",
+  "hash": "02dbc795c5732e2f",
   "state": "closed"
  },
  "264e9999-bfa9-40ed-ab2b-5113277b955d": {
   "number": 194,
   "slug": "python-typeerror-type-object-is-not-subscriptable-e3e1",
-  "hash": "34afd0e9cbc1d267",
+  "hash": "d86336b7be2a1224",
   "state": "closed"
  },
  "c5235cb6-fe47-4fcb-bf44-a9e2502b94ca": {
   "number": 195,
   "slug": "python-modulenotfounderror-no-module-named-imghdr-64c5",
-  "hash": "37d8b644d8664e66",
+  "hash": "b046991580227521",
   "state": "closed"
  },
  "4a156791-b5b8-4475-95f4-827fde4e7aea": {
   "number": 196,
   "slug": "python-modulenotfounderror-no-module-named-distutils-6e45",
-  "hash": "68d5be2f83fc381b",
+  "hash": "d475cffc5a08fa63",
   "state": "closed"
  },
  "77536f91-ff3b-4416-9b15-c2a72a5b55e6": {
   "number": 197,
   "slug": "python-deprecationwarning-datetime-datetime-utcnow-is-deprecated-4a10",
-  "hash": "b4201d2d2dd69e6a",
+  "hash": "22dd68c7cce3370c",
   "state": "closed"
  },
  "9e35afe9-71b9-497c-9e59-5be9332f9589": {
   "number": 198,
   "slug": "pytest-e-modulenotfounderror-no-module-named-package-9aa9",
-  "hash": "e6dd12bd8f1b2c6a",
+  "hash": "cf53b50b16b10e04",
   "state": "closed"
  },
  "fe38f527-4907-4147-bf8f-2943cad711eb": {
   "number": 199,
   "slug": "pydantic-userwarning-valid-config-keys-have-changed-341c",
-  "hash": "04f5c582ac8f9099",
+  "hash": "c87c0b61887401d0",
   "state": "closed"
  },
  "a20d4ffe-8e3c-427d-b888-4bcf30cb4986": {
   "number": 200,
   "slug": "pydantic-pydantic-errors-pydanticimporterror-basesettings-has-been-7e99",
-  "hash": "b09db08de57ba56c",
+  "hash": "cac784b9bdc10d59",
   "state": "closed"
  },
  "150879f7-836b-454c-90af-d10e753b5eb7": {
   "number": 201,
   "slug": "prisma-prismaclientinitializationerror-prisma-client-could-not-locate-bb40",
-  "hash": "d7892eb6b0f60904",
+  "hash": "d4e5a223fb1bde34",
   "state": "closed"
  },
  "d2045e81-dde0-44de-8872-9fd14e85b6c2": {
   "number": 202,
   "slug": "prisma-error-environment-variable-not-found-database-3c25",
-  "hash": "025571552972da6f",
+  "hash": "a916841c69349aee",
   "state": "closed"
  },
  "a3b14532-1bfc-42b2-877c-fc71373b4126": {
   "number": 203,
   "slug": "prisma-warn-prisma-client-this-is-the-f7b2",
-  "hash": "64c81f3c8bcc58d5",
+  "hash": "f5220df2bd726d58",
   "state": "closed"
  },
  "fcb2dbdf-d7ad-491c-97d0-c253a9d9a92f": {
   "number": 204,
   "slug": "powershell-file-path-cannot-be-loaded-because-5098",
-  "hash": "783d80905ae9c327",
+  "hash": "307837af19365edf",
   "state": "closed"
  },
  "150ecdce-fc25-48cd-b807-5fcb98b3d96c": {
   "number": 205,
   "slug": "postgresql-psql-error-connection-to-server-on-6c85",
-  "hash": "cec107c236b5c7b1",
+  "hash": "4db4b8971be696f8",
   "state": "closed"
  },
  "f4d2404e-da0a-4801-959a-d724a533e95b": {
   "number": 206,
   "slug": "postgresql-psql-error-connection-to-server-on-bb71",
-  "hash": "9fd92cbc1dbdf8c3",
+  "hash": "5d5ae245ad96357a",
   "state": "closed"
  },
  "316adc5f-f63b-48a0-afec-3281529e7652": {
   "number": 207,
   "slug": "postgresql-fatal-password-authentication-failed-for-user-bd6e",
-  "hash": "f8d35b3a13c297a5",
+  "hash": "fcd36212dc3e3aca",
   "state": "closed"
  },
  "5660a4f6-8539-4920-8d5f-144f1a92e13c": {
   "number": 208,
   "slug": "pnpm-err-pnpm-outdated-lockfile-cannot-install-539d",
-  "hash": "f65c571692a57a28",
+  "hash": "b00a373568d49db5",
   "state": "closed"
  },
  "953b2917-ef17-4879-83f3-f1d1dd010b08": {
   "number": 209,
   "slug": "pip-error-externally-managed-environment-a62f",
-  "hash": "11e12084ae5f3ae6",
+  "hash": "91fec0dd28567c04",
   "state": "closed"
  },
  "62f1f4c3-dc57-4065-a5a4-da642050e9c1": {
   "number": 210,
   "slug": "pandas-attributeerror-dataframe-object-has-no-attribute-8dff",
-  "hash": "ee1181e4743fe225",
+  "hash": "26073326de8a90cf",
   "state": "closed"
  },
  "be2c8f8e-e50f-45b5-b349-abb90dc332fd": {
   "number": 211,
   "slug": "openai-python-openai-lib-old-api-apiremovedinv1-you-b6e4",
-  "hash": "bef835ba12a01a12",
+  "hash": "207178e02da15fe0",
   "state": "closed"
  },
  "77b05c9b-632c-4fe0-bbd5-a7d9cc3a1196": {
   "number": 212,
   "slug": "numpy-attributeerror-np-float-was-removed-in-712d",
-  "hash": "5b387f48e5de535e",
+  "hash": "e9339afaacb0aaa0",
   "state": "closed"
  },
  "84554dda-fcd6-4675-a7a4-69acfb420220": {
   "number": 213,
   "slug": "numpy-a-module-that-was-compiled-using-13a4",
-  "hash": "0fda8948dacbe22d",
+  "hash": "2e7c45db481919bb",
   "state": "closed"
  },
  "cafc444a-b00b-40d4-a0e9-6dadce880cb1": {
   "number": 214,
   "slug": "npm-node-env-is-not-recognized-as-0b4a",
-  "hash": "cc1fc29e47616f5b",
+  "hash": "1fc71654ed566a96",
   "state": "closed"
  },
  "140579a2-be61-454a-8460-053804025c7a": {
   "number": 215,
   "slug": "npm-npm-error-eresolve-unable-to-resolve-581d",
-  "hash": "3f76d3bd1c2c4a43",
+  "hash": "892969fda01b8fe3",
   "state": "closed"
  },
  "be978e70-4655-43a3-991a-2ab1679c2aee": {
   "number": 216,
   "slug": "npm-npm-error-error-eacces-permission-denied-bd37",
-  "hash": "5be9963c8216f553",
+  "hash": "4bec15bfcc3f2cd8",
   "state": "closed"
  },
  "1e6fc244-5072-43c9-8f87-a5694a3ea754": {
   "number": 217,
   "slug": "npm-npm-error-npm-ci-can-only-0bec",
-  "hash": "a579f5e37debae94",
+  "hash": "1e24a13eea25573d",
   "state": "closed"
  },
  "a0394956-726c-4041-b238-8d2e777a4932": {
   "number": 218,
   "slug": "node-error-the-module-path-addon-node-382f",
-  "hash": "c25b2fe74e8be12f",
+  "hash": "6727fbb10f54e3c0",
   "state": "closed"
  },
  "04f4166c-494b-4471-af49-96b28e397783": {
   "number": 219,
   "slug": "node-error-listen-eaddrinuse-address-already-in-50a7",
-  "hash": "c02f7e8f883164d0",
+  "hash": "fae2b8a05c357489",
   "state": "closed"
  },
  "a75230ec-a130-49e9-b17a-9cbd1fdd655f": {
   "number": 220,
   "slug": "node-error-err-module-not-found-cannot-d739",
-  "hash": "681f87b7d460d84a",
+  "hash": "294dbe96314fdcc6",
   "state": "closed"
  },
  "bbf0b58c-385c-4df4-8e33-b18550273211": {
   "number": 221,
   "slug": "node-error-err-require-esm-require-of-f653",
-  "hash": "0c3fd2a88f0e8a85",
+  "hash": "40f8f8d02ea196ba",
   "state": "closed"
  },
  "acfda551-3df2-4c1f-978a-de54137570d5": {
   "number": 222,
   "slug": "node-error-connect-econnrefused-1-port-a6ee",
-  "hash": "17733ef0c768db2d",
+  "hash": "3cd846ae8ee87e47",
   "state": "closed"
  },
  "76ff7483-0882-47df-881e-df27039da379": {
   "number": 223,
   "slug": "node-referenceerror-dirname-is-not-defined-in-74dc",
-  "hash": "987e5d14a4fc7d21",
+  "hash": "ddd4c7d6f850d8f6",
   "state": "closed"
  },
  "86b71536-d6b0-4346-bac8-a6b11c2569ff": {
   "number": 224,
   "slug": "node-syntaxerror-cannot-use-import-statement-outside-9fcc",
-  "hash": "a988f7313b5f83b5",
+  "hash": "f2999dd7d884f57b",
   "state": "closed"
  },
  "751f5ba9-e9fe-40a2-9994-5936eee1adfa": {
   "number": 225,
   "slug": "nextjs-usesearchparams-should-be-wrapped-in-a-4940",
-  "hash": "dc53fc711ea2acff",
+  "hash": "f3cfb05d93be8ee1",
   "state": "closed"
  },
  "c17ab3d0-17b2-42f5-ad3b-539da661853f": {
   "number": 226,
   "slug": "nextjs-you-re-importing-a-module-that-5ce1",
-  "hash": "451515b8069bd3f3",
+  "hash": "a3420e2ad988d82c",
   "state": "closed"
  },
  "8afec428-1593-42eb-a08d-ba63d6e3cf2d": {
   "number": 227,
   "slug": "nextjs-module-not-found-can-t-resolve-e873",
-  "hash": "0622f3d6c9a8ed8a",
+  "hash": "5ec9800526bae513",
   "state": "closed"
  },
  "9df85e1c-e270-414b-8fd0-8efe86323d3c": {
   "number": 228,
   "slug": "nextjs-error-invalid-src-prop-https-host-62ea",
-  "hash": "e8a3f0ac2333141d",
+  "hash": "defd268f1d254d1e",
   "state": "closed"
  },
  "9fa469f7-0803-4f23-afbe-48f8da3e3801": {
   "number": 229,
   "slug": "nextjs-error-route-route-used-params-name-bb0f",
-  "hash": "2ec39b119e8bfd0a",
+  "hash": "dbfadd52c81302f4",
   "state": "closed"
  },
  "dfbf28a1-f79b-4495-8fb4-da3335e9fb88": {
   "number": 230,
   "slug": "nextjs-type-error-type-params-param-string-0774",
-  "hash": "bfa1a66b1a22f260",
+  "hash": "37f69e56b031ee28",
   "state": "closed"
  },
  "a7165c70-054f-4c02-a2f3-958f25e596b2": {
   "number": 231,
   "slug": "nextjs-error-route-route-used-cookies-get-e381",
-  "hash": "ff886d4b48726d5d",
+  "hash": "3e0baea7f2c9c109",
   "state": "closed"
  },
  "d1536eee-7b3b-40b8-b026-e9cba879083f": {
   "number": 232,
   "slug": "claude-code-error-spawn-npx-enoent-dd5d",
-  "hash": "50edaa04a470edd1",
+  "hash": "0577bb5962a7b684",
   "state": "closed"
  },
  "0406b820-4eeb-47e8-9515-bfe744ee5cb6": {
   "number": 233,
   "slug": "macos-zsh-command-not-found-python-374f",
-  "hash": "8e325da07d29203b",
+  "hash": "9cde712d3c8dbbb9",
   "state": "closed"
  },
  "df5d63f9-e399-4341-bd5a-53df705c3c30": {
   "number": 234,
   "slug": "langchain-importerror-cannot-import-name-chatopenai-from-aba1",
-  "hash": "696395738f644366",
+  "hash": "2958f2eeea95be6e",
   "state": "closed"
  },
  "1d82e0cb-36c1-4e3c-a226-6275da132264": {
   "number": 235,
   "slug": "jest-syntaxerror-unexpected-token-export-b6fe",
-  "hash": "0458b5e42f6e5c71",
+  "hash": "5b50b315508ecfe3",
   "state": "closed"
  },
  "6ee91d40-b645-42b3-a051-78d71b90494a": {
   "number": 236,
   "slug": "java-java-lang-unsupportedclassversionerror-class-has-been-03fb",
-  "hash": "12c5d1e2f51f2353",
+  "hash": "5a015cd3b5f6efb8",
   "state": "closed"
  },
  "afcc54a5-4beb-4e23-9c09-63370f4679bc": {
   "number": 237,
   "slug": "gradle-bug-exception-in-phase-semantic-analysis-c3ae",
-  "hash": "1c182e6c42a288a4",
+  "hash": "be00ce3d49917293",
   "state": "closed"
  },
  "3eb6f87e-68b9-4f83-a57d-00a66ec5c914": {
   "number": 238,
   "slug": "go-main-go-n-n-undefined-name-3d40",
-  "hash": "150364ab92586577",
+  "hash": "90f99b77fd35e9b3",
   "state": "closed"
  },
  "d74ed84d-dbcc-4a97-9eec-47fab2315ab5": {
   "number": 239,
   "slug": "go-go-module-version-parsing-go-mod-0210",
-  "hash": "505551bac3f0831f",
+  "hash": "897e2a9da89be80e",
   "state": "closed"
  },
  "a6cf5701-fc4d-4305-acc6-664d30be8d83": {
   "number": 240,
   "slug": "go-go-go-mod-requires-go-required-c54b",
-  "hash": "bfa1bcb39c9a6ece",
+  "hash": "1b1eef490e85b868",
   "state": "closed"
  },
  "fc8d6e5a-59d2-48e1-a8c3-c72b1d487bd0": {
   "number": 241,
   "slug": "go-go-go-mod-file-not-found-ca68",
-  "hash": "f6ba483aaab81293",
+  "hash": "112fa871b1935013",
   "state": "closed"
  },
  "bb7591e6-ae80-41bc-9dd1-bc18af0a895d": {
   "number": 242,
   "slug": "go-missing-go-sum-entry-for-module-c06d",
-  "hash": "5e18a30ccb0319e9",
+  "hash": "c897618f932dd181",
   "state": "closed"
  },
  "5d182a99-a5c6-4c06-8842-def74ad0d99c": {
   "number": 243,
   "slug": "github-actions-this-request-has-been-automatically-failed-f987",
-  "hash": "3f789589a2b2c2fa",
+  "hash": "04bdf9a976348bf0",
   "state": "closed"
  },
  "4aabce61-7274-4215-bcb2-912d90233544": {
   "number": 244,
   "slug": "github-actions-the-set-output-command-is-deprecated-591f",
-  "hash": "64462212f162f613",
+  "hash": "4da585b9f0e14f99",
   "state": "closed"
  },
  "90a6fa47-5df2-492d-a6d9-4ee563cd5edb": {
   "number": 245,
   "slug": "github-actions-requesterror-httperror-resource-not-accessible-by-4342",
-  "hash": "c4f94d70c3a5379f",
+  "hash": "406cfc359bf04af7",
   "state": "closed"
  },
  "aea964bd-fa15-4dc1-9e3c-9692af16427b": {
   "number": 246,
   "slug": "git-email-permission-denied-publickey-224b",
-  "hash": "0ca72320ab02e9da",
+  "hash": "510bb14370f3a2fe",
   "state": "closed"
  },
  "b3b3ab58-44d3-4db5-98a2-6d2f5f300f9b": {
   "number": 247,
   "slug": "git-error-src-refspec-main-does-not-4fbc",
-  "hash": "56bb421e3a99fe98",
+  "hash": "79117242ac601536",
   "state": "closed"
  },
  "fb67dfdd-9f43-492d-bdc0-c01ede3c851d": {
   "number": 248,
   "slug": "git-fatal-refusing-to-merge-unrelated-histories-c004",
-  "hash": "179840b623d04dde",
+  "hash": "f87238679ea51bdc",
   "state": "closed"
  },
  "7bd5ed80-4558-4aaf-828a-ef95eabb9762": {
   "number": 249,
   "slug": "git-hint-updates-were-rejected-because-the-7c03",
-  "hash": "7698affe99670000",
+  "hash": "70ce567fdb257ddf",
   "state": "closed"
  },
  "24f0aff8-a26c-40e2-bc99-735004db8ce5": {
   "number": 250,
   "slug": "git-error-your-local-changes-to-the-096c",
-  "hash": "6c81bf8bff71034c",
+  "hash": "d2327ac1157ce620",
   "state": "closed"
  },
  "341d019e-c230-4fca-839d-1805d6e88898": {
   "number": 251,
   "slug": "git-warning-in-the-working-copy-of-a3ac",
-  "hash": "f10f3ba2750ac937",
+  "hash": "74611008176d2aa9",
   "state": "closed"
  },
  "1cf403cc-4ed1-43a8-b9d6-a0fa144b07e5": {
   "number": 252,
   "slug": "git-remote-support-for-password-authentication-was-5808",
-  "hash": "d3c99fb2512dd6e8",
+  "hash": "bc479f303f195c33",
   "state": "closed"
  },
  "a9d0eecb-37ab-4942-86b7-31b57959efba": {
   "number": 253,
   "slug": "git-fatal-detected-dubious-ownership-in-repository-9ffd",
-  "hash": "8bbf1f025209284c",
+  "hash": "b7c5e69421938873",
   "state": "closed"
  },
  "8dda0d65-c576-4188-a15f-16e7fd5e78ee": {
   "number": 254,
   "slug": "express-typeerror-cannot-destructure-property-name-of-ab2b",
-  "hash": "6081c833f98cf3f0",
+  "hash": "f7ba37ad55ef82ba",
   "state": "closed"
  },
  "56dbafdf-b260-4c9b-8021-6a5c40dabfce": {
   "number": 255,
   "slug": "express-typeerror-missing-parameter-name-at-index-eb3e",
-  "hash": "35c64acc8b7b7207",
+  "hash": "c366130c948c28ec",
   "state": "closed"
  },
  "46dadda8-8fb6-4919-94f6-fcbb02f96b73": {
   "number": 256,
   "slug": "eslint-eslint-couldn-t-find-an-eslint-22a2",
-  "hash": "84b58ccf890b1492",
+  "hash": "12ce169df796ea5f",
   "state": "closed"
  },
  "0bf48623-8857-4e33-b8cf-be3d5e1f3635": {
   "number": 257,
   "slug": "docker-permission-denied-while-trying-to-connect-5db1",
-  "hash": "e74d9aa8faea56a7",
+  "hash": "2eb00b4882640ac0",
   "state": "closed"
  },
  "c089a1cd-0ff6-4c27-953a-ac42e69f8a03": {
   "number": 258,
   "slug": "docker-bind-for-ip-port-failed-port-3633",
-  "hash": "c0204664a97eaabc",
+  "hash": "070100110178bc34",
   "state": "closed"
  },
  "d174a627-16a3-40ef-b37c-b803adc29268": {
   "number": 259,
   "slug": "docker-warning-the-requested-image-s-platform-c270",
-  "hash": "debc5500b7ba30f6",
+  "hash": "3a3f4a4d8fcfebff",
   "state": "closed"
  },
  "1abdff65-45b5-4030-984f-3952949348be": {
   "number": 260,
   "slug": "docker-compose-warn-n-path-docker-compose-yml-0e1b",
-  "hash": "68db05082bd11ba1",
+  "hash": "9ee20fcfed288e94",
   "state": "closed"
  },
  "21a79abb-4085-4505-8a36-fcb32f93f636": {
   "number": 261,
   "slug": "docker-error-failed-to-solve-failed-to-dd27",
-  "hash": "3434584077da7907",
+  "hash": "c18b8feea6465bf7",
   "state": "closed"
  },
  "ab234d0b-e378-4390-9275-f3424f7cbb2f": {
   "number": 262,
   "slug": "docker-failed-to-compute-cache-key-failed-78cf",
-  "hash": "d4aa10049a77bd63",
+  "hash": "45cd3e1970990d7c",
   "state": "closed"
  },
  "cb4ec941-6a65-4dba-b306-029640159abe": {
   "number": 263,
   "slug": "corepack-error-cannot-find-matching-keyid-signatures-0c27",
-  "hash": "56b427860827b0b7",
+  "hash": "20b1e57f4863d461",
   "state": "closed"
  },
  "524f3dc3-3aab-459d-aafe-a1a86726bae1": {
   "number": 264,
   "slug": "cargo-error-rustc-installed-is-not-supported-9ba8",
-  "hash": "5c30c4e1035b9dda",
+  "hash": "70afd36b2fc490ea",
   "state": "closed"
  },
  "0be04d65-1abd-4661-858e-d3ac04e397de": {
   "number": 265,
   "slug": "browser-cors-access-to-fetch-at-url-from-108c",
-  "hash": "80cd3139790880f0",
+  "hash": "b06fd67e95aa6872",
   "state": "closed"
  },
  "c3082c8f-dc32-4e5a-9e86-8a6998e0c5e9": {
   "number": 266,
   "slug": "browser-cors-access-to-fetch-at-url-from-769d",
-  "hash": "062e41843e89c099",
+  "hash": "867f093c64c857c8",
   "state": "closed"
  },
  "440e5303-d756-4213-860c-a250254f8c3e": {
   "number": 267,
   "slug": "bash-bash-script-sh-bin-bash-m-406e",
-  "hash": "62050605581abb99",
+  "hash": "453a505325639bdf",
   "state": "closed"
  },
  "2f9e3e0c-4f14-48fc-bdb3-50f55b6dfbb1": {
   "number": 268,
   "slug": "aws-cli-an-error-occurred-expiredtoken-when-calling-0870",
-  "hash": "cf1bcc71ac27c04a",
+  "hash": "c221df58fabf79ba",
   "state": "closed"
  },
  "980dea92-079f-4c85-b9e2-66eed49ee153": {
   "number": 269,
   "slug": "anthropic-api-error-400-type-error-error-type-f35b",
-  "hash": "35109852f6794d13",
+  "hash": "9455687da1892e9c",
   "state": "closed"
  },
  "6b2ef949-4a27-4b76-aaaa-f81b7b34dd5c": {
   "number": 270,
   "slug": "anthropic-api-429-type-error-error-type-rate-33cf",
-  "hash": "32c5afc6d26038fd",
+  "hash": "aa2b0ba65ab7a7f0",
   "state": "closed"
  },
  "638269c9-b553-4371-bbdb-8901c0915b32": {
   "number": 271,
   "slug": "vitest-after-upgrading-vitest-to-3-2-6d9b",
-  "hash": "0ca6449becb23260",
+  "hash": "4e9f545d34095792",
   "state": "closed"
  },
  "44212c77-e853-4c8c-a0be-cd5605697466": {
   "number": 272,
   "slug": "vite-forge-dependency-scanner-developer-console-flags-5db7",
-  "hash": "4da33a45e1bfb1ef",
+  "hash": "9941afc1ea5b96e9",
   "state": "closed"
  },
  "6705f1f3-33ed-4d57-8bcb-738bfa9f700c": {
   "number": 273,
   "slug": "three-js-tsc-noemit-fails-in-a-project-9cda",
-  "hash": "d1827ac80ab54677",
+  "hash": "2df0e9547380e80c",
   "state": "closed"
  },
  "96530901-470e-483d-af5e-77e26f6a7444": {
   "number": 274,
   "slug": "three-js-in-react-force-graph-3d-with-99ba",
-  "hash": "70625c181544813d",
+  "hash": "e3f150d98d0f842f",
   "state": "closed"
  },
  "9b1a5847-a1ad-44eb-8a09-2c2c33da2bf9": {
   "number": 275,
   "slug": "jira-cloud-api-every-jql-count-reads-0-or-2469",
-  "hash": "6a5031b027d5c152",
+  "hash": "32b9abb95d16555a",
   "state": "closed"
  },
  "56b8096a-8926-4159-b03d-6c75cae284b1": {
   "number": 276,
   "slug": "jira-cloud-api-get-rest-api-3-project-search-295f",
-  "hash": "261c8bbf15239e39",
+  "hash": "d430e2ee431e00d8",
   "state": "closed"
  },
  "d540d8b9-88de-479d-a5fe-a16fec6616d8": {
   "number": 277,
   "slug": "jira-cloud-api-get-rest-api-3-project-search-90ec",
-  "hash": "4fd0e51726db525f",
+  "hash": "6dd1fbbde3c45e17",
   "state": "closed"
  },
  "c875f5f2-75e5-4e57-9bbe-cc4d3f2ba52c": {
   "number": 278,
   "slug": "jira-cloud-api-jql-project-x-and-labels-not-2b27",
-  "hash": "766ec4e24ec5bbd0",
+  "hash": "22d1f8cb7edb2533",
   "state": "closed"
  },
  "aee9fa27-4288-4220-abcb-0bbd24acda62": {
   "number": 279,
   "slug": "jira-cloud-api-syntaxerror-unexpected-end-of-json-input-1184",
-  "hash": "c5df1253549e4b5f",
+  "hash": "02a9a0551d010ded",
   "state": "closed"
  },
  "ccb71052-63e0-4332-a3a2-f8ba79a4f5dd": {
   "number": 280,
   "slug": "jira-agile-api-get-rest-agile-1-0-board-2bd2",
-  "hash": "6bee59d667463ddd",
+  "hash": "9dbbb008d53123ba",
   "state": "closed"
  },
  "292f0742-ef6f-4f6b-b56b-b0d3d1301c2b": {
   "number": 281,
   "slug": "jira-agile-api-get-rest-agile-1-0-board-e742",
-  "hash": "164a730e83b866e4",
+  "hash": "7afe201e2a0b73a4",
   "state": "closed"
  },
  "ec4f6003-9d08-44d2-9579-c0caa1849d0c": {
   "number": 282,
   "slug": "jira-agile-api-post-rest-agile-1-0-backlog-a22f",
-  "hash": "edb5d621a02fb619",
+  "hash": "576a4c9826bb3dfa",
   "state": "closed"
  },
  "f382aeee-b819-4e92-a4cd-90396d876c3b": {
   "number": 283,
   "slug": "forge-platform-deep-link-to-a-forge-jira-7149",
-  "hash": "616b9deaea15a2c4",
+  "hash": "036854d593fec89e",
   "state": "closed"
  },
  "551eccc3-fe8e-4341-a604-adec90b70bea": {
   "number": 284,
   "slug": "forge-cli-forge-deploy-forge-lint-error-invalid-e984",
-  "hash": "1a09291744135d68",
+  "hash": "fdbec97c934304bd",
   "state": "closed"
  },
  "e9b8cea1-790e-41cf-ac97-f2241bb8959e": {
   "number": 285,
   "slug": "forge-cli-forge-deploy-error-typescript-errors-in-7f5a",
-  "hash": "394ed768f58e8194",
+  "hash": "bbf35fbe310afb82",
   "state": "closed"
  },
  "c2e3db5a-70f5-498d-a2a0-52235cd0b883": {
   "number": 286,
   "slug": "vllm-assertionerror-decode-context-parallelism-dcp-requires-a78d",
-  "hash": "abef27c03aaf6716",
+  "hash": "d2e8ae830bbd77ba",
   "state": "closed"
  },
  "952f7ba3-13be-4df8-b01c-36aecb79120f": {
   "number": 287,
   "slug": "vllm-runtimeerror-the-size-of-tensor-a-2ef6",
-  "hash": "0a4292164f4e5a39",
+  "hash": "c2085929c9a8a1ab",
   "state": "closed"
  },
  "a8495406-70a8-48bc-94d6-bf17cf4238ae": {
   "number": 288,
   "slug": "trpc-typeerror-cannot-read-properties-of-undefined-ea1a",
-  "hash": "2fa38e6b35adcf76",
+  "hash": "05ff52cd24e06ade",
   "state": "closed"
  },
  "3fa342d1-8ddc-4344-9c46-bc27702db226": {
   "number": 289,
   "slug": "transformers-keyerror-rope-type-at-self-rope-6a68",
-  "hash": "63d3232ed80c9bae",
+  "hash": "892bfbc4804ab550",
   "state": "closed"
  },
  "57e49a3a-258c-4ea1-81af-2ad2df683d04": {
   "number": 290,
   "slug": "transformers-jinja2-exceptions-undefinederror-dict-object-has-9fed",
-  "hash": "330255d1fec73b35",
+  "hash": "daae6aa5e4199df6",
   "state": "closed"
  },
  "4565e192-bb29-4eee-a121-5fdd3ca2e5de": {
   "number": 291,
   "slug": "transformers-typeerror-bool-object-is-not-iterable-e414",
-  "hash": "83f616a4304cbf96",
+  "hash": "26e6653faf16b8ea",
   "state": "closed"
  },
  "173b9fdb-1ffe-48ea-96d7-1bad715ecb32": {
   "number": 292,
   "slug": "transformers-audio-classification-pipeline-returns-score-1-71a3",
-  "hash": "db55c13a373fdbcf",
+  "hash": "a7eebf0844a95374",
   "state": "closed"
  },
  "d1854536-be85-4dfc-af27-b05d7569eaee": {
   "number": 293,
   "slug": "tensorflow-typeerror-expected-int32-but-got-value-9b83",
-  "hash": "5f159546c8ac361e",
+  "hash": "4cdf9a25db74a568",
   "state": "closed"
  },
  "e03a5c4b-9059-473e-bd46-624eb5fae72c": {
   "number": 294,
   "slug": "ruff-error-e0425-cannot-find-value-note-1012",
-  "hash": "a93ff005d80a9a2a",
+  "hash": "57e1af14807506c8",
   "state": "closed"
  },
  "c364f0a2-0a50-4e43-b812-84ff4015bb67": {
   "number": 295,
   "slug": "pnpm-pre-run-install-error-and-warn-8c87",
-  "hash": "abe62f0a972aee64",
+  "hash": "02af936f97f08302",
   "state": "closed"
  },
  "fc63d8e1-46a7-41a6-835e-d42805d3f23b": {
   "number": 296,
   "slug": "pnpm-pnpm-install-with-dedupepeers-true-links-908a",
-  "hash": "f295e1f36ab214f4",
+  "hash": "31e840b9fd4ee411",
   "state": "closed"
  },
  "3822c42a-f219-4217-9407-2deff47f6ecd": {
   "number": 297,
   "slug": "playwright-error-unknown-command-cli-081e",
-  "hash": "152d74b6405fdfb1",
+  "hash": "c9e516b10135ab49",
   "state": "closed"
  },
  "b34633f4-2e9b-4add-b0b6-097abc9a7082": {
   "number": 298,
   "slug": "playwright-waiting-for-url-navigation-to-finish-2d23",
-  "hash": "5f281572e4061a9f",
+  "hash": "110d3921fb164f7d",
   "state": "closed"
  },
  "8f9597f8-5f1f-42d1-97cc-0a7db6b2a262": {
   "number": 299,
   "slug": "ollama-warning-could-not-connect-to-a-5ba8",
-  "hash": "8d82ede214156ad3",
+  "hash": "215214b5606ec925",
   "state": "closed"
  },
  "44c968c0-e270-48ee-ab16-a6ae170b53e8": {
   "number": 300,
   "slug": "langchain-js-invalidupdateerror-invalid-update-for-channel-key-c0b8",
-  "hash": "e67b1705aa4b17d3",
+  "hash": "4cef2130297e19bf",
   "state": "closed"
  },
  "9a232584-e247-4f10-8a2c-975cee6bf413": {
   "number": 301,
   "slug": "langchain-js-error-tool-error-message-at-object-0c75",
-  "hash": "fc1ee50f29b1c0e7",
+  "hash": "b11090894c40d889",
   "state": "closed"
  },
  "954e8012-4f16-4581-91ce-2c8d67dffc97": {
   "number": 302,
   "slug": "homebrew-error-cask-attempted-to-use-a-d0da",
-  "hash": "231cb946f2f89404",
+  "hash": "9cd25bd5e892780c",
   "state": "closed"
  },
  "ad7abd98-8c5e-45eb-b981-024f200e4a41": {
   "number": 303,
   "slug": "firebase-tools-request-to-serviceusage-googleapis-com-v1-d37f",
-  "hash": "3c09e6765124f386",
+  "hash": "73b70e927868c2d2",
   "state": "closed"
  },
  "7aa38782-3703-465f-bef0-83573f3abe5e": {
   "number": 304,
   "slug": "expo-unsatisfiedlinkerror-dlopen-failed-library-libexpo-sqlite-0ffd",
-  "hash": "a932969ea7e54ca8",
+  "hash": "bad87bdfc9816641",
   "state": "closed"
  },
  "8167df0b-5b5c-4013-ad49-f1a890ab087e": {
   "number": 305,
   "slug": "eslint-parsing-error-unexpected-token-after-eslint-12ba",
-  "hash": "71412407295e0e56",
+  "hash": "012125b0afda00a9",
   "state": "closed"
  },
  "c3d72b45-6619-433c-b748-d3eddc588601": {
   "number": 306,
   "slug": "biome-i-rule-name-errored-error-file-7861",
-  "hash": "ebf8031cf1d6b06a",
+  "hash": "66cb2267fc6067e6",
   "state": "closed"
  },
  "dfdb9295-81b0-4bef-ac85-3a87abf51d64": {
   "number": 307,
   "slug": "astro-typeerror-this-bridge-deleteenv-is-not-7da2",
-  "hash": "25298f14c05cf0d5",
+  "hash": "0fd343a1afa7a63a",
   "state": "closed"
  },
  "1e37f2be-dae7-497c-aaf9-991cd09f1552": {
   "number": 308,
   "slug": "prisma-error-ts2769-no-overload-matches-this-42c2",
-  "hash": "15c5a3664be7daf5",
+  "hash": "4bcdc6c8cf806bab",
   "state": "closed"
  },
  "62f1f3c3-7288-42ed-8e07-47dc95fc4626": {
   "number": 309,
   "slug": "pnpm-error-err-pnpm-no-offline-meta-c403",
-  "hash": "602f0dfd03da7886",
+  "hash": "97d88472f07ab707",
   "state": "closed"
  },
  "9b66928a-3d0e-4d80-b9de-1d2036f8a43e": {
   "number": 310,
   "slug": "nx-the-pkg-package-is-not-used-f641",
-  "hash": "577b500d43a62a19",
+  "hash": "03ee045d49cc7dc3",
   "state": "closed"
  },
  "4bec978d-43fb-45d3-b4fd-ecf062b170f2": {
   "number": 311,
   "slug": "nextjs-next-dev-types-validator-ts-line-ebcb",
-  "hash": "762fa39ac78dc6c1",
+  "hash": "e951f30ce34aef7c",
   "state": "closed"
  },
  "0384733f-a48d-4abd-b1ad-92a5e61b1649": {
   "number": 312,
   "slug": "homebrew-warning-you-are-using-macos-on-fbf0",
-  "hash": "6fc354cf3f7ae128",
+  "hash": "e48ae977dc255ec0",
   "state": "closed"
  },
  "3f1d14c4-ee4d-4029-a230-4c39395e67cb": {
   "number": 313,
   "slug": "homebrew-path-pathname-binread-operation-not-permitted-4ff8",
-  "hash": "58f24d9ecca75acd",
+  "hash": "6a14b4356a1a3eae",
   "state": "closed"
  },
  "21ae8659-fdd1-41af-aaf9-e80e001cb867": {
   "number": 314,
   "slug": "claude-code-api-error-400-invalid-schema-for-e75c",
-  "hash": "c0c5be0d96f2ba49",
+  "hash": "eb02b7d7b687f6eb",
   "state": "closed"
  },
  "15e9b594-fe6e-4ebf-a1ea-7bc1c18d1897": {
   "number": 315,
   "slug": "angular-formvaluecontrol-with-transformedvalue-under-formcontrol-or-3472",
-  "hash": "69f619744875ca41",
+  "hash": "5606b0a96d04841f",
   "state": "closed"
  }
 }

@@ -5,7 +5,7 @@ Canonical: https://api.modalhub.ai/r/nestjs-warn-legacyrouteconverter-unsupporte
 # "WARN [LegacyRouteConverter] Unsupported route path: "<route>". In pre…" — nestjs 11.1
 seen as: WARN [LegacyRouteConverter] Unsupported route path: "/v1/*". In previous versions, the symbols ?, *, and + were used to denote optional or repeating path parameters. The latest version of "path-to-regexp" now requires the use of named parameters.
 cause: Nest 11 matches paths with path-to-regexp 8 (Express 5, middie 9), which rejects an unnamed * or (.*); Nest rewrites such paths at boot and warns
-status: no reports yet · published on nestjs 11.1.6
+status: no reports yet · published on nestjs 11.1.6 · checked by the publisher against the sources below
 arms: works 11.1
 risk: low
 fix (patch):
@@ -19,9 +19,13 @@ fix (patch):
 ~~~
 repro: none
 check: restart the app: the boot log has no [LegacyRouteConverter] lines
+sources:
+- https://github.com/nestjs/nest/issues/14513
+- https://github.com/nestjs/nest/issues/14568
+- https://expressjs.com/en/guide/migrating-5.html
 don't:
 - follow the hint literally and turn users/* into users/*path — *path needs at least one more segment, so /users/ stops matching; users/{*path} keeps the old matches (12.1.1+ rewords the hint for this) (×1)
 - replace '*' with '(.*)', a Nest 10 idiom for all routes — (.*) is rejected too: Nest converts it to {*path} and logs the same warning, e.g. for /v1/(.*) under a global prefix (×1)
 ---
-reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/nestjs-warn-legacyrouteconverter-unsupported-route-path-route-f8b0/worked?v=<version> or https://api.modalhub.ai/r/nestjs-warn-legacyrouteconverter-unsupported-route-path-route-f8b0/didnt?v=<version> (one request, no account)
+reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/nestjs-warn-legacyrouteconverter-unsupported-route-path-route-f8b0/worked?v=<version> or https://api.modalhub.ai/r/nestjs-warn-legacyrouteconverter-unsupported-route-path-route-f8b0/didnt?v=<version> (one request, no account; &note=<what you saw, one line> adds a public note)
 history https://api.modalhub.ai/r/nestjs-warn-legacyrouteconverter-unsupported-route-path-route-f8b0/history · license CC0-1.0

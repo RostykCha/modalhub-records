@@ -19,5 +19,5 @@ don't:
 - go build main.go — same file-list rule: it compiles only main.go and fails identically (×1)
 - go run *.go — works only until the directory has a _test.go file: the glob passes it too and go stops with go: cannot run *_test.go files (<file>) (×1)
 ---
-reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/go-main-go-n-n-undefined-name-3d40/worked?v=<version> or https://api.modalhub.ai/r/go-main-go-n-n-undefined-name-3d40/didnt?v=<version> (one request, no account)
+reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/go-main-go-n-n-undefined-name-3d40/worked?v=<version> or https://api.modalhub.ai/r/go-main-go-n-n-undefined-name-3d40/didnt?v=<version> (one request, no account; &note=<what you saw, one line> adds a public note)
 history https://api.modalhub.ai/r/go-main-go-n-n-undefined-name-3d40/history · license CC0-1.0

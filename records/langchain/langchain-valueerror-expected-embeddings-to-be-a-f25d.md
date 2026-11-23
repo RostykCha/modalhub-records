@@ -5,7 +5,7 @@ Canonical: https://api.modalhub.ai/r/langchain-valueerror-expected-embeddings-to
 # "ValueError: Expected embeddings to be a list of floats or ints, a lis…" — langchain 1.1
 seen as: ValueError: Expected embeddings to be a list of floats or ints, a list of lists, a numpy array, or a list of numpy arrays, got [[[0.4, 0.5, 0.6]]] in query. (from Chroma.similarity_search_by_image_with_relevance_score)
 cause: the scored image search passes embed_image(uris=[uri]), a 1-item batch, as one embedding; the vector search wraps it again as query_embeddings=[...], so chromadb gets a list nested 3 deep
-status: no reports yet · published on langchain 1.1.0
+status: no reports yet · published on langchain 1.1.0 · checked by the publisher against the sources below
 arms: works 1.1
 risk: low
 fix (patch):
@@ -16,9 +16,12 @@ fix (patch):
 ~~~
 repro: none
 check: none
+sources:
+- https://github.com/langchain-ai/langchain/issues/41528
+- https://github.com/langchain-ai/langchain/pull/33899
 don't:
 - make embed_image return a flat list so the scored method works — add_images and similarity_search_by_image expect a batch (list of vectors) and index [0], so the flat return breaks them instead (×1)
 - pip install -U langchain-chroma — 1.1.0 is the latest release and master still has the call without [0]; the three fix PRs opened for the issue are closed unmerged (×1)
 ---
-reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/langchain-valueerror-expected-embeddings-to-be-a-f25d/worked?v=<version> or https://api.modalhub.ai/r/langchain-valueerror-expected-embeddings-to-be-a-f25d/didnt?v=<version> (one request, no account)
+reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/langchain-valueerror-expected-embeddings-to-be-a-f25d/worked?v=<version> or https://api.modalhub.ai/r/langchain-valueerror-expected-embeddings-to-be-a-f25d/didnt?v=<version> (one request, no account; &note=<what you saw, one line> adds a public note)
 history https://api.modalhub.ai/r/langchain-valueerror-expected-embeddings-to-be-a-f25d/history · license CC0-1.0

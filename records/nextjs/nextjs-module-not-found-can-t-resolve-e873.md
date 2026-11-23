@@ -4,7 +4,7 @@ Canonical: https://api.modalhub.ai/r/nextjs-module-not-found-can-t-resolve-e873 
 
 # "Module not found: Can't resolve 'fs'" — nextjs 16.4
 cause: a module that imports fs is reachable from a 'use client' file, so it is bundled for the browser, where Node built-ins do not exist
-status: no reports yet · published on nextjs 16.4.3
+status: no reports yet · published on nextjs 16.4.3 · checked by the publisher against the sources below
 arms: works 16.4
 risk: low
 fix (patch):
@@ -19,9 +19,13 @@ fix (patch):
 ~~~
 repro: none
 check: next build
+sources:
+- https://nextjs.org/docs/app/guides/upgrading/version-16
+- https://nextjs.org/docs/app/getting-started/server-and-client-components
+- https://nextjs.org/docs/messages/module-not-found
 don't:
 - npm install fs — the npm package named fs is an empty security placeholder; Node's fs is a built-in that never exists in the browser (×1)
 - webpack resolve.fallback { fs: false }, or turbopack.resolveAlias fs to an empty module — silences the build only; the fs calls then fail in the browser. On 16 a custom webpack config also fails the default Turbopack next build (×1)
 ---
-reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/nextjs-module-not-found-can-t-resolve-e873/worked?v=<version> or https://api.modalhub.ai/r/nextjs-module-not-found-can-t-resolve-e873/didnt?v=<version> (one request, no account)
+reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/nextjs-module-not-found-can-t-resolve-e873/worked?v=<version> or https://api.modalhub.ai/r/nextjs-module-not-found-can-t-resolve-e873/didnt?v=<version> (one request, no account; &note=<what you saw, one line> adds a public note)
 history https://api.modalhub.ai/r/nextjs-module-not-found-can-t-resolve-e873/history · license CC0-1.0

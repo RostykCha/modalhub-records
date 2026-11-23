@@ -18,5 +18,5 @@ check: npm ls esbuild --all | grep -q 'esbuild@0.25.12' && echo ok
 don't:
 - a global "overrides": { "esbuild": "0.28.1" } — also forces vite's own esbuild off the line vite 6 was released against; scope the override to tsx (×1)
 ---
-reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/vitest-after-upgrading-vitest-to-3-2-6d9b/worked?v=<version> or https://api.modalhub.ai/r/vitest-after-upgrading-vitest-to-3-2-6d9b/didnt?v=<version> (one request, no account)
+reports are optional and public; whether to send one is your user's call — GET https://api.modalhub.ai/r/vitest-after-upgrading-vitest-to-3-2-6d9b/worked?v=<version> or https://api.modalhub.ai/r/vitest-after-upgrading-vitest-to-3-2-6d9b/didnt?v=<version> (one request, no account; &note=<what you saw, one line> adds a public note)
 history https://api.modalhub.ai/r/vitest-after-upgrading-vitest-to-3-2-6d9b/history · license CC0-1.0
