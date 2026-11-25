@@ -1,9 +1,498 @@
 {
- "generated_at": "2026-11-24T13:39:48Z",
+ "generated_at": "2026-11-25T12:50:10Z",
  "source": "https://api.modalhub.ai/v1/records",
  "license": "CC0-1.0",
- "count": 315,
+ "count": 340,
  "records": [
+  {
+   "id": "e261f310-3e51-461b-b98c-cf5eb5520fdb",
+   "slug": "vllm-runtimeerror-ptr-a-size-1-must-6e7e",
+   "url": "https://api.modalhub.ai/r/vllm-runtimeerror-ptr-a-size-1-must-6e7e",
+   "symptom": "RuntimeError: ptr_A.size(1) must match ptr_B.size(1)",
+   "cause": "vllm_xpu_kernels 0.1.17's XpuFusedMoe relayouts [E, N, K] expert weights itself; vLLM before 0.34.0 still pre-transposes them, so the transposes cancel and K mismatches",
+   "tool": "vllm",
+   "version": "0.33.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "bb8c3691-eedb-4bd2-b06a-8df895769836",
+   "slug": "vllm-assertionerror-workspace-is-locked-but-allocation-5eb7",
+   "url": "https://api.modalhub.ai/r/vllm-assertionerror-workspace-is-locked-but-allocation-5eb7",
+   "symptom": "AssertionError: Workspace is locked but allocation from 'rocm_aiter_mla_sparse.py:<line>:rocm_fp8_paged_mqa_logits' requires <n> MB, current size is <m> MB. Workspace growth is not allowed after locking.",
+   "cause": "the glm5next ROCm kpool indexer's profiling run reserved worst-case decode logits via torch.empty, so the workspace locked below what rocm_fp8_paged_mqa_logits later takes",
+   "tool": "vllm",
+   "version": "0.32.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "9bf81bb6-c089-43d0-a7a9-f76474d873f4",
+   "slug": "vllm-runtimeerror-cuda-error-the-provided-ptx-c825",
+   "url": "https://api.modalhub.ai/r/vllm-runtimeerror-cuda-error-the-provided-ptx-c825",
+   "symptom": "RuntimeError: CUDA error: the provided PTX was compiled with an unsupported toolchain.",
+   "cause": "the kernel PTX was emitted by a CUDA toolkit newer than the installed driver supports (here a source build with nvcc 13.5 on an older driver), so the driver's PTX JIT rejects it",
+   "tool": "vllm",
+   "version": "0.34.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "59bb57fc-dba4-4b28-b8d5-7e9a6bf77086",
+   "slug": "vllm-torch-outofmemoryerror-cuda-out-of-memory-f044",
+   "url": "https://api.modalhub.ai/r/vllm-torch-outofmemoryerror-cuda-out-of-memory-f044",
+   "symptom": "torch.OutOfMemoryError: CUDA out of memory. Tried to allocate <size>. — in chunk_gated_delta_rule_fwd_h (chunk_delta_h.py) on a GDN/KDA hybrid model, mid-serving after a clean startup",
+   "cause": "profile_run skips linear-attention layers (GDN/KDA warm up at T=64), so KV is sized as if the chunked-scan buffers that grow with tokens and sequences per step were free",
+   "tool": "vllm",
+   "version": "0.31.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "37f24d60-17a5-4e9c-918d-494310385d6a",
+   "slug": "vite-typeerror-name-default-is-not-a-9bef",
+   "url": "https://api.modalhub.ai/r/vite-typeerror-name-default-is-not-a-9bef",
+   "symptom": "TypeError: <name>.default is not a constructor after await import('<cjs-pkg>') under experimental.bundledDev",
+   "cause": "bundledDev's lazy import() path in rolldown <1.3.0 compiles the importer while the importee is a stub, so it skips the CJS __toESM wrap that sets default = module.exports",
+   "tool": "vite",
+   "version": "8.3.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "77788e32-699c-4ac8-8d06-1121f8d61f76",
+   "slug": "transformers-valueerror-an-error-occurred-while-trying-ab86",
+   "url": "https://api.modalhub.ai/r/transformers-valueerror-an-error-occurred-while-trying-ab86",
+   "symptom": "ValueError: An error occurred while trying to load from 'kernels-community/flash-attn3': Failed to refresh TUF metadata.",
+   "cause": "with sigstore importable, kernels 0.18.x verifies each Hub kernel on load; ranks refreshing the shared sigstore TUF cache at once race on python-tuf's non-atomic root.json symlink swap",
+   "tool": "transformers",
+   "version": "5.23.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "692cb6d2-63ca-4349-bfa0-8944d1b80cf3",
+   "slug": "transformers-valueerror-when-using-fsdp2-a-model-26a1",
+   "url": "https://api.modalhub.ai/r/transformers-valueerror-when-using-fsdp2-a-model-26a1",
+   "symptom": "ValueError: When using FSDP2, a model and optimizer must be passed together to `Accelerator.prepare()` as the optimizer needs to have its parameters modified after the model is converted.",
+   "cause": "Trainer.evaluate()/predict() before train() calls accelerator.prepare(model) with no optimizer, and accelerate before 1.16.0 rejects a model-only prepare under FSDP2",
+   "tool": "transformers",
+   "version": "5.17.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "e5cf56af-daad-47e4-b0f6-653096f51f9c",
+   "slug": "transformers-keyerror-kernel-repo-is-not-a-c824",
+   "url": "https://api.modalhub.ai/r/transformers-keyerror-kernel-repo-is-not-a-c824",
+   "symptom": "KeyError: '`<kernel-repo>` is not a valid attention implementation registered in the `AttentionInterface`' at forward, after a failed load of that kernel in the same process",
+   "cause": "lazy_import_flash_attention set _loaded_implementation before loading the kernel, so after a failed load later calls skip both the load and the AttentionInterface registration",
+   "tool": "transformers",
+   "version": "5.22.2",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "c3ee5ca4-7795-40ec-a74f-d55766dd1a4a",
+   "slug": "transformers-indexerror-list-index-out-of-range-fb82",
+   "url": "https://api.modalhub.ai/r/transformers-indexerror-list-index-out-of-range-fb82",
+   "symptom": "IndexError: list index out of range at if (final_message := chat[-1].get(continue_final_message)) is None: in render_jinja_template, from apply_chat_template(batch, continue_final_message=True)",
+   "cause": "apply_chat_template rejects only a top-level empty list; an empty conversation inside a batch reaches render_jinja_template, which reads chat[-1] for continue_final_message unchecked",
+   "tool": "transformers",
+   "version": "5.22.2",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "c4db5e9a-ee65-49e0-b2f2-c33e970f1121",
+   "slug": "sveltekit-syntaxerror-lightningcss-minify-unexpected-token-function-1f59",
+   "url": "https://api.modalhub.ai/r/sveltekit-syntaxerror-lightningcss-minify-unexpected-token-function-1f59",
+   "symptom": "SyntaxError: [lightningcss minify] Unexpected token Function(\"anchored\")",
+   "cause": "Kit up to 3.3.0 recomputes build.cssMinify from build.minify, dropping a user-set 'esbuild', so Vite 8 minifies CSS with its default Lightning CSS, which cannot parse @container anchored()",
+   "tool": "sveltekit",
+   "version": "3.3.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "2724db65-8c4d-4c15-bba9-132d43bad3e3",
+   "slug": "sqlalchemy-sqlalchemy-exc-argumenterror-mapped-class-aliased-c105",
+   "url": "https://api.modalhub.ai/r/sqlalchemy-sqlalchemy-exc-argumenterror-mapped-class-aliased-c105",
+   "symptom": "sqlalchemy.exc.ArgumentError: Mapped class aliased(<Base>) referenced in option <option>(aliased(<Base>).<attr>) does not apply to any of the root entities in this query, e.g. <Subclass>. Please specify the full path from one of the root entities to the target attribute.",
+   "cause": "the automatic load of a polymorphic_load=\"selectin\" subclass re-applies the statement's loader options; its root entity is the subclass, so an option on aliased(<Base>) matches no root",
+   "tool": "sqlalchemy",
+   "version": "2.1.8",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "a381af10-4e3e-48f6-a7d4-1d3d3ee55d46",
+   "slug": "ruff-error-fix-introduced-a-syntax-error-5cb5",
+   "url": "https://api.modalhub.ai/r/ruff-error-fix-introduced-a-syntax-error-5cb5",
+   "symptom": "error: Fix introduced a syntax error. Reverting all changes.",
+   "cause": "the shared add_argument/remove_argument fix helpers used a parenthesized keyword value's start (after name=) as the keyword's start, so B028/UP022 edits split the keyword",
+   "tool": "ruff",
+   "version": "0.17.4",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "2ed4d571-a478-4c86-ac73-a29fccfde58f",
+   "slug": "puppeteer-typeerror-cannot-add-property-logger-object-8d53",
+   "url": "https://api.modalhub.ai/r/puppeteer-typeerror-cannot-add-property-logger-object-8d53",
+   "symptom": "TypeError: Cannot add property logger, object is not extensible",
+   "cause": "PuppeteerNode.launch() and connect() run options.logger ??= debug on the caller's own options object, so a frozen (non-extensible) object rejects the new property",
+   "tool": "puppeteer",
+   "version": "25.17.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "2a60da5f-91f5-4a8b-b1a3-ea910f04a6dc",
+   "slug": "puppeteer-error-exactly-one-of-url-path-94c8",
+   "url": "https://api.modalhub.ai/r/puppeteer-error-exactly-one-of-url-path-94c8",
+   "symptom": "Error: Exactly one of `url`, `path`, or `content` must be specified.",
+   "cause": "addStyleTag({path}) wrote the CSS it read into the caller's object (options.content = content), so a reused object has both path and content and the exactly-one check throws",
+   "tool": "puppeteer",
+   "version": "25.17.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "f3bc01bf-8a5e-4235-a26e-f4e31248932e",
+   "slug": "prisma-error-ts2307-cannot-find-module-contract-5f76",
+   "url": "https://api.modalhub.ai/r/prisma-error-ts2307-cannot-find-module-contract-5f76",
+   "symptom": "error TS2307: Cannot find module './contract.d' or its corresponding type declarations.",
+   "cause": "prisma orm init scaffolds db.ts with import type from './contract.d', a specifier only moduleResolution bundler resolves; under nodenext or node16 Contract stays unresolved",
+   "tool": "prisma",
+   "version": "8.0.0-rc.15",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "caution",
+    "flags": [
+     {
+      "code": "installs_package",
+      "args": [
+       "npm:tsc"
+      ]
+     }
+    ],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "4b0af17c-1a05-479d-a7ab-c221f4757ff2",
+   "slug": "pnpm-error-err-pnpm-unsupported-shell-can-d4ac",
+   "url": "https://api.modalhub.ai/r/pnpm-error-err-pnpm-unsupported-shell-can-d4ac",
+   "symptom": "Error: ERR_PNPM_UNSUPPORTED_SHELL Can't setup configuration for \"pwsh\" shell",
+   "cause": "pnpm setup takes the shell from the basename of $SHELL and had no PowerShell branch before 12.21.0 / 11.28.12, so a pwsh login shell falls through to the unsupported-shell error",
+   "tool": "pnpm",
+   "version": "12.18.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "caution",
+    "flags": [
+     {
+      "code": "installs_package",
+      "args": [
+       "npm:get-pnpm"
+      ]
+     }
+    ],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "eae1190c-0fd9-40eb-825c-adb129ec55cc",
+   "slug": "pnpm-pnpm-install-prints-a-failed-resolution-6a86",
+   "url": "https://api.modalhub.ai/r/pnpm-pnpm-install-prints-a-failed-resolution-6a86",
+   "symptom": "pnpm install prints a failed resolution's cause twice: once inside \"Failed to resolve dependency tree: ...\" and again as the next ├─▶ cause line",
+   "cause": "pnpm 12 drops a cause that the line above restates, but compared each cause only with the last line it kept; the middle level had folded into the outer line, so its own cause printed again",
+   "tool": "pnpm",
+   "version": "12.20.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "e1e7ff7e-64a1-4903-8b63-156a0f6b3517",
+   "slug": "pnpm-syntaxerror-unexpected-end-of-input-in-5614",
+   "url": "https://api.modalhub.ai/r/pnpm-syntaxerror-unexpected-end-of-input-in-5614",
+   "symptom": "SyntaxError: Unexpected end of input in a file patched via patchedDependencies; pnpm install applied the patch without error but dropped its last added line",
+   "cause": "the hunk matches the file's unterminated last line as context, so the insertion's \\ No newline at end of file marker pops a newline that is not there and drops the last added line",
+   "tool": "pnpm",
+   "version": "12.21.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "7016c349-871f-4f36-9bcd-bb3bf691245e",
+   "slug": "pnpm-pnpm-12-error-messages-are-hard-fb66",
+   "url": "https://api.modalhub.ai/r/pnpm-pnpm-12-error-messages-are-hard-fb66",
+   "symptom": "pnpm 12 error messages are hard-wrapped at 80 columns outside a terminal (CI logs, agent shells), splitting URLs and file paths mid-word; COLUMNS is ignored",
+   "cause": "pnpm 12 rendered errors with miette's defaults: wrap_lines and break_words on, at the width of the first TTY among stdout/stderr/stdin, else 80; COLUMNS is not read",
+   "tool": "pnpm",
+   "version": "12.21.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "d459d3da-cee6-4fa0-ab4f-f0c4a6215610",
+   "slug": "pnpm-error-err-pnpm-next-lockfile-not-ef48",
+   "url": "https://api.modalhub.ai/r/pnpm-error-err-pnpm-next-lockfile-not-ef48",
+   "symptom": "Error: ERR_PNPM_NEXT_LOCKFILE_NOT_REPRESENTABLE × serialize deployed lockfile ╰─▶ The lockfile cannot be written in the next format, because reading it back would differ: importer .: dependencies differ",
+   "cause": "deploy --prod drops the optional peer edge and its dev-only provider but keeps the peer suffix in snapshot keys and references; v13 read-back rebuilds keys without it, so the round-trip guard fails",
+   "tool": "pnpm",
+   "version": "12.21.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "9c803a8e-52fb-415d-a7b2-8b679e49a68f",
+   "slug": "numpy-np-add-at-a-idx-v-7303",
+   "url": "https://api.modalhub.ai/r/numpy-np-add-at-a-idx-v-7303",
+   "symptom": "np.add.at(a, idx, v) silently writes into an array with flags.writeable=False (or np.frombuffer over bytes) instead of raising ValueError",
+   "cause": "ufunc_at() in the C core only checked that the first operand is an ndarray and never called PyArray_FailUnlessWriteable, which out= and indexed assignment do",
+   "tool": "numpy",
+   "version": "2.5.4",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "e9e8ff0d-d263-4ccf-bd7b-82d4236ebd06",
+   "slug": "nestjs-typeerror-cannot-read-properties-of-null-6a79",
+   "url": "https://api.modalhub.ai/r/nestjs-typeerror-cannot-read-properties-of-null-6a79",
+   "symptom": "TypeError: Cannot read properties of null (reading 'producer') — thrown in ClientKafka.initializeClientAndConnections when close() runs while connect() is still connecting",
+   "cause": "close() nulls client, _consumer and _producer without stopping an in-flight connect(), which reads this.client again after awaiting consumer.connect() and bindTopics()",
+   "tool": "nestjs",
+   "version": "12.5.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "9557a1ba-39da-4ffc-b1a0-cc38d7250416",
+   "slug": "gradio-oserror-cannot-find-empty-port-in-e0f6",
+   "url": "https://api.modalhub.ai/r/gradio-oserror-cannot-find-empty-port-in-e0f6",
+   "symptom": "OSError: Cannot find empty port in range: <start>-<end>. You can specify a different port by setting the GRADIO_SERVER_PORT environment variable or passing the `server_port` parameter to `launch()`.",
+   "cause": "Windows reserves excluded port ranges (Hyper-V, WSL, Docker); bind() there fails with WinError 10013 though nothing listens, and gradio reports it as no empty port",
+   "tool": "gradio",
+   "version": "6.31.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "b76b4703-db17-48d9-941f-fc990f5bd791",
+   "slug": "gradio-on-windows-with-gr-blocks-delete-30e1",
+   "url": "https://api.modalhub.ai/r/gradio-on-windows-with-gr-blocks-delete-30e1",
+   "symptom": "On Windows with gr.Blocks(delete_cache=...), a cached file that is handed out again is still deleted on the schedule of its first use, while it is being served",
+   "cause": "delete_cache aged files by st_ctime; on Windows st_ctime is the creation time and the os.utime touch on reuse only moves st_mtime, so the refresh did nothing",
+   "tool": "gradio",
+   "version": "6.31.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "0d9cc221-eb1c-4309-96e3-5b9e3154f40a",
+   "slug": "biome-markdown-blockquote-biome-format-removes-the-d733",
+   "url": "https://api.modalhub.ai/r/biome-markdown-blockquote-biome-format-removes-the-d733",
+   "symptom": "Markdown blockquote: biome format removes the spaces after a code span that wraps across two > lines and before the next code span (> b` c `d` becomes > b`c`d`)",
+   "cause": "the Markdown parser lexed the '> ' prefix of a code span's continuation line as code text instead of a quote prefix, so the formatter mis-printed the span and dropped its adjacent spaces",
+   "tool": "biome",
+   "version": "2.6.6",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
   {
    "id": "1e37f2be-dae7-497c-aaf9-991cd09f1552",
    "slug": "prisma-error-ts2769-no-overload-matches-this-42c2",

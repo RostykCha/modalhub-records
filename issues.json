@@ -1888,5 +1888,155 @@
   "slug": "angular-formvaluecontrol-with-transformedvalue-under-formcontrol-or-3472",
   "hash": "5606b0a96d04841f",
   "state": "closed"
+ },
+ "e261f310-3e51-461b-b98c-cf5eb5520fdb": {
+  "number": 316,
+  "slug": "vllm-runtimeerror-ptr-a-size-1-must-6e7e",
+  "hash": "3e8fcb9eb3d00da7",
+  "state": "closed"
+ },
+ "bb8c3691-eedb-4bd2-b06a-8df895769836": {
+  "number": 317,
+  "slug": "vllm-assertionerror-workspace-is-locked-but-allocation-5eb7",
+  "hash": "5f03bd530fcd94b4",
+  "state": "closed"
+ },
+ "9bf81bb6-c089-43d0-a7a9-f76474d873f4": {
+  "number": 318,
+  "slug": "vllm-runtimeerror-cuda-error-the-provided-ptx-c825",
+  "hash": "69ed84e7e2962e75",
+  "state": "closed"
+ },
+ "59bb57fc-dba4-4b28-b8d5-7e9a6bf77086": {
+  "number": 319,
+  "slug": "vllm-torch-outofmemoryerror-cuda-out-of-memory-f044",
+  "hash": "37ccbd6b3ffed5bb",
+  "state": "closed"
+ },
+ "37f24d60-17a5-4e9c-918d-494310385d6a": {
+  "number": 320,
+  "slug": "vite-typeerror-name-default-is-not-a-9bef",
+  "hash": "a760de94c9456ccc",
+  "state": "closed"
+ },
+ "77788e32-699c-4ac8-8d06-1121f8d61f76": {
+  "number": 321,
+  "slug": "transformers-valueerror-an-error-occurred-while-trying-ab86",
+  "hash": "a741537306814606",
+  "state": "closed"
+ },
+ "692cb6d2-63ca-4349-bfa0-8944d1b80cf3": {
+  "number": 322,
+  "slug": "transformers-valueerror-when-using-fsdp2-a-model-26a1",
+  "hash": "18c8a937553891d7",
+  "state": "closed"
+ },
+ "e5cf56af-daad-47e4-b0f6-653096f51f9c": {
+  "number": 323,
+  "slug": "transformers-keyerror-kernel-repo-is-not-a-c824",
+  "hash": "5de7e44e1573fff4",
+  "state": "closed"
+ },
+ "c3ee5ca4-7795-40ec-a74f-d55766dd1a4a": {
+  "number": 324,
+  "slug": "transformers-indexerror-list-index-out-of-range-fb82",
+  "hash": "858a7ca2a2c6ab2b",
+  "state": "closed"
+ },
+ "c4db5e9a-ee65-49e0-b2f2-c33e970f1121": {
+  "number": 325,
+  "slug": "sveltekit-syntaxerror-lightningcss-minify-unexpected-token-function-1f59",
+  "hash": "75994452a38665b4",
+  "state": "closed"
+ },
+ "2724db65-8c4d-4c15-bba9-132d43bad3e3": {
+  "number": 326,
+  "slug": "sqlalchemy-sqlalchemy-exc-argumenterror-mapped-class-aliased-c105",
+  "hash": "b7f783cee01ad4b7",
+  "state": "closed"
+ },
+ "a381af10-4e3e-48f6-a7d4-1d3d3ee55d46": {
+  "number": 327,
+  "slug": "ruff-error-fix-introduced-a-syntax-error-5cb5",
+  "hash": "96f77c42bd89e5b8",
+  "state": "closed"
+ },
+ "2ed4d571-a478-4c86-ac73-a29fccfde58f": {
+  "number": 328,
+  "slug": "puppeteer-typeerror-cannot-add-property-logger-object-8d53",
+  "hash": "1d16aac3e6d104d4",
+  "state": "closed"
+ },
+ "2a60da5f-91f5-4a8b-b1a3-ea910f04a6dc": {
+  "number": 329,
+  "slug": "puppeteer-error-exactly-one-of-url-path-94c8",
+  "hash": "cec55ccca981b48c",
+  "state": "closed"
+ },
+ "f3bc01bf-8a5e-4235-a26e-f4e31248932e": {
+  "number": 330,
+  "slug": "prisma-error-ts2307-cannot-find-module-contract-5f76",
+  "hash": "e8ba0d504b60a80b",
+  "state": "closed"
+ },
+ "4b0af17c-1a05-479d-a7ab-c221f4757ff2": {
+  "number": 331,
+  "slug": "pnpm-error-err-pnpm-unsupported-shell-can-d4ac",
+  "hash": "cb0ee6b168257d58",
+  "state": "closed"
+ },
+ "eae1190c-0fd9-40eb-825c-adb129ec55cc": {
+  "number": 332,
+  "slug": "pnpm-pnpm-install-prints-a-failed-resolution-6a86",
+  "hash": "720777765879c44d",
+  "state": "closed"
+ },
+ "e1e7ff7e-64a1-4903-8b63-156a0f6b3517": {
+  "number": 333,
+  "slug": "pnpm-syntaxerror-unexpected-end-of-input-in-5614",
+  "hash": "4b285b7f6280487c",
+  "state": "closed"
+ },
+ "7016c349-871f-4f36-9bcd-bb3bf691245e": {
+  "number": 334,
+  "slug": "pnpm-pnpm-12-error-messages-are-hard-fb66",
+  "hash": "4fd1ecf0b48e8df3",
+  "state": "closed"
+ },
+ "d459d3da-cee6-4fa0-ab4f-f0c4a6215610": {
+  "number": 335,
+  "slug": "pnpm-error-err-pnpm-next-lockfile-not-ef48",
+  "hash": "f054f02059372db0",
+  "state": "closed"
+ },
+ "9c803a8e-52fb-415d-a7b2-8b679e49a68f": {
+  "number": 336,
+  "slug": "numpy-np-add-at-a-idx-v-7303",
+  "hash": "144931919868cf33",
+  "state": "closed"
+ },
+ "e9e8ff0d-d263-4ccf-bd7b-82d4236ebd06": {
+  "number": 337,
+  "slug": "nestjs-typeerror-cannot-read-properties-of-null-6a79",
+  "hash": "ded0a9c8c82988d2",
+  "state": "closed"
+ },
+ "9557a1ba-39da-4ffc-b1a0-cc38d7250416": {
+  "number": 338,
+  "slug": "gradio-oserror-cannot-find-empty-port-in-e0f6",
+  "hash": "d86b3836745919f5",
+  "state": "closed"
+ },
+ "b76b4703-db17-48d9-941f-fc990f5bd791": {
+  "number": 339,
+  "slug": "gradio-on-windows-with-gr-blocks-delete-30e1",
+  "hash": "482b58aa7b905dc0",
+  "state": "closed"
+ },
+ "0d9cc221-eb1c-4309-96e3-5b9e3154f40a": {
+  "number": 340,
+  "slug": "biome-markdown-blockquote-biome-format-removes-the-d733",
+  "hash": "71f109562ea4f288",
+  "state": "closed"
  }
 }
