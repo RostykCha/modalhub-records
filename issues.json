@@ -2038,5 +2038,17 @@
   "slug": "biome-markdown-blockquote-biome-format-removes-the-d733",
   "hash": "71f109562ea4f288",
   "state": "closed"
+ },
+ "7c5eaa92-7831-4951-ad98-8c044f4c6474": {
+  "number": 341,
+  "slug": "npm-npm-error-eexist-file-already-exists-1a52",
+  "hash": "33de88c8aaf38440",
+  "state": "closed"
+ },
+ "cf554f34-c372-430b-817b-c6c9fab57290": {
+  "number": 342,
+  "slug": "astro-hydrate-error-parsing-props-for-component-6645",
+  "hash": "58f04121bbe7862b",
+  "state": "closed"
  }
 }

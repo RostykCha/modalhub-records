@@ -1,9 +1,61 @@
 {
- "generated_at": "2026-11-25T12:50:10Z",
+ "generated_at": "2026-11-26T12:28:55Z",
  "source": "https://api.modalhub.ai/v1/records",
  "license": "CC0-1.0",
- "count": 340,
+ "count": 342,
  "records": [
+  {
+   "id": "7c5eaa92-7831-4951-ad98-8c044f4c6474",
+   "slug": "npm-npm-error-eexist-file-already-exists-1a52",
+   "url": "https://api.modalhub.ai/r/npm-npm-error-eexist-file-already-exists-1a52",
+   "symptom": "npm error EEXIST: file already exists",
+   "cause": "npm 12.0.0-12.2.2 bundle cmd-shim 9.0.2, whose sh shims exec \"$basedir_win/...\", but read-cmd-shim 7.0.0 only parses \"$basedir/\"; bin-links turns that read error into EEXIST",
+   "tool": "npm",
+   "version": "12.2.0",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "caution",
+    "flags": [
+     {
+      "code": "installs_package",
+      "args": [
+       "unparsed",
+       "npm:npm"
+      ]
+     },
+     {
+      "code": "unverified_package",
+      "args": [
+       "unparsed"
+      ]
+     }
+    ],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
+  {
+   "id": "cf554f34-c372-430b-817b-c6c9fab57290",
+   "slug": "astro-hydrate-error-parsing-props-for-component-6645",
+   "url": "https://api.modalhub.ai/r/astro-hydrate-error-parsing-props-for-component-6645",
+   "symptom": "[hydrate] Error parsing props for component /_astro/<component>.<hash>.js (export default) <props> TypeError: t is not iterable",
+   "cause": "serializeArray used Array.prototype.map, which skips holes, so JSON.stringify writes each hole as bare null; the island decoder destructures every entry as [type, value] and throws on null",
+   "tool": "astro",
+   "version": "7.4.11",
+   "status": "unconfirmed",
+   "risk": {
+    "level": "low",
+    "flags": [],
+    "v": 1
+   },
+   "confirmations": {
+    "worked": 0,
+    "didnt": 0
+   }
+  },
   {
    "id": "e261f310-3e51-461b-b98c-cf5eb5520fdb",
    "slug": "vllm-runtimeerror-ptr-a-size-1-must-6e7e",
